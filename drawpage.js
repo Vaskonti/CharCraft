@@ -67,17 +67,11 @@ class DrawingBoard {
         this.draw_character = character
     }
 
-    draw(x, y, drawBoardRect) {
-        const cellWidth = drawBoardRect.width / this.boardMatrix[0].length;
-        const cellHeight = drawBoardRect.height / this.boardMatrix.length;
-
-        const clickedCol = Math.floor((x - drawBoardRect.left) / cellWidth);
-        const clickedRow = Math.floor((y - drawBoardRect.top) / cellHeight);
-
+    drawCharacter(x, y) {
         for (let i = -this.mouseRadius; i <= this.mouseRadius; i++) {
             for (let j = -this.mouseRadius; j <= this.mouseRadius; j++) {
-                const coloredRow = clickedRow + i;
-                const coloredCol = clickedCol + j;
+                const coloredRow = x + i;
+                const coloredCol = y + j;
 
                 if (
                     coloredRow >= 0 && coloredRow < this.boardMatrix.length &&
@@ -90,14 +84,38 @@ class DrawingBoard {
             }
         }
     }
+
+    drawLine(fromX, fromY, toX, toY) {
+        let dx = Math.abs(toX - fromX);
+        let dy = Math.abs(toY - fromY);
+        let sx = fromX < toX ? 1 : -1;
+        let sy = fromY < toY ? 1 : -1;
+        let err = dx - dy;
+
+        while (true) {
+            this.drawCharacter(fromX, fromY);
+
+            if (fromX === toX && fromY === toY) break;
+
+            let e2 = 2 * err;
+            if (e2 > -dy) {
+                err -= dy;
+                fromX += sx;
+            }
+            if (e2 < dx) {
+                err += dx;
+                fromY += sy;
+            }
+        }
+    }
 }
 
 class DrawingBoardUI {
     constructor(drawingBoard) {
         this.drawingBoard = drawingBoard;
-        this.mouseHold = false;
+        this.isMouseDown = false;
         this.drawBoardElement = null;
-
+        this.lastDrawnCell = null
         this.init();
     }
     // TODO: maybe if board is too big for user resolution make the symbols smaller? 
@@ -113,18 +131,56 @@ class DrawingBoardUI {
             this.drawingBoard.redrawBoard(this.drawBoardElement);
 
             document.addEventListener("click", (e) => this.draw(e));
-            document.addEventListener("mouseup", () => (this.mouseHold = false));
-            document.addEventListener("mousedown", () => (this.mouseHold = true));
-            document.addEventListener("mousemove", (e) => {
-                if (this.mouseHold) this.draw(e);
-            });
+            document.addEventListener("mouseup", () => (this.isMouseDown = false));
+            document.addEventListener("mousedown", (e) => this.mouseDown(e));
+            document.addEventListener("mousemove", (e) => this.mouseMove(e));
         });
     }
 
-    draw(event) {
-        const { clientX, clientY } = event;
+    getClickedCell(event) {
         const drawBoardRect = this.drawBoardElement.getBoundingClientRect();
-        this.drawingBoard.draw(clientX, clientY, drawBoardRect);
+
+        const cellWidth = drawBoardRect.width / this.drawingBoard.boardMatrix[0].length;
+        const cellHeight = drawBoardRect.height / this.drawingBoard.boardMatrix.length;
+
+        const clickedCol = Math.floor((event.clientX - drawBoardRect.left) / cellWidth);
+        const clickedRow = Math.floor((event.clientY - drawBoardRect.top) / cellHeight);
+
+        return { clickedRow, clickedCol };
+    }
+
+    mouseDown(event) {
+        this.isMouseDown = true;
+        this.lastClickedCell = this.getClickedCell(event);
+    }
+
+    mouseMove(event) {
+        if (!this.isMouseDown || !this.lastClickedCell) {
+            return;
+        }
+
+        const currentCell = this.getClickedCell(event);
+
+        if (!(currentCell.clickedRow !== this.lastClickedCell.clickedRow ||
+                currentCell.clickedCol !== this.lastClickedCell.clickedCol
+        )) {
+            return;
+        }
+
+        this.drawingBoard.drawLine(
+            this.lastClickedCell.clickedRow,
+            this.lastClickedCell.clickedCol,
+            currentCell.clickedRow,
+            currentCell.clickedCol
+        );
+
+        this.lastClickedCell = currentCell;
+    }
+
+    draw(event) {
+        const { clickedRow, clickedCol } = this.getClickedCell(event);
+        
+        this.drawingBoard.drawCharacter(clickedRow, clickedCol);
     }
 }
 
