@@ -1,146 +1,136 @@
 
-class Character 
-{
-    constructor(character, color) 
-    {
+class Character {
+    constructor(character, color) {
         this.character = character;
         this.color = color;
     }
 
-    displayDetails() 
-    {
+    displayDetails() {
         console.log(`character: ${this.character}, color: ${this.color}`);
     }
 }
 
-const mouse_radius = 0;
-const board_size = 100
-let draw_board = NaN;
-let board_matrix = Array(board_size/2).fill().map(()=>Array(board_size).fill())
-let mouse_hold = false
-
-window.addEventListener("load", (_event) =>
-{
-    const collection = document.getElementsByClassName("draw-board");
-    if (collection.length == 0)
-    {
-        console.log("Board doesn't exist.");
-        return;
+class DrawingBoard {
+    constructor(boardSize, mouseRadius) {
+        this.boardSize = boardSize;
+        this.mouseRadius = mouseRadius;
+        this.boardMatrix = Array(boardSize / 2).fill().map(() => Array(boardSize).fill());
+        this.draw_color = "#FFFFFF"
+        this.draw_character = '#'
+        this.default_character = ' '
+        this.resetBoard();
     }
 
-    draw_board = collection[0];
-    init_board_matrix();
-    redraw_draw_board();
-    document.addEventListener("click", mouse_click_callback);
-    document.addEventListener("mouseup", mouse_up_callback);
-    document.addEventListener("mousedown", mouse_down_callback);
-    document.addEventListener("mousemove", mouse_move_callback);
-});
-
-function init_board_matrix()
-{
-    const text_color = "#FF0000";
-    board_matrix.forEach((row, rowIndex) =>
-    {   
-        row.forEach((_, colIndex) =>
-        {
-            board_matrix[rowIndex][colIndex] = new Character('a', text_color);
+    resetBoard() {
+        const textColor = "#000000";
+        this.boardMatrix.forEach((row, rowIndex) => {
+            row.forEach((_, colIndex) => {
+                this.boardMatrix[rowIndex][colIndex] = new Character(this.default_character, textColor);
+            });
         });
-    });
-}
-
-function redraw_draw_board()
-{
-    let end_thing = "";
-    board_matrix.forEach((row, rowIndex) =>
-    {
-        row.forEach((_, colIndex) =>
-        {
-            const cellId = `cell-${rowIndex}-${colIndex}`;
-            const elementHTML = `<span id="${cellId}" style="color: ${board_matrix[rowIndex][colIndex].color};">${board_matrix[rowIndex][colIndex].character}</span>`;
-            end_thing = end_thing.concat(elementHTML);
-        });
-        end_thing = end_thing.concat(`<br>`);
-    });
-    draw_board.innerHTML = end_thing;
-}
-
-function update_cell(row, col)
-{
-    const cellId = `cell-${row}-${col}`;
-    const cell = document.getElementById(cellId);
-
-    if (cell)
-    {
-        const character = board_matrix[row][col];
-        cell.style.color = character.color;
-        cell.textContent = character.character;
     }
-}
 
-function draw_on_mouse(event)
-{
-    mouse_x = event.clientX;
-    mouse_y = event.clientY;
+    setDefaultCharacter(character) {
+        this.default_character = character
+    }
 
-    const draw_board_rect = draw_board.getBoundingClientRect()
-    const content_width = draw_board.scrollWidth;
-    const content_height = draw_board.scrollHeight;
-    
-    if (mouse_x >= draw_board_rect.left &&
-        mouse_x <= draw_board_rect.left + content_width &&
-        mouse_y >= draw_board_rect.top &&
-        mouse_y <= draw_board_rect.top + content_height)
-    {
+    redrawBoard(container) {
+        let boardHTML = "";
+        this.boardMatrix.forEach((row, rowIndex) => {
+            row.forEach((cell, colIndex) => {
+                const cellId = `cell-${rowIndex}-${colIndex}`;
+                const elementHTML = `<span id="${cellId}" style="color: ${cell.color};">${cell.character}</span>`;
+                boardHTML += elementHTML;
+            });
+            boardHTML += `<br>`;
+        });
+        container.innerHTML = boardHTML;
+    }
 
-        const cell_width = draw_board_rect.width / board_matrix[0].length;
-        const cell_height = draw_board_rect.height / board_matrix.length;
+    updateCell(row, col) {
+        const cellId = `cell-${row}-${col}`;
+        const cell = document.getElementById(cellId);
 
-        const clicked_col = Math.floor((mouse_x - draw_board_rect.left) / cell_width);
-        const clicked_row = Math.floor((mouse_y - draw_board_rect.top) / cell_height);
+        if (cell) {
+            const character = this.boardMatrix[row][col];
+            cell.style.color = character.color;
+            cell.textContent = character.character;
+        }
+    }
 
-        for (let i = -mouse_radius; i <= mouse_radius; i++)
-        {
-            for (let j = -mouse_radius; j <= mouse_radius; j++)
-            {
-                const colored_row = clicked_row + i;
-                const colored_col = clicked_col + j;
+    /* pass string color in format "#XXXXXX" */
+    setDrawColor(color) {
+        this.draw_color = color
+    }
+
+    setDrawCharacter(character) {
+        this.draw_character = character
+    }
+
+    draw(x, y, drawBoardRect) {
+        const cellWidth = drawBoardRect.width / this.boardMatrix[0].length;
+        const cellHeight = drawBoardRect.height / this.boardMatrix.length;
+
+        const clickedCol = Math.floor((x - drawBoardRect.left) / cellWidth);
+        const clickedRow = Math.floor((y - drawBoardRect.top) / cellHeight);
+
+        for (let i = -this.mouseRadius; i <= this.mouseRadius; i++) {
+            for (let j = -this.mouseRadius; j <= this.mouseRadius; j++) {
+                const coloredRow = clickedRow + i;
+                const coloredCol = clickedCol + j;
 
                 if (
-                    colored_row >= 0 && colored_row < board_matrix.length &&
-                    colored_col >= 0 && colored_col < board_matrix[0].length
-                )
-                {
-                    board_matrix[colored_row][colored_col].character = '#';
-                    board_matrix[colored_row][colored_col].color = "#FFFFFF";
-                    update_cell(colored_row, colored_col);
+                    coloredRow >= 0 && coloredRow < this.boardMatrix.length &&
+                    coloredCol >= 0 && coloredCol < this.boardMatrix[0].length
+                ) {
+                    this.boardMatrix[coloredRow][coloredCol].character = this.draw_character;
+                    this.boardMatrix[coloredRow][coloredCol].color = this.draw_color;
+                    this.updateCell(coloredRow, coloredCol);
                 }
             }
         }
     }
 }
 
-function mouse_click_callback(event) 
-{
-    draw_on_mouse(event);
-}
+class DrawingBoardUI {
+    constructor(drawingBoard) {
+        this.drawingBoard = drawingBoard;
+        this.mouseHold = false;
+        this.drawBoardElement = null;
 
+        this.init();
+    }
+    // TODO: maybe if board is too big for user resolution make the symbols smaller? 
+    init() {
+        window.addEventListener("load", () => {
+            const collection = document.getElementsByClassName("draw-board");
+            if (collection.length === 0) {
+                console.log("Board doesn't exist.");
+                return;
+            }
 
-function mouse_down_callback(_event)
-{
-    mouse_hold = true;
-}
+            this.drawBoardElement = collection[0];
+            this.drawingBoard.redrawBoard(this.drawBoardElement);
 
-function mouse_up_callback(_event)
-{
-    mouse_hold = false;
-}
+            document.addEventListener("click", (e) => this.draw(e));
+            document.addEventListener("mouseup", () => (this.mouseHold = false));
+            document.addEventListener("mousedown", () => (this.mouseHold = true));
+            document.addEventListener("mousemove", (e) => {
+                if (this.mouseHold) this.draw(e);
+            });
+        });
+    }
 
-function mouse_move_callback(event)
-{
-    if (mouse_hold)
-    {
-        draw_on_mouse(event);
+    draw(event) {
+        const { clientX, clientY } = event;
+        const drawBoardRect = this.drawBoardElement.getBoundingClientRect();
+        this.drawingBoard.draw(clientX, clientY, drawBoardRect);
     }
 }
+
+//TODO: make it dynamic
+const boardSize = 100;
+const mouseRadius = 0;
+const drawingBoard = new DrawingBoard(boardSize, mouseRadius);
+const drawingBoardUI = new DrawingBoardUI(drawingBoard);
 

@@ -13,8 +13,8 @@
 
 .draw-board
 {
-    width: max-content;  /* should stay this way!*/
-    height: max-content; /* should stay this way!*/
+    width: max-content;  /* must stay this way! */
+    height: max-content; /* must stay this way! */
     color: white;
     background-color: black;
 }
