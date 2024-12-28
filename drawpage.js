@@ -10,28 +10,57 @@ class Character {
     }
 }
 
+const emptyCharacter = ' '
+
+const DrawType = {
+    SQUARE: 'square',
+    CIRCLE: 'circle',
+};
+Object.freeze(DrawType);
+
 class DrawingBoard {
-    constructor(boardSize, mouseRadius) {
+    constructor(sizeX, sizeY) {
         this.boardSize = boardSize;
-        this.mouseRadius = mouseRadius;
-        this.boardMatrix = Array(boardSize / 2).fill().map(() => Array(boardSize).fill());
-        this.draw_color = "#FFFFFF"
-        this.draw_character = '#'
-        this.default_character = ' '
+        this.mouseRadius = 1;
+        this.boardMatrix = Array(sizeY).fill().map(() => Array(sizeX).fill());
+        this.drawColor = "#FFFFFF"
+        this.drawCharacter = '0'
+        this.defaultCharacter = emptyCharacter
+        this.drawType = DrawType.CIRCLE
         this.resetBoard();
     }
 
-    resetBoard() {
-        const textColor = "#000000";
+    setMouseRadius(mouseRadius) {
+        this.mouseRadius = mouseRadius;
+    }
+
+    setDrawType(drawType) {
+        this.drawType = drawType;
+    }
+
+    setBoardSize(sizeX, sizeY) {
+        this.boardMatrix = Array(sizeY).fill().map(() => Array(sizeX).fill());
+        this.resetBoard();
+    }
+
+    fillBoardWithCharacter(character) {
         this.boardMatrix.forEach((row, rowIndex) => {
             row.forEach((_, colIndex) => {
-                this.boardMatrix[rowIndex][colIndex] = new Character(this.default_character, textColor);
+                this.boardMatrix[rowIndex][colIndex] = new Character(character, this.drawColor);
             });
         });
     }
 
+    clearBoard() {
+        this.fillBoardWithCharacter(emptyCharacter);
+    }
+
+    resetBoard() {
+        this.fillBoardWithCharacter(this.defaultCharacter);
+    }
+
     setDefaultCharacter(character) {
-        this.default_character = character
+        this.defaultCharacter = character
     }
 
     redrawBoard(container) {
@@ -60,25 +89,31 @@ class DrawingBoard {
 
     /* pass string color in format "#XXXXXX" */
     setDrawColor(color) {
-        this.draw_color = color
+        this.drawColor = color
     }
 
     setDrawCharacter(character) {
-        this.draw_character = character
+        this.drawCharacter = character
     }
+
 
     drawCharacter(x, y) {
         for (let i = -this.mouseRadius; i <= this.mouseRadius; i++) {
             for (let j = -this.mouseRadius; j <= this.mouseRadius; j++) {
                 const coloredRow = x + i;
                 const coloredCol = y + j;
-
+                if (this.drawType == DrawType.CIRCLE &&
+                    (coloredRow - x)**2 + (coloredCol - y)**2 > this.mouseRadius**2
+                )
+                {
+                    continue;
+                }
                 if (
                     coloredRow >= 0 && coloredRow < this.boardMatrix.length &&
                     coloredCol >= 0 && coloredCol < this.boardMatrix[0].length
                 ) {
-                    this.boardMatrix[coloredRow][coloredCol].character = this.draw_character;
-                    this.boardMatrix[coloredRow][coloredCol].color = this.draw_color;
+                    this.boardMatrix[coloredRow][coloredCol].character = this.drawCharacter;
+                    this.boardMatrix[coloredRow][coloredCol].color = this.drawColor;
                     this.updateCell(coloredRow, coloredCol);
                 }
             }
@@ -126,6 +161,7 @@ class DrawingBoardUI {
         this.lastDrawnCell = null
         this.init();
     }
+
     // TODO: maybe if board is too big for user resolution make the symbols smaller? 
     init() {
         window.addEventListener("load", () => {
@@ -217,9 +253,11 @@ class DrawingBoardUI {
 
 }
 
-//TODO: make it dynamic
 const boardSize = 100;
-const mouseRadius = 0;
-const drawingBoard = new DrawingBoard(boardSize, mouseRadius);
+const mouseRadius = 2;
+const drawingBoard = new DrawingBoard(boardSize, boardSize/2);
+drawingBoard.setMouseRadius(mouseRadius);
+drawingBoard.setDrawType(DrawType.CIRCLE);
 const drawingBoardUI = new DrawingBoardUI(drawingBoard);
 
+//TODO: can we use unittesting framework like jest?
