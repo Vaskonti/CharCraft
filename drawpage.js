@@ -108,6 +108,14 @@ class DrawingBoard {
             }
         }
     }
+
+    exportBoardAsJSON() {
+        return JSON.stringify(this.boardMatrix);
+    }
+
+    importBoardFromJSON(boardData) {
+        this.boardMatrix = JSON.parse(boardData);
+    }
 }
 
 class DrawingBoardUI {
@@ -179,9 +187,34 @@ class DrawingBoardUI {
 
     draw(event) {
         const { clickedRow, clickedCol } = this.getClickedCell(event);
-        
+
         this.drawingBoard.drawCharacter(clickedRow, clickedCol);
     }
+
+
+    saveBoard() { /* TODO: test */
+        const fileContent = this.drawingBoard.exportBoardAsJSON();
+        const blob = new Blob([fileContent], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "drawing.json";
+        a.click();
+        URL.revokeObjectURL(a.href);
+    }
+
+    loadBoard(event) { /* TODO: test */
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const boardData = e.target.result;
+            this.drawingBoard.importBoardFromJSON(boardData);
+            this.drawingBoard.redrawBoard(this.drawBoardElement);
+        };
+        reader.readAsText(file);
+    }
+
 }
 
 //TODO: make it dynamic
