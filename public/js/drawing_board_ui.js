@@ -25,14 +25,14 @@ class DrawingBoardUI {
         document.addEventListener("mousemove", (e) => this.mouseMove(e));
     }
 
-    getClickedCellCoordinates(click_event) {
+    getClickedCellCoordinates(clickEvent) {
         const drawBoardRect = this.drawBoardElement.getBoundingClientRect();
 
         const cellWidth = drawBoardRect.width / this.drawingBoard.boardMatrix[0].length;
         const cellHeight = drawBoardRect.height / this.drawingBoard.boardMatrix.length;
 
-        const clickedCol = Math.floor((click_event.clientX - drawBoardRect.left) / cellWidth);
-        const clickedRow = Math.floor((click_event.clientY - drawBoardRect.top) / cellHeight);
+        const clickedCol = Math.floor((clickEvent.clientX - drawBoardRect.left) / cellWidth);
+        const clickedRow = Math.floor((clickEvent.clientY - drawBoardRect.top) / cellHeight);
 
         return { clickedRow, clickedCol };
     }
@@ -72,7 +72,7 @@ class DrawingBoardUI {
     }
 
 
-    saveBoard() { /* TODO: test */
+    saveBoard() {
         const fileContent = this.drawingBoard.exportBoardAsJSON();
         const blob = new Blob([fileContent], { type: "application/json" });
         const a = document.createElement("a");
@@ -82,7 +82,7 @@ class DrawingBoardUI {
         URL.revokeObjectURL(a.href);
     }
 
-    loadBoard(event) { /* TODO: test */
+    loadBoard(event) {
         const file = event.target.files[0];
         if (!file) return;
 
