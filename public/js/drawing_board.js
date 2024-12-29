@@ -1,4 +1,4 @@
-import Character from '../../src/js/character.js'; /** TODO: fix pathing */
+const { Character } = require('../../src/js/character'); /** TODO: fix pathing */
 
 const emptyCharacter = ' '
 
@@ -147,4 +147,4 @@ class DrawingBoard {
 
 
 
-export { DrawingBoard, emptyCharacter, DrawType };
+module.exports = { DrawingBoard, DrawType, emptyCharacter };

@@ -1,4 +1,4 @@
-import { DrawingBoard } from "./drawing_board.js";
+const { DrawingBoard } = require('./drawing_board.js');
 
 class DrawingBoardUI {
     constructor(drawingBoard) {
@@ -6,43 +6,40 @@ class DrawingBoardUI {
         this.isMouseDown = false;
         this.drawBoardElement = null;
         this.lastDrawnCell = null
-        this.init();
     }
 
     // TODO: maybe if board is too big for user resolution make the symbols smaller? 
     init() {
-        window.addEventListener("load", () => {
-            const collection = document.getElementsByClassName("draw-board");
-            if (collection.length === 0) {
-                console.log("Board doesn't exist.");
-                return;
-            }
+        const collection = document.getElementsByClassName("draw-board");
+        if (collection.length === 0) {
+            console.log("Board doesn't exist.");
+            return;
+        }
 
-            this.drawBoardElement = collection[0];
-            this.drawingBoard.redrawBoard(this.drawBoardElement);
+        this.drawBoardElement = collection[0];
+        this.drawingBoard.redrawBoard(this.drawBoardElement);
 
-            document.addEventListener("click", (e) => this.draw(e));
-            document.addEventListener("mouseup", () => (this.isMouseDown = false));
-            document.addEventListener("mousedown", (e) => this.mouseDown(e));
-            document.addEventListener("mousemove", (e) => this.mouseMove(e));
-        });
+        document.addEventListener("click", (e) => this.draw(e));
+        document.addEventListener("mouseup", () => (this.isMouseDown = false));
+        document.addEventListener("mousedown", (e) => this.mouseDown(e));
+        document.addEventListener("mousemove", (e) => this.mouseMove(e));
     }
 
-    getClickedCell(event) {
+    getClickedCellCoordinates(click_event) {
         const drawBoardRect = this.drawBoardElement.getBoundingClientRect();
 
         const cellWidth = drawBoardRect.width / this.drawingBoard.boardMatrix[0].length;
         const cellHeight = drawBoardRect.height / this.drawingBoard.boardMatrix.length;
 
-        const clickedCol = Math.floor((event.clientX - drawBoardRect.left) / cellWidth);
-        const clickedRow = Math.floor((event.clientY - drawBoardRect.top) / cellHeight);
+        const clickedCol = Math.floor((click_event.clientX - drawBoardRect.left) / cellWidth);
+        const clickedRow = Math.floor((click_event.clientY - drawBoardRect.top) / cellHeight);
 
         return { clickedRow, clickedCol };
     }
 
     mouseDown(event) {
         this.isMouseDown = true;
-        this.lastClickedCell = this.getClickedCell(event);
+        this.lastClickedCell = this.getClickedCellCoordinates(event);
     }
 
     mouseMove(event) {
@@ -50,7 +47,7 @@ class DrawingBoardUI {
             return;
         }
 
-        const currentCell = this.getClickedCell(event);
+        const currentCell = this.getClickedCellCoordinates(event);
 
         if (!(currentCell.clickedRow !== this.lastClickedCell.clickedRow ||
                 currentCell.clickedCol !== this.lastClickedCell.clickedCol
@@ -69,7 +66,7 @@ class DrawingBoardUI {
     }
 
     draw(event) {
-        const { clickedRow, clickedCol } = this.getClickedCell(event);
+        const { clickedRow, clickedCol } = this.getClickedCellCoordinates(event);
 
         this.drawingBoard.drawCharacterOnPoint(clickedRow, clickedCol);
     }
@@ -100,5 +97,4 @@ class DrawingBoardUI {
 
 }
 
-
-export default DrawingBoardUI;
+module.exports = { DrawingBoardUI };
