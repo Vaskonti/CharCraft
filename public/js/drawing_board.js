@@ -14,7 +14,7 @@ class DrawingBoard {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
         this.mouseRadius = 1;
-        this.boardMatrix = Array(sizeY).fill().map(() => Array(sizeX).fill());
+        this.boardMatrix = Array(sizeX).fill().map(() => Array(sizeY).fill());
         this.drawColor = "#FFFFFF"
         this.drawCharacter = '0'
         this.defaultCharacter = emptyCharacter
@@ -68,7 +68,7 @@ class DrawingBoard {
         container.innerHTML = boardHTML;
     }
 
-    updateCell(row, col) {
+    updateCellTag(row, col) {
         const cellId = `cell-${row}-${col}`;
         const cell = document.getElementById(cellId);
 
@@ -77,6 +77,20 @@ class DrawingBoard {
             cell.style.color = character.color;
             cell.textContent = character.character;
         }
+    }
+
+    isPositionValid(row, col) {
+        return (row >= 0 && row < this.boardMatrix.length &&
+            col >= 0 && col < this.boardMatrix[0].length);
+    }
+
+    colorCell(row, col) {
+        if (!this.isPositionValid(row, col)) {
+            return;
+        }
+        this.boardMatrix[row][col].character = this.drawCharacter;
+        this.boardMatrix[row][col].color = this.drawColor;
+        this.updateCellTag(row, col);
     }
 
     /* pass string color in format "#XXXXXX" */
@@ -88,37 +102,32 @@ class DrawingBoard {
         this.drawCharacter = character
     }
 
+    drawCharacterOnPoint(row, col) {
+        if (!this.isPositionValid(row, col)) {
+            return;
+        }
 
-    drawCharacterOnPoint(x, y) {
         for (let i = -this.mouseRadius; i <= this.mouseRadius; i++) {
             for (let j = -this.mouseRadius; j <= this.mouseRadius; j++) {
-                const coloredRow = x + i;
-                const coloredCol = y + j;
+                const coloredRow = row + i;
+                const coloredCol = col + j;
                 if (this.drawType == DrawType.CIRCLE &&
-                    (coloredRow - x)**2 + (coloredCol - y)**2 > this.mouseRadius**2
-                )
-                {
+                    (coloredRow - row)**2 + (coloredCol - col)**2 > this.mouseRadius**2
+                ) {
                     continue;
                 }
-                if (
-                    coloredRow >= 0 && coloredRow < this.boardMatrix.length &&
-                    coloredCol >= 0 && coloredCol < this.boardMatrix[0].length
-                ) {
-                    this.boardMatrix[coloredRow][coloredCol].character = this.drawCharacter;
-                    this.boardMatrix[coloredRow][coloredCol].color = this.drawColor;
-                    this.updateCell(coloredRow, coloredCol);
-                }
+                this.colorCell(coloredRow, coloredCol);
             }
         }
     }
 
-    drawLine(fromX, fromY, toX, toY) {
+    drawLine(fromX, fromY, toX, toY) { 
         let dx = Math.abs(toX - fromX);
         let dy = Math.abs(toY - fromY);
         let sx = fromX < toX ? 1 : -1;
         let sy = fromY < toY ? 1 : -1;
         let err = dx - dy;
-
+        
         while (true) {
             this.drawCharacterOnPoint(fromX, fromY);
 
@@ -132,9 +141,51 @@ class DrawingBoard {
             if (e2 < dx) {
                 err += dx;
                 fromY += sy;
-            }
+            } // MATH, BABY!
         }
     }
+
+    bucketOnPosition(x, y) {
+        if (!this.isPositionValid(x, y)) {
+            return;
+        }
+    
+        let queue = [];
+        let visited = new Set(); // Set to track visited points
+        let point = {x, y};
+        queue.push(point);
+    
+        let characterToBeBucketed = this.boardMatrix[x][y].character;
+        let characterColor = this.boardMatrix[x][y].color;
+    
+        while (queue.length !== 0) {
+            let {x, y} = queue.shift();
+    
+            let key = `${x},${y}`;
+            if (visited.has(key)) {
+                continue;
+            }
+            visited.add(key);
+    
+            if (!this.isPositionValid(x, y)) {
+                continue;
+            }
+            if (
+                this.boardMatrix[x][y].character !== characterToBeBucketed ||
+                this.boardMatrix[x][y].color !== characterColor
+            ) {
+                continue;
+            }
+    
+            this.colorCell(x, y);
+    
+            queue.push({x: x + 1, y});
+            queue.push({x: x - 1, y});
+            queue.push({x, y: y + 1});
+            queue.push({x, y: y - 1});
+        }
+    }
+    
 
     exportBoardAsJSON() {
         return JSON.stringify(this.boardMatrix);

@@ -5,7 +5,7 @@ console.log("stuff");
 
 const boardSize = 100;
 const mouseRadius = 2;
-const drawingBoard = new DrawingBoard(boardSize, boardSize/2);
+const drawingBoard = new DrawingBoard(boardSize/2, boardSize);
 drawingBoard.setMouseRadius(mouseRadius);
 drawingBoard.setDrawType(DrawType.CIRCLE);
 const drawingBoardUI = new DrawingBoardUI(drawingBoard);

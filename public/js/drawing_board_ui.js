@@ -71,6 +71,7 @@ class DrawingBoardUI {
         this.drawingBoard.drawCharacterOnPoint(clickedRow, clickedCol);
     }
 
+    
 
     saveBoard() {
         const fileContent = this.drawingBoard.exportBoardAsJSON();
