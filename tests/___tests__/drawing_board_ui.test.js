@@ -104,7 +104,7 @@ describe('DrawingBoardUI Tests', () => {
 
     test('should save the board to a file', () => {
         board.fillBoardWithCharacter('X');
-        
+
         global.URL.revokeObjectURL = jest.fn();
         // Mock document.createElement to spy on link creation
         const spy = jest.spyOn(document, 'createElement').mockReturnValue({
@@ -155,6 +155,7 @@ describe('DrawingBoardUI Tests', () => {
 
         expect(spy).toHaveBeenCalled();
         expect(JSON.stringify(board.boardMatrix)).toEqual(boardData);
+        expect(spy.mock.calls[0][0]).toBe(drawBoardElement); // that's cool, lol
     });
 
     test('should redraw the board correctly after loading', () => {
@@ -166,7 +167,7 @@ describe('DrawingBoardUI Tests', () => {
         
         newBoard.redrawBoard(document.querySelector('.draw-board'));
 
-        expect(spy).toHaveBeenCalled(); // that's cool, lol
+        expect(spy).toHaveBeenCalled();
         expect(newBoard.boardMatrix[0][0].character).toBe('O');
         expect(newBoard.boardMatrix[19][19].character).toBe('O');
     });
