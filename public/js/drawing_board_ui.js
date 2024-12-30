@@ -1,14 +1,15 @@
-import { DrawingBoard } from './drawing_board.js';
+import { Board } from './board.js';
+import { Brush, BrushType, DrawType } from './brush.js';
 
 export class DrawingBoardUI {
-    constructor(drawingBoard) {
+    constructor(drawingBoard, brush) {
         this.drawingBoard = drawingBoard;
         this.isMouseDown = false;
         this.drawBoardElement = null;
-        this.lastDrawnCell = null
+        this.lastDrawnCell = null;
+        this.brush = brush;
     }
 
-    // TODO: maybe if board is too big for user resolution make the symbols smaller? 
     init() {
         const collection = document.getElementsByClassName("draw-board");
         if (collection.length === 0) {
@@ -27,7 +28,6 @@ export class DrawingBoardUI {
 
     getClickedCellCoordinates(clickEvent) {
         const drawBoardRect = this.drawBoardElement.getBoundingClientRect();
-
         const cellWidth = drawBoardRect.width / this.drawingBoard.boardMatrix[0].length;
         const cellHeight = drawBoardRect.height / this.drawingBoard.boardMatrix.length;
 
@@ -49,29 +49,22 @@ export class DrawingBoardUI {
 
         const currentCell = this.getClickedCellCoordinates(event);
 
-        if (!(currentCell.clickedRow !== this.lastClickedCell.clickedRow ||
-                currentCell.clickedCol !== this.lastClickedCell.clickedCol
-        )) {
-            return;
+        if (currentCell.clickedRow !== this.lastClickedCell.clickedRow || currentCell.clickedCol !== this.lastClickedCell.clickedCol) {
+            this.brush.drawLine(
+                this.drawingBoard,
+                this.lastClickedCell.clickedRow,
+                this.lastClickedCell.clickedCol,
+                currentCell.clickedRow,
+                currentCell.clickedCol
+            );
+            this.lastClickedCell = currentCell;
         }
-
-        this.drawingBoard.drawLine(
-            this.lastClickedCell.clickedRow,
-            this.lastClickedCell.clickedCol,
-            currentCell.clickedRow,
-            currentCell.clickedCol
-        );
-
-        this.lastClickedCell = currentCell;
     }
 
     draw(event) {
         const { clickedRow, clickedCol } = this.getClickedCellCoordinates(event);
-
-        this.drawingBoard.drawCharacterOnPoint(clickedRow, clickedCol);
+        this.brush.drawOnPosition(this.drawingBoard, clickedRow, clickedCol);
     }
-
-    
 
     saveBoard() {
         const fileContent = this.drawingBoard.exportBoardAsJSON();
@@ -95,5 +88,4 @@ export class DrawingBoardUI {
         };
         reader.readAsText(file);
     }
-
 }
