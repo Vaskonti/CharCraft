@@ -2,7 +2,7 @@
     "name": "char-craft",
     "version": "0.0.0",
     "description": "None",
-    "main": "DrawingBoard.js",
+    "main": "Board.js",
     "authors": "Alexander Makedonski, Vasil Hristov, Pamela Slavcheva",
     "license": "MIT",
     "devDependencies": {
