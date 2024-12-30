@@ -22,6 +22,7 @@ Run in the main dir of the project:
 npm install
 npm install --save-dev jest
 npm install --save-dev jest-environment-jsdom
+npm install @babel/core @babel/preset-env babel-jest --save-dev
 
 Then to run the tests:
 npm test

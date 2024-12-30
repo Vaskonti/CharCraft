@@ -1,5 +1,5 @@
 
-class Character {
+export class Character {
     constructor(character, color) {
         this.character = character;
         this.color = color;
@@ -9,5 +9,3 @@ class Character {
         console.log(`character: ${this.character}, color: ${this.color}`);
     }
 }
-
-module.exports = { Character };

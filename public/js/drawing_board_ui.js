@@ -1,6 +1,6 @@
-const { DrawingBoard } = require('./drawing_board.js');
+import { DrawingBoard } from './drawing_board.js';
 
-class DrawingBoardUI {
+export class DrawingBoardUI {
     constructor(drawingBoard) {
         this.drawingBoard = drawingBoard;
         this.isMouseDown = false;
@@ -17,7 +17,7 @@ class DrawingBoardUI {
         }
 
         this.drawBoardElement = collection[0];
-        this.drawingBoard.redrawBoard(this.drawBoardElement);
+        this.drawingBoard.fillBoardContainer(this.drawBoardElement);
 
         document.addEventListener("click", (e) => this.draw(e));
         document.addEventListener("mouseup", () => (this.isMouseDown = false));
@@ -91,11 +91,9 @@ class DrawingBoardUI {
         reader.onload = (e) => {
             const boardData = e.target.result;
             this.drawingBoard.importBoardFromJSON(boardData);
-            this.drawingBoard.redrawBoard(this.drawBoardElement);
+            this.drawingBoard.fillBoardContainer(this.drawBoardElement);
         };
         reader.readAsText(file);
     }
 
 }
-
-module.exports = { DrawingBoardUI };

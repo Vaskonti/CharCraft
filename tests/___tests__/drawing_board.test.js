@@ -1,6 +1,6 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals'); 
-const { DrawingBoard, DrawType } = require('../../public/js/drawing_board');
-const { Character } = require('../../src/js/character');
+import { DrawingBoard, DrawType } from '../../public/js/drawing_board.js';
+import { Character } from '../../src/js/character.js';
 
 describe('DrawingBoard Class Tests', () => {
     let board;

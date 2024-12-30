@@ -1,9 +1,9 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals'); 
-const { DrawingBoardUI } = require('../../public/js/drawing_board_ui');
-const { DrawingBoard, DrawType } = require('../../public/js/drawing_board');
+import { DrawingBoardUI } from '../../public/js/drawing_board_ui.js';
+import { DrawingBoard, DrawType } from '../../public/js/drawing_board.js';
 
 describe('DrawingBoardUI Tests', () => {
-    let board, boardUI;
+    let board, boardUI, drawBoardElement;
 
     beforeEach(() => {
         document.body.innerHTML = `<div class="draw-board"></div>`; // mock
@@ -149,7 +149,7 @@ describe('DrawingBoardUI Tests', () => {
             });
         });
     
-        const spy = jest.spyOn(boardUI.drawingBoard, 'redrawBoard');
+        const spy = jest.spyOn(boardUI.drawingBoard, 'fillBoardContainer');
 
         boardUI.loadBoard(fakeEvent);
 
@@ -163,9 +163,9 @@ describe('DrawingBoardUI Tests', () => {
         const boardJSON = board.exportBoardAsJSON();
         const newBoard = new DrawingBoard(20, 20);
         newBoard.importBoardFromJSON(boardJSON);
-        const spy = jest.spyOn(newBoard, 'redrawBoard');
+        const spy = jest.spyOn(newBoard, 'fillBoardContainer');
         
-        newBoard.redrawBoard(document.querySelector('.draw-board'));
+        newBoard.fillBoardContainer(document.querySelector('.draw-board'));
 
         expect(spy).toHaveBeenCalled();
         expect(newBoard.boardMatrix[0][0].character).toBe('O');
