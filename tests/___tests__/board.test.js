@@ -45,7 +45,7 @@ describe('Board Class Tests', () => {
 
     test('should color a valid cell correctly', () => {
         board.boardMatrix[1][1] = new Character('A', '#000000');
-        board.colorCell(1, 1, '@', '#FF0000'); // updated to include color
+        board.colorCell(1, 1, '@', '#FF0000');
 
         expect(board.boardMatrix[1][1].character).toBe('@');
         expect(board.boardMatrix[1][1].color).toBe('#FF0000');
