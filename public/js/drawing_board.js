@@ -1,15 +1,15 @@
-const { Character } = require('../../src/js/character'); /** TODO: fix pathing */
+import { Character } from '../../src/js/character.js'; /** TODO: fix pathing */
 
-const emptyCharacter = ' '
+export const emptyCharacter = ' '
 
-const DrawType = {
+export const DrawType = {
     SQUARE: 'square',
     CIRCLE: 'circle',
 };
 
 Object.freeze(DrawType);
 
-class DrawingBoard {
+export class DrawingBoard {
     constructor(sizeX, sizeY) {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
@@ -55,7 +55,7 @@ class DrawingBoard {
         this.defaultCharacter = character
     }
 
-    redrawBoard(container) {
+    fillBoardContainer(container) {
         let boardHTML = "";
         this.boardMatrix.forEach((row, rowIndex) => {
             row.forEach((cell, colIndex) => {
@@ -151,7 +151,7 @@ class DrawingBoard {
         }
     
         let queue = [];
-        let visited = new Set(); // Set to track visited points
+        let visited = new Set();
         let point = {x, y};
         queue.push(point);
     
@@ -198,4 +198,4 @@ class DrawingBoard {
 
 
 
-module.exports = { DrawingBoard, DrawType, emptyCharacter };
+export default { DrawingBoard, DrawType, emptyCharacter };
