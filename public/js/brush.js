@@ -71,7 +71,6 @@ export class Brush {
             drawingBoard.colorCell(row, col, null, this.drawColor);
         }
         else if (this.brushType === BrushType.CHARACTER_ONLY) {
-            const color = drawingBoard.boardMatrix[row][col].color;
             drawingBoard.colorCell(row, col, this.drawCharacter, null);
         }
     }
