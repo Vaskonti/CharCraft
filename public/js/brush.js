@@ -1,14 +1,20 @@
 import { Board } from './board.js';
 
-export const DrawType = {
+export const BrushShape = {
     CIRCLE: 'circle',
     SQUARE: 'square',
 };
 
 
-export const BrushType = {
+export const ToolType = {
     NORMAL: 'normal',
     BUCKET: 'bucket',
+};
+
+export const BrushType = {
+    NORMAL: 'normal',
+    COLOR_ONLY: 'color_only',
+    CHARACTER_ONLY: 'character_only',
 };
 
 
@@ -17,12 +23,17 @@ export class Brush {
         this.mouseRadius = 0;
         this.drawColor = "#FFFFFF";
         this.drawCharacter = '0';
+        this.toolType = ToolType.NORMAL;
+        this.brushShape = BrushShape.CIRCLE;
         this.brushType = BrushType.NORMAL;
-        this.drawType = DrawType.CIRCLE;
     }
 
     setBrushType(brushType) {
         this.brushType = brushType;
+    }
+
+    setToolType(toolType) {
+        this.toolType = toolType;
     }
 
     setMouseRadius(radius) {
@@ -38,18 +49,31 @@ export class Brush {
         this.drawCharacter = character;
     }
 
-    setDrawType(drawType) {
-        this.drawType = drawType;
+    setBrushShape(brushShape) {
+        this.brushShape = brushShape;
     }
 
 
     drawOnPosition(drawingBoard, row, col) {
-        if (this.brushType === BrushType.BUCKET) {
+        if (this.toolType === ToolType.BUCKET) {
             this.bucketOnPosition(drawingBoard, row, col);
         }
-        else { // (this.brushType === BrushType.NORMAL)
+        else { // (this.toolType === ToolType.NORMAL)
             this.drawCharacterOnPosition(drawingBoard, row, col);
         }   
+    }
+
+    colorCellOnBoard(drawingBoard, row, col) {
+        if (this.brushType === BrushType.NORMAL) {
+            drawingBoard.colorCell(row, col, this.drawCharacter, this.drawColor);
+        }
+        else if (this.brushType === BrushType.COLOR_ONLY) {
+            drawingBoard.colorCell(row, col, null, this.drawColor);
+        }
+        else if (this.brushType === BrushType.CHARACTER_ONLY) {
+            const color = drawingBoard.boardMatrix[row][col].color;
+            drawingBoard.colorCell(row, col, this.drawCharacter, null);
+        }
     }
 
     drawCharacterOnPosition(drawingBoard, row, col) {
@@ -62,12 +86,13 @@ export class Brush {
                 const coloredRow = row + i;
                 const coloredCol = col + j;
 
-                if (this.drawType === DrawType.CIRCLE &&
+                if (this.brushShape === BrushShape.CIRCLE &&
                     ((coloredRow - row) ** 2 + (coloredCol - col) ** 2 > this.mouseRadius ** 2)
                 ) {
                     continue;
                 }
-                drawingBoard.colorCell(coloredRow, coloredCol, this.drawCharacter, this.drawColor);
+
+                this.colorCellOnBoard(drawingBoard, coloredRow, coloredCol);
             }
         }
     }
@@ -94,7 +119,7 @@ export class Brush {
             let currentCell = drawingBoard.boardMatrix[x][y];
             if (currentCell.character !== startCharacter || currentCell.color !== startColor) continue;
 
-            drawingBoard.colorCell(x, y, this.drawCharacter, this.drawColor);
+            this.colorCellOnBoard(drawingBoard, x, y);
 
             queue.push({ x: x + 1, y });
             queue.push({ x: x - 1, y });

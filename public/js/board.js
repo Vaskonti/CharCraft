@@ -70,8 +70,12 @@ export class Board {
         if (!this.isPositionValid(row, col)) {
             return;
         }
-        this.boardMatrix[row][col].character = character;
-        this.boardMatrix[row][col].color = color;
+        if (character) {
+            this.boardMatrix[row][col].character = character;
+        }
+        if (color) {
+            this.boardMatrix[row][col].color = color;
+        }
         this.updateCellTag(row, col);
     }
 
