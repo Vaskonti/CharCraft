@@ -1,12 +1,11 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals'); 
 import { Board } from '../../public/js/board.js';
-import { Brush, BrushType, DrawType } from '../../public/js/brush.js';
+import { Brush, ToolType, BrushShape, BrushType } from '../../public/js/brush.js';
 import { Character } from '../../src/js/character.js';
 
 describe('Brush Class Tests', () => {
     let board;
     let brush;
-    let oldFunction;
     beforeEach(() => {
         board = new Board(5, 5);
         brush = new Brush();
@@ -24,12 +23,12 @@ describe('Brush Class Tests', () => {
         test('should switch brush type correctly', () => {
             brush.setMouseRadius(1);
             board.colorCell = jest.fn();
-            brush.setBrushType(BrushType.BUCKET);
+            brush.setToolType(ToolType.BUCKET);
             brush.bucketOnPosition(board, 0, 0);
             expect(board.colorCell).toHaveBeenCalledTimes(4);
         
             board.colorCell = jest.fn(); // reset 
-            brush.setBrushType(BrushType.NORMAL);
+            brush.setToolType(ToolType.NORMAL);
             brush.drawCharacterOnPosition(board, 2, 2); 
             expect(board.colorCell).toHaveBeenCalledTimes(5);
         });
@@ -82,6 +81,87 @@ describe('Brush Class Tests', () => {
             expect(board.boardMatrix[3][3].character).toBe('*');
             expect(board.boardMatrix[4][4].character).toBe('*');
         });
+
+        test('BrushType.NORMAL should change both character and color', () => {
+            brush.setBrushType(BrushType.NORMAL);
+            brush.setDrawColor('#FF0000');
+            brush.setDrawCharacter('@');
+    
+            brush.drawCharacterOnPosition(board, 2, 2);
+    
+            expect(board.boardMatrix[2][2].character).toBe('@');
+            expect(board.boardMatrix[2][2].color).toBe('#FF0000');
+        });
+    
+        test('BrushType.COLOR_ONLY should change only the color', () => {
+            brush.setBrushType(BrushType.COLOR_ONLY);
+            brush.setDrawColor('#FF0000');
+            brush.setDrawCharacter('@');
+    
+            brush.drawCharacterOnPosition(board, 2, 2);
+    
+            expect(board.boardMatrix[2][2].character).toBe('E');
+            expect(board.boardMatrix[2][2].color).toBe('#FF0000');
+        });
+    
+        test('BrushType.CHARACTER_ONLY should change only the character', () => {
+            brush.setBrushType(BrushType.CHARACTER_ONLY);
+            brush.setDrawColor('#FF0000');
+            brush.setDrawCharacter('@');
+    
+            brush.drawCharacterOnPosition(board, 2, 2);
+    
+            expect(board.boardMatrix[2][2].character).toBe('@');
+            expect(board.boardMatrix[2][2].color).toBe('purple');
+        });
+    
+        test('BrushType.NORMAL should work with larger radius', () => {
+            brush.setBrushType(BrushType.NORMAL);
+            brush.setMouseRadius(1);
+            brush.setDrawColor('#00FF00');
+            brush.setDrawCharacter('*');
+    
+            brush.drawCharacterOnPosition(board, 2, 2);
+    
+            expect(board.boardMatrix[2][2].character).toBe('*');
+            expect(board.boardMatrix[2][2].color).toBe('#00FF00');
+            expect(board.boardMatrix[1][2].character).toBe('*');
+            expect(board.boardMatrix[1][2].color).toBe('#00FF00');
+            expect(board.boardMatrix[2][1].character).toBe('*');
+            expect(board.boardMatrix[2][1].color).toBe('#00FF00');
+        });
+    
+        test('BrushType.COLOR_ONLY should work with larger radius', () => {
+            brush.setBrushType(BrushType.COLOR_ONLY);
+            brush.setMouseRadius(1);
+            brush.setDrawColor('#00FF00');
+            brush.setDrawCharacter('*');
+    
+            brush.drawCharacterOnPosition(board, 2, 2);
+    
+            expect(board.boardMatrix[2][2].character).toBe('E');
+            expect(board.boardMatrix[2][2].color).toBe('#00FF00');
+            expect(board.boardMatrix[1][2].character).toBe('B');
+            expect(board.boardMatrix[1][2].color).toBe('#00FF00');
+            expect(board.boardMatrix[2][1].character).toBe('D');
+            expect(board.boardMatrix[2][1].color).toBe('#00FF00');
+        });
+    
+        test('BrushType.CHARACTER_ONLY should work with larger radius', () => {
+            brush.setBrushType(BrushType.CHARACTER_ONLY);
+            brush.setMouseRadius(1);
+            brush.setDrawColor('#00FF00');
+            brush.setDrawCharacter('*');
+    
+            brush.drawCharacterOnPosition(board, 2, 2);
+    
+            expect(board.boardMatrix[2][2].character).toBe('*');
+            expect(board.boardMatrix[2][2].color).toBe('purple');
+            expect(board.boardMatrix[1][2].character).toBe('*');
+            expect(board.boardMatrix[1][2].color).toBe('blue');
+            expect(board.boardMatrix[2][1].character).toBe('*');
+            expect(board.boardMatrix[2][1].color).toBe('yellow');
+        });
     });
 
     describe('Brush Bucket Tests', () => {
@@ -121,15 +201,15 @@ describe('Brush Class Tests', () => {
         test('should set and get brush properties correctly', () => {
             brush.setDrawColor("#FF0000");
             brush.setDrawCharacter('@');
-            brush.setBrushType(BrushType.BUCKET);
+            brush.setToolType(ToolType.BUCKET);
             brush.setMouseRadius(2);
-            brush.setDrawType(DrawType.SQUARE);
+            brush.setBrushShape(BrushShape.SQUARE);
 
             expect(brush.drawColor).toBe("#FF0000");
             expect(brush.drawCharacter).toBe('@');
-            expect(brush.brushType).toBe(BrushType.BUCKET);
+            expect(brush.toolType).toBe(ToolType.BUCKET);
             expect(brush.mouseRadius).toBe(2);
-            expect(brush.drawType).toBe(DrawType.SQUARE);
+            expect(brush.brushShape).toBe(BrushShape.SQUARE);
         });
 
         test('should draw character on point', () => {
@@ -154,7 +234,7 @@ describe('Brush Class Tests', () => {
         });
 
         test('should respect the draw type when drawing a character', () => {
-            brush.setDrawType(DrawType.SQUARE);
+            brush.setBrushShape(BrushShape.SQUARE);
             brush.setMouseRadius(1);
             brush.setDrawColor('#00FF00');
             brush.setDrawCharacter('*');
