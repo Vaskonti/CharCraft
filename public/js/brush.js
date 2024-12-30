@@ -1,4 +1,4 @@
-import { Board } from './board.js';
+import { Board, defaultColor } from './board.js';
 
 export const BrushShape = {
     CIRCLE: 'circle',
@@ -21,7 +21,7 @@ export const BrushType = {
 export class Brush {
     constructor() {
         this.mouseRadius = 0;
-        this.drawColor = "#FFFFFF";
+        this.drawColor = defaultColor;
         this.drawCharacter = '0';
         this.toolType = ToolType.NORMAL;
         this.brushShape = BrushShape.CIRCLE;

@@ -1,6 +1,7 @@
 import { Character } from '../../src/js/character.js'; /** TODO: fix pathing */
 
 export const emptyCharacter = ' '
+export const defaultColor = "#FFFFFF"
 
 export class Board {
     constructor(sizeX, sizeY) {
@@ -23,7 +24,7 @@ export class Board {
     fillBoardWithCharacter(character) {
         this.boardMatrix.forEach((row, rowIndex) => {
             row.forEach((_, colIndex) => {
-                this.boardMatrix[rowIndex][colIndex] = new Character(character, this.drawColor);
+                this.boardMatrix[rowIndex][colIndex] = new Character(character, defaultColor);
                 this.updateCellTag(rowIndex, colIndex);
             });
         });
@@ -74,6 +75,10 @@ export class Board {
             this.boardMatrix[row][col].character = character;
         }
         if (color) {
+            if (this.boardMatrix[row][col].character == emptyCharacter)
+            {
+                return; // should not be coloring
+            }
             this.boardMatrix[row][col].color = color;
         }
         this.updateCellTag(row, col);
