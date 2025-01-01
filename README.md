@@ -26,9 +26,9 @@ npm test
 
 
 
-If the packages do not install with npm install, do:
-
+If the packages do not install with "npm install" command, you can install them one by one:
 npm install --save-dev jest
 npm install --save-dev jest-environment-jsdom
-npm install @babel/core @babel/preset-env babel-jest --save-dev
+npm install --save-dev @babel/core @babel/preset-env babel-jest
+npm install --save-dev jest-canvas-mock
 

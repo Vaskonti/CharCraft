@@ -22,7 +22,7 @@ function computeCharacterDensity(character) {
     {
         return densityCache[character];
     }
-    const canvas = new OffscreenCanvas(10, 10);
+    const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -62,9 +62,9 @@ function getVisibilityRankIndexOfCharacter(character) {
     densityIndexCache[character] = best_rank_index;
     return best_rank_index;
 }
-window.addEventListener("load", (_) => {
-    precomputeDensityForVisibilityRank(); // TODO: assess if this function is better left a global call.
-});
+//window.addEventListener("load", (_) => {
+precomputeDensityForVisibilityRank(); // TODO: assess if this function is better left a global call.
+//});
 
 
 export class Board {
