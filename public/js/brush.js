@@ -15,8 +15,9 @@ export const BrushType = {
     NORMAL: 'normal',
     COLOR_ONLY: 'color_only',
     CHARACTER_ONLY: 'character_only',
+    EMBOLDEN_CHARACTER: 'embolden_character',
+    FADE_CHARACTER: 'fade_character'
 };
-
 
 export class Brush {
     constructor() {
@@ -40,7 +41,7 @@ export class Brush {
         this.mouseRadius = radius;
     }
 
-    /* pass string color in format "#XXXXXX" */
+    /* pass string color in format "#XXXXXX" preferably */
     setDrawColor(color) {
         this.drawColor = color;
     }
@@ -72,6 +73,12 @@ export class Brush {
         }
         else if (this.brushType === BrushType.CHARACTER_ONLY) {
             drawingBoard.colorCell(row, col, this.drawCharacter, null);
+        }
+        else if (this.brushType === BrushType.EMBOLDEN_CHARACTER) {
+            drawingBoard.emboldCell(row, col);
+        }
+        else if (this.brushType === BrushType.FADE_CHARACTER) {
+            drawingBoard.fadeCell(row, col);
         }
     }
 

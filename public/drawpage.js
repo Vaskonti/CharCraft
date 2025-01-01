@@ -77,5 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 brush.setBrushType(BrushType.CHARACTER_ONLY);
             });
         }
+        else if (strType == "embolden") {
+            button.addEventListener('click', () => {
+                brush.setBrushType(BrushType.EMBOLDEN_CHARACTER);
+            });
+        }
+        else if (strType == "fade") {
+            button.addEventListener('click', () => {
+                brush.setBrushType(BrushType.FADE_CHARACTER);
+            });
+        }
     });
 });

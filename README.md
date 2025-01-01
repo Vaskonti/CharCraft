@@ -20,9 +20,15 @@ npm -v      # Should print "10.9.0".
 
 Run in the main dir of the project:
 npm install
+
+Then to run the tests:
+npm test
+
+
+
+If the packages do not install with npm install, do:
+
 npm install --save-dev jest
 npm install --save-dev jest-environment-jsdom
 npm install @babel/core @babel/preset-env babel-jest --save-dev
 
-Then to run the tests:
-npm test

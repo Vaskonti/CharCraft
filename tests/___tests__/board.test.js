@@ -1,5 +1,5 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals'); 
-import { Board } from '../../public/js/board.js';
+import { Board, emptyCharacter } from '../../public/js/board.js';
 import { Character } from '../../src/js/character.js';
 
 describe('Board Class Tests', () => {
@@ -55,6 +55,49 @@ describe('Board Class Tests', () => {
         board.colorCell(-1, -1, '@', '#FF0000'); // Invalid position
         expect(board.boardMatrix.every(row => row.every(cell => cell.character !== '@'))).toBe(true);
     });
+
+    /* Sadly jest doesn't support offscreenCanvas context. TODO: look for fix later. */
+    // test('should embold a cell correctly', () => {
+    //     board.boardMatrix[2][2] = new Character('-', '#000000');
+    //     board.emboldCell(2, 2);
+
+    //     const character = board.boardMatrix[2][2].character;
+    //     const expectedCharacter = visibilityRank[visibilityRank.indexOf('-') + 1];
+    //     expect(character).toBe(expectedCharacter);
+    // });
+
+    // test('should not embold a cell if already at maximum visibility rank', () => {
+    //     board.boardMatrix[3][3] = new Character('@', '#000000');
+    //     board.emboldCell(3, 3);
+
+    //     const character = board.boardMatrix[3][3].character;
+    //     expect(character).toBe('@');
+    // });
+
+    // test('should fade a cell correctly', () => {
+    //     board.boardMatrix[4][4] = new Character('o', '#000000');
+    //     board.fadeCell(4, 4);
+
+    //     const character = board.boardMatrix[4][4].character;
+    //     const expectedCharacter = visibilityRank[visibilityRank.indexOf('o') - 1];
+    //     expect(character).toBe(expectedCharacter);
+    // });
+
+    // test('should not fade a cell if already at minimum visibility rank', () => {
+    //     board.boardMatrix[0][0] = new Character(emptyCharacter, '#000000');
+    //     board.fadeCell(0, 0);
+
+    //     const character = board.boardMatrix[0][0].character;
+    //     expect(character).toBe(emptyCharacter);
+    // });
+
+    // test('should handle embold on invalid positions gracefully', () => {
+    //     expect(() => board.emboldCell(-1, -1)).not.toThrow();
+    // });
+
+    // test('should handle fade on invalid positions gracefully', () => {
+    //     expect(() => board.fadeCell(10, 10)).not.toThrow();
+    // });
 
     test('should export and import board as JSON correctly', () => {
         board.fillBoardWithCharacter('X');
