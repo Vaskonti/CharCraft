@@ -1,34 +1,53 @@
-### CharCraft
+# CharCraft
 
+## Prerequisites
 
+### Windows:
+If `npm` is already installed, you may skip these steps.
 
-## Unit testing with jest
+#### Step 1: Install Chocolatey
+Open PowerShell as Administrator and execute:
+```powershell
+powershell -c "irm https://community.chocolatey.org/install.ps1 | iex"
+```
 
-# Windows:
-If you have npm installed already, you can skip these steps:
-
-Install chocolatey on powershell by administrator:
-powershell -c "irm https://community.chocolatey.org/install.ps1|iex"
-
-Install node.js version 22:
+#### Step 2: Install Node.js
+Using Chocolatey, install Node.js:
+```powershell
 choco install nodejs-lts --version="22.11.0"
+```
 
-You may need to reset the enviorment before verifying.
-Verify instalation:
-node -v     # Should print "v22.12.0".
-npm -v      # Should print "10.9.0".
+#### Step 3: Verify Installation
+After installation, you may need to reset the environment before verification. Then, run the following commands:
+```powershell
+node -v
+# Expected output: v22.12.0
+npm -v
+# Expected output: 10.9.0
+```
 
-Run in the main dir of the project:
+## Setting Up the Project
+
+### Step 1: Install Dependencies
+Navigate to the main directory of the project and run:
+```bash
 npm install
+```
 
-Then to run the tests:
+### Step 2: Run Tests
+To execute the tests, simply run:
+```bash
 npm test
+```
 
+## Troubleshooting
 
+If dependencies do not install with the `npm install` command, you may install them individually as follows:
 
-If the packages do not install with "npm install" command, you can install them one by one:
+```bash
 npm install --save-dev jest
 npm install --save-dev jest-environment-jsdom
 npm install --save-dev @babel/core @babel/preset-env babel-jest
 npm install --save-dev jest-canvas-mock
+```
 
