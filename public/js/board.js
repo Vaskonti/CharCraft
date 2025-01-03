@@ -69,26 +69,43 @@ precomputeDensityForVisibilityRank(); // TODO: assess if this function is better
 
 export class Board {
     constructor(sizeX, sizeY) {
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
         this.boardMatrix = Array(sizeX).fill().map(() => Array(sizeY).fill());
         this.defaultCharacter = emptyCharacter;
+        this.container = undefined;
         this.resetBoard();
     }
 
     setBoardSize(sizeX, sizeY) {
+        const oldBoard = this.boardMatrix;
         this.boardMatrix = Array(sizeY).fill().map(() => Array(sizeX).fill());
         this.resetBoard();
+        
+        oldBoard.forEach((row, rowIndex) => {
+            row.forEach((element, colIndex) => {
+                if (rowIndex >= sizeX || colIndex >= sizeY) {
+                    return;
+                }
+                this.boardMatrix[rowIndex][colIndex] = element;
+            });
+        }); 
+
+        if (this.container)
+        {
+            fillBoardContainer(this.container);
+        }
     }
 
     setDefaultCharacter(character) {
         this.defaultCharacter = character;
     }
 
-    fillBoardWithCharacter(character) {
+    fillBoardWithCharacter(character, color) {
+        if (!color) {
+            color = defaultColor;
+        }
         this.boardMatrix.forEach((row, rowIndex) => {
             row.forEach((_, colIndex) => {
-                this.boardMatrix[rowIndex][colIndex] = new Character(character, defaultColor);
+                this.boardMatrix[rowIndex][colIndex] = new Character(character, color);
                 this.updateCellTag(rowIndex, colIndex);
             });
         });
@@ -103,6 +120,7 @@ export class Board {
     }
 
     fillBoardContainer(container) {
+        this.container = container;
         let boardHTML = "";
         this.boardMatrix.forEach((row, rowIndex) => {
             row.forEach((cell, colIndex) => {
@@ -139,8 +157,7 @@ export class Board {
             this.boardMatrix[row][col].character = character;
         }
         if (color) {
-            if (this.boardMatrix[row][col].character == emptyCharacter) // should not be coloring
-            {
+            if (this.boardMatrix[row][col].character == emptyCharacter) { // should not be coloring
                 return;
             }
             this.boardMatrix[row][col].color = color;
@@ -177,4 +194,19 @@ export class Board {
     importBoardFromJSON(boardData) {
         this.boardMatrix = JSON.parse(boardData);
     }
+}
+
+
+
+/* This function is for testing purposes */
+export function create_some_board() {
+    let board = new Board(5, 5);
+    board.boardMatrix = [
+        [new Character('A', 'red'), new Character('A', 'red'), new Character('B', 'blue'), new Character('C', 'green'), new Character('C', 'green')],
+        [new Character('A', 'red'), new Character('A', 'red'), new Character('B', 'blue'), new Character('C', 'green'), new Character('C', 'green')],
+        [new Character('D', 'yellow'), new Character('D', 'yellow'), new Character('E', 'purple'), new Character('C', 'green'), new Character('C', 'green')],
+        [new Character('D', 'yellow'), new Character('D', 'yellow'), new Character('E', 'purple'), new Character('C', 'green'), new Character('C', 'green')],
+        [new Character('D', 'yellow'), new Character('D', 'yellow'), new Character('E', 'purple'), new Character('C', 'green'), new Character('C', 'green')],
+    ];
+    return board;
 }
