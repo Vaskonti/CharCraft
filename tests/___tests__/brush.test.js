@@ -1,5 +1,5 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals'); 
-import { Board } from '../../public/js/board.js';
+import { Board, create_some_board } from '../../public/js/board.js';
 import { Brush, ToolType, BrushShape, BrushType } from '../../public/js/brush.js';
 import { Character } from '../../src/js/character.js';
 
@@ -7,16 +7,8 @@ describe('Brush Class Tests', () => {
     let board;
     let brush;
     beforeEach(() => {
-        board = new Board(5, 5);
+        board = create_some_board();
         brush = new Brush();
-        board.boardMatrix = [
-            [new Character('A', 'red'), new Character('A', 'red'), new Character('B', 'blue'), new Character('C', 'green'), new Character('C', 'green')],
-            [new Character('A', 'red'), new Character('A', 'red'), new Character('B', 'blue'), new Character('C', 'green'), new Character('C', 'green')],
-            [new Character('D', 'yellow'), new Character('D', 'yellow'), new Character('E', 'purple'), new Character('C', 'green'), new Character('C', 'green')],
-            [new Character('D', 'yellow'), new Character('D', 'yellow'), new Character('E', 'purple'), new Character('C', 'green'), new Character('C', 'green')],
-            [new Character('D', 'yellow'), new Character('D', 'yellow'), new Character('E', 'purple'), new Character('C', 'green'), new Character('C', 'green')],
-        ];
-        
     });
 
     describe('Brush bounds tests', () => {

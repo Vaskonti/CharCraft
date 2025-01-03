@@ -1,5 +1,5 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals'); 
-import { Board, emptyCharacter, visibilityRank } from '../../public/js/board.js';
+import { Board, emptyCharacter, visibilityRank, create_some_board } from '../../public/js/board.js';
 import { Character } from '../../src/js/character.js';
 
 describe('Board Class Tests', () => {
@@ -56,7 +56,6 @@ describe('Board Class Tests', () => {
         expect(board.boardMatrix.every(row => row.every(cell => cell.character !== '@'))).toBe(true);
     });
 
-    /* Sadly jest doesn't support offscreenCanvas context. TODO: look for fix later. */
     test('should embold a cell correctly', () => {
         board.boardMatrix[2][2] = new Character('-', '#000000');
         board.emboldCell(2, 2);
@@ -100,13 +99,31 @@ describe('Board Class Tests', () => {
     });
 
     test('should export and import board as JSON correctly', () => {
-        board.fillBoardWithCharacter('X');
+        board.fillBoardWithCharacter('A', '#FFFFFF');
         const exportedData = board.exportBoardAsJSON();
 
         const newBoard = new Board(10, 5);
         newBoard.importBoardFromJSON(exportedData);
 
         expect(JSON.stringify(newBoard.boardMatrix)).toEqual(JSON.stringify(board.boardMatrix));
+        expect(newBoard.boardMatrix).toEqual(board.boardMatrix)
+        
+    });
+
+
+    test('Resizing baord to a smaller one should keep the inital characters and colors', () => {
+        const oldBoard = create_some_board();
+        board = create_some_board();
+        board.setBoardSize(3, 3);
+
+        expect(board.boardMatrix.length).toEqual(3)
+        expect(board.boardMatrix[0].length).toEqual(3)
+
+        board.boardMatrix.forEach((row, rowIndex) => {
+            row.forEach((element, colIndex) => {
+                expect(element).toEqual(oldBoard.boardMatrix[rowIndex][colIndex]);
+            });
+        });
     });
 
     // TODO
