@@ -1,7 +1,7 @@
 import { DrawingBoardUI } from './js/drawing_board_ui.js';
 import { Board } from './js/board.js';
 import { Brush, ToolType, BrushShape, BrushType} from './js/brush.js';
-import { ImageConverter } from './js/image_converter.js';
+import { ImageConverter, ImageParseOptions } from './js/image_converter.js';
 document.addEventListener('DOMContentLoaded', () => {
 
     let img = new Image();
@@ -9,7 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const boardSize = 100;
     const mouseRadius = 1;
     img.onload = () => {
-        const drawingBoard = ImageConverter.parseImageToBoard(img, 0, boardSize*2, boardSize); //new Board(boardSize/2, boardSize);
+        const options = new ImageParseOptions();
+        options.darkCharacterTreshold = 0;
+        options.brightnessFactor = 2.0;
+        options.staticVolumeIncrease = 0
+        options.gammaCorrection = 2.0;
+        options.resolutionX = boardSize*2;
+        options.resolutionY = boardSize;
+        const drawingBoard = ImageConverter.parseImageToBoard(img, options); //new Board(boardSize/2, boardSize);
         const brush = new Brush();
         brush.setMouseRadius(mouseRadius);
         brush.setBrushShape(BrushShape.CIRCLE);
