@@ -184,7 +184,7 @@ export class ImageParseOptions {
                 edgeDetectionThreshold = 150,
                 resolutionX = null,
                 resolutionY = null) {
-        this.darkCharacterTreshold = darkCharacterTreshold;
+        this.darkCharacterThreshold = darkCharacterTreshold;
         this.staticVolumeIncrease = staticVolumeIncrease;
         this.brightnessFactor = brightnessFactor;
         this.gammaCorrection = gammaCorrection;
