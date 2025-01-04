@@ -1,5 +1,5 @@
 import { Character } from '../../src/js/character.js';
-import { asciiVisibilityRank, emptyCharacter } from '../../src/js/utils.js';
+import { asciiVisibilityRank, reducedAsciiVisibilityRank, emptyCharacter } from '../../src/js/utils.js';
 import { Board } from './board.js'
  
 export class ImageConverter {
@@ -15,6 +15,7 @@ export class ImageConverter {
         const pixels = ImageConverter.getImagePixels(img, options);
         ImageConverter.applyBrightnessFactor(pixels, options);
         ImageConverter.applyGammaCorrection(pixels, options);
+        ImageConverter.applyEdgeDetection(pixels, options);
         const board = ImageConverter.#createBoardFromPixels(pixels, options);
         return board;
     }
@@ -50,6 +51,63 @@ export class ImageConverter {
             pixels.data[i] = Math.min(Math.pow(pixels.data[i] / 255, options.gammaCorrection) * 255, 255);
             pixels.data[i + 1] = Math.min(Math.pow(pixels.data[i + 1] / 255, options.gammaCorrection) * 255, 255);
             pixels.data[i + 2] = Math.min(Math.pow(pixels.data[i + 2] / 255, options.gammaCorrection) * 255, 255);
+        }
+    }
+
+    static applyEdgeDetection(pixels, options) {
+        if (!options.edgeDetection) {
+            return;
+        }
+        const width = pixels.width;
+        const height = pixels.height;
+        const outputData = new Uint8ClampedArray(pixels.data.length);
+        const sobelX = [
+            -1, 0, 1,
+            -2, 0, 2,
+            -1, 0, 1,
+        ];
+        const sobelY = [
+            -1, -2, -1,
+             0,  0,  0,
+             1,  2,  1,
+        ];
+        for (let y = 1; y < height - 1; y++) {
+            for (let x = 1; x < width - 1; x++) {
+                let Gx = 0, Gy = 0;
+    
+                for (let ky = -1; ky <= 1; ky++) {
+                    for (let kx = -1; kx <= 1; kx++) {
+                        const pixelIndex = ((y + ky) * width + (x + kx)) * 4;
+                        const intensity = pixels.data[pixelIndex] * 0.3 +
+                                          pixels.data[pixelIndex + 1] * 0.59 +
+                                          pixels.data[pixelIndex + 2] * 0.11;
+    
+                        Gx += intensity * sobelX[(ky + 1) * 3 + (kx + 1)];
+                        Gy += intensity * sobelY[(ky + 1) * 3 + (kx + 1)];
+                    }
+                }
+            
+    
+                const magnitude = Math.sqrt(Gx * Gx + Gy * Gy);
+                const normalized = Math.min(255, magnitude);
+    
+                const outputIndex = (y * width + x) * 4;
+                if (normalized > options.edgeDetectionThreshold) {
+                    outputData[outputIndex] = 0; 
+                    outputData[outputIndex + 1] = 0; 
+                    outputData[outputIndex + 2] = 0;
+                    outputData[outputIndex + 3] = 0;
+                } else {
+                    outputData[outputIndex] = pixels.data[outputIndex];
+                    outputData[outputIndex + 1] = pixels.data[outputIndex + 1];
+                    outputData[outputIndex + 2] = pixels.data[outputIndex + 2];
+                    outputData[outputIndex + 3] = pixels.data[outputIndex + 3];
+                }
+            }
+        }
+    
+        for (let i = 0; i < pixels.data.length; i++) {
+            pixels.data[i] = outputData[i];
         }
     }
 
@@ -98,10 +156,11 @@ export class ImageConverter {
         {
             return emptyCharacter;
         }
-
-        const index = Math.floor((averageColor / 255) * asciiVisibilityRank.length) + options.staticVolumeIncrease;
-        const characterIndex = Math.min(asciiVisibilityRank.length - 1, index);
-        const character = asciiVisibilityRank[characterIndex];
+        
+        const length = options.useReducedSet ? reducedAsciiVisibilityRank.length :  asciiVisibilityRank.length;
+        const index = Math.floor((averageColor / 255) * length) + options.staticVolumeIncrease;
+        const characterIndex = Math.min(length - 1, index);
+        const character = options.useReducedSet ? reducedAsciiVisibilityRank[characterIndex] : asciiVisibilityRank[characterIndex];
 
         return character;
     }
@@ -120,12 +179,18 @@ export class ImageParseOptions {
                 staticVolumeIncrease = 0,
                 brightnessFactor = 1.0,
                 gammaCorrection = 1.0,
+                useReducedSet = false,
+                edgeDetection = false,
+                edgeDetectionThreshold = 150,
                 resolutionX = null,
                 resolutionY = null) {
         this.darkCharacterTreshold = darkCharacterTreshold;
         this.staticVolumeIncrease = staticVolumeIncrease;
         this.brightnessFactor = brightnessFactor;
         this.gammaCorrection = gammaCorrection;
+        this.useReducedSet = useReducedSet;
+        this.edgeDetection = edgeDetection;
+        this.edgeDetectionThreshold = edgeDetectionThreshold;
         this.resolutionX = resolutionX;
         this.resolutionY = resolutionY;
     }
