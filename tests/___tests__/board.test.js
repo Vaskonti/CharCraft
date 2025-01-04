@@ -1,6 +1,8 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals'); 
-import { Board, emptyCharacter, visibilityRank, create_some_board } from '../../public/js/board.js';
+import { Board, create_some_board } from '../../public/js/board.js';
 import { Character } from '../../src/js/character.js';
+import { emptyCharacter, reducedAsciiVisibilityRank } from '../../src/js/utils.js';
+
 
 describe('Board Class Tests', () => {
     let board;
@@ -61,7 +63,7 @@ describe('Board Class Tests', () => {
         board.emboldCell(2, 2);
 
         const character = board.boardMatrix[2][2].character;
-        const expectedCharacter = visibilityRank[visibilityRank.indexOf('-') + 1];
+        const expectedCharacter = reducedAsciiVisibilityRank[reducedAsciiVisibilityRank.indexOf('-') + 1];
         expect(character).toBe(expectedCharacter);
     });
 
@@ -78,7 +80,7 @@ describe('Board Class Tests', () => {
         board.fadeCell(4, 4);
 
         const character = board.boardMatrix[4][4].character;
-        const expectedCharacter = visibilityRank[visibilityRank.indexOf('o') - 1];
+        const expectedCharacter = reducedAsciiVisibilityRank[reducedAsciiVisibilityRank.indexOf('o') - 1];
         expect(character).toBe(expectedCharacter);
     });
 

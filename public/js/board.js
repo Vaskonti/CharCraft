@@ -1,70 +1,5 @@
-import { Character } from '../../src/js/character.js'; /** TODO: fix pathing */
-
-export const emptyCharacter = ' '
-export const defaultColor = "#FFFFFF"
-
-export const visibilityRank = [emptyCharacter, '.', '-', '=', 'o', 'a', '#', '@'];
-const densityCache = {}; // TODO: investigate: is that global for user now, or resets anytime the page is reset????
-const densityIndexCache = {};
-
-function precomputeDensityForVisibilityRank() {
-    for (let i = 0; i < visibilityRank.length; i += 1) {
-        densityCache[visibilityRank[i]] = computeCharacterDensity(visibilityRank[i]);
-        densityIndexCache[visibilityRank[i]] = i;
-    }
-}
-
-/* This function calculates the density of a given character by determining 
-    how much of its rendered area is visually "filled" (i.e., has visible pixels) between 0 and 1.
-    Stores the character in cache. When called later the function returns immediately.*/
-function computeCharacterDensity(character) {
-    if (character in densityCache)
-    {
-        return densityCache[character];
-    }
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = '10px monospace';
-    ctx.fillText(character, 0, 10);
-
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-    let filledPixels = 0;
-    for (let i = 0; i < imageData.length; i += 4) {
-        const alpha = imageData[i + 3];
-        if (alpha > 128) filledPixels++;
-    }
-
-    const density = filledPixels / (canvas.width * canvas.height);
-    return density;
-}
-
-
-/* This function returns the index of a character in the visibilityRank with the closest density heuristic. NOTE:: the visibility ranks MUST be precomputed. 
-    Keeps character in densityIndexCache so it doesn't always compute */
-function getVisibilityRankIndexOfCharacter(character) {
-    if (character in densityIndexCache)
-    {
-        return densityIndexCache[character];
-    }
-    let closest_density_distance = 100;
-    let best_rank_index = 0;
-    const character_density = computeCharacterDensity(character);
-    for (let i = 0; i < visibilityRank.length; i += 1) {
-        const density_distance = Math.abs(densityCache[visibilityRank[i]] - character_density);
-        if (density_distance < closest_density_distance)
-        {
-            best_rank_index = i;
-            closest_density_distance = density_distance;
-        }
-    }
-    densityIndexCache[character] = best_rank_index;
-    return best_rank_index;
-}
-//window.addEventListener("load", (_) => {
-precomputeDensityForVisibilityRank(); // TODO: assess if this function is better left a global call.
-//});
+import { Character } from '../../src/js/character.js';
+import {emptyCharacter, defaultColor, reducedAsciiVisibilityRank, getVisibilityRankIndexOfCharacter } from '../../src/js/utils.js';
 
 
 export class Board {
@@ -170,10 +105,10 @@ export class Board {
             return;
         }
         const character_index = getVisibilityRankIndexOfCharacter(this.boardMatrix[row][col].character);
-        if (character_index == visibilityRank.length - 1) {
+        if (character_index == reducedAsciiVisibilityRank.length - 1) {
             return;
         }
-        this.colorCell(row, col, visibilityRank[character_index + 1], null);
+        this.colorCell(row, col, reducedAsciiVisibilityRank[character_index + 1], null);
     }
 
     fadeCell(row, col) {
@@ -184,7 +119,7 @@ export class Board {
         if (character_index == 0) {
             return;
         }
-        this.colorCell(row, col, visibilityRank[character_index - 1], null);
+        this.colorCell(row, col, reducedAsciiVisibilityRank[character_index - 1], null);
     }
 
     exportBoardAsJSON() {

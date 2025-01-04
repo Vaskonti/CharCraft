@@ -1,4 +1,5 @@
-import { Board, defaultColor } from './board.js';
+import { Board } from './board.js';
+import { defaultColor } from '../../src/js/utils.js';
 
 export const BrushShape = {
     CIRCLE: 'circle',
