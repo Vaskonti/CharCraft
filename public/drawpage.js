@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mouseRadius = 1;
     img.onload = () => {
         const options = new ImageParseOptions();
-        options.darkCharacterTreshold = 0;
+        options.darkCharacterThreshold = 0;
         options.brightnessFactor = 1.1;
         options.staticVolumeIncrease = 0;
         options.gammaCorrection = 0.5;
