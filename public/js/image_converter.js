@@ -14,6 +14,7 @@ export class ImageConverter {
 
         const pixels = ImageConverter.getImagePixels(img, options);
         ImageConverter.applyBrightnessFactor(pixels, options);
+        ImageConverter.applyGammaCorrection(pixels, options);
         const board = ImageConverter.#createBoardFromPixels(pixels, options);
         return board;
     }
@@ -46,9 +47,9 @@ export class ImageConverter {
             return;
         }
         for (let i = 0; i < pixels.data.length; i += 4) {
-            pixels.data[i] = Math.min(Math.pow(pixels.data[i] / 255, gamma) * 255, 255);
-            pixels.data[i + 1] = Math.min(Math.pow(pixels.data[i + 1] / 255, gamma) * 255, 255);
-            pixels.data[i + 2] = Math.min(Math.pow(pixels.data[i + 2] / 255, gamma) * 255, 255);
+            pixels.data[i] = Math.min(Math.pow(pixels.data[i] / 255, options.gammaCorrection) * 255, 255);
+            pixels.data[i + 1] = Math.min(Math.pow(pixels.data[i + 1] / 255, options.gammaCorrection) * 255, 255);
+            pixels.data[i + 2] = Math.min(Math.pow(pixels.data[i + 2] / 255, options.gammaCorrection) * 255, 255);
         }
     }
 

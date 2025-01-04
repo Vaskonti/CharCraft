@@ -5,18 +5,19 @@ import { ImageConverter, ImageParseOptions } from './js/image_converter.js';
 document.addEventListener('DOMContentLoaded', () => {
 
     let img = new Image();
-    img.src = '../assets/fine.png';
+    img.src = '../assets/starry_night.png';
     const boardSize = 100;
     const mouseRadius = 1;
     img.onload = () => {
         const options = new ImageParseOptions();
         options.darkCharacterTreshold = 0;
-        options.brightnessFactor = 2.0;
+        options.brightnessFactor = 1.0;
         options.staticVolumeIncrease = 0
-        options.gammaCorrection = 2.0;
+        options.gammaCorrection = 0.5;
         options.resolutionX = boardSize*2;
         options.resolutionY = boardSize;
-        const drawingBoard = ImageConverter.parseImageToBoard(img, options); //new Board(boardSize/2, boardSize);
+        const drawingBoard = ImageConverter.parseImageToBoard(img, options);
+        //const drawingBoard = new Board(boardSize, boardSize)
         const brush = new Brush();
         brush.setMouseRadius(mouseRadius);
         brush.setBrushShape(BrushShape.CIRCLE);
