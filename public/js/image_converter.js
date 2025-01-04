@@ -16,11 +16,11 @@ export class ImageConverter {
         ImageConverter.applyBrightnessFactor(pixels, options);
         ImageConverter.applyGammaCorrection(pixels, options);
         ImageConverter.applyEdgeDetection(pixels, options);
-        const board = ImageConverter.#createBoardFromPixels(pixels, options);
+        const board = ImageConverter.createBoardFromPixels(pixels, options);
         return board;
     }
 
-    static #createBoardFromPixels(pixels, options) {
+    static createBoardFromPixels(pixels, options) {
         const board = new Board(pixels.height, pixels.width);
         for (let i = 0; i < board.boardMatrix.length; i += 1) {
             for (let j = 0; j < board.boardMatrix[0].length; j += 1) {
