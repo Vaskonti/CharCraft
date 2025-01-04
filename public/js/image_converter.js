@@ -3,7 +3,7 @@ import { asciiVisibilityRank, emptyCharacter } from '../../src/js/utils.js';
 import { Board } from './board.js'
  
 export class ImageConverter {
-    static parseImageToBoard(img, ResolutionX = null, ResolutionY = null) {
+    static parseImageToBoard(img, darkCharacterTreshold = 0, ResolutionX = null, ResolutionY = null) {
 
         if (!img || !img.width || !img.height) {
             throw new Error("Invalid image provided.");
@@ -17,12 +17,13 @@ export class ImageConverter {
         {
             ResolutionY = img.height;
         }
+
         const pixels = ImageConverter.getImagePixels(img, ResolutionX, ResolutionY);
-        const board = new Board(img.width, img.height);
+        const board = new Board(pixels.height, pixels.width);
         for (let i = 0; i < board.boardMatrix.length; i += 1) {
             for (let j = 0; j < board.boardMatrix[0].length; j += 1) {
                 const pixel = ImageConverter.getPixel(pixels, i, j);
-                board.boardMatrix[i][j].character = ImageConverter.getPixelSymbol(pixel);
+                board.boardMatrix[i][j].character = ImageConverter.getPixelSymbol(pixel, darkCharacterTreshold);
                 board.boardMatrix[i][j].color = ImageConverter.getPixelColorHex(pixel);
             }
         }
@@ -37,11 +38,13 @@ export class ImageConverter {
         const rowOffset = row * 4 * pixels.width;
         const colOffset = col * 4;
         const position = rowOffset + colOffset;
-        return {red: pixels.data[position], 
-                green: pixels.data[position + 1], 
-                blue: pixels.data[position + 2], 
-                alpha: pixels.data[position + 3],
+        const pixel = { 
+            red: pixels.data[position], 
+            green: pixels.data[position + 1], 
+            blue: pixels.data[position + 2], 
+            alpha: pixels.data[position + 3],
             }
+        return pixel;
     }
 
     static getImagePixels(img, resolutionX, resolutionY) {
@@ -62,11 +65,17 @@ export class ImageConverter {
         return pixels;
     }
 
-    static getPixelSymbol(pixel) {
+    static getPixelSymbol(pixel, darkCharacterTreshold = 0) {
         const alpha = pixel.alpha; // TODO: consider alpha in some images
         if (alpha === 0) return emptyCharacter;
 
         const averageColor = (pixel.red + pixel.green + pixel.blue)/3;
+        
+        if (darkCharacterTreshold > averageColor)
+        {
+            return emptyCharacter;
+        }
+
         const characterIndex = Math.floor((averageColor / 255) * asciiVisibilityRank.length);
         const character = asciiVisibilityRank[characterIndex];
 
