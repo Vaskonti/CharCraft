@@ -15,6 +15,7 @@ export class CanvasBoard extends CharacterBoard {
     setBoardSize(sizeX, sizeY) {
         super.setBoardSize(sizeX, sizeY);
         this.#createCanvas();
+        this.redrawBoard();
     }
 
     #createCanvas() {
