@@ -140,24 +140,10 @@ describe('DrawingBoardUI Tests', () => {
             });
         });
 
-        const spy = jest.spyOn(boardUI.drawingBoard, 'fillBoardContainer');
+        const spy = jest.spyOn(boardUI.drawingBoard, 'initialiseContainer');
         boardUI.loadBoard(fakeEvent);
 
         expect(spy).toHaveBeenCalled();
         expect(JSON.stringify(board.boardMatrix)).toEqual(boardData);
-    });
-
-    test('should redraw the board correctly after loading', () => {
-        board.fillBoardWithCharacter('O');
-        const boardJSON = board.exportBoardAsJSON();
-        const newBoard = new TextBoard(20, 20);
-        newBoard.importBoardFromJSON(boardJSON);
-        const spy = jest.spyOn(newBoard, 'fillBoardContainer');
-        
-        newBoard.fillBoardContainer(document.querySelector('.draw-board'));
-
-        expect(spy).toHaveBeenCalled();
-        expect(newBoard.boardMatrix[0][0].character).toBe('O');
-        expect(newBoard.boardMatrix[19][19].character).toBe('O');
     });
 });

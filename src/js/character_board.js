@@ -11,6 +11,10 @@ export class CharacterBoard {
         this.resetBoard();
     }
 
+    initialiseContainer(_) {
+        throw new Error("Subclasses need to define initialiseContainer.");
+    }
+
     setDefaultCharacter(character) {
         this.defaultCharacter = character;
     }
@@ -106,5 +110,15 @@ export class CharacterBoard {
             return;
         }
         this._setCell(row, col, reducedAsciiVisibilityRank[character_index - 1], null);
+    }
+
+    static parseCopyBoard(parsedBoard, TargetBoardClass, additionalArgs = []) {
+        const rows = parsedBoard.rows;
+        const cols = parsedBoard.cols;
+        const boardMatrixJSON = parsedBoard.exportBoardAsJSON(); 
+        const newBoard = new TargetBoardClass(rows, cols, ...additionalArgs);
+        newBoard.importBoardFromJSON(boardMatrixJSON);
+    
+        return newBoard;
     }
 }

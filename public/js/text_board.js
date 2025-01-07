@@ -18,9 +18,9 @@ export class TextBoard extends CharacterBoard {
         this.updateCellTag(row, col);
     }
 
-    initializeContainer(container) {
+    initialiseContainer(container) {
         this.container = container;
-        this.redrawBoard();
+        this.#fillBoardContainer(container);
     }
 
     setBoardSize(sizeX, sizeY) {
@@ -41,7 +41,7 @@ export class TextBoard extends CharacterBoard {
         }
     }
 
-    fillBoardContainer(container) {
+    #fillBoardContainer(container) {
         this.container = container;
         let boardHTML = "";
         this.boardMatrix.forEach((row, rowIndex) => {
