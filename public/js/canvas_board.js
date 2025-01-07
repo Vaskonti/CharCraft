@@ -3,11 +3,10 @@ import { CharacterBoard } from '../../src/js/character_board.js';
 import { defaultColor } from '../../src/js/utils.js';
 
 export class CanvasBoard extends CharacterBoard {
-    constructor(sizeX, sizeY, cellWidth = 10, cellHeight = 16, cellOffset = 0) {
+    constructor(sizeX, sizeY, cellWidth = 10, cellHeight = 16) {
         super(sizeX, sizeY);
         this.cellWidth = cellWidth;
         this.cellHeight = cellHeight;
-        this.cellOffset = cellOffset;
         this.canvas = undefined;
         this.context = undefined;
     }
@@ -38,9 +37,8 @@ export class CanvasBoard extends CharacterBoard {
         this.redrawBoard();
     }
 
-    colorCell(row, col, character, color) {
-        if (!this.isPositionValid(row, col)) return;
-        super._setCell(row, col, character, color)
+    _setCell(row, col, character, color) {
+        super._setCell(row, col, character, color);
         this.#drawCell(row, col);
     }
 

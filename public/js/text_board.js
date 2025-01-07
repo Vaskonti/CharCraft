@@ -10,10 +10,7 @@ export class TextBoard extends CharacterBoard {
         this.cellTagElements = undefined;
     }
 
-    colorCell(row, col, character, color) {
-        if (!this.isPositionValid(row, col)) { //TODO: double checks position, fix later
-            return;
-        }
+    _setCell(row, col, character, color) {
         super._setCell(row, col, character, color);
         this.updateCellTag(row, col);
     }

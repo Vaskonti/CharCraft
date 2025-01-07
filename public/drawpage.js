@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
         options.brightnessFactor = 1.2;
         options.staticVolumeIncrease = 0;
         options.gammaCorrection = 0.5;
-        options.useReducedSet = true;
+        options.useReducedSet = false;
         options.edgeDetection = false;
         options.edgeDetectionThreshold = 245;
         options.resolutionX = boardSize*2;
         options.resolutionY = boardSize;
         let drawingBoard = ImageConverter.parseImageToBoard(img, options);
-        drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight, cellOffset]);
+        drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight]);
         const brush = new Brush();
         brush.setMouseRadius(mouseRadius);
         brush.setBrushShape(BrushShape.CIRCLE);
