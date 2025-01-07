@@ -28,7 +28,7 @@ export class TextBoard extends CharacterBoard {
 
         if (this.container)
         {
-            fillBoardContainer(this.container);
+            this.#fillBoardContainer(this.container);
         }
     }
 
