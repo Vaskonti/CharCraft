@@ -18,7 +18,7 @@ export class DrawingBoardUI {
         }
 
         this.drawBoardElement = collection[0];
-        this.drawingBoard.fillBoardContainer(this.drawBoardElement);
+        this.drawingBoard.initialiseContainer(this.drawBoardElement);
 
         document.addEventListener("click", (e) => this.draw(e));
         document.addEventListener("mouseup", () => (this.isMouseDown = false));
@@ -84,7 +84,7 @@ export class DrawingBoardUI {
         reader.onload = (e) => {
             const boardData = e.target.result;
             this.drawingBoard.importBoardFromJSON(boardData);
-            this.drawingBoard.fillBoardContainer(this.drawBoardElement);
+            this.drawingBoard.initialiseContainer(this.drawBoardElement);
         };
         reader.readAsText(file);
     }
