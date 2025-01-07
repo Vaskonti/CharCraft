@@ -1,5 +1,5 @@
 import { ImageConverter, ImageParseOptions } from '../../public/js/image_converter.js';
-import { Board } from '../../public/js/board.js';
+import { CharacterBoard } from '../../src/js/character_board.js';
 import { Character } from '../../src/js/character.js';
 
 const img = {
@@ -27,7 +27,7 @@ describe('ImageConverter Class Tests', () => {
 
     test('should parse image into a board correctly', () => {
         const board = ImageConverter.parseImageToBoard(img, options);
-        expect(board).toBeInstanceOf(Board);
+        expect(board).toBeInstanceOf(CharacterBoard);
         expect(board.boardMatrix.length).toBe(100);
         expect(board.boardMatrix[0].length).toBe(100);
     });
@@ -70,7 +70,7 @@ describe('ImageConverter Class Tests', () => {
             data: new Uint8ClampedArray(5 * 5 * 4).fill(255),
         };
         const board = ImageConverter.createBoardFromPixels(pixels, options);
-        expect(board).toBeInstanceOf(Board);
+        expect(board).toBeInstanceOf(CharacterBoard);
         expect(board.boardMatrix.length).toBe(5);
         expect(board.boardMatrix[0].length).toBe(5);
     });
