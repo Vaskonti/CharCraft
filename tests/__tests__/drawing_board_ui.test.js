@@ -1,6 +1,6 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals');
 import { DrawingBoardUI } from '../../public/js/drawing_board_ui.js';
-import { Board } from '../../public/js/board.js';
+import { TextBoard } from '../../public/js/text_board.js';
 import { Brush } from '../../public/js/brush.js';
 
 describe('DrawingBoardUI Tests', () => {
@@ -8,7 +8,7 @@ describe('DrawingBoardUI Tests', () => {
 
     beforeEach(() => {
         document.body.innerHTML = `<div class="draw-board"></div>`; // mock
-        board = new Board(20, 20);
+        board = new TextBoard(20, 20);
         brush = new Brush()
         brush.setDrawCharacter('@');
         brush.setDrawColor("#FF0000");
@@ -150,7 +150,7 @@ describe('DrawingBoardUI Tests', () => {
     test('should redraw the board correctly after loading', () => {
         board.fillBoardWithCharacter('O');
         const boardJSON = board.exportBoardAsJSON();
-        const newBoard = new Board(20, 20);
+        const newBoard = new TextBoard(20, 20);
         newBoard.importBoardFromJSON(boardJSON);
         const spy = jest.spyOn(newBoard, 'fillBoardContainer');
         

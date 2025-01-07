@@ -1,6 +1,6 @@
 import { Character } from '../../src/js/character.js';
 import { asciiVisibilityRank, reducedAsciiVisibilityRank, emptyCharacter } from '../../src/js/utils.js';
-import { Board } from './board.js'
+import { CharacterBoard } from '../../src/js/character_board.js'
  
 export class ImageConverter {
     static parseImageToBoard(img, options = new ImageParseOptions()) {
@@ -21,7 +21,7 @@ export class ImageConverter {
     }
 
     static createBoardFromPixels(pixels, options) {
-        const board = new Board(pixels.height, pixels.width);
+        const board = new CharacterBoard(pixels.height, pixels.width);
         for (let i = 0; i < board.boardMatrix.length; i += 1) {
             for (let j = 0; j < board.boardMatrix[0].length; j += 1) {
                 const pixel = ImageConverter.getPixel(pixels, i, j);
