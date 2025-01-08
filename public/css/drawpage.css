@@ -13,8 +13,12 @@
 
 .draw-board
 {
+    font-family: monospace;
     width: max-content;  /* must stay this way! */
     height: max-content; /* must stay this way! */
     color: white;
     background-color: black;
+    letter-spacing: 1px;
+    line-height: 0.95;
+    row-gap: 0px;
 }
