@@ -1,4 +1,5 @@
-import { Board, defaultColor } from './board.js';
+import { Board } from './board.js';
+import { defaultColor } from '../../src/js/utils.js';
 
 export const BrushShape = {
     CIRCLE: 'circle',
@@ -82,10 +83,8 @@ export class Brush {
         }
     }
 
-    drawCharacterOnPosition(drawingBoard, row, col) {
-        if (!drawingBoard.isPositionValid(row, col)) {
-            return;
-        }
+    getColoringPositionsForPoint(row, col) {
+        const positions = [];
 
         for (let i = -this.mouseRadius; i <= this.mouseRadius; i++) {
             for (let j = -this.mouseRadius; j <= this.mouseRadius; j++) {
@@ -98,9 +97,21 @@ export class Brush {
                     continue;
                 }
 
-                this.colorCellOnBoard(drawingBoard, coloredRow, coloredCol);
+                positions.push([coloredRow, coloredCol]);
             }
         }
+        return positions;
+    }
+
+    drawCharacterOnPosition(drawingBoard, row, col) {
+        if (!drawingBoard.isPositionValid(row, col)) {
+            return;
+        }
+
+        const positions = this.getColoringPositionsForPoint(row, col);
+        positions.forEach(([ coloredRow, coloredCol ]) => {
+            this.colorCellOnBoard(drawingBoard, coloredRow, coloredCol);
+        });
     }
 
     bucketOnPosition(drawingBoard, row, col) {
@@ -141,8 +152,14 @@ export class Brush {
         let sy = fromY < toY ? 1 : -1;
         let err = dx - dy;
 
+        const drawPositions = new Map(); // For faster itteration
+
         while (true) {
-            this.drawCharacterOnPosition(drawingBoard, fromX, fromY);
+            const positions = this.getColoringPositionsForPoint(fromX, fromY);
+            positions.forEach(([ coloredRow, coloredCol ]) => {
+                const key = (coloredRow << 16) | (coloredCol & 0xFFFF); // SPEED
+                drawPositions.set(key, [ coloredRow, coloredCol ]);
+            });
             if (fromX === toX && fromY === toY) break;
 
             let e2 = 2 * err;
@@ -155,5 +172,9 @@ export class Brush {
                 fromY += sy;
             }// MATH, BABY!
         }
+
+        drawPositions.forEach(([ coloredRow, coloredCol ]) => {
+            this.colorCellOnBoard(drawingBoard, coloredRow, coloredCol);
+        });
     }
 }

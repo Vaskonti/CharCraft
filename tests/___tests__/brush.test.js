@@ -154,6 +154,59 @@ describe('Brush Class Tests', () => {
             expect(board.boardMatrix[2][1].character).toBe('*');
             expect(board.boardMatrix[2][1].color).toBe('yellow');
         });
+
+        test('should return correct positions for circular brush shape', () => {
+            brush.setBrushShape(BrushShape.CIRCLE);
+            brush.setMouseRadius(1);
+    
+            const positions = brush.getColoringPositionsForPoint(2, 2);
+    
+            expect(positions).toContainEqual([2, 2]);
+            expect(positions).toContainEqual([1, 2]);
+            expect(positions).toContainEqual([2, 1]);
+            expect(positions).toContainEqual([3, 2]);
+            expect(positions).toContainEqual([2, 3]);
+            expect(positions).not.toContainEqual([0, 0]);
+        });
+    
+        test('should return correct positions for square brush shape', () => {
+            brush.setBrushShape(BrushShape.SQUARE);
+            brush.setMouseRadius(1);
+    
+            const positions = brush.getColoringPositionsForPoint(2, 2);
+    
+            expect(positions).toContainEqual([2, 2]);
+            expect(positions).toContainEqual([1, 1]);
+            expect(positions).toContainEqual([1, 2]);
+            expect(positions).toContainEqual([1, 3]);
+            expect(positions).toContainEqual([2, 1]);
+            expect(positions).toContainEqual([2, 3]);
+            expect(positions).toContainEqual([3, 1]);
+            expect(positions).toContainEqual([3, 2]);
+            expect(positions).toContainEqual([3, 3]);
+        });
+    
+        test('should return no positions for radius 0', () => {
+            brush.setBrushShape(BrushShape.CIRCLE);
+            brush.setMouseRadius(0);
+    
+            const positions = brush.getColoringPositionsForPoint(2, 2);
+    
+            expect(positions).toContainEqual([2, 2]);
+            expect(positions).toHaveLength(1);
+        });
+    
+        test('should handle edge cases correctly', () => {
+            brush.setBrushShape(BrushShape.CIRCLE);
+            brush.setMouseRadius(2);
+    
+            const positions = brush.getColoringPositionsForPoint(0, 0);
+    
+            expect(positions).toContainEqual([0, 0]);
+            expect(positions).toContainEqual([1, 0]);
+            expect(positions).toContainEqual([0, 1]);
+            expect(positions).toContainEqual([1, 1]);
+        });
     });
 
     describe('Brush Bucket Tests', () => {
