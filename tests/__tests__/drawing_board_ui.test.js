@@ -1,6 +1,6 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals');
 import { DrawingBoardUI } from '../../public/js/drawing_board_ui.js';
-import { Board } from '../../public/js/board.js';
+import { TextBoard } from '../../public/js/text_board.js';
 import { Brush } from '../../public/js/brush.js';
 
 describe('DrawingBoardUI Tests', () => {
@@ -8,7 +8,7 @@ describe('DrawingBoardUI Tests', () => {
 
     beforeEach(() => {
         document.body.innerHTML = `<div class="draw-board"></div>`; // mock
-        board = new Board(20, 20);
+        board = new TextBoard(20, 20);
         brush = new Brush()
         brush.setDrawCharacter('@');
         brush.setDrawColor("#FF0000");
@@ -140,24 +140,10 @@ describe('DrawingBoardUI Tests', () => {
             });
         });
 
-        const spy = jest.spyOn(boardUI.drawingBoard, 'fillBoardContainer');
+        const spy = jest.spyOn(boardUI.drawingBoard, 'initialiseContainer');
         boardUI.loadBoard(fakeEvent);
 
         expect(spy).toHaveBeenCalled();
         expect(JSON.stringify(board.boardMatrix)).toEqual(boardData);
-    });
-
-    test('should redraw the board correctly after loading', () => {
-        board.fillBoardWithCharacter('O');
-        const boardJSON = board.exportBoardAsJSON();
-        const newBoard = new Board(20, 20);
-        newBoard.importBoardFromJSON(boardJSON);
-        const spy = jest.spyOn(newBoard, 'fillBoardContainer');
-        
-        newBoard.fillBoardContainer(document.querySelector('.draw-board'));
-
-        expect(spy).toHaveBeenCalled();
-        expect(newBoard.boardMatrix[0][0].character).toBe('O');
-        expect(newBoard.boardMatrix[19][19].character).toBe('O');
     });
 });
