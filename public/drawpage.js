@@ -1,26 +1,31 @@
 import { DrawingBoardUI } from './js/drawing_board_ui.js';
-import { Board } from './js/board.js';
+import { CanvasBoard } from './js/canvas_board.js';
+import { TextBoard } from './js/text_board.js';
 import { Brush, ToolType, BrushShape, BrushType} from './js/brush.js';
 import { ImageConverter, ImageParseOptions } from './js/image_converter.js';
+import { CharacterBoard } from '../src/js/character_board.js';
 document.addEventListener('DOMContentLoaded', () => {
 
     let img = new Image();
     img.src = '../assets/fine.png';
     const boardSize = 150;
+    const cellWidth = 10;
+    const cellHeight = cellWidth*1.3;
+    const cellOffset = 3;
     const mouseRadius = 1;
     img.onload = () => {
         const options = new ImageParseOptions();
         options.darkCharacterThreshold = 0;
-        options.brightnessFactor = 1.1;
+        options.brightnessFactor = 1.2;
         options.staticVolumeIncrease = 0;
         options.gammaCorrection = 0.5;
-        options.useReducedSet = true;
-        options.edgeDetection = true;
+        options.useReducedSet = false;
+        options.edgeDetection = false;
         options.edgeDetectionThreshold = 245;
         options.resolutionX = boardSize*2;
         options.resolutionY = boardSize;
-        const drawingBoard = ImageConverter.parseImageToBoard(img, options);
-        //const drawingBoard = new Board(boardSize, boardSize)
+        let drawingBoard = ImageConverter.parseImageToBoard(img, options);
+        drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight]);
         const brush = new Brush();
         brush.setMouseRadius(mouseRadius);
         brush.setBrushShape(BrushShape.CIRCLE);
