@@ -22,7 +22,7 @@ export class CanvasBoard extends CharacterBoard {
         this.canvas.width = this.cols * this.cellWidth;
         this.canvas.height = this.rows * this.cellHeight;
         this.context = this.canvas.getContext('2d');
-        this.context.font = `${this.cellHeight}px Georgia`; //TODO: find better font
+        this.context.font = `${this.cellHeight + 2}px Georgia`; //TODO: find better font
         this.context.textBaseline = 'top';
     }
 
