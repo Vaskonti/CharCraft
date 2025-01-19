@@ -13,9 +13,10 @@
     --orange: #F9AA0C;
     --black: #000000;
     --gray: #272732f3;
+    --light-gray:#55555ef3;
     --white: #FFFFFF;
     --font: ThickBoy-Regular;
-    --header-height: 10%;
+    --header-height: 70px;
     font-family: var(--font);
 
 }
@@ -39,7 +40,6 @@ header {
     color: var(--white);
     opacity: 0.9;
     z-index: 1000;
-    border: 2px solid white;
     padding: 0;
     margin: 0;
 }
@@ -77,4 +77,10 @@ footer {
     left:0px; 
     right:0px; 
     opacity: 0.8;
+}
+
+main
+{
+    width: 100%;
+    height: calc(100% - var(--header-height)); 
 }
