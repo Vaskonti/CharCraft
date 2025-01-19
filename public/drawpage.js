@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
         drawingBoardUI.init();
 
-        const colorButtons = document.querySelectorAll('.color-buttons button');
+        const colorButtons = document.querySelectorAll('#color-pallet button');
         colorButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const color = button.getAttribute('data-color');
