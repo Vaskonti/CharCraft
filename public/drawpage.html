@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/drawpage.css">
+    <link rel="stylesheet" href="css/header-and-footer.css">
 
     <script type="module" src="drawpage.js"></script>
     <title>Draw page</title>
@@ -13,15 +14,43 @@
 
 
 <body>
+    <header>
+        <img src="assets/images/logo2.PNG" alt="logo" class = "logo">
+        <img src="assets/images/name.PNG" alt="name" class="logo">
+        
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
     <section class="idk-draw-something">
         <pre class="draw-board prevent-select"></pre>
     </section>
 
-    <section class="color-buttons">
-        <button style="background-color: red;" data-color="#FF0000"></button>
-        <button style="background-color: blue;" data-color="#0000FF"></button>
-        <button style="background-color: green;" data-color="#00FF00"></button>
-        <button style="background-color: yellow;" data-color="#FFFF00"></button>
+    <section class="pallet" id="color-pallet">
+        <button style="background-color: #000000;" data-color="#000000"></button>
+        <button style="background-color: #7F7F7F;" data-color="#7F7F7F"></button>
+        <button style="background-color: #880015;" data-color="#880015"></button>
+        <button style="background-color: #ED1C24;" data-color="#ED1C24"></button>
+        <button style="background-color: #FF7F27;" data-color="#FF7F27"></button>
+        <button style="background-color: #FFF200;" data-color="#FFF200"></button>
+        <button style="background-color: #22B14C;" data-color="#22B14C"></button>
+        <button style="background-color: #00A2E8;" data-color="#00A2E8"></button>
+        <button style="background-color: #3F48CC;" data-color="#3F48CC"></button>
+        <button style="background-color: #A349A4;" data-color="#A349A4"></button>
+        <button style="background-color: #FFFFFF;" data-color="#FFFFFF"></button>
+        <button style="background-color: #C3C3C3;" data-color="#C3C3C3"></button>
+        <button style="background-color: #B97A57;" data-color="#B97A57"></button>
+        <button style="background-color: #FFAEC9;" data-color="#FFAEC9"></button>
+        <button style="background-color: #FFC90E;" data-color="#FFC90E"></button>
+        <button style="background-color: #EFE4B0;" data-color="#EFE4B0"></button>
+        <button style="background-color: #B5E61D;" data-color="#B5E61D"></button>
+        <button style="background-color: #99D9EA;" data-color="#99D9EA"></button>
+        <button style="background-color: #7092BE;" data-color="#7092BE"></button>
+        <button style="background-color: #C8BFE7;" data-color="#C8BFE7"></button>
+        <button style="background-color: #d8d1d1;" data-color="#d8d1d1"></button>
     </section>
 
     <section class="clear-buttons">
@@ -45,7 +74,9 @@
         <button data-brush="embolden">embolden</button>
         <button data-brush="fade">fade</button>
     </section>
-
+    <footer>
+        <p>2024 CharCraft. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

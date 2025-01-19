@@ -22,3 +22,8 @@
     line-height: 0.95;
     row-gap: 0px;
 }
+
+.pallet
+{
+    border-radius: 50%;
+}
