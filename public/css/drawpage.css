@@ -1,17 +1,24 @@
+
 main
 {
     margin-top: var(--header-height);
     padding: 0;
     display: flex;
-    align-items: center;
-    justify-self: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px; 
+    margin-top: var(--header-height); 
+    padding: 10px;
 }
+
 
 .idk-draw-something
 {
     width: fill;
     height: fill;
     background-color: black;
+    width: 80%;
 }
 
 .prevent-select {
@@ -36,9 +43,12 @@ main
 {
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
-    width: 100px;
     flex-wrap: wrap;
+    justify-self: space-apart;
+    width: 5%;
+    flex: 0 1 auto; 
+    padding: 10px; 
+    background-color: var(--light-gray);
 }
 .pallet button
 {
@@ -46,4 +56,20 @@ main
     height: 30px; 
     border-radius: 50%;
     cursor: pointer;
+}
+
+.icon
+{
+    width:16px;
+    height: 16px;
+}
+
+.hidden
+{
+    visibility: hidden;
+}
+
+.hidden:hover
+{
+    visibility: visible;
 }
