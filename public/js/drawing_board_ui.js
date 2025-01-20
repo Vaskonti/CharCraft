@@ -28,12 +28,28 @@ export class DrawingBoardUI {
 
     getClickedCellCoordinates(clickEvent) {
         const drawBoardRect = this.drawBoardElement.getBoundingClientRect();
-        const cellWidth = drawBoardRect.width / this.drawingBoard.boardMatrix[0].length;
-        const cellHeight = drawBoardRect.height / this.drawingBoard.boardMatrix.length;
+    
+        const computedStyle = window.getComputedStyle(this.drawBoardElement);
 
-        const clickedCol = Math.floor((clickEvent.clientX - drawBoardRect.left) / cellWidth);
-        const clickedRow = Math.floor((clickEvent.clientY - drawBoardRect.top) / cellHeight);
+        const paddingLeft = parseFloat(computedStyle.paddingLeft || 0);
+        const paddingTop = parseFloat(computedStyle.paddingTop || 0);
+        const borderLeft = parseFloat(computedStyle.borderLeftWidth || 0);
+        const borderTop = parseFloat(computedStyle.borderTopWidth || 0);
+    
+        /* Calculate actual drawable area */
+        const drawableWidth = drawBoardRect.width - paddingLeft - borderLeft * 2;
+        const drawableHeight = drawBoardRect.height - paddingTop - borderTop * 2;
 
+        const cellWidth = drawableWidth / this.drawingBoard.boardMatrix[0].length;
+        const cellHeight = drawableHeight / this.drawingBoard.boardMatrix.length;
+    
+        /* Adjust mouse coordinates to account for padding and border */
+        const offsetX = clickEvent.clientX - (drawBoardRect.left + paddingLeft + borderLeft);
+        const offsetY = clickEvent.clientY - (drawBoardRect.top + paddingTop + borderTop);
+    
+        const clickedCol = Math.floor(offsetX / cellWidth);
+        const clickedRow = Math.floor(offsetY / cellHeight);
+    
         return { clickedRow, clickedCol };
     }
 
