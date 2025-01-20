@@ -113,15 +113,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorPickerInput = document.getElementById("color-picker");
     const colorPickerBtn = document.querySelector(".color-picker-btn");
 
-    // Open color picker when button is clicked
     colorPickerBtn.addEventListener("click", () => {
         colorPickerInput.click();
     });
 
-    // Update button background and set color when user selects a color
     colorPickerInput.addEventListener("input", (event) => {
         const selectedColor = event.target.value;
         colorPickerBtn.style.backgroundColor = selectedColor;
         colorPickerBtn.setAttribute("data-color", selectedColor);
     });
+
+    const pallet_buttons = document.querySelectorAll("#color-pallet button");
+    const tool_buttons = document.querySelectorAll(".tool-buttons button");
+    const draw_buttons = document.querySelectorAll(".draw-buttons button");
+    const brush_buttons  = document.querySelectorAll(".brush-buttons button");
+
+
+    function removeSelection(type) {
+        if (type == "pallet") pallet_buttons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "tool") tool_buttons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "draw") draw_buttons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "brush") brush_buttons.forEach((brush_buttons) => brush_buttons.classList.remove("selected"));
+        
+    }
+
+    pallet_buttons.forEach((pallet_buttons) => {
+        pallet_buttons.addEventListener("click", () => {
+            removeSelection("pallet");
+            pallet_buttons.classList.add("selected");
+        });
+    });
+
+    tool_buttons.forEach((tool_buttons) => {
+        tool_buttons.addEventListener("click", () => {
+            removeSelection("tool");
+            tool_buttons.classList.add("selected");
+        });
+    });
+
+    draw_buttons.forEach((draw_buttons) => {
+        draw_buttons.addEventListener("click", () => {
+            removeSelection("draw");
+            draw_buttons.classList.add("selected");
+        });
+    });
+
+    brush_buttons.forEach((brush_buttons) => {
+        brush_buttons.addEventListener("click", () => {
+            removeSelection("brush");
+            brush_buttons.classList.add("selected");
+        });
+    });
+
+    
+
 });

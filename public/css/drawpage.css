@@ -49,6 +49,7 @@ main
     flex: 0 1 auto; 
     padding: 10px; 
     background-color: var(--black);
+    border-radius: 25px;
 }
 .pallet button
 {
@@ -58,11 +59,16 @@ main
     cursor: pointer;
 }
 
+.selected
+{
+    border: 3px groove var(--orange);
+}
+
 .icon
 {
     width:20px;
     height: 20px;
-    translate: -12% 10%;
+    translate: -13% 10%;
 }
 
 
