@@ -4,6 +4,7 @@ import { TextBoard } from './js/text_board.js';
 import { Brush, ToolType, BrushShape, BrushType} from './js/brush.js';
 import { ImageConverter, ImageParseOptions } from './js/image_converter.js';
 import { CharacterBoard } from '../src/js/character_board.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let img = new Image();
@@ -106,6 +107,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.addEventListener('click', () => {
                     brush.setBrushType(BrushType.FADE_CHARACTER);
                 });
+            }
+        });
+
+        const asciiKeyBtn = document.getElementById("character-picker-btn");
+        const selectedAsciiDisplay = document.getElementById("character-picker");
+
+        let isWaitingForKey = false;
+        let currentAsciiChar = null;
+
+        asciiKeyBtn.addEventListener("click", () => {
+            asciiKeyBtn.textContent = " ";
+            isWaitingForKey = true;
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (isWaitingForKey) {
+                currentAsciiChar = event.key;
+                asciiKeyBtn.textContent = currentAsciiChar;
+                brush.setDrawCharacter(currentAsciiChar);
+                isWaitingForKey = false;
             }
         });
     }
