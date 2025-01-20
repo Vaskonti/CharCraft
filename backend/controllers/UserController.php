@@ -42,6 +42,7 @@ class UserController extends Controller
         $user = User::where('email', $data['email'])->first();
 
         if (password_verify($user->password, $data['password'])) {
+            session_start();
             $_SESSION['user_id'] = $user->id;
             $_SESSION['logged_id'] = true;
 
@@ -53,5 +54,13 @@ class UserController extends Controller
         return $this->jsonResponse([
             'message' => 'Invalid email password combination'
         ], 401);
+    }
+
+    public function logout(): JsonResponse
+    {
+        session_destroy();
+        return $this->jsonResponse([
+            'message' => 'Logged out successfully!'
+        ]);
     }
 }

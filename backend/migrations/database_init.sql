@@ -25,6 +25,7 @@ CREATE TABLE `posts` (
   `id` integer PRIMARY KEY,
   `title` varchar(255),
   `description` varchar(255),
+  `user_id` integer,
   `ascii_image_id` integer,
   `created_at` timestamp,
   `likes` bigint
@@ -47,6 +48,7 @@ CREATE TABLE `entity_likes` (
 );
 
 ALTER TABLE `posts` ADD FOREIGN KEY (`ascii_image_id`) REFERENCES `ascii_images` (`id`);
+ALTER TABLE `posts` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 ALTER TABLE `follows` ADD FOREIGN KEY (`following_user_id`) REFERENCES `users` (`id`);
 
