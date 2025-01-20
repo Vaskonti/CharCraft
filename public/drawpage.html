@@ -29,7 +29,7 @@
         <section class="pallet" id="color-pallet">
             <button style="background-color: #000000;" data-color="#000000"></button>
             <button style="background-color: #7F7F7F;" data-color="#7F7F7F"></button>
-            <button style="background-color: #880015;" data-color="#880015"></button>
+            <!-- <button style="background-color: #880015;" data-color="#880015"></button> -->
             <button style="background-color: #ED1C24;" data-color="#ED1C24"></button>
             <button style="background-color: #FF7F27;" data-color="#FF7F27"></button>
             <button style="background-color: #FFF200;" data-color="#FFF200"></button>
@@ -69,8 +69,8 @@
             </section>
 
             <section class="draw-buttons">
-                <button data-draw="circle"><img src="assets/images/icons/dry-clean.png" alt="circle" class="icon" title="circle"></button>
-                <button data-draw="square"><img src="assets/images/icons/stop.png" alt="square" class="icon" title="square"></button>
+                <button data-draw="circle"><img src="assets/images/icons/dry-clean.png" alt="circle" class="icon" title="circle brush"></button>
+                <button data-draw="square"><img src="assets/images/icons/stop.png" alt="square" class="icon" title="square brush"></button>
             </section>
 
             <section class="brush-buttons">
@@ -85,7 +85,12 @@
                 <button id="character-picker-btn" title="character picker"><input type="text" id="character-picker" hidden>o</button>
             </section>
 
+            <section id="image-loader-section">
+                <button id="image-loader-btn" title="image loader"><input type="image" id="image-loader" hidden><img src="assets/images/icons/image-gallery.png" alt="image loader" class="icon"></button>
+            </section>
+
             <section id="save-selection">
+                <button id="download-btn" title="download"><img src="assets/images/icons/download.png" alt="download" class="icon"></button>
                 <button id="save-btn"><input type="submit" name="save" id="save" hidden> <img src="assets/images/icons/tick.png" alt="save" class="icon" title="save"></button>
             </section>
         </section>
