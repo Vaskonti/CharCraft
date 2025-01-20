@@ -132,20 +132,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 isWaitingForKey = false;
             }
         });
+
+        const colorPickerInput = document.getElementById("color-picker");
+        const colorPickerBtn = document.querySelector(".color-picker-btn");
+
+        colorPickerBtn.addEventListener("click", () => {
+            colorPickerInput.click();
+        });
+
+        colorPickerInput.addEventListener("input", (event) => {
+            const selectedColor = event.target.value;
+            colorPickerBtn.style.backgroundColor = selectedColor;
+            colorPickerBtn.setAttribute("data-color", selectedColor);
+        });
     }
 
-    const colorPickerInput = document.getElementById("color-picker");
-    const colorPickerBtn = document.querySelector(".color-picker-btn");
-
-    colorPickerBtn.addEventListener("click", () => {
-        colorPickerInput.click();
-    });
-
-    colorPickerInput.addEventListener("input", (event) => {
-        const selectedColor = event.target.value;
-        colorPickerBtn.style.backgroundColor = selectedColor;
-        colorPickerBtn.setAttribute("data-color", selectedColor);
-    });
+    
 
     const pallet_buttons = document.querySelectorAll("#color-pallet button");
     const tool_buttons = document.querySelectorAll(".tool-buttons button");
