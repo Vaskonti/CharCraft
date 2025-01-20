@@ -11,4 +11,3 @@ $router->get('/users', [UserController::class, 'listUsers']);
 $router->post('/users', [UserController::class, 'createUser']);
 
 $router->dispatch(method(), uri());
-
