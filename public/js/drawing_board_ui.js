@@ -20,10 +20,54 @@ export class DrawingBoardUI {
         this.drawBoardElement = collection[0];
         this.drawingBoard.initialiseContainer(this.drawBoardElement);
 
+        this.captureDrawEvents();
+        this.disableAndCaptureScrollAndZoom();
+    }
+
+    /* returns cleanup function */
+    captureDrawEvents() {
+        const mouseUpHandler = () => { this.isMouseDown = false; };
+
         document.addEventListener("click", (e) => this.draw(e));
-        document.addEventListener("mouseup", () => (this.isMouseDown = false));
+        document.addEventListener("mouseup", mouseUpHandler);
         document.addEventListener("mousedown", (e) => this.mouseDown(e));
         document.addEventListener("mousemove", (e) => this.mouseMove(e));
+
+
+        return () => {
+            document.removeEventListener("click", this.draw);
+            document.removeEventListener("mouseup", mouseUpHandler);
+            document.removeEventListener("mousedown", this.mouseDown);
+            document.removeEventListener("mousemove", this.mouseMove);
+        };
+    }
+
+    /* returns cleanup function */
+    disableAndCaptureScrollAndZoom() {
+        const wheelHandler = (event) => {
+            event.preventDefault();
+            if (event.ctrlKey) {
+
+            } else {
+
+            }
+        };
+    
+        const keyHandler = (event) => {
+            const keysToPrevent = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "PageUp", "PageDown", "Home", "End", " "];
+            if (keysToPrevent.includes(event.key)) {
+                event.preventDefault();
+
+            }
+        };
+    
+        document.addEventListener("wheel", wheelHandler, { passive: false });
+        document.addEventListener("keydown", keyHandler);
+    
+        return () => {
+            document.removeEventListener("wheel", wheelHandler, { passive: false });
+            document.removeEventListener("keydown", keyHandler);
+        };
     }
 
     getClickedCellCoordinates(clickEvent) {
