@@ -145,6 +145,29 @@ document.addEventListener('DOMContentLoaded', () => {
             colorPickerBtn.style.backgroundColor = selectedColor;
             colorPickerBtn.setAttribute("data-color", selectedColor);
         });
+
+        //TODO: Fix image upload
+        const imageInput = document.getElementById("image-loader");
+
+        imageInput.addEventListener("click", async (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = async (e) => {
+                    const img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = () => {
+                        drawingBoard = ImageConverter.parseImageToBoard(img, options);
+                        drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight]);
+                    };
+                };
+
+            }
+        });
+
+        //TODO: Implement local save and save to profile
     }
 
     
