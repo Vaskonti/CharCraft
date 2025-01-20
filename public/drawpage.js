@@ -7,18 +7,17 @@ import { CharacterBoard } from '../src/js/character_board.js';
 document.addEventListener('DOMContentLoaded', () => {
 
     let img = new Image();
-    img.src = '../assets/fine.png';
-    const boardSize = 150;
+    img.src = '../assets/pickle_test.jpg';
+    const boardSize = 200;
     const cellWidth = 10;
     const cellHeight = cellWidth*1.3;
-    const cellOffset = 3;
     const mouseRadius = 1;
     img.onload = () => {
         const options = new ImageParseOptions();
         options.darkCharacterThreshold = 0;
-        options.brightnessFactor = 1.2;
-        options.staticVolumeIncrease = 0;
-        options.gammaCorrection = 0.5;
+        options.brightnessFactor = 1;
+        options.staticVolumeIncrease = 10;
+        options.gammaCorrection = 1;
         options.useReducedSet = false;
         options.edgeDetection = false;
         options.edgeDetectionThreshold = 245;

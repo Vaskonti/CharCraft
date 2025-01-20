@@ -1,6 +1,13 @@
 <?php
 
-require_once __DIR__ . '/../backend/config/config.php';
-require_once __DIR__ . '/../backend/misc/log.php';
+use Backend\Controllers\UserController;
+use Backend\Routes\Router;
 
-echo config('filesystems.logs_dir');
+require_once '../backend/controllers/UserController.php';
+
+$router = new Router();
+
+$router->get('/users', [UserController::class, 'listUsers']);
+$router->post('/users', [UserController::class, 'createUser']);
+
+$router->dispatch(method(), uri());
