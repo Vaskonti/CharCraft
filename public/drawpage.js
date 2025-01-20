@@ -109,4 +109,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    const colorPickerInput = document.getElementById("color-picker");
+    const colorPickerBtn = document.querySelector(".color-picker-btn");
+
+    // Open color picker when button is clicked
+    colorPickerBtn.addEventListener("click", () => {
+        colorPickerInput.click();
+    });
+
+    // Update button background and set color when user selects a color
+    colorPickerInput.addEventListener("input", (event) => {
+        const selectedColor = event.target.value;
+        colorPickerBtn.style.backgroundColor = selectedColor;
+        colorPickerBtn.setAttribute("data-color", selectedColor);
+    });
 });

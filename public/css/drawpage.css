@@ -10,6 +10,7 @@ main
     gap: 10px; 
     margin-top: var(--header-height); 
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 
@@ -18,7 +19,7 @@ main
     width: fill;
     height: fill;
     background-color: black;
-    width: 80%;
+    width: 90%;
 }
 
 .prevent-select {
@@ -39,16 +40,15 @@ main
     row-gap: 0px;
 }
 
-.pallet
+.pallet, .pallet section
 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-self: space-apart;
-    width: 5%;
+    justify-self: space-between;
     flex: 0 1 auto; 
     padding: 10px; 
-    background-color: var(--light-gray);
+    background-color: var(--black);
 }
 .pallet button
 {
@@ -60,16 +60,10 @@ main
 
 .icon
 {
-    width:16px;
-    height: 16px;
+    width:20px;
+    height: 20px;
+    translate: -12% 10%;
 }
 
-.hidden
-{
-    visibility: hidden;
-}
 
-.hidden:hover
-{
-    visibility: visible;
-}
+
