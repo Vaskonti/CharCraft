@@ -111,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const asciiKeyBtn = document.getElementById("character-picker-btn");
-        const selectedAsciiDisplay = document.getElementById("character-picker");
 
         let isWaitingForKey = false;
         let currentAsciiChar = null;
@@ -124,6 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener("keydown", (event) => {
             if (isWaitingForKey) {
                 currentAsciiChar = event.key;
+                if (currentAsciiChar == "Shift")
+                {
+                    secondAsciiChar = event.key;
+                }
                 asciiKeyBtn.textContent = currentAsciiChar;
                 brush.setDrawCharacter(currentAsciiChar);
                 isWaitingForKey = false;
