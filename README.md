@@ -33,6 +33,10 @@ Navigate to the main directory of the project and run:
 ```bash
 npm install
 ```
+Then create an environment file:
+```bash
+cp .env.example .env
+```
 
 ### Step 2: Run Tests
 To execute the tests, simply run:
