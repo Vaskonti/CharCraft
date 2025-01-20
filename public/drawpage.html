@@ -47,8 +47,11 @@
             <button style="background-color: #99D9EA;" data-color="#99D9EA"></button>
             <button style="background-color: #7092BE;" data-color="#7092BE"></button>
             <button style="background-color: #C8BFE7;" data-color="#C8BFE7"></button>
-            <button style="background-color: #d8d1d1;" data-color="#d8d1d1"></button>
+
+            <button class="color-picker-btn"><input type="color" id="color-picker" hidden><img src="assets/images/icons/color-picker.png" alt="color-wheel" class="icon" title="color picker"></button>
         </section>
+
+       
         
         <section class="idk-draw-something">
             <pre class="draw-board prevent-select"></pre>
@@ -76,6 +79,14 @@
                 <button data-brush="character-only"><img src="assets/images/icons/abc.png" alt="character only"class="icon" title="character only"></button>
                 <button data-brush="embolden"><img src="assets/images/icons/bold.png" alt="embolden"class="icon" title="embolden"></button>
                 <button data-brush="fade"><img src="assets/images/icons/fog.png" alt="fade" class="icon" title="fade"></button>
+            </section>
+
+            <section id="character-picker-section">
+                <button id="character-picker-btn" title="character picker"><input type="text" id="character-picker" hidden>o</button>
+            </section>
+
+            <section id="save-selection">
+                <button id="save-btn"><input type="submit" name="save" id="save" hidden> <img src="assets/images/icons/tick.png" alt="save" class="icon" title="save"></button>
             </section>
         </section>
     </main>

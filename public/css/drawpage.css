@@ -10,6 +10,7 @@ main
     gap: 10px; 
     margin-top: var(--header-height); 
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 
@@ -17,7 +18,12 @@ main
 {
     width: fill;
     height: fill;
+<<<<<<< HEAD
     width: 80%;
+=======
+    background-color: black;
+    width: 90%;
+>>>>>>> 59a1f34c0d1a9c17b5ac2b60b1f3d781b4de6f2f
 }
 
 .prevent-select {
@@ -38,16 +44,16 @@ main
     row-gap: 0px;
 }
 
-.pallet
+.pallet, .pallet section
 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-self: space-apart;
-    width: 5%;
+    justify-self: space-between;
     flex: 0 1 auto; 
     padding: 10px; 
-    background-color: var(--light-gray);
+    background-color: var(--black);
+    border-radius: 25px;
 }
 .pallet button
 {
@@ -57,18 +63,17 @@ main
     cursor: pointer;
 }
 
+.selected
+{
+    border: 3px groove var(--orange);
+}
+
 .icon
 {
-    width:16px;
-    height: 16px;
+    width:20px;
+    height: 20px;
+    translate: -13% 10%;
 }
 
-.hidden
-{
-    visibility: hidden;
-}
 
-.hidden:hover
-{
-    visibility: visible;
-}
+
