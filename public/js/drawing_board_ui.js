@@ -7,6 +7,9 @@ export class DrawingBoardUI {
         this.isMouseDown = false;
         this.drawBoardElement = null;
         this.lastDrawnCell = null;
+        this.scale = 1;
+        this.offsetX = 0;
+        this.offsetY = 0;
         this.brush = brush;
     }
 
@@ -22,6 +25,11 @@ export class DrawingBoardUI {
 
         this.captureDrawEvents();
         this.disableAndCaptureScrollAndZoom();
+
+        const rect = this.drawBoardElement.getBoundingClientRect();
+        this.offsetX = 0;
+        this.offsetY = 0;
+        this.drawBoardElement.style.transformOrigin = `${0} ${0}`;
     }
 
     /* returns cleanup function */
@@ -47,9 +55,9 @@ export class DrawingBoardUI {
         const wheelHandler = (event) => {
             event.preventDefault();
             if (event.ctrlKey) {
-
+                /* Deprecated */
             } else {
-
+                this.handleZoom(event)
             }
         };
     
@@ -124,6 +132,34 @@ export class DrawingBoardUI {
     draw(event) {
         const { clickedRow, clickedCol } = this.getClickedCellCoordinates(event);
         this.brush.drawOnPosition(this.drawingBoard, clickedRow, clickedCol);
+    }
+
+    handleZoom(event) {
+        const rect = this.drawBoardElement.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+    
+        const zoomFactor = 0.1; // TODO: make it constant later
+        const zoomIn = event.deltaY < 0;
+        const scaleDelta = zoomIn ? 1 + zoomFactor : 1 - zoomFactor;
+    
+        const newScale = this.scale * scaleDelta;
+    
+        // Calculate the difference between the mouse position and the current offsets
+        const deltaX = mouseX - this.offsetX;
+        const deltaY = mouseY - this.offsetY;
+    
+        // Adjust offsets to keep the zoom centered on the mouse position
+        this.offsetX -= deltaX * (scaleDelta - 1);
+        this.offsetY -= deltaY * (scaleDelta - 1);
+    
+        this.scale = newScale;
+    
+        this.updateTransform();
+    }
+
+    updateTransform() {
+        this.drawBoardElement.style.transform = `translate(${this.offsetX}px, ${this.offsetY}px) scale(${this.scale})`;
     }
 
     saveBoard() {
