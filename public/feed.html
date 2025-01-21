@@ -4,8 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CharCraft Feed</title>
+    <link rel="stylesheet" href="css/header-and-footer.css">
+    <link rel="stylesheet" href="css/create-post.css">
+    <link rel="stylesheet" href="css/post.css">
+
 </head>
 <body>
-    
+    <header>
+        <img src="assets/images/logo2.PNG" alt="logo" class = "logo">
+        <img src="assets/images/name.PNG" alt="name" class="logo" id="name">
+        
+        <nav>
+            <a href="#home">Home</a>
+            <a href="/public/drawpage.html">Draw</a>
+            <a href="#log-out">Log out</a>
+        </nav>
+    </header>
+    <main>
+        <section id="create-post">
+            
+            <form action="">
+                <h2>Create a Post</h2>
+                <input type="text" id="title" name="title" placeholder="Title" required>
+                <textarea id="description" name="content" placeholder="Description"></textarea>
+                <input type="file" placeholder="ASCII image" required> 
+                <!-- TODO: To allow posting images from user profile -->
+                <input type="submit" value="Post">
+                <input type="hidden" id="user-id" name="user-id" value="12345">
+            </form>
+        </section>
+
+        <section class="post">
+            <h3 class="user">Pamela Slavcheva</h3>
+            <time class="created-at">16:53, 21/01/2025</time>
+            <img src="/public/assets/images/starry-night.png" alt="ASCII image" class="ASCII-image">
+            <h3 class="title">Starry Night</h3>
+            <section class="likes">
+                <img src="/public/assets/images/icons/heart.png" alt="like" class="icon"><p>123 </p>
+            </section>
+            
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi diam velit, placerat ut ultricies eu, dapibus ut augue. In convallis mauris vel augue tincidunt, vel pulvinar lacus varius. </p>
+        </section>
+
+        <section class="post">
+            <h3 class="user">Pamela Slavcheva</h3>
+            <time class="created-at">16:53, 21/01/2025</time>
+            <img src="/public/assets/images/starry-night.png" alt="ASCII image" class="ASCII-image">
+            <h3 class="title">Starry Night</h3>
+            <section class="likes">
+                <img src="/public/assets/images/icons/heart.png" alt="like" class="icon"><p>123 </p>
+            </section>
+            
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi diam velit, placerat ut ultricies eu, dapibus ut augue. In convallis mauris vel augue tincidunt, vel pulvinar lacus varius. </p>
+        </section>
+    </main>
+    <footer>
+        <p>2024 CharCraft. All rights reserved.</p>
+    </footer>
 </body>
 </html>
