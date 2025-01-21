@@ -27,9 +27,10 @@ export class DrawingBoardUI {
         this.disableAndCaptureScrollAndZoom();
 
         const rect = this.drawBoardElement.getBoundingClientRect();
-        this.offsetX = 0;
-        this.offsetY = 0;
+        this.offsetX = 0; //rect.left;
+        this.offsetY = 0; //rect.top;
         this.drawBoardElement.style.transformOrigin = `${0} ${0}`;
+        this.updateTransform();
     }
 
     /* returns cleanup function */
@@ -135,23 +136,18 @@ export class DrawingBoardUI {
     }
 
     handleZoom(event) {
-        const rect = this.drawBoardElement.getBoundingClientRect();
-        const mouseX = event.clientX - rect.left;
-        const mouseY = event.clientY - rect.top;
+        const xs = (event.clientX - this.offsetX) / this.scale;
+        const ys = (event.clientY - this.offsetY) / this.scale;
     
-        const zoomFactor = 0.1; // TODO: make it constant later
+        const zoomFactor = 0.1;
         const zoomIn = event.deltaY < 0;
         const scaleDelta = zoomIn ? 1 + zoomFactor : 1 - zoomFactor;
     
         const newScale = this.scale * scaleDelta;
     
-        // Calculate the difference between the mouse position and the current offsets
-        const deltaX = mouseX - this.offsetX;
-        const deltaY = mouseY - this.offsetY;
-    
         // Adjust offsets to keep the zoom centered on the mouse position
-        this.offsetX -= deltaX * (scaleDelta - 1);
-        this.offsetY -= deltaY * (scaleDelta - 1);
+        this.offsetX = event.clientX - xs*newScale;
+        this.offsetY = event.clientY - ys*newScale;
     
         this.scale = newScale;
     
