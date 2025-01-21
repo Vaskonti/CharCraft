@@ -2,11 +2,10 @@
 
 namespace Backend\Controllers;
 
-use Backend\Controllers\Controller;
+use Backend\Models\User;
 use Backend\Responses\JsonResponse;
 use CreateUserRequest;
 use LoginRequest;
-use User;
 
 class UserController extends Controller
 {
