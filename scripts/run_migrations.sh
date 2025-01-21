@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ ! -f .env ]; then
-    echo "❌ Environment file not found!"
+    echo "❌  Environment file not found!"
     exit 1
 fi
 source .env  # Load environment variables
@@ -8,7 +8,7 @@ MIGRATIONS_DIR="backend/migrations/up"
 
 # Check if MySQL is accessible
 if ! command -v mysql &> /dev/null; then
-    echo "❌ Error: MySQL is not installed or not in the system PATH."
+    echo "❌  Error: MySQL is not installed or not in the system PATH."
     exit 1
 fi
 
@@ -60,7 +60,7 @@ for migration in $(find "$MIGRATIONS_DIR"/*.sql | sort); do
         # Log the migration as executed
         mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" "$DB_DATABASE" -e "INSERT INTO migrations_log (filename) VALUES ('$filename');"
 
-        echo "✅ Migration $filename executed successfully!"
+        echo "✅  Migration $filename executed successfully!"
     fi
 done
 echo "✅  All migrations executed successfully!"
