@@ -37,17 +37,17 @@ export class DrawingBoardUI {
     captureDrawEvents() {
         const mouseUpHandler = () => { this.isMouseDown = false; };
 
-        document.addEventListener("click", (e) => this.draw(e));
-        document.addEventListener("mouseup", mouseUpHandler);
-        document.addEventListener("mousedown", (e) => this.mouseDown(e));
-        document.addEventListener("mousemove", (e) => this.mouseMove(e));
+        this.drawBoardElement.addEventListener("click", (e) => this.draw(e));
+        this.drawBoardElement.addEventListener("mouseup", mouseUpHandler);
+        this.drawBoardElement.addEventListener("mousedown", (e) => this.mouseDown(e));
+        this.drawBoardElement.addEventListener("mousemove", (e) => this.mouseMove(e));
 
 
         return () => {
-            document.removeEventListener("click", this.draw);
-            document.removeEventListener("mouseup", mouseUpHandler);
-            document.removeEventListener("mousedown", this.mouseDown);
-            document.removeEventListener("mousemove", this.mouseMove);
+            this.drawBoardElement.removeEventListener("click", this.draw);
+            this.drawBoardElement.removeEventListener("mouseup", mouseUpHandler);
+            this.drawBoardElement.removeEventListener("mousedown", this.mouseDown);
+            this.drawBoardElement.removeEventListener("mousemove", this.mouseMove);
         };
     }
 

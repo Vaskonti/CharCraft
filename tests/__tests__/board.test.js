@@ -1,14 +1,13 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals');
 import { CharacterBoard } from '../../src/js/character_board.js';
 import { Character } from '../../src/js/character.js';
-import { emptyCharacter, reducedAsciiVisibilityRank } from '../../src/js/utils.js';
+import { asciiVisibilityRank, defaultColor, emptyCharacter, reducedAsciiVisibilityRank } from '../../src/js/utils.js';
 
 describe('CharacterBoard Class Tests', () => {
     let board;
 
     beforeEach(() => {
         board = new CharacterBoard(10, 5);
-        board.setDefaultCharacter('@');
     });
 
     test('should initialize the board with the correct size', () => {
@@ -18,12 +17,7 @@ describe('CharacterBoard Class Tests', () => {
 
     test('should reset board to default character', () => {
         board.resetBoard();
-        expect(board.boardMatrix.every(row => row.every(cell => cell.character === '@'))).toBe(true);
-    });
-
-    test('should set default character correctly', () => {
-        board.setDefaultCharacter('#');
-        expect(board.defaultCharacter).toBe('#');
+        expect(board.boardMatrix.every(row => row.every(cell => cell.character === emptyCharacter))).toBe(true);
     });
 
     test('should return true for valid positions within the board', () => {
@@ -45,14 +39,22 @@ describe('CharacterBoard Class Tests', () => {
     });
 
     test('should color a valid cell correctly', () => {
-        board.colorCell(1, 1, '@', '#FF0000');
-        expect(board.boardMatrix[1][1].character).toBe('@');
+        board.colorCell(1, 1, 'a', '#FF0000');
+        expect(board.boardMatrix[1][1].character).toBe('a');
         expect(board.boardMatrix[1][1].color).toBe('#FF0000');
     });
 
-    test('should handle invalid colorCell positions gracefully', () => {
-        board.colorCell(-1, -1, '@', '#FF0000'); // Invalid position
-        expect(board.boardMatrix.every(row => row.every(cell => cell.character !== '@'))).toBe(true);
+
+    test('should revert color when coloring with empty character', () => {
+        board.colorCell(1, 1, 'a', '#FF0000');
+        board.colorCell(1, 1, emptyCharacter, '#FF0000');
+        expect(board.boardMatrix[1][1].character).toBe(emptyCharacter);
+        expect(board.boardMatrix[1][1].color).toBe(defaultColor);
+    });
+
+    test('should handle invalid colorCell positions', () => {
+        board.colorCell(-1, -1, 'K', '#FF0000'); // Invalid position
+        expect(board.boardMatrix.every(row => row.every(cell => cell.character === emptyCharacter))).toBe(true);
     });
 
     test('should embold a cell correctly', () => {
@@ -65,11 +67,11 @@ describe('CharacterBoard Class Tests', () => {
     });
 
     test('should not embold a cell if already at maximum visibility rank', () => {
-        board.boardMatrix[3][3] = new Character('@', '#000000');
+        board.boardMatrix[3][3] = new Character(asciiVisibilityRank[asciiVisibilityRank.length - 1], '#000000');
         board.emboldCell(3, 3);
 
         const character = board.boardMatrix[3][3].character;
-        expect(character).toBe('@');
+        expect(character).toBe(asciiVisibilityRank[asciiVisibilityRank.length - 1]);
     });
 
     test('should fade a cell correctly', () => {
