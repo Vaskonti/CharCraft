@@ -9,10 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let img = new Image();
     img.src = '../assets/fine.png';
-    const boardSize = 150;
+    const boardSize = 50;
     const cellWidth = 10;
     const cellHeight = cellWidth*1.3;
-    const cellOffset = 3;
     const mouseRadius = 1;
     img.onload = () => {
         const options = new ImageParseOptions();

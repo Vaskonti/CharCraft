@@ -1,6 +1,6 @@
 import { Character } from '../../src/js/character.js';
 import { CharacterBoard } from '../../src/js/character_board.js';
-import { defaultColor } from '../../src/js/utils.js';
+import { defaultColor, canvasFont } from '../../src/js/utils.js';
 
 export class CanvasBoard extends CharacterBoard {
     constructor(sizeX, sizeY, cellWidth = 10, cellHeight = 16) {
@@ -22,7 +22,7 @@ export class CanvasBoard extends CharacterBoard {
         this.canvas.width = this.cols * this.cellWidth;
         this.canvas.height = this.rows * this.cellHeight;
         this.context = this.canvas.getContext('2d');
-        this.context.font = `${this.cellHeight}px Georgia`; //TODO: find better font
+        this.context.font = `${this.cellHeight}px ${canvasFont}`; //TODO: find better font
         this.context.textBaseline = 'top';
     }
 
