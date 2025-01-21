@@ -10,19 +10,39 @@ class Model
 {
     protected static string $table;
 
-    protected static function connect()
+    protected static function connect(): PDO
     {
         return Database::connect();
     }
 
-    public static function create(array $data)
+    public function __construct($data = null)
+    {
+        if ($data) {
+            foreach ($data as $key => $value) {
+                $this->$key = $value;
+            }
+        }
+    }
+
+    public static function create(array $data): ?Model
     {
         $db = self::connect();
-        $columns = implode(', ', array_keys($data));
+        $fields = implode(', ', array_keys($data));
         $placeholders = implode(', ', array_fill(0, count($data), '?'));
-        $stmt = $db->prepare("INSERT INTO " . static::$table . " ($columns) VALUES ($placeholders)");
-        $stmt->execute(array_values($data));
-        return $db->lastInsertId();
+        $values = array_values($data);
+        $stmt = $db->prepare("INSERT INTO " . static::$table . " ($fields) VALUES ($placeholders)");
+        $stmt->execute($values);
+        $id = $db->lastInsertId();
+        return static::find($id);
+    }
+
+    private static function getConnection()
+    {
+        static $db;
+        if (!$db) {
+            $db = Database::connect();
+        }
+        return $db;
     }
 
     public static function find($id): ?static
@@ -49,15 +69,6 @@ class Model
 
         // Return the results, allowing method chaining
         return new static($results) ?? null;
-    }
-
-    public function __construct($data = null)
-    {
-        if ($data) {
-            foreach ($data as $key => $value) {
-                $this->$key = $value;
-            }
-        }
     }
 
     public static function first(): null|static
