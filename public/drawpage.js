@@ -45,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const clearButtons = document.querySelectorAll('.clear-buttons button');
         clearButtons.forEach(button => {
             button.addEventListener('click', () => {
+                if(confirm("Are you sure you want to clear everything?")) {
                 drawingBoard.clearBoard();
+                }
             });
         });
 
