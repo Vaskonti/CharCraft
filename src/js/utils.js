@@ -6,8 +6,9 @@ export const asciiVisibilityRank = emptyCharacter + ".-':_,^=;><+!rc*/z?sLTv)J7(
 export const reducedAsciiVisibilityRank = emptyCharacter + ".-=oa#@";
 export const densityCache = {}; // TODO: investigate: is that global for user now, or resets anytime the page is reset????
 export const densityIndexCache = {};
+export const canvasFont = "Georgia";//TODO: find better font
 
-function precomputeDensityForVisibilityRank() {
+export function precomputeDensityForReducedVisibilityRank() {
     for (let i = 0; i < reducedAsciiVisibilityRank.length; i += 1) {
         densityCache[reducedAsciiVisibilityRank[i]] = computeCharacterDensity(reducedAsciiVisibilityRank[i]);
         densityIndexCache[reducedAsciiVisibilityRank[i]] = i;
@@ -17,16 +18,17 @@ function precomputeDensityForVisibilityRank() {
 /* This function calculates the density of a given character by determining 
     how much of its rendered area is visually "filled" (i.e., has visible pixels) between 0 and 1.
     Stores the character in cache. When called later the function returns immediately.*/
-function computeCharacterDensity(character) {
+export function computeCharacterDensity(character) {
     if (character in densityCache)
     {
         return densityCache[character];
     }
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    
+    canvas.width = 10;
+    canvas.height = 10;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = '10px monospace';
+    ctx.font = `10px ${canvasFont}`;
     ctx.fillText(character, 0, 10);
 
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
@@ -64,5 +66,5 @@ export function getVisibilityRankIndexOfCharacter(character) {
 }
 
 //window.addEventListener("load", (_) => {
-precomputeDensityForVisibilityRank(); // TODO: assess if this function is better left a global call.
+precomputeDensityForReducedVisibilityRank(); // TODO: assess if this function is better left a global call.
 //});
