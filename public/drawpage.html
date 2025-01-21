@@ -5,47 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/drawpage.css">
+    <link rel="stylesheet" href="css/header-and-footer.css">
 
     <script type="module" src="drawpage.js"></script>
-    <title>Draw page</title>
+    <title>CharCraft Drawing page</title>
 </head>
 
 
 
 <body>
-    <section class="idk-draw-something">
-        <pre class="draw-board prevent-select"></pre>
-    </section>
+    <header>
+        <img src="assets/images/logo2.PNG" alt="logo" class = "logo">
+        <img src="assets/images/name.PNG" alt="name" class="logo">
+        
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#feed">Feed</a>
+            <a href="#log-out">Log out</a>
+        </nav>
+    </header>
 
-    <section class="color-buttons">
-        <button style="background-color: red;" data-color="#FF0000"></button>
-        <button style="background-color: blue;" data-color="#0000FF"></button>
-        <button style="background-color: green;" data-color="#00FF00"></button>
-        <button style="background-color: yellow;" data-color="#FFFF00"></button>
-    </section>
+    <main>
+        <section class="pallet" id="color-pallet">
+            <button style="background-color: #000000;" data-color="#000000"></button>
+            <button style="background-color: #7F7F7F;" data-color="#7F7F7F"></button>
+            <!-- <button style="background-color: #880015;" data-color="#880015"></button> -->
+            <button style="background-color: #ED1C24;" data-color="#ED1C24"></button>
+            <button style="background-color: #FF7F27;" data-color="#FF7F27"></button>
+            <button style="background-color: #FFF200;" data-color="#FFF200"></button>
+            <button style="background-color: #22B14C;" data-color="#22B14C"></button>
+            <button style="background-color: #00A2E8;" data-color="#00A2E8"></button>
+            <button style="background-color: #3F48CC;" data-color="#3F48CC"></button>
+            <button style="background-color: #A349A4;" data-color="#A349A4"></button>
+            <button style="background-color: #FFFFFF;" data-color="#FFFFFF"></button>
+            <button style="background-color: #C3C3C3;" data-color="#C3C3C3"></button>
+            <button style="background-color: #B97A57;" data-color="#B97A57"></button>
+            <button style="background-color: #FFAEC9;" data-color="#FFAEC9"></button>
+            <button style="background-color: #FFC90E;" data-color="#FFC90E"></button>
+            <button style="background-color: #EFE4B0;" data-color="#EFE4B0"></button>
+            <button style="background-color: #B5E61D;" data-color="#B5E61D"></button>
+            <button style="background-color: #99D9EA;" data-color="#99D9EA"></button>
+            <button style="background-color: #7092BE;" data-color="#7092BE"></button>
+            <button style="background-color: #C8BFE7;" data-color="#C8BFE7"></button>
 
-    <section class="clear-buttons">
-        <button>clear</button>
-    </section>
+            <button class="color-picker-btn"><input type="color" id="color-picker" hidden><img src="assets/images/icons/color-picker.png" alt="color-wheel" class="icon" title="color picker"></button>
+        </section>
 
-    <section class="tool-buttons"a>
-        <button data-style="bucket">bucket</button>
-        <button data-style="brush">brush</button>
-    </section>
+       
+        
+        <section class="idk-draw-something">
+            <pre class="draw-board prevent-select"></pre>
+        </section>
 
-    <section class="draw-buttons">
-        <button data-draw="circle">circle</button>
-        <button data-draw="square">square</button>
-    </section>
+        
+        <section class="pallet" id="buttons">
+            <section class="clear-buttons">
+                <button><img src="assets/images/icons/broom.png" alt="clear" class="icon" title="clear"></button>
+            </section>
 
-    <section class="brush-buttons">
-        <button data-brush="normal">normal</button>
-        <button data-brush="color-only">color-only</button>
-        <button data-brush="character-only">character-only</button>
-        <button data-brush="embolden">embolden</button>
-        <button data-brush="fade">fade</button>
-    </section>
+            <section class="tool-buttons"a>
+                <button data-style="bucket"><img src="assets/images/icons/paint-bucket.png" alt="bucket" class="icon" title="bucket"></button>
+                <button data-style="brush"><img src="assets/images/icons/paintbrush.png" alt="brush" class="icon" title="brush"></button>
+            </section>
 
+            <section class="draw-buttons">
+                <button data-draw="circle"><img src="assets/images/icons/dry-clean.png" alt="circle" class="icon" title="circle brush"></button>
+                <button data-draw="square"><img src="assets/images/icons/stop.png" alt="square" class="icon" title="square brush"></button>
+            </section>
+
+            <section class="brush-buttons">
+                <button data-brush="normal"><img src="assets/images/icons/brush.png" alt="normal" class="icon" title="normal"></button>
+                <button data-brush="color-only"><img src="assets/images/icons/coloring-tool.png" alt="color only"class="icon" title="color only"></button>
+                <button data-brush="character-only"><img src="assets/images/icons/abc.png" alt="character only"class="icon" title="character only"></button>
+                <button data-brush="embolden"><img src="assets/images/icons/bold.png" alt="embolden"class="icon" title="embolden"></button>
+                <button data-brush="fade"><img src="assets/images/icons/fog.png" alt="fade" class="icon" title="fade"></button>
+            </section>
+
+            <section id="character-picker-section">
+                <button id="character-picker-btn" title="character picker"><input type="text" id="character-picker" hidden>o</button>
+            </section>
+
+            <section id="image-loader-section">
+                <button id="image-loader-btn" title="image loader"><input type="image" id="image-loader" hidden><img src="assets/images/icons/image-gallery.png" alt="image loader" class="icon"></button>
+            </section>
+
+            <section id="save-selection">
+                <button id="download-btn" title="download"><img src="assets/images/icons/download.png" alt="download" class="icon"></button>
+                <button id="save-btn"><input type="submit" name="save" id="save" hidden> <img src="assets/images/icons/tick.png" alt="save" class="icon" title="save"></button>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>2024 CharCraft. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'ThickBoy-Regular';	
+    src: url('../assets/fonts/thicccboi/fonts/TTF/THICCCBOI-Regular.ttf') format('ttf'),
+         url('../assets/fonts/thicccboi/fonts/Webfont/THICCCBOI-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --purple: #5A30E5;
+    --blue: #37BCC2;
+    --red: #F03B21;
+    --orange: #F9AA0C;
+    --black: #000000;
+    --gray: #272732f3;
+    --light-gray:#55555ef3;
+    --white: #FFFFFF;
+    --font: ThickBoy-Regular;
+    --header-height: 70px;
+    font-family: var(--font);
+
+}
+
+body {
+    margin: 0;
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--black);
+    color: var(--white);
+    opacity: 0.9;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    width: auto;
+    height: 60%;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
+footer {
+    position:fixed;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    bottom:0px; 
+    height:5%; 
+    left:0px; 
+    right:0px; 
+    opacity: 0.8;
+}
+
+main
+{
+    width: 100%;
+    height: calc(100% - var(--header-height)); 
+}
