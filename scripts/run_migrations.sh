@@ -24,27 +24,43 @@ else
     echo "✅  Database '$DB_DATABASE' already exists."
     echo "Do you want to drop the database '$DB_DATABASE' and create a new one? [Y/n])"
         read -r response
-        if [[ "$response" =~ ^([nN][oO]|[nN])$ ]]; then
-            echo "❌ Aborting..."
-            exit 1
+        if [[ "$response" =~ ^([yY][oO]|[yY])$ ]]; then
+            mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" -e "DROP DATABASE $DB_DATABASE;"
+            mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" -e "CREATE DATABASE $DB_DATABASE;"
         fi
-        mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" -e "DROP DATABASE $DB_DATABASE;"
-        mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" -e "CREATE DATABASE $DB_DATABASE;"
 fi
 
 
 if [ ! -d "$MIGRATIONS_DIR" ]; then
-    echo "❌ Migrations directory not found!"
+    echo "❌  Migrations directory not found!"
     exit 1
 fi
 
-# Run all SQL files in the migrations directory sorted by name
-for sql_file in $(find "$MIGRATIONS_DIR"/*.sql | sort); do
-    if [ -f "$sql_file" ]; then
-        echo "🚀 Running migration: $sql_file"
-        mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" "$DB_DATABASE" < "$sql_file"
-        mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" "$DB_DATABASE" -e "INSERT INTO migrations_log (filename) VALUES ('$sql_file');"
-        echo "✅  Migration completed: $sql_file"
+# Function to check if migration has already been run
+migration_already_ran() {
+    local migration="$1"
+    result=$(mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" "$DB_DATABASE" -se "SELECT COUNT(*) FROM migrations_log WHERE filename='$migration';")
+    if [ "$result" -gt 0 ]; then
+        return 0  # Migration already ran
+    else
+        return 1  # Migration has not run yet
+    fi
+}
+
+# Run migrations in lexicographical order
+for migration in $(find "$MIGRATIONS_DIR"/*.sql | sort); do
+    filename=$(basename "$migration")
+
+    if migration_already_ran "$filename"; then
+        echo "🔹 Skipping $filename (already executed)"
+    else
+        echo "🚀 Running migration: $filename"
+        mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" "$DB_DATABASE" < "$migration"
+
+        # Log the migration as executed
+        mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" "$DB_DATABASE" -e "INSERT INTO migrations_log (filename) VALUES ('$filename');"
+
+        echo "✅ Migration $filename executed successfully!"
     fi
 done
 echo "✅  All migrations executed successfully!"
