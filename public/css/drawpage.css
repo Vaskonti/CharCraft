@@ -1,15 +1,30 @@
+
+main
+{
+    margin-top: var(--header-height);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px; 
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+
 .idk-draw-something
 {
     width: fill;
     height: fill;
-    background-color: black;
+    width: 90%;
+    border-radius: 10px;
 }
 
 .prevent-select {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none; 
-  }
+}
 
 .draw-board
 {
@@ -22,3 +37,37 @@
     line-height: 0.95;
     row-gap: 0px;
 }
+
+.pallet, .pallet section
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-self: space-between;
+    flex: 0 1 auto; 
+    padding: 10px; 
+    background-color: var(--black);
+    border-radius: 25px;
+}
+.pallet button
+{
+    width: 30px;
+    height: 30px; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.selected
+{
+    border: 3px groove var(--orange);
+}
+
+.icon
+{
+    width:20px;
+    height: 20px;
+    translate: -13% 10%;
+}
+
+
+
