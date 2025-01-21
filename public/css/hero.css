@@ -55,7 +55,6 @@ body{
     font-weight: bold;
     background-color: var(--blue);
     border: 2px outset var(--gray);
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 20%;
@@ -63,7 +62,7 @@ body{
     padding: 1%;
 }
 
-button:hover {
+#hero button:hover {
     background-color: var(--orange);
     border: 2px inset var(--gray);
 }
