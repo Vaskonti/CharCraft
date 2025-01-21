@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     img.onload = () => {
         const options = new ImageParseOptions();
         options.darkCharacterThreshold = 0;
-        options.brightnessFactor = 1.2;
-        options.staticVolumeIncrease = 0;
-        options.gammaCorrection = 0.5;
+        options.brightnessFactor = 1;
+        options.staticVolumeIncrease = 10;
+        options.gammaCorrection = 1;
         options.useReducedSet = false;
         options.edgeDetection = false;
         options.edgeDetectionThreshold = 245;
