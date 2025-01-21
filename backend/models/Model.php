@@ -2,6 +2,7 @@
 
 namespace Backend\Models;
 
+use Backend\Database\Database;
 use Exception;
 use PDO;
 
@@ -87,8 +88,6 @@ class Model
      */
     public function __set($property, $value)
     {
-        if ($property === 'id')
-            throw new Exception('Property id cannot be assigned!');
         if (property_exists($this, $property)) {
             $this->$property = $value;
         } else {
