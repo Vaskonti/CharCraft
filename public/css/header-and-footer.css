@@ -49,6 +49,11 @@ header {
     height: 60%;
 }
 
+#name
+{
+    padding-left: 10%;
+}
+
 nav {
     display: flex;
     gap: 15px;
@@ -83,4 +88,5 @@ main
 {
     width: 100%;
     height: calc(100% - var(--header-height)); 
+    margin-top: var(--header-height);
 }
