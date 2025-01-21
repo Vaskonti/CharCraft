@@ -3,11 +3,11 @@
 use Backend\Controllers\UserController;
 use Backend\Routes\Router;
 
-require_once '../backend/controllers/UserController.php';
-
+require_once '../backend/routes/Router.php';
 $router = new Router();
 
-$router->get('/users', [UserController::class, 'listUsers']);
-$router->post('/users', [UserController::class, 'createUser']);
+$router->post('/register', [UserController::class, 'createUser']);
+$router->post('/login', [UserController::class, 'login']);
+$router->post('/logout', [UserController::class, 'logout']);
 
 $router->dispatch(method(), uri());
