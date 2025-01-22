@@ -67,82 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
     drawingBoardUI.init();
 
     const colorButtons = document.querySelectorAll('#color-pallet button');
-    colorButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const color = button.getAttribute('data-color');
-            brush.setDrawColor(color);
-        });
-    });
-
+    drawingBoardUI.registerColorButtons(colorButtons, 'data-color');
     const clearButtons = document.querySelectorAll('.clear-buttons button');
-    clearButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            if(confirm("Are you sure you want to clear everything?")) {
-            drawingBoard.clearBoard();
-            }
-        });
-    });
-
+    drawingBoardUI.registerClearButtons(clearButtons);
     const toolButtons = document.querySelectorAll('.tool-buttons button');
-    toolButtons.forEach(button => {
-        const strType = button.getAttribute('data-style');
-        if (strType == "bucket") {
-            button.addEventListener('click', () => {
-                brush.setToolType(ToolType.BUCKET);
-            });
-        }
-        else if (strType == "brush") {
-            button.addEventListener('click', () => {
-                brush.setToolType(ToolType.NORMAL);
-            });
-        }
-    });
-
+    drawingBoardUI.registerToolButtons(toolButtons, 'data-style');
     const drawButtons = document.querySelectorAll('.draw-buttons button');
-    drawButtons.forEach(button => {
-        const strType = button.getAttribute('data-draw');
-        if (strType == "circle") {
-            button.addEventListener('click', () => {
-                brush.setBrushShape(BrushShape.CIRCLE);
-            });
-        }
-        else if (strType == "square") {
-            button.addEventListener('click', () => {
-                brush.setBrushShape(BrushShape.NORMAL);
-            });
-        }
-    });
-
-
+    drawingBoardUI.registerDrawButtons(drawButtons, 'data-draw');
     const brushButtons = document.querySelectorAll('.brush-buttons button');
-    brushButtons.forEach(button => {
-        const strType = button.getAttribute('data-brush');
-        if (strType == "normal") {
-            button.addEventListener('click', () => {
-                brush.setBrushType(BrushType.NORMAL);
-            });
-        }
-        else if (strType == "color-only") {
-            button.addEventListener('click', () => {
-                brush.setBrushType(BrushType.COLOR_ONLY);
-            });
-        }
-        else if (strType == "character-only") {
-            button.addEventListener('click', () => {
-                brush.setBrushType(BrushType.CHARACTER_ONLY);
-            });
-        }
-        else if (strType == "embolden") {
-            button.addEventListener('click', () => {
-                brush.setBrushType(BrushType.EMBOLDEN_CHARACTER);
-            });
-        }
-        else if (strType == "fade") {
-            button.addEventListener('click', () => {
-                brush.setBrushType(BrushType.FADE_CHARACTER);
-            });
-        }
-    });
+    drawingBoardUI.registerBrushButtons(brushButtons, 'data-brush');
 
     const asciiKeyBtn = document.getElementById("character-picker-btn");
 
@@ -180,45 +113,41 @@ document.addEventListener('DOMContentLoaded', () => {
         colorPickerBtn.setAttribute("data-color", selectedColor);
     });
 
-    const pallet_buttons = document.querySelectorAll("#color-pallet button");
-    const tool_buttons = document.querySelectorAll(".tool-buttons button");
-    const draw_buttons = document.querySelectorAll(".draw-buttons button");
-    const brush_buttons  = document.querySelectorAll(".brush-buttons button");
-
+    const palletButtons = document.querySelectorAll("#color-pallet button");
 
     function removeSelection(type) {
-        if (type == "pallet") pallet_buttons.forEach((btn) => btn.classList.remove("selected"));
-        if (type == "tool") tool_buttons.forEach((btn) => btn.classList.remove("selected"));
-        if (type == "draw") draw_buttons.forEach((btn) => btn.classList.remove("selected"));
-        if (type == "brush") brush_buttons.forEach((brush_buttons) => brush_buttons.classList.remove("selected"));
+        if (type == "pallet") palletButtons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "tool") toolButtons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "draw") drawButtons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "brush") brushButtons.forEach((brush_buttons) => brush_buttons.classList.remove("selected"));
         
     }
 
-    pallet_buttons.forEach((pallet_buttons) => {
-        pallet_buttons.addEventListener("click", () => {
+    palletButtons.forEach((palletButton) => {
+        palletButton.addEventListener("click", () => {
             removeSelection("pallet");
-            pallet_buttons.classList.add("selected");
+            palletButton.classList.add("selected");
         });
     });
 
-    tool_buttons.forEach((tool_buttons) => {
-        tool_buttons.addEventListener("click", () => {
+    toolButtons.forEach((toolButton) => {
+        toolButton.addEventListener("click", () => {
             removeSelection("tool");
-            tool_buttons.classList.add("selected");
+            toolButton.classList.add("selected");
         });
     });
 
-    draw_buttons.forEach((draw_buttons) => {
-        draw_buttons.addEventListener("click", () => {
+    drawButtons.forEach((drawButton) => {
+        drawButton.addEventListener("click", () => {
             removeSelection("draw");
-            draw_buttons.classList.add("selected");
+            drawButton.classList.add("selected");
         });
     });
 
-    brush_buttons.forEach((brush_buttons) => {
-        brush_buttons.addEventListener("click", () => {
+    brushButtons.forEach((brushButton) => {
+        brushButton.addEventListener("click", () => {
             removeSelection("brush");
-            brush_buttons.classList.add("selected");
+            brushButton.classList.add("selected");
         });
     });
 
