@@ -49,6 +49,7 @@ main
     border-radius: 25px;
     z-index: 100;
 }
+
 .pallet button
 {
     width: 30px;
@@ -106,7 +107,11 @@ main
 }
 
 
-/* TODO: style later */
+/* TODO: style */
 label {
+    color: black;
+}
+
+h2 {
     color: black;
 }
