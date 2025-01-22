@@ -4,20 +4,62 @@ import { Brush, ToolType, BrushShape, BrushType} from '../../src/js/brush.js';
 import { ImageConverter, ImageParseOptions } from '../../src/js/image_converter.js';
 import { CharacterBoard } from '../../src/js/character_board.js';
 
+
+const imageInput = document.getElementById('image-input');
+const openPopup = document.getElementById('image-loader-btn');
+const imagePopup = document.getElementById('image-popup');
+const closePopup = document.getElementById('close-popup');
+const cancelSettings = document.getElementById('cancel-settings');
+const previewCanvasSection = document.getElementById('preview-canvas-section');
+
+const resolutionXInput = document.getElementById('resolutionX');
+const resolutionYInput = document.getElementById('resolutionY');
+const brightnessInput = document.getElementById('brightness');
+const gammaInput = document.getElementById('gamma');
+const useReducedSetInput = document.getElementById('use-reduced-set');
+const edgeDetectionInput = document.getElementById('edge-detection');
+const edgeDetectionStrength = document.getElementById('edge-detection-strength');
+
+var previewCanvasBoard = new CanvasBoard(0, 0);
+let img = new Image();
+
+function getImageOptions() {
+    const options = new ImageParseOptions();
+    options.brightnessFactor = parseFloat(brightnessInput.value);
+    options.gammaCorrection = parseFloat(gammaInput.value);
+    options.resolutionX = parseInt(resolutionXInput.value);
+    options.resolutionY = parseInt(resolutionYInput.value);
+    options.useReducedSet = useReducedSetInput.checked;
+    options.edgeDetection = edgeDetectionInput.checked;
+    options.edgeDetectionThreshold = parseFloat(edgeDetectionStrength.value);
+
+    return options;
+}
+
+function loadPreviewBoard() {
+    const options = getImageOptions();
+    previewCanvasBoard = ImageConverter.parseImageToBoard(img, options);
+    previewCanvasBoard = CharacterBoard.parseCopyBoard(previewCanvasBoard, CanvasBoard, [4, 4]);
+    previewCanvasBoard.initialiseContainer(previewCanvasSection);
+    previewCanvasBoard.canvas.style.maxWidth = "100%";
+    previewCanvasBoard.canvas.style.maxHeight = "100%";
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    let img = new Image();
     img.src = '../assets/fine.png';
-    const boardSize = 50;
-    const cellWidth = 10;
+    const boardSize = 100;
+    const cellWidth = 12;
     const cellHeight = cellWidth*1.3;
     const mouseRadius = 1;
+    var options;
     img.onload = () => {
-        const options = new ImageParseOptions();
+        options = new ImageParseOptions();
         options.darkCharacterThreshold = 0;
         options.brightnessFactor = 1;
         options.staticVolumeIncrease = 10;
-        options.gammaCorrection = 1;
+        options.gammaCorrection = 0.5;
         options.useReducedSet = false;
         options.edgeDetection = false;
         options.edgeDetectionThreshold = 245;
@@ -31,135 +73,121 @@ document.addEventListener('DOMContentLoaded', () => {
         brush.setToolType(ToolType.NORMAL);
         const drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
         drawingBoardUI.init();
-
-        const colorButtons = document.querySelectorAll('#color-pallet button');
-        colorButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const color = button.getAttribute('data-color');
-                brush.setDrawColor(color);
-            });
-        });
-
-        const clearButtons = document.querySelectorAll('.clear-buttons button');
-        clearButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                if(confirm("Are you sure you want to clear everything?")) {
-                drawingBoard.clearBoard();
-                }
-            });
-        });
-
-        const toolButtons = document.querySelectorAll('.tool-buttons button');
-        toolButtons.forEach(button => {
-            const strType = button.getAttribute('data-style');
-            if (strType == "bucket") {
-                button.addEventListener('click', () => {
-                    brush.setToolType(ToolType.BUCKET);
-                });
-            }
-            else if (strType == "brush") {
-                button.addEventListener('click', () => {
-                    brush.setToolType(ToolType.NORMAL);
-                });
-            }
-        });
-
-        const drawButtons = document.querySelectorAll('.draw-buttons button');
-        drawButtons.forEach(button => {
-            const strType = button.getAttribute('data-draw');
-            if (strType == "circle") {
-                button.addEventListener('click', () => {
-                    brush.setBrushShape(BrushShape.CIRCLE);
-                });
-            }
-            else if (strType == "square") {
-                button.addEventListener('click', () => {
-                    brush.setBrushShape(BrushShape.NORMAL);
-                });
-            }
-        });
-
-
-        const brushButtons = document.querySelectorAll('.brush-buttons button');
-        brushButtons.forEach(button => {
-            const strType = button.getAttribute('data-brush');
-            if (strType == "normal") {
-                button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.NORMAL);
-                });
-            }
-            else if (strType == "color-only") {
-                button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.COLOR_ONLY);
-                });
-            }
-            else if (strType == "character-only") {
-                button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.CHARACTER_ONLY);
-                });
-            }
-            else if (strType == "embolden") {
-                button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.EMBOLDEN_CHARACTER);
-                });
-            }
-            else if (strType == "fade") {
-                button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.FADE_CHARACTER);
-                });
-            }
-        });
-
-        const asciiKeyBtn = document.getElementById("character-picker-btn");
-
-        let isWaitingForKey = false;
-        let currentAsciiChar = null;
-
-        asciiKeyBtn.addEventListener("click", () => {
-            asciiKeyBtn.textContent = " ";
-            isWaitingForKey = true;
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (isWaitingForKey) {
-                currentAsciiChar = event.key;
-                if (currentAsciiChar == "Shift")
-                {
-                    secondAsciiChar = event.key;
-                }
-                asciiKeyBtn.textContent = currentAsciiChar;
-                brush.setDrawCharacter(currentAsciiChar);
-                isWaitingForKey = false;
-            }
-        });
-
-        const colorPickerInput = document.getElementById("color-picker");
-        const colorPickerBtn = document.querySelector(".color-picker-btn");
-
-        colorPickerBtn.addEventListener("click", () => {
-            colorPickerInput.click();
-        });
-
-        colorPickerInput.addEventListener("input", (event) => {
-            const selectedColor = event.target.value;
-            colorPickerBtn.style.backgroundColor = selectedColor;
-            colorPickerBtn.setAttribute("data-color", selectedColor);
-        });
-
-        const openPopup = document.getElementById('image-loader-btn');
-        const imagePopup = document.getElementById('image-popup');
-        const closePopup = document.getElementById('close-popup');
-        const cancelSettings = document.getElementById('cancel-settings')
-
-        openPopup.addEventListener('click', () => imagePopup.classList.remove('hidden'));
-        closePopup.addEventListener('click', () => imagePopup.classList.add('hidden'));
-        cancelSettings.addEventListener('click', () => imagePopup.classList.add('hidden'));
-    
-
-        //TODO: Implement local save and save to profile
     }
 
-    
+    const colorButtons = document.querySelectorAll('#color-pallet button');
+    colorButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const color = button.getAttribute('data-color');
+            brush.setDrawColor(color);
+        });
+    });
+
+    const clearButtons = document.querySelectorAll('.clear-buttons button');
+    clearButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if(confirm("Are you sure you want to clear everything?")) {
+            drawingBoard.clearBoard();
+            }
+        });
+    });
+
+    const toolButtons = document.querySelectorAll('.tool-buttons button');
+    toolButtons.forEach(button => {
+        const strType = button.getAttribute('data-style');
+        if (strType == "bucket") {
+            button.addEventListener('click', () => {
+                brush.setToolType(ToolType.BUCKET);
+            });
+        }
+        else if (strType == "brush") {
+            button.addEventListener('click', () => {
+                brush.setToolType(ToolType.NORMAL);
+            });
+        }
+    });
+
+    const drawButtons = document.querySelectorAll('.draw-buttons button');
+    drawButtons.forEach(button => {
+        const strType = button.getAttribute('data-draw');
+        if (strType == "circle") {
+            button.addEventListener('click', () => {
+                brush.setBrushShape(BrushShape.CIRCLE);
+            });
+        }
+        else if (strType == "square") {
+            button.addEventListener('click', () => {
+                brush.setBrushShape(BrushShape.NORMAL);
+            });
+        }
+    });
+
+
+    const brushButtons = document.querySelectorAll('.brush-buttons button');
+    brushButtons.forEach(button => {
+        const strType = button.getAttribute('data-brush');
+        if (strType == "normal") {
+            button.addEventListener('click', () => {
+                brush.setBrushType(BrushType.NORMAL);
+            });
+        }
+        else if (strType == "color-only") {
+            button.addEventListener('click', () => {
+                brush.setBrushType(BrushType.COLOR_ONLY);
+            });
+        }
+        else if (strType == "character-only") {
+            button.addEventListener('click', () => {
+                brush.setBrushType(BrushType.CHARACTER_ONLY);
+            });
+        }
+        else if (strType == "embolden") {
+            button.addEventListener('click', () => {
+                brush.setBrushType(BrushType.EMBOLDEN_CHARACTER);
+            });
+        }
+        else if (strType == "fade") {
+            button.addEventListener('click', () => {
+                brush.setBrushType(BrushType.FADE_CHARACTER);
+            });
+        }
+    });
+
+    const asciiKeyBtn = document.getElementById("character-picker-btn");
+
+    let isWaitingForKey = false;
+    let currentAsciiChar = null;
+
+    asciiKeyBtn.addEventListener("click", () => {
+        asciiKeyBtn.textContent = " ";
+        isWaitingForKey = true;
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (isWaitingForKey) {
+            currentAsciiChar = event.key;
+            if (currentAsciiChar == "Shift")
+            {
+                secondAsciiChar = event.key;
+            }
+            asciiKeyBtn.textContent = currentAsciiChar;
+            brush.setDrawCharacter(currentAsciiChar);
+            isWaitingForKey = false;
+        }
+    });
+
+    const colorPickerInput = document.getElementById("color-picker");
+    const colorPickerBtn = document.querySelector(".color-picker-btn");
+
+    colorPickerBtn.addEventListener("click", () => {
+        colorPickerInput.click();
+    });
+
+    colorPickerInput.addEventListener("input", (event) => {
+        const selectedColor = event.target.value;
+        colorPickerBtn.style.backgroundColor = selectedColor;
+        colorPickerBtn.setAttribute("data-color", selectedColor);
+    });
 
     const pallet_buttons = document.querySelectorAll("#color-pallet button");
     const tool_buttons = document.querySelectorAll(".tool-buttons button");
@@ -203,6 +231,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    openPopup.addEventListener('click', () => imagePopup.classList.remove('hidden'));
+    closePopup.addEventListener('click', () => imagePopup.classList.add('hidden'));
+    cancelSettings.addEventListener('click', () => imagePopup.classList.add('hidden'));
+
+    imageInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            img.src = reader.result;
+            img.onload = () => {
+                loadPreviewBoard();
+            };
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+
+    //TODO: maybe add the other options?
+    const allButtons = [ // todo: rename
+        resolutionXInput, 
+        resolutionYInput, 
+        brightnessInput, 
+        gammaInput, 
+        useReducedSetInput, 
+        edgeDetectionInput, 
+        edgeDetectionStrength
+    ];
+
+    allButtons.forEach(button => {
+        button.addEventListener('change', (_) => {
+            loadPreviewBoard();
+        });
+    });
+
     
+
+    //TODO: Implement local save and save to profile
 
 });

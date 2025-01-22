@@ -11,7 +11,7 @@ export class CharacterBoard {
         this.resetBoard();
     }
 
-    initialiseContainer(_) {
+    initialiseContainer(container) {
         throw new Error("Subclasses need to define initialiseContainer.");
     }
 

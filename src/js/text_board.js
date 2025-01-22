@@ -16,6 +16,7 @@ export class TextBoard extends CharacterBoard {
     }
 
     initialiseContainer(container) {
+        container.innerHTML = '';
         this.container = container;
         this.#fillBoardContainer(container);
     }
