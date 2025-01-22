@@ -19,7 +19,6 @@ export class CanvasBoard extends CharacterBoard {
 
     #createCanvas() {
         this.canvas = document.createElement('canvas');
-        this.canvas.style.backgroundColor = this.backgroundColor;
         this.canvas.width = this.cols * this.cellWidth;
         this.canvas.height = this.rows * this.cellHeight;
         this.context = this.canvas.getContext('2d');
@@ -29,7 +28,7 @@ export class CanvasBoard extends CharacterBoard {
 
     setBackgroundColor(backgroundColor) {
         super.setBackgroundColor(backgroundColor);
-        this.canvas.style.backgroundColor = this.backgroundColor;
+        this.redrawBoard();
     }
 
     initialiseContainer(container) {
@@ -55,7 +54,8 @@ export class CanvasBoard extends CharacterBoard {
 
         const x = col * (this.cellWidth);
         const y = row * (this.cellHeight);
-        this.context.clearRect(x, y, this.cellWidth, this.cellHeight);
+        this.context.fillStyle = this.backgroundColor;
+        this.context.fillRect(x, y, this.cellWidth, this.cellHeight);
         this.context.fillStyle = cell.color || defaultColor;
         this.context.fillText(cell.character || " ", x, y, this.cellWidth);
     }
