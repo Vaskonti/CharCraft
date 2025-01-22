@@ -1,5 +1,5 @@
-import { CharacterBoard } from '../../src/js/character_board.js';
-import { defaultColor } from '../../src/js/utils.js';
+import { CharacterBoard } from './character_board.js';
+import { defaultColor, emptyCharacter } from './utils.js';
 
 export const BrushShape = {
     CIRCLE: 'circle',
@@ -14,6 +14,7 @@ export const ToolType = {
 
 export const BrushType = {
     NORMAL: 'normal',
+    ERASE: 'erase',
     COLOR_ONLY: 'color_only',
     CHARACTER_ONLY: 'character_only',
     EMBOLDEN_CHARACTER: 'embolden_character',
@@ -25,6 +26,8 @@ export class Brush {
         this.mouseRadius = 0;
         this.drawColor = defaultColor;
         this.drawCharacter = '0';
+        this.defaultCharacter = emptyCharacter;
+        this.defaultColor = defaultColor;
         this.toolType = ToolType.NORMAL;
         this.brushShape = BrushShape.CIRCLE;
         this.brushType = BrushType.NORMAL;
@@ -51,6 +54,14 @@ export class Brush {
         this.drawCharacter = character;
     }
 
+    setDefaultCharacter(character) {
+        this.defaultCharacter = character;
+    }
+
+    setDefaultColor(color) {
+        this.defaultColor = color;
+    }
+
     setBrushShape(brushShape) {
         this.brushShape = brushShape;
     }
@@ -68,6 +79,10 @@ export class Brush {
     colorCellOnBoard(drawingBoard, row, col) {
         if (this.brushType === BrushType.NORMAL) {
             drawingBoard.colorCell(row, col, this.drawCharacter, this.drawColor);
+        }
+        else if (this.brushType === BrushType.ERASE)
+        {
+            drawingBoard.colorCell(row, col, this.defaultCharacter, this.defaultColor);
         }
         else if (this.brushType === BrushType.COLOR_ONLY) {
             drawingBoard.colorCell(row, col, null, this.drawColor);

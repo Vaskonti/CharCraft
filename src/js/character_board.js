@@ -1,5 +1,5 @@
 import { Character } from './character.js';
-import { emptyCharacter, defaultColor, reducedAsciiVisibilityRank, getVisibilityRankIndexOfCharacter } from '../../src/js/utils.js';
+import { emptyCharacter, defaultColor, reducedAsciiVisibilityRank, getVisibilityRankIndexOfCharacter, defaultBackgroundColor } from '../../src/js/utils.js';
 
 export class CharacterBoard {
     constructor(sizeX, sizeY) {
@@ -8,15 +8,16 @@ export class CharacterBoard {
         this.defaultCharacter = emptyCharacter;
         this.defaultColor = defaultColor;
         this.boardMatrix = Array(sizeX).fill().map(() => Array(sizeY).fill());
+        this.backgroundColor = defaultBackgroundColor;
         this.resetBoard();
     }
 
-    initialiseContainer(_) {
+    initialiseContainer(container) {
         throw new Error("Subclasses need to define initialiseContainer.");
     }
 
-    setDefaultCharacter(character) {
-        this.defaultCharacter = character;
+    setBackgroundColor(backgroundColor) {
+        this.backgroundColor = backgroundColor;
     }
 
     resetBoard() {
@@ -51,7 +52,7 @@ export class CharacterBoard {
         }
         if (color) {
             if (this.boardMatrix[row][col].character == emptyCharacter) { // should not be coloring
-                return;
+                color = defaultColor;
             }
             this.boardMatrix[row][col].color = color;
         }

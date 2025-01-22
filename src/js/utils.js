@@ -2,9 +2,10 @@
 
 export const emptyCharacter = ' '
 export const defaultColor = "#FFFFFF"
+export const defaultBackgroundColor = "#000000"
 export const asciiVisibilityRank = emptyCharacter + ".-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@";
 export const reducedAsciiVisibilityRank = emptyCharacter + ".-=oa#@";
-export const densityCache = {}; // TODO: investigate: is that global for user now, or resets anytime the page is reset????
+export const densityCache = {};
 export const densityIndexCache = {};
 export const canvasFont = "Georgia";//TODO: find better font
 
@@ -65,6 +66,4 @@ export function getVisibilityRankIndexOfCharacter(character) {
     return best_rank_index;
 }
 
-//window.addEventListener("load", (_) => {
-precomputeDensityForReducedVisibilityRank(); // TODO: assess if this function is better left a global call.
-//});
+precomputeDensityForReducedVisibilityRank();
