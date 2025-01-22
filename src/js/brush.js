@@ -1,5 +1,5 @@
-import { CharacterBoard } from '../../src/js/character_board.js';
-import { defaultColor, emptyCharacter } from '../../src/js/utils.js';
+import { CharacterBoard } from './character_board.js';
+import { defaultColor, emptyCharacter } from './utils.js';
 
 export const BrushShape = {
     CIRCLE: 'circle',

@@ -1,4 +1,4 @@
-import { CanvasBoard } from '../../public/js/canvas_board.js';
+import { CanvasBoard } from '../../src/js/canvas_board.js';
 import { Character } from '../../src/js/character.js';
 import { defaultColor } from '../../src/js/utils.js';
 
@@ -18,6 +18,7 @@ describe('CanvasBoard Class Tests', () => {
             height: 0,
             getContext: jest.fn(() => ({
                 clearRect: jest.fn(),
+                fillRect: jest.fn(),
                 fillText: jest.fn(),
                 fillStyle: '',
                 font: '',
@@ -63,7 +64,7 @@ describe('CanvasBoard Class Tests', () => {
         const x = 3 * board.cellWidth;
         const y = 2 * board.cellHeight;
 
-        expect(contextMock.clearRect).toHaveBeenCalledWith(
+        expect(contextMock.fillRect).toHaveBeenCalledWith(
             x,
             y,
             board.cellWidth,
@@ -127,7 +128,7 @@ describe('CanvasBoard Class Tests', () => {
         const x = 1 * board.cellWidth;
         const y = 1 * board.cellHeight;
 
-        expect(contextMock.clearRect).toHaveBeenCalledWith(
+        expect(contextMock.fillRect).toHaveBeenCalledWith(
             x,
             y,
             board.cellWidth,
