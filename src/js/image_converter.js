@@ -1,6 +1,6 @@
-import { Character } from '../../src/js/character.js';
-import { asciiVisibilityRank, reducedAsciiVisibilityRank, emptyCharacter } from '../../src/js/utils.js';
-import { CharacterBoard } from '../../src/js/character_board.js'
+import { Character } from './character.js';
+import { asciiVisibilityRank, reducedAsciiVisibilityRank, emptyCharacter } from './utils.js';
+import { CharacterBoard } from './character_board.js'
  
 export class ImageConverter {
     static parseImageToBoard(img, options = new ImageParseOptions()) {

@@ -1,4 +1,4 @@
-import { CanvasBoard } from '../../public/js/canvas_board.js';
+import { CanvasBoard } from '../../src/js/canvas_board.js';
 import { Character } from '../../src/js/character.js';
 import { defaultColor } from '../../src/js/utils.js';
 

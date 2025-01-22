@@ -1,4 +1,4 @@
-import { CharacterBoard } from '../../src/js/character_board.js';
+import { CharacterBoard } from './character_board.js';
 import { Brush, ToolType, BrushShape } from './brush.js';
 
 export class DrawingBoardUI {

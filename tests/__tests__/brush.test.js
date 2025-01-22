@@ -1,6 +1,6 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals'); 
-import { TextBoard, create_some_text_board } from '../../public/js/text_board.js';
-import { Brush, ToolType, BrushShape, BrushType } from '../../public/js/brush.js';
+import { TextBoard, create_some_text_board } from '../../src/js/text_board.js';
+import { Brush, ToolType, BrushShape, BrushType } from '../../src/js/brush.js';
 import { Character } from '../../src/js/character.js';
 
 describe('Brush Class Tests', () => {

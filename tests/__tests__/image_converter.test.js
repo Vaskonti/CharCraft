@@ -1,4 +1,4 @@
-import { ImageConverter, ImageParseOptions } from '../../public/js/image_converter.js';
+import { ImageConverter, ImageParseOptions } from '../../src/js/image_converter.js';
 import { CharacterBoard } from '../../src/js/character_board.js';
 import { Character } from '../../src/js/character.js';
 

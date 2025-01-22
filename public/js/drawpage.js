@@ -1,9 +1,8 @@
-import { DrawingBoardUI } from './js/drawing_board_ui.js';
-import { CanvasBoard } from './js/canvas_board.js';
-import { TextBoard } from './js/text_board.js';
-import { Brush, ToolType, BrushShape, BrushType} from './js/brush.js';
-import { ImageConverter, ImageParseOptions } from './js/image_converter.js';
-import { CharacterBoard } from '../src/js/character_board.js';
+import { DrawingBoardUI } from '../../src/js/drawing_board_ui.js';
+import { CanvasBoard } from '../../src/js/canvas_board.js';
+import { Brush, ToolType, BrushShape, BrushType} from '../../src/js/brush.js';
+import { ImageConverter, ImageParseOptions } from '../../src/js/image_converter.js';
+import { CharacterBoard } from '../../src/js/character_board.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
