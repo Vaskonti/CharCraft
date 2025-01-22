@@ -188,7 +188,7 @@ export class DrawingBoardUI {
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const color = button.getAttribute(dataName);
-                brush.setDrawColor(color);
+                this.brush.setDrawColor(color);
             });
         });
     }
@@ -197,7 +197,7 @@ export class DrawingBoardUI {
         clearButtons.forEach(button => {
             button.addEventListener('click', () => {
                 if(confirm("Are you sure you want to clear everything?")) {
-                drawingBoard.clearBoard();
+                    this.drawingBoard.clearBoard();
                 }
             });
         });
@@ -208,12 +208,12 @@ export class DrawingBoardUI {
             const strType = button.getAttribute(dataName);
             if (strType == "bucket") {
                 button.addEventListener('click', () => {
-                    brush.setToolType(ToolType.BUCKET);
+                    this.brush.setToolType(ToolType.BUCKET);
                 });
             }
             else if (strType == "brush") {
                 button.addEventListener('click', () => {
-                    brush.setToolType(ToolType.NORMAL);
+                    this.brush.setToolType(ToolType.NORMAL);
                 });
             }
         });
@@ -224,12 +224,12 @@ export class DrawingBoardUI {
             const strType = button.getAttribute(dataName);
             if (strType == "circle") {
                 button.addEventListener('click', () => {
-                    brush.setBrushShape(BrushShape.CIRCLE);
+                    this.brush.setBrushShape(BrushShape.CIRCLE);
                 });
             }
             else if (strType == "square") {
                 button.addEventListener('click', () => {
-                    brush.setBrushShape(BrushShape.NORMAL);
+                    this.brush.setBrushShape(BrushShape.NORMAL);
                 });
             }
         });
@@ -240,27 +240,27 @@ export class DrawingBoardUI {
             const strType = button.getAttribute(dataName);
             if (strType == "normal") {
                 button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.NORMAL);
+                    this.brush.setBrushType(BrushType.NORMAL);
                 });
             }
             else if (strType == "color-only") {
                 button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.COLOR_ONLY);
+                    this.brush.setBrushType(BrushType.COLOR_ONLY);
                 });
             }
             else if (strType == "character-only") {
                 button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.CHARACTER_ONLY);
+                    this.brush.setBrushType(BrushType.CHARACTER_ONLY);
                 });
             }
             else if (strType == "embolden") {
                 button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.EMBOLDEN_CHARACTER);
+                    this.brush.setBrushType(BrushType.EMBOLDEN_CHARACTER);
                 });
             }
             else if (strType == "fade") {
                 button.addEventListener('click', () => {
-                    brush.setBrushType(BrushType.FADE_CHARACTER);
+                    this.brush.setBrushType(BrushType.FADE_CHARACTER);
                 });
             }
         });
