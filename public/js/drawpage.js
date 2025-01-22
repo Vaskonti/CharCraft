@@ -146,26 +146,15 @@ document.addEventListener('DOMContentLoaded', () => {
             colorPickerBtn.setAttribute("data-color", selectedColor);
         });
 
-        //TODO: Fix image upload
-        const imageInput = document.getElementById("image-loader");
+        const openPopup = document.getElementById('image-loader-btn');
+        const imagePopup = document.getElementById('image-popup');
+        const closePopup = document.getElementById('close-popup');
+        const cancelSettings = document.getElementById('cancel-settings')
 
-        imageInput.addEventListener("click", async (event) => {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-
-                reader.onload = async (e) => {
-                    const img = new Image();
-                    img.src = e.target.result;
-
-                    img.onload = () => {
-                        drawingBoard = ImageConverter.parseImageToBoard(img, options);
-                        drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight]);
-                    };
-                };
-
-            }
-        });
+        openPopup.addEventListener('click', () => imagePopup.classList.remove('hidden'));
+        closePopup.addEventListener('click', () => imagePopup.classList.add('hidden'));
+        cancelSettings.addEventListener('click', () => imagePopup.classList.add('hidden'));
+    
 
         //TODO: Implement local save and save to profile
     }
