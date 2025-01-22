@@ -94,7 +94,26 @@
                 <button id="save-btn"><input type="submit" name="save" id="save" hidden> <img src="assets/images/icons/tick.png" alt="save" class="icon" title="save"></button>
             </section>
         </section>
-    </main>  
+    </main>
+    
+    <div id="image-popup" class="popup hidden">
+        <div class="popup-content">
+        <span id="close-popup" class="close-btn">&times;</span>
+        <h2>Customize Your Image</h2>
+        <input type="file" id="image-input" accept="image/*" />
+        <div>
+            <label>Resolution X: <input type="number" id="resolutionX" value="150" /></label>
+            <label>Resolution Y: <input type="number" id="resolutionY" value="100" /></label>
+            <label>Brightness: <input type="number" id="brightness" value="1" step="0.1" /></label>
+            <label>Gamma Correction: <input type="number" id="gamma" value="1" step="0.1" /></label>
+        </div>
+        <canvas id="preview-canvas"></canvas>
+        <button id="apply-settings">Apply</button>
+        <button id="cancel-settings">Cancel</button>
+        </div>
+    </div>
+    
+    
     <footer>
         <p>2024 CharCraft. All rights reserved.</p>
     </footer>
