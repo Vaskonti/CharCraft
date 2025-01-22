@@ -27,6 +27,7 @@ export class CanvasBoard extends CharacterBoard {
     }
 
     initialiseContainer(container) {
+        container.innerHTML = '';
         this.#createCanvas();
         container.appendChild(this.canvas);
         this.redrawBoard();
