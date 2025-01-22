@@ -1,5 +1,5 @@
 import { CharacterBoard } from './character_board.js';
-import { Brush, ToolType, BrushShape } from './brush.js';
+import { Brush, ToolType, BrushShape, BrushType } from './brush.js';
 
 export class DrawingBoardUI {
     constructor(drawingBoard, brush) {
