@@ -56,12 +56,14 @@ const boardSize = 100;
 const cellWidth = 12;
 const cellHeight = cellWidth*1.3;
 
+const downloadButton = document.getElementById('download-btn');
+
 document.addEventListener('DOMContentLoaded', () => {
     let drawingBoard = new CanvasBoard(boardSize, boardSize*1.5, cellWidth, cellHeight);
     brush.setMouseRadius(mouseRadius);
     brush.setBrushShape(BrushShape.CIRCLE);
     brush.setToolType(ToolType.NORMAL);
-    const drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
+    let drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
     drawingBoardUI.init();
 
     const colorButtons = document.querySelectorAll('#color-pallet button');
@@ -259,10 +261,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     applySettings.addEventListener('click', () => {
         imagePopup.classList.add('hidden')
-        let drawingBoard = ImageConverter.parseImageToBoard(img, getImageOptions());
+        drawingBoard = ImageConverter.parseImageToBoard(img, getImageOptions());
         drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight]);
-        const drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
+        drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
         drawingBoardUI.init();
+    });
+
+    let filename = null;
+
+    downloadButton.addEventListener('click', () => {
+        const canvas = drawingBoard.canvas;
+        const imageURL = canvas.toDataURL("image/png");
+        const link = document.createElement('a');
+        link.href = imageURL;
+        link.download = filename || 'ascii_image.png';
+        link.click();
     });
 
     //TODO: Implement local save and save to profile
