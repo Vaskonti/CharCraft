@@ -1,16 +1,16 @@
 <?php
 
-use Backend\Requests\Request;
+namespace Backend\Requests;
 
 class CreateUserRequest extends Request
 {
     public function rules(): array
     {
         return [
-            'username' => ['required', 'min:3'],
-            'email' => ['required', 'email'],
-            'password' => ['required', 'min:6'],
-            'password_confirmation' => ['required', 'min:6']
+            'username' => 'required|min:3',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+            'password_confirmation' => 'required|min:6'
         ];
     }
 
