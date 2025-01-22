@@ -1,7 +1,7 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals');
-import { DrawingBoardUI } from '../../public/js/drawing_board_ui.js';
-import { TextBoard } from '../../public/js/text_board.js';
-import { Brush } from '../../public/js/brush.js';
+import { DrawingBoardUI } from '../../src/js/drawing_board_ui.js';
+import { TextBoard } from '../../src/js/text_board.js';
+import { Brush } from '../../src/js/brush.js';
 
 describe('DrawingBoardUI Tests', () => {
     let board, brush, boardUI, drawBoardElement;

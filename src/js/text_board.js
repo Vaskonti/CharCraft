@@ -1,8 +1,8 @@
-import { Character } from '../../src/js/character.js';
-import { CharacterBoard } from '../../src/js/character_board.js';
-import { defaultColor } from '../../src/js/utils.js';
+import { Character } from './character.js';
+import { CharacterBoard } from './character_board.js';
+import { defaultColor } from './utils.js';
 
-
+/* (currently) DEPRECATED: DO NOT USE */
 export class TextBoard extends CharacterBoard {
     constructor(sizeX, sizeY) {
         super(sizeX, sizeY);
@@ -16,6 +16,7 @@ export class TextBoard extends CharacterBoard {
     }
 
     initialiseContainer(container) {
+        container.innerHTML = '';
         this.container = container;
         this.#fillBoardContainer(container);
     }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/drawpage.css">
     <link rel="stylesheet" href="css/header-and-footer.css">
 
-    <script type="module" src="drawpage.js"></script>
+    <script type="module" src="js/drawpage.js"></script>
     <title>CharCraft Drawing page</title>
 </head>
 
@@ -95,6 +95,28 @@
             </section>
         </section>
     </main>
+    
+    <section id="image-popup" class="popup hidden">
+        <section class="popup-content">
+            <span id="close-popup" class="close-btn">&times;</span>
+            <h2>Customize Your Image</h2>
+            <input type="file" id="image-input" accept="image/*" />
+            <ul>
+                <li><label>Resolution X: <input  placeholder="Resolution X:" type="number" id="resolutionX" value="150" /></label></li>
+                <li><label>Resolution Y: <input type="number" id="resolutionY" value="100" /></label></li>
+                <li><label>Brightness: <input type="number" id="brightness" value="1" step="0.1" /></label></li>
+                <li><label>Gamma Correction: <input type="number" id="gamma" value="1" step="0.1" /></label></li>
+                <li><label>Use less ascii characters: <input type="checkbox" id="use-reduced-set"/></label></li>
+                <li><label>Edge detection: <input type="checkbox" id="edge-detection"/></label></li>
+                <li><label>Edge detection strength: <input type="number" id="edge-detection-strength" value="245" step="5" /></label></li>
+            </ul>
+            <section id="preview-canvas-section"></section>
+            <button id="apply-settings">Apply</button>
+            <button id="cancel-settings">Cancel</button>
+        </section>
+    </section>
+    
+    
     <footer>
         <p>2024 CharCraft. All rights reserved.</p>
     </footer>
