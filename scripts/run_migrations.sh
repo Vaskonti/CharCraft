@@ -12,7 +12,7 @@ if ! command -v mysql &> /dev/null; then
     exit 1
 fi
 
-# Create the database if it does not exist
+# Create the Database if it does not exist
 echo "🚀 Checking if database '$DB_DATABASE' exists..."
 DB_EXISTS=$(mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" -se "SHOW DATABASES LIKE '$DB_DATABASE';")
 

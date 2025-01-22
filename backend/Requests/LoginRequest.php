@@ -1,7 +1,7 @@
 <?php
 
+namespace Backend\Requests;
 use Backend\Requests\Request;
-
 class LoginRequest extends Request
 {
 
