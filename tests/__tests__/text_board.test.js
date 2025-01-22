@@ -1,4 +1,4 @@
-import { TextBoard } from '../../public/js/text_board.js';
+import { TextBoard } from '../../src/js/text_board.js';
 import { Character } from '../../src/js/character.js';
 import { defaultColor } from '../../src/js/utils.js';
 

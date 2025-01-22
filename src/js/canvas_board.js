@@ -1,6 +1,6 @@
-import { Character } from '../../src/js/character.js';
-import { CharacterBoard } from '../../src/js/character_board.js';
-import { defaultColor, canvasFont } from '../../src/js/utils.js';
+import { Character } from './character.js';
+import { CharacterBoard } from './character_board.js';
+import { defaultColor, canvasFont } from './utils.js';
 
 export class CanvasBoard extends CharacterBoard {
     constructor(sizeX, sizeY, cellWidth = 10, cellHeight = 16) {
@@ -22,11 +22,17 @@ export class CanvasBoard extends CharacterBoard {
         this.canvas.width = this.cols * this.cellWidth;
         this.canvas.height = this.rows * this.cellHeight;
         this.context = this.canvas.getContext('2d');
-        this.context.font = `${this.cellHeight}px ${canvasFont}`; //TODO: find better font
+        this.context.font = `${this.cellHeight}px ${canvasFont}`;
         this.context.textBaseline = 'top';
     }
 
+    setBackgroundColor(backgroundColor) {
+        super.setBackgroundColor(backgroundColor);
+        this.redrawBoard();
+    }
+
     initialiseContainer(container) {
+        container.innerHTML = '';
         this.#createCanvas();
         container.appendChild(this.canvas);
         this.redrawBoard();
@@ -48,7 +54,8 @@ export class CanvasBoard extends CharacterBoard {
 
         const x = col * (this.cellWidth);
         const y = row * (this.cellHeight);
-        this.context.clearRect(x, y, this.cellWidth, this.cellHeight);
+        this.context.fillStyle = this.backgroundColor;
+        this.context.fillRect(x, y, this.cellWidth, this.cellHeight);
         this.context.fillStyle = cell.color || defaultColor;
         this.context.fillText(cell.character || " ", x, y, this.cellWidth);
     }
