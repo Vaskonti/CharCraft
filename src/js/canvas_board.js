@@ -1,6 +1,6 @@
-import { Character } from '../../src/js/character.js';
-import { CharacterBoard } from '../../src/js/character_board.js';
-import { defaultColor, canvasFont } from '../../src/js/utils.js';
+import { Character } from './character.js';
+import { CharacterBoard } from './character_board.js';
+import { defaultColor, canvasFont } from './utils.js';
 
 export class CanvasBoard extends CharacterBoard {
     constructor(sizeX, sizeY, cellWidth = 10, cellHeight = 16) {
