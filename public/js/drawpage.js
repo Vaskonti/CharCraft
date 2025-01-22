@@ -10,6 +10,7 @@ const openPopup = document.getElementById('image-loader-btn');
 const imagePopup = document.getElementById('image-popup');
 const closePopup = document.getElementById('close-popup');
 const cancelSettings = document.getElementById('cancel-settings');
+const applySettings = document.getElementById('apply-settings');
 const previewCanvasSection = document.getElementById('preview-canvas-section');
 
 const resolutionXInput = document.getElementById('resolutionX');
@@ -41,39 +42,27 @@ function loadPreviewBoard() {
     previewCanvasBoard = ImageConverter.parseImageToBoard(img, options);
     previewCanvasBoard = CharacterBoard.parseCopyBoard(previewCanvasBoard, CanvasBoard, [4, 4]);
     previewCanvasBoard.initialiseContainer(previewCanvasSection);
+    //previewCanvasBoard.canvas.style.width = "100%";
+    //previewCanvasBoard.canvas.style.height = "100%";
     previewCanvasBoard.canvas.style.maxWidth = "100%";
     previewCanvasBoard.canvas.style.maxHeight = "100%";
 }
 
+var drawingBoardUI = null;
+const brush = new Brush();
+let mouseRadius = 1;
+
+const boardSize = 100;
+const cellWidth = 12;
+const cellHeight = cellWidth*1.3;
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    img.src = '../assets/fine.png';
-    const boardSize = 100;
-    const cellWidth = 12;
-    const cellHeight = cellWidth*1.3;
-    const mouseRadius = 1;
-    var options;
-    img.onload = () => {
-        options = new ImageParseOptions();
-        options.darkCharacterThreshold = 0;
-        options.brightnessFactor = 1;
-        options.staticVolumeIncrease = 10;
-        options.gammaCorrection = 0.5;
-        options.useReducedSet = false;
-        options.edgeDetection = false;
-        options.edgeDetectionThreshold = 245;
-        options.resolutionX = boardSize*2;
-        options.resolutionY = boardSize;
-        let drawingBoard = ImageConverter.parseImageToBoard(img, options);
-        drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight]);
-        const brush = new Brush();
-        brush.setMouseRadius(mouseRadius);
-        brush.setBrushShape(BrushShape.CIRCLE);
-        brush.setToolType(ToolType.NORMAL);
-        const drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
-        drawingBoardUI.init();
-    }
+    let drawingBoard = new CanvasBoard(boardSize, boardSize*1.5, cellWidth, cellHeight);
+    brush.setMouseRadius(mouseRadius);
+    brush.setBrushShape(BrushShape.CIRCLE);
+    brush.setToolType(ToolType.NORMAL);
+    const drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
+    drawingBoardUI.init();
 
     const colorButtons = document.querySelectorAll('#color-pallet button');
     colorButtons.forEach(button => {
@@ -235,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closePopup.addEventListener('click', () => imagePopup.classList.add('hidden'));
     cancelSettings.addEventListener('click', () => imagePopup.classList.add('hidden'));
 
+    //TODO: add remove image
     imageInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -267,7 +257,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
+    applySettings.addEventListener('click', () => {
+        imagePopup.classList.add('hidden')
+        let drawingBoard = ImageConverter.parseImageToBoard(img, getImageOptions());
+        drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight]);
+        const drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
+        drawingBoardUI.init();
+    });
 
     //TODO: Implement local save and save to profile
 

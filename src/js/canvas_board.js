@@ -19,11 +19,17 @@ export class CanvasBoard extends CharacterBoard {
 
     #createCanvas() {
         this.canvas = document.createElement('canvas');
+        this.canvas.style.backgroundColor = this.backgroundColor;
         this.canvas.width = this.cols * this.cellWidth;
         this.canvas.height = this.rows * this.cellHeight;
         this.context = this.canvas.getContext('2d');
-        this.context.font = `${this.cellHeight}px ${canvasFont}`; //TODO: find better font
+        this.context.font = `${this.cellHeight}px ${canvasFont}`;
         this.context.textBaseline = 'top';
+    }
+
+    setBackgroundColor(backgroundColor) {
+        super.setBackgroundColor(backgroundColor);
+        this.canvas.style.backgroundColor = this.backgroundColor;
     }
 
     initialiseContainer(container) {
