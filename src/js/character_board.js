@@ -15,10 +15,6 @@ export class CharacterBoard {
         throw new Error("Subclasses need to define initialiseContainer.");
     }
 
-    setDefaultCharacter(character) {
-        this.defaultCharacter = character;
-    }
-
     resetBoard() {
         this.fillBoardWithCharacter(this.defaultCharacter);
     }
@@ -51,7 +47,7 @@ export class CharacterBoard {
         }
         if (color) {
             if (this.boardMatrix[row][col].character == emptyCharacter) { // should not be coloring
-                return;
+                color = defaultColor;
             }
             this.boardMatrix[row][col].color = color;
         }

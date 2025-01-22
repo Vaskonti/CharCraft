@@ -37,16 +37,18 @@ export class DrawingBoardUI {
     captureDrawEvents() {
         const mouseUpHandler = () => { this.isMouseDown = false; };
 
-        document.addEventListener("click", (e) => this.draw(e));
-        document.addEventListener("mouseup", mouseUpHandler);
-        document.addEventListener("mousedown", (e) => this.mouseDown(e));
+        this.drawBoardElement.addEventListener("click", (e) => this.draw(e)); // prevent drawing when clicking outside the board.
+        this.drawBoardElement.addEventListener("mousedown", (e) => this.mouseDown(e));
+
+        document.addEventListener("mouseup", mouseUpHandler); // can turn off drawing even when outside the board.
         document.addEventListener("mousemove", (e) => this.mouseMove(e));
 
 
         return () => {
-            document.removeEventListener("click", this.draw);
+            this.drawBoardElement.removeEventListener("click", this.draw);
+            this.drawBoardElement.removeEventListener("mousedown", this.mouseDown);
+
             document.removeEventListener("mouseup", mouseUpHandler);
-            document.removeEventListener("mousedown", this.mouseDown);
             document.removeEventListener("mousemove", this.mouseMove);
         };
     }
