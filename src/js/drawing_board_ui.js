@@ -6,11 +6,13 @@ export class DrawingBoardUI {
         this.drawingBoard = drawingBoard;
         this.isMouseDown = false;
         this.drawBoardElement = null;
-        this.lastDrawnCell = null;
         this.scale = 1;
         this.offsetX = 0;
         this.offsetY = 0;
         this.brush = brush;
+        this.captureMouseEventsCleanupCallback = null;
+        this.disableAndCaptureScrollAndZoomCleanupCallback = null;
+
     }
 
     init() {
@@ -21,35 +23,53 @@ export class DrawingBoardUI {
         }
 
         this.drawBoardElement = collection[0];
-        this.drawingBoard.initialiseContainer(this.drawBoardElement);
-
-        this.captureDrawEvents();
-        this.disableAndCaptureScrollAndZoom();
-
-        const rect = this.drawBoardElement.getBoundingClientRect();
-        this.offsetX = 0; //rect.left;
-        this.offsetY = 0; //rect.top;
         this.drawBoardElement.style.transformOrigin = `${0} ${0}`;
+        
         this.updateTransform();
+        this.drawingBoard.initialiseContainer(this.drawBoardElement);
+    }
+
+    enableBoardUI() {
+        this.captureMouseEventsCleanupCallback = this.captureMouseEvents();
+        this.disableAndCaptureScrollAndZoomCleanupCallback = this.disableAndCaptureScrollAndZoom();
+    }
+
+    disableBoardUI() {
+        this.captureMouseEventsCleanupCallback();
+        this.disableAndCaptureScrollAndZoomCleanupCallback()
     }
 
     /* returns cleanup function */
-    captureDrawEvents() {
-        const mouseUpHandler = () => { this.isMouseDown = false; };
+    captureMouseEvents() {
+        const clickHandler = (event) => { 
+            this.draw(event);
+        };
 
-        this.drawBoardElement.addEventListener("click", (e) => this.draw(e)); // prevent drawing when clicking outside the board.
-        this.drawBoardElement.addEventListener("mousedown", (e) => this.mouseDown(e));
+        const mouseUpHandler = (event) => { 
+            this.isMouseDown = false;
+        };
+
+        const mouseDownHandler = (event) => { 
+            this.mouseDown(event);
+        };
+
+        const mouseMoveHandler = (event) => { 
+            this.mouseMove(event);
+        };
+
+        this.drawBoardElement.addEventListener("click", clickHandler); // prevent drawing when clicking outside the board.
+        this.drawBoardElement.addEventListener("mousedown", mouseDownHandler);
 
         document.addEventListener("mouseup", mouseUpHandler); // can turn off drawing even when outside the board.
-        document.addEventListener("mousemove", (e) => this.mouseMove(e));
+        document.addEventListener("mousemove", mouseMoveHandler);
 
 
         return () => {
-            this.drawBoardElement.removeEventListener("click", this.draw);
-            this.drawBoardElement.removeEventListener("mousedown", this.mouseDown);
+            this.drawBoardElement.removeEventListener("click", clickHandler);
+            this.drawBoardElement.removeEventListener("mousedown", mouseDownHandler);
 
             document.removeEventListener("mouseup", mouseUpHandler);
-            document.removeEventListener("mousemove", this.mouseMove);
+            document.removeEventListener("mousemove", mouseMoveHandler);
         };
     }
 
@@ -74,7 +94,7 @@ export class DrawingBoardUI {
     
         document.addEventListener("wheel", wheelHandler, { passive: false });
         document.addEventListener("keydown", keyHandler);
-    
+
         return () => {
             document.removeEventListener("wheel", wheelHandler, { passive: false });
             document.removeEventListener("keydown", keyHandler);
@@ -175,7 +195,7 @@ export class DrawingBoardUI {
         if (!file) return;
 
         const reader = new FileReader();
-        reader.onload = (e) => {
+        reader.onload = (event) => {
             const boardData = e.target.result;
             this.drawingBoard.importBoardFromJSON(boardData);
             this.drawingBoard.initialiseContainer(this.drawBoardElement);
