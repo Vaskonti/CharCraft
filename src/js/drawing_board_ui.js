@@ -4,8 +4,11 @@ import { Brush, ToolType, BrushShape, BrushType } from './brush.js';
 export class DrawingBoardUI {
     constructor(drawingBoard, brush) {
         this.drawingBoard = drawingBoard;
-        this.isMouseDown = false;
+        this.isLeftMouseDown = false;
+        this.isRightMouseDown = false;
         this.drawBoardElement = null;
+        this.lastLeftMoveCell = null;
+        this.lastRightMoveCoordinates = null;
         this.scale = 1;
         this.offsetX = 0;
         this.offsetY = 0;
@@ -27,6 +30,11 @@ export class DrawingBoardUI {
         
         this.updateTransform();
         this.drawingBoard.initialiseContainer(this.drawBoardElement);
+
+        window.oncontextmenu = function ()
+        {
+            return false; //cancel default menu
+        }
     }
 
     enableBoardUI() {
@@ -42,32 +50,65 @@ export class DrawingBoardUI {
     /* returns cleanup function */
     captureMouseEvents() {
         const clickHandler = (event) => { 
-            this.draw(event);
+            if (event.button === 0)
+            {
+                this.draw(event); 
+            }
+            else
+            {
+                /* nothing to do */
+            }
         };
 
         const mouseUpHandler = (event) => { 
-            this.isMouseDown = false;
+            if (event.button === 0)
+            {
+                this.isLeftMouseDown = false;
+            }
+            else
+            {
+                this.isRightMouseDown = false;
+            }
         };
 
-        const mouseDownHandler = (event) => { 
-            this.mouseDown(event);
+        const LeftMouseDownHandler = (event) => { 
+            if (event.button === 0)
+            {
+                this.leftMouseDown(event);
+            }
         };
+
+        const rightMouseDownHandler = (event) => {
+            if (event.button !== 0)
+            {
+                this.rightMouseDown(event);
+            }
+        }
 
         const mouseMoveHandler = (event) => { 
-            this.mouseMove(event);
+            if (this.isLeftMouseDown)
+            {
+                this.leftMouseMove(event);
+            }
+            if (this.isRightMouseDown)
+            {
+                this.rightMouseMove(event);
+            }
         };
 
         this.drawBoardElement.addEventListener("click", clickHandler); // prevent drawing when clicking outside the board.
-        this.drawBoardElement.addEventListener("mousedown", mouseDownHandler);
+        this.drawBoardElement.addEventListener("mousedown", LeftMouseDownHandler);
 
+        document.addEventListener("mousedown", rightMouseDownHandler);
         document.addEventListener("mouseup", mouseUpHandler); // can turn off drawing even when outside the board.
         document.addEventListener("mousemove", mouseMoveHandler);
 
 
         return () => {
             this.drawBoardElement.removeEventListener("click", clickHandler);
-            this.drawBoardElement.removeEventListener("mousedown", mouseDownHandler);
+            this.drawBoardElement.removeEventListener("mousedown", LeftMouseDownHandler);
 
+            document.removeEventListener("mousedown", rightMouseDownHandler);
             document.removeEventListener("mouseup", mouseUpHandler);
             document.removeEventListener("mousemove", mouseMoveHandler);
         };
@@ -128,28 +169,40 @@ export class DrawingBoardUI {
         return { clickedRow, clickedCol };
     }
 
-    mouseDown(event) {
-        this.isMouseDown = true;
-        this.lastClickedCell = this.getClickedCellCoordinates(event);
+    leftMouseDown(event) {
+        this.isLeftMouseDown = true;
+        this.lastLeftMoveCell = this.getClickedCellCoordinates(event);
     }
 
-    mouseMove(event) {
-        if (!this.isMouseDown || !this.lastClickedCell) {
+    rightMouseDown(event) {
+        this.isRightMouseDown = true;
+        this.lastRightMoveCoordinates = { clientX: event.clientX, clientY: event.clientY };
+    }
+
+    leftMouseMove(event) {
+        if (!this.isLeftMouseDown || !this.lastLeftMoveCell) {
             return;
         }
 
         const currentCell = this.getClickedCellCoordinates(event);
 
-        if (currentCell.clickedRow !== this.lastClickedCell.clickedRow || currentCell.clickedCol !== this.lastClickedCell.clickedCol) {
+        if (currentCell.clickedRow !== this.lastLeftMoveCell.clickedRow || currentCell.clickedCol !== this.lastLeftMoveCell.clickedCol) {
             this.brush.drawLine(
                 this.drawingBoard,
-                this.lastClickedCell.clickedRow,
-                this.lastClickedCell.clickedCol,
+                this.lastLeftMoveCell.clickedRow,
+                this.lastLeftMoveCell.clickedCol,
                 currentCell.clickedRow,
                 currentCell.clickedCol
             );
-            this.lastClickedCell = currentCell;
+            this.lastLeftMoveCell = currentCell;
         }
+    }
+
+    rightMouseMove(event) {
+        this.offsetX -= this.lastRightMoveCoordinates.clientX - event.clientX;
+        this.offsetY -= this.lastRightMoveCoordinates.clientY - event.clientY;
+        this.lastRightMoveCoordinates = { clientX: event.clientX, clientY: event.clientY };
+        this.updateTransform();
     }
 
     draw(event) {
