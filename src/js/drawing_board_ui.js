@@ -25,6 +25,11 @@ export class DrawingBoardUI {
             return;
         }
 
+        // Disable scrolling and hide scrollbars
+        // TODO: make it css?
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+
         this.drawBoardElement = collection[0];
         this.drawBoardElement.style.transformOrigin = `${0} ${0}`;
         
