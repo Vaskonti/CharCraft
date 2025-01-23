@@ -53,8 +53,8 @@ function loadPreviewBoard() {
     previewCanvasBoard = ImageConverter.parseImageToBoard(img, options);
     previewCanvasBoard = CharacterBoard.parseCopyBoard(previewCanvasBoard, CanvasBoard, [cellWidth, cellHeight]);
     previewCanvasBoard.initialiseContainer(previewCanvasSection);
-    previewCanvasBoard.canvas.style.maxWidth = "100%";
-    previewCanvasBoard.canvas.style.maxHeight = "100%";
+    //previewCanvasBoard.canvas.style.maxWidth = "100%";
+    //previewCanvasBoard.canvas.style.maxHeight = "100%";
 }
 
 function showPopup() {
