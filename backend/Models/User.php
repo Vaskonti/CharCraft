@@ -1,8 +1,6 @@
 <?php
 
 namespace Backend\Models;
-require __DIR__ . '/Model.php';
-use Backend\Models\Model;
 
 class User extends Model
 {
