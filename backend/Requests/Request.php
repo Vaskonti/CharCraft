@@ -1,6 +1,8 @@
 <?php
 
 namespace Backend\Requests;
+
+use Backend\Constants\ImageType;
 use Backend\Database\Database;
 
 class Request
@@ -11,16 +13,16 @@ class Request
 
     public function __construct()
     {
+        header('Content-Type: application/json');
         $this->pdo = Database::connect();
         if (!$this->authorize()) {
             http_response_code(403);
-            header('Content-Type: application/json');
             echo json_encode(["error" => "Forbidden"]);
             exit;
         }
 
         $this->data = $_SERVER['REQUEST_METHOD'] === 'POST'
-            ? json_decode(file_get_contents("php://input"), true) ?? []
+            ? json_decode(file_get_contents("php://input"), true) ?? $_POST
             : $_GET;
     }
 
@@ -42,7 +44,12 @@ class Request
             "email" => ":field must be a valid email address.",
             "min" => ":field must be at least :min characters.",
             "max" => ":field must not exceed :max characters.",
-            "confirmed" => ":field must match :field_confirmation."
+            "confirmed" => ":field must match :field_confirmation.",
+            "unique" => ":field is already taken.",
+            "exists" => ":field does not exist.",
+            "image" => ":field must be an image.",
+            "maxSize" => "The :field must not exceed :maxSize MB.",
+            "mimes" => "The :field must be of type: :mimes"
         ];
     }
 
@@ -54,7 +61,7 @@ class Request
         foreach ($rules as $field => $ruleSet) {
             foreach ($ruleSet as $rule) {
                 if ($rule === 'required') {
-                    if (!isset($data[$field]) || trim($data[$field]) === '') {
+                    if ((!isset($data[$field]) || trim($data[$field]) === '') && !isset($_FILES[$field])) {
                         $this->addError($field, $messages["required"] ?? "$field is required.");
                     }
                 }
@@ -97,6 +104,32 @@ class Request
                         $this->addError($field, str_replace(':field', $field, $messages["unique"] ?? "$field is already taken."));
                     }
                 }
+                if (str_starts_with($rule, 'exists:')) {
+                    [$table, $column] = explode(',', substr($rule, 7));
+                    if (!$this->valueExists($table, $column, $data[$field] ?? '')) {
+                        $this->addError($field, str_replace(':field', $field, $messages["exists"] ?? "$field does not exist."));
+                    }
+                }
+                if ($rule === 'file' && !isset($_FILES[$field])) {
+                    $this->addError($field, "$field is required.");
+                }
+                if ($rule === 'image' && isset($_FILES[$field])) {
+                    $mime = mime_content_type($_FILES[$field]['tmp_name']);
+                    if (!in_array($mime, ImageType::ALLOWED_IMAGE_TYPES)) {
+                        $this->addError($field, "$field must be an image.");
+                    }
+                }
+                if (str_starts_with($rule, 'maxSize:') && isset($_FILES[$field])) {
+                    $maxSize = (int)substr($rule, 8) * 1024 * 1024;
+                    if ($_FILES[$field]['size'] > $maxSize) {
+                        $this->addError($field, "The $field must not exceed " . ($maxSize / 1024 / 1024) . "MB.");
+                    }
+                }
+                if (str_starts_with($rule, 'mimes:') && isset($_FILES[$field])) {
+                    $allowedTypes = explode(',', substr($rule, 6));
+                    $fileMimeType = mime_content_type($_FILES[$field]['tmp_name']);
+                    if (!in_array($fileMimeType, $allowedTypes)) {
+                        $this->addError($field, "The $field must be of type: " . implode(', ', $allowedTypes));
 
                 if (str_starts_with($rule, 'in:')) {
                     $allowedValues = explode(',', substr($rule, 3));
@@ -108,7 +141,6 @@ class Request
         }
         if (!empty($this->errors)) {
             http_response_code(422);
-            header('Content-Type: application/json');
             echo json_encode(["errors" => $this->errors]);
             exit;
         }
@@ -128,7 +160,7 @@ class Request
 
     protected function valueExists(string $table, string $column, string $value): bool
     {
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM $table WHERE $column = :value");
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM {$table} WHERE {$column} = :value");
         $stmt->execute(['value' => $value]);
         return $stmt->fetchColumn() > 0;
     }
@@ -138,5 +170,13 @@ class Request
         return array_filter($this->data, function ($key) {
             return isset($this->rules()[$key]);
         }, ARRAY_FILTER_USE_KEY);
+    }
+
+    public function file(string $field): ?array
+    {
+        if (!isset($_FILES[$field])) {
+            return null;
+        }
+        return $_FILES[$field];
     }
 }
