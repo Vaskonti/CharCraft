@@ -274,10 +274,14 @@ export class DrawingBoardUI {
 
     registerColorButtons(buttons, dataName = 'data-color') {
         buttons.forEach(button => {
+            const color = button.getAttribute(dataName);
             button.addEventListener('click', () => {
-                const color = button.getAttribute(dataName);
                 this.brush.setDrawColor(color);
             });
+            if (this.brush.drawColor === color)
+            {
+                button.classList.add("selected");
+            }
         });
     }
 
@@ -294,62 +298,79 @@ export class DrawingBoardUI {
     registerToolButtons(toolButtons, dataName = 'data-style') {
         toolButtons.forEach(button => {
             const strType = button.getAttribute(dataName);
+            var toolType = ToolType.BRUSH;
+
             if (strType == "bucket") {
-                button.addEventListener('click', () => {
-                    this.brush.setToolType(ToolType.BUCKET);
-                });
+                toolType = ToolType.BUCKET;
             }
             else if (strType == "brush") {
-                button.addEventListener('click', () => {
-                    this.brush.setToolType(ToolType.NORMAL);
-                });
+                toolType = ToolType.BRUSH
             }
+
+            button.addEventListener('click', () => {
+                this.brush.setToolType(toolType);
+            });
+            
+            if (this.brush.toolType === toolType)
+            {
+                button.classList.add("selected");
+            }
+            
         });
     }
 
     registerDrawButtons(drawButtons, dataName = 'data-draw') {
         drawButtons.forEach(button => {
             const strType = button.getAttribute(dataName);
+            var brushShape = BrushShape.CIRCLE;
+
             if (strType == "circle") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushShape(BrushShape.CIRCLE);
-                });
+                brushShape = BrushShape.CIRCLE;
             }
             else if (strType == "square") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushShape(BrushShape.NORMAL);
-                });
+                brushShape = BrushShape.SQUARE;
             }
+
+            button.addEventListener('click', () => {
+                this.brush.setBrushShape(brushShape);
+            });
+            if (this.brush.brushShape === brushShape)
+            {
+                button.classList.add("selected");
+            }
+            
         });
     }
 
     registerBrushButtons(brushButtons, dataName = 'data-brush') {
         brushButtons.forEach(button => {
             const strType = button.getAttribute(dataName);
+            var brushType = BrushType.NORMAL;
             if (strType == "normal") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.NORMAL);
-                });
+                brushType = BrushType.NORMAL;
             }
             else if (strType == "color-only") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.COLOR_ONLY);
-                });
+                brushType = BrushType.COLOR_ONLY;
             }
             else if (strType == "character-only") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.CHARACTER_ONLY);
-                });
+                brushType = BrushType.CHARACTER_ONLY;
             }
             else if (strType == "embolden") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.EMBOLDEN_CHARACTER);
-                });
+                brushType = BrushType.EMBOLDEN_CHARACTER;
             }
             else if (strType == "fade") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.FADE_CHARACTER);
-                });
+                brushType = BrushType.FADE_CHARACTER;
+            }
+            else if (strType == "erase") {
+                brushType = BrushType.ERASE;
+            }
+
+            button.addEventListener('click', () => {
+                this.brush.setBrushType(brushType);
+            });
+            if (this.brush.brushType === brushType)
+            {
+                button.classList.add("selected");
             }
         });
     }
