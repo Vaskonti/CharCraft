@@ -26,14 +26,13 @@ export class DrawingBoardUI {
         }
 
         // Disable scrolling and hide scrollbars
-        // TODO: make it css?
+        // NOTE: make it css?
         document.body.style.overflow = "hidden";
         document.documentElement.style.overflow = "hidden";
 
         this.drawBoardElement = collection[0];
         this.drawBoardElement.style.transformOrigin = `${0} ${0}`;
-        
-        this.updateTransform();
+        this.centerCanvas();
         this.drawingBoard.initialiseContainer(this.drawBoardElement);
 
         window.oncontextmenu = function ()
@@ -230,6 +229,17 @@ export class DrawingBoardUI {
         this.offsetY = event.clientY - ys*newScale;
     
         this.scale = newScale;
+    
+        this.updateTransform();
+    }
+
+    centerCanvas() {
+        const boardRect = this.drawBoardElement.getBoundingClientRect();
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+    
+        this.offsetX = (screenWidth - boardRect.width * this.scale) / 2;
+        this.offsetY = (screenHeight - boardRect.height * this.scale) / 2;
     
         this.updateTransform();
     }

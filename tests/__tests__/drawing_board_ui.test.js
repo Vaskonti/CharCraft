@@ -165,6 +165,7 @@ describe('DrawingBoardUI Tests', () => {
     // });
 
     test('should handle right mouse button drag for panning', () => {
+        const initalPosition = { offsetX: boardUI.offsetX, offsetY: boardUI.offsetY };
         const startEvent = { clientX: 100, clientY: 100, button: 2 };
         const moveEvent = { clientX: 120, clientY: 110 };
 
@@ -173,8 +174,8 @@ describe('DrawingBoardUI Tests', () => {
         expect(boardUI.lastRightMoveCoordinates).toEqual({ clientX: 100, clientY: 100 });
 
         boardUI.rightMouseMove(moveEvent);
-        expect(boardUI.offsetX).toBe(20);
-        expect(boardUI.offsetY).toBe(10);
+        expect(boardUI.offsetX - initalPosition.offsetX).toBe(20);
+        expect(boardUI.offsetY - initalPosition.offsetY).toBe(10);
     });
 
     test('should link tool buttons and update brush tool type', () => {
@@ -245,6 +246,31 @@ describe('DrawingBoardUI Tests', () => {
 
         boardUI.handleZoom(zoomOutEvent);
         expect(boardUI.scale).toBeLessThan(1);
+    });
+
+
+    test('should center the canvas properly', () => {
+        const mockBoardElement = {
+            getBoundingClientRect: jest.fn().mockReturnValue({
+                width: 500,
+                height: 300,
+            }),
+            style: {
+                transform: '',
+            },
+        };
+    
+        Object.defineProperty(window, 'innerWidth', { value: 800, writable: true });
+        Object.defineProperty(window, 'innerHeight', { value: 600, writable: true });
+    
+        boardUI.drawBoardElement = mockBoardElement;
+        boardUI.scale = 1;
+    
+        boardUI.centerCanvas();
+    
+        expect(boardUI.offsetX).toBeCloseTo((800 - 500) / 2);
+        expect(boardUI.offsetY).toBeCloseTo((600 - 300) / 2);
+        expect(mockBoardElement.style.transform).toBe(`translate(${boardUI.offsetX}px, ${boardUI.offsetY}px) scale(1)`);
     });
 
 
