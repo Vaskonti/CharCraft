@@ -3,7 +3,6 @@
 use Backend\Controllers\Controller;
 use Backend\Models\EntityLike;
 
-
 class LikeEntityController extends Controller
 {
 
@@ -37,10 +36,7 @@ class LikeEntityController extends Controller
         }
 
         $data = $request->validated();
-        $like = EntityLike::where('userId', $data['user_id'])
-            ->where('entityId', $data['entity_id'])
-            ->where('entityType', $data['entity_type'])
-            ->first();
+        $like = EntityLike::find($data['id']);
 
         if (!$like) {
             return $this->jsonResponse([

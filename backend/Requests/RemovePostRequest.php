@@ -2,7 +2,7 @@
 
 namespace Backend\Requests;
 
-class RemoveLikeEntityRequest extends Request
+class CreatePostRequest extends Request
 {
     public function rules(): array
     {
@@ -13,6 +13,6 @@ class RemoveLikeEntityRequest extends Request
 
     public function authorize(): bool
     {
-        return isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
+        return !isset($_SESSION['user_id']) || $_SESSION['user_id'];
     }
 }
