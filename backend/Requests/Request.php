@@ -97,6 +97,7 @@ class Request
                         $this->addError($field, str_replace(':field', $field, $messages["confirmed"] ?? "$field must match {$field}_confirmation."));
                     }
                 }
+
                 if (str_starts_with($rule, 'unique:')) {
                     [$table, $column] = explode(',', substr($rule, 7));
                     if ($this->valueExists($table, $column, $data[$field] ?? '')) {
@@ -129,6 +130,11 @@ class Request
                     $fileMimeType = mime_content_type($_FILES[$field]['tmp_name']);
                     if (!in_array($fileMimeType, $allowedTypes)) {
                         $this->addError($field, "The $field must be of type: " . implode(', ', $allowedTypes));
+
+                if (str_starts_with($rule, 'in:')) {
+                    $allowedValues = explode(',', substr($rule, 3));
+                    if (isset($data[$field]) && !in_array($data[$field], $allowedValues)) {
+                        $this->addError($field, str_replace(':field', $field, $this->messages()["in"] ?? "$field must be one of: " . implode(', ', $allowedValues)));
                     }
                 }
             }
