@@ -37,6 +37,21 @@ class Model
         return static::find($id);
     }
 
+    /**
+     * @throws Exception
+     */
+    public function delete(): bool
+    {
+        $db = self::connect();
+
+        if (!property_exists($this, 'id') || empty($this->id)) {
+            throw new Exception("Cannot delete record: 'id' property is missing or not set.");
+        }
+
+        $stmt = $db->prepare("DELETE FROM " . static::$table . " WHERE id = ?");
+        return $stmt->execute([$this->id]);
+    }
+
     private static function getConnection()
     {
         static $db;
