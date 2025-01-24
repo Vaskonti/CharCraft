@@ -11,18 +11,23 @@
         "@babel/preset-env": "^7.26.0",
         "babel-jest": "^29.7.0",
         "jest": "^29.6.0",
-        "jest-environment-jsdom": "^29.7.0",
-        "jest-canvas-mock": "^2.5.2"
+        "jest-canvas-mock": "^2.5.2",
+        "jest-environment-jsdom": "^29.7.0"
     },
     "scripts": {
         "test": "jest",
         "build": "babel src --out-dir dist --ignore '**/*.test.js'"
     },
     "jest": {
-        "setupFiles": ["jest-canvas-mock"],
+        "setupFiles": [
+            "jest-canvas-mock"
+        ],
         "testEnvironment": "jest-environment-jsdom",
         "transform": {
             "^.+\\.jsx?$": "babel-jest"
         }
+    },
+    "dependencies": {
+        "punycode": "^2.3.1"
     }
 }
