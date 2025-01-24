@@ -32,8 +32,8 @@ export class DrawingBoardUI {
 
         this.drawBoardElement = collection[0];
         this.drawBoardElement.style.transformOrigin = `${0} ${0}`;
-        this.centerCanvas();
         this.drawingBoard.initialiseContainer(this.drawBoardElement);
+        this.centerCanvas();
 
         window.oncontextmenu = function ()
         {
@@ -240,7 +240,7 @@ export class DrawingBoardUI {
     
         this.offsetX = (screenWidth - boardRect.width * this.scale) / 2;
         this.offsetY = (screenHeight - boardRect.height * this.scale) / 2;
-    
+
         this.updateTransform();
     }
 
