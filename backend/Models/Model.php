@@ -52,6 +52,16 @@ class Model
         return $stmt->execute([$this->id]);
     }
 
+    public static function random(int $limit): array
+    {
+        $db = self::connect();
+        $stmt = $db->prepare("SELECT * FROM " . static::$table . " ORDER BY RAND() LIMIT ?");
+        $stmt->bindValue(1, $limit, \PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     private static function getConnection()
     {
         static $db;
@@ -97,6 +107,29 @@ class Model
         }
 
         $query .= " LIMIT 1";
+        $stmt = $db->prepare($query);
+        $stmt->execute($params);
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $data ? new static($data) : null;
+    }
+
+    public function all(): ?static
+    {
+        $db = self::connect();
+        $query = "SELECT * FROM " . static::$table;
+        $params = [];
+
+        if (!empty($this->query)) {
+            $conditions = [];
+            foreach ($this->query as [$field, $value]) {
+                $conditions[] = "$field = ?";
+                $params[] = $value;
+            }
+
+            $query .= " WHERE " . implode(" AND ", $conditions);
+        }
+        
         $stmt = $db->prepare($query);
         $stmt->execute($params);
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
