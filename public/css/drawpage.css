@@ -14,8 +14,8 @@ main
 
 .idk-draw-something
 {
-    width: 90vw;  /* Take 90% of the viewport width */
-    height: 85vh; /* Take 70% of the viewport height */
+    width: 90vw;
+    height: 85vh; 
     border-radius: 10px;
     overflow: hidden;
     padding-top: 10px; 
@@ -96,12 +96,12 @@ main
 
 .popup 
 { 
-    color: black;
+    color: var(--white);
     position: fixed; 
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    background: white; 
+    background: var(--gray); 
     padding: 20px; 
     border-radius: 10px; 
     z-index: 1000; 
@@ -109,6 +109,13 @@ main
     max-width: 90vw;
     max-height: 90vh; 
     overflow: auto; 
+    border: 2px outset var(--orange);
+}
+
+label input
+{
+    width: 40px;
+    align-self: flex-end;
 }
 
 .popup-content {
@@ -135,13 +142,38 @@ main
 }
 
 
-/* TODO: style */
-label {
-    color: black;
+label, h2, p {
+    color: var(--white);
 }
 
-h2 {
-    color: black;
+
+#brush-size {
+    position: absolute;
+    translate: -120% 350%;
+    width: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
+#apply-settings, #cancel-settings
+{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: var(--black);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px outset var(--gray);
+    font: var(--font);
+}
+
+#apply-settings:hover, #cancel-settings:hover
+{
+    background-color: var(--orange);
+    border: 2px inset var(--gray);
 }
 
 @media (max-height: 700px) 

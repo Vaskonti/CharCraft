@@ -227,4 +227,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //TODO: Implement save to profile
 
+    const brushSizeBtn = document.getElementById("brush-size-btn");
+    const brushSizeSlider = document.getElementById("brush-size");
+
+    brushSizeBtn.addEventListener("click", () => {
+        brushSizeSlider.classList.toggle("hidden");
+    });
+
+    brushSizeSlider.addEventListener("input", () => {
+        brushSizeBtn.textContent = brushSizeSlider.value;
+        brush.setMouseRadius(brushSizeSlider.value);
+    });
+
 });
+
