@@ -9,6 +9,7 @@ use PDO;
 class Model
 {
     protected static string $table;
+    private array $query;
 
     protected static function connect(): PDO
     {
@@ -57,30 +58,35 @@ class Model
         return null;
     }
 
-    public static function where($field, $value): ?Model
+    public static function where($field, $value): static
     {
-        $db = self::connect();
-        $stmt = $db->prepare("SELECT * FROM " . static::$table . " WHERE $field = ?");
-        $stmt->execute([$value]);
-        $results = [];
-        while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $results[] = new static($data);
-        }
-
-        // Return the results, allowing method chaining
-        return new static($results) ?? null;
+        $instance = new static();
+        $instance->query[] = [$field, $value];
+        return $instance;
     }
 
-    public static function first(): null|static
+    public function first(): ?static
     {
         $db = self::connect();
-        $stmt = $db->prepare("SELECT * FROM " . static::$table . " LIMIT 1");
-        $stmt->execute();
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($data) {
-            return new static($data);
+        $query = "SELECT * FROM " . static::$table;
+        $params = [];
+
+        if (!empty($this->query)) {
+            $conditions = [];
+            foreach ($this->query as [$field, $value]) {
+                $conditions[] = "$field = ?";
+                $params[] = $value;
+            }
+
+            $query .= " WHERE " . implode(" AND ", $conditions);
         }
-        return null;
+
+        $query .= " LIMIT 1";
+        $stmt = $db->prepare($query);
+        $stmt->execute($params);
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $data ? new static($data) : null;
     }
 
     /**

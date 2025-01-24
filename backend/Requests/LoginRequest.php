@@ -8,8 +8,8 @@ class LoginRequest extends Request
     public function rules(): array
     {
         return [
-            'email' => 'required|email',
-            'password' => 'required'
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:6']
         ];
     }
 }
