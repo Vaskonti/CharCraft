@@ -2,7 +2,7 @@
 
 namespace Backend\Models;
 
-class EntityLikes extends Model
+class EntityLike extends Model
 {
     protected static string $table = 'entity_likes';
 
