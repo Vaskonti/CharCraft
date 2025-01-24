@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedColor = event.target.value;
         colorPickerBtn.style.backgroundColor = selectedColor;
         colorPickerBtn.setAttribute("data-color", selectedColor);
+        drawingBoardUI.registerColorButtons(colorButtons, 'data-color');
     });
 
     const palletButtons = document.querySelectorAll("#color-pallet button");
