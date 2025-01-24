@@ -14,6 +14,7 @@ class Response
         $this->data = $data;
         $this->statusCode = $statusCode;
         $this->headers = $headers;
+        $this->send();
     }
 
     protected function setHeaders(): void
