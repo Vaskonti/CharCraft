@@ -2,11 +2,10 @@
 
 namespace Backend\Controllers;
 
-use Backend\Controllers\Controller;
+use Backend\Models\User;
+use Backend\Requests\CreateUserRequest;
+use Backend\Requests\LoginRequest;
 use Backend\Responses\JsonResponse;
-use CreateUserRequest;
-use LoginRequest;
-use User;
 
 class UserController extends Controller
 {
@@ -22,7 +21,8 @@ class UserController extends Controller
         User::create([
             'username' => $data['username'],
             'password' => password_hash($data['password'], PASSWORD_DEFAULT),
-            'email' => $data['email']
+            'email' => $data['email'],
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         return $this->jsonResponse([
@@ -41,7 +41,7 @@ class UserController extends Controller
         $data = $request->validated();
         $user = User::where('email', $data['email'])->first();
 
-        if (password_verify($user->password, $data['password'])) {
+        if (password_verify($data['password'], $user->password)) {
             session_start();
             $_SESSION['user_id'] = $user->id;
             $_SESSION['logged_id'] = true;

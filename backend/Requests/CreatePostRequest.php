@@ -7,10 +7,10 @@ class CreatePostRequest extends Request
     public function rules(): array
     {
         return [
-          'title' => 'required|min:3',
-            'content' => 'required|min:10',
-            'user_id' => 'required|integer',
-            'ascii_image_id' => 'required|integer'
+            'title' => ['required', 'string', 'min:3'],
+            'content' => ['required', 'string', 'min:3'],
+            'user_id' => ['required', 'integer'],
+            'ascii_image_id' => ['required', 'integer'],
         ];
     }
 
