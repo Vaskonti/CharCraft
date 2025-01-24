@@ -254,7 +254,7 @@ export class DrawingBoardUI {
 
         const reader = new FileReader();
         reader.onload = (event) => {
-            const boardData = e.target.result;
+            const boardData = event.target.result;
             this.drawingBoard.importBoardFromJSON(boardData);
             this.drawingBoard.initialiseContainer(this.drawBoardElement);
         };

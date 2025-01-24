@@ -1,7 +1,7 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals');
 import { DrawingBoardUI } from '../../src/js/drawing_board_ui.js';
 import { TextBoard } from '../../src/js/text_board.js';
-import { Brush } from '../../src/js/brush.js';
+import { Brush, BrushShape, ToolType } from '../../src/js/brush.js';
 
 describe('DrawingBoardUI Tests', () => {
     let board, brush, boardUI, drawBoardElement;
@@ -82,8 +82,8 @@ describe('DrawingBoardUI Tests', () => {
         const startEvent = { clientX: 0, clientY: 0 };
         const endEvent = { clientX: 100, clientY: 100 };
 
-        boardUI.mouseDown(startEvent);
-        boardUI.mouseMove(endEvent);
+        boardUI.leftMouseDown(startEvent);
+        boardUI.leftMouseMove(endEvent);
 
         const startCell = boardUI.getClickedCellCoordinates(startEvent);
         const endCell = boardUI.getClickedCellCoordinates(endEvent);
@@ -146,4 +146,106 @@ describe('DrawingBoardUI Tests', () => {
         expect(spy).toHaveBeenCalled();
         expect(JSON.stringify(board.boardMatrix)).toEqual(boardData);
     });
+
+    /* deprecated for now */
+    // test('should enable and disable board UI correctly', () => {
+    //     const mockCleanupMouseEvents = jest.fn();
+    //     const mockCleanupScrollAndZoom = jest.fn();
+
+    //     jest.spyOn(boardUI, 'captureMouseEvents').mockReturnValue(mockCleanupMouseEvents);
+    //     jest.spyOn(boardUI, 'disableAndCaptureScrollAndZoom').mockReturnValue(mockCleanupScrollAndZoom);
+
+    //     boardUI.enableBoardUI();
+    //     expect(boardUI.captureMouseEvents).toHaveBeenCalled();
+    //     expect(boardUI.disableAndCaptureScrollAndZoom).toHaveBeenCalled();
+
+    //     boardUI.disableBoardUI();
+    //     expect(mockCleanupMouseEvents).toHaveBeenCalled();
+    //     expect(mockCleanupScrollAndZoom).toHaveBeenCalled();
+    // });
+
+    test('should handle right mouse button drag for panning', () => {
+        const startEvent = { clientX: 100, clientY: 100, button: 2 };
+        const moveEvent = { clientX: 120, clientY: 110 };
+
+        boardUI.rightMouseDown(startEvent);
+        expect(boardUI.isRightMouseDown).toBe(true);
+        expect(boardUI.lastRightMoveCoordinates).toEqual({ clientX: 100, clientY: 100 });
+
+        boardUI.rightMouseMove(moveEvent);
+        expect(boardUI.offsetX).toBe(20);
+        expect(boardUI.offsetY).toBe(10);
+    });
+
+    test('should link tool buttons and update brush tool type', () => {
+        document.body.innerHTML += `
+            <button class="tool-button" data-style="bucket"></button>
+            <button class="tool-button" data-style="brush"></button>`;
+
+        const buttons = document.querySelectorAll('.tool-button');
+        boardUI.registerToolButtons(buttons, 'data-style');
+
+        buttons[0].click();
+        expect(brush.toolType).toBe(ToolType.BUCKET);
+
+        buttons[1].click();
+        expect(brush.toolType).toBe(ToolType.NORMAL);
+    });
+
+    test('should link brush shape buttons and update brush shape', () => {
+        document.body.innerHTML += `
+            <button class="shape-button" data-draw="circle"></button>
+            <button class="shape-button" data-draw="square"></button>`;
+
+        const buttons = document.querySelectorAll('.shape-button');
+        boardUI.registerDrawButtons(buttons, 'data-draw');
+
+        buttons[0].click();
+        expect(brush.brushShape).toBe(BrushShape.CIRCLE);
+
+        buttons[1].click();
+        expect(brush.brushShape).toBe(BrushShape.NORMAL);
+    });
+
+    test('should link color buttons and update brush color', () => {
+        document.body.innerHTML += `
+            <button class="color-button" data-color="#FF0000"></button>
+            <button class="color-button" data-color="#00FF00"></button>`;
+
+        const buttons = document.querySelectorAll('.color-button');
+        boardUI.registerColorButtons(buttons, 'data-color');
+
+        buttons[0].click();
+        expect(brush.drawColor).toBe('#FF0000');
+
+        buttons[1].click();
+        expect(brush.drawColor).toBe('#00FF00');
+    });
+
+    test('should link clear buttons and clear the board', () => {
+        document.body.innerHTML += `<button class="clear-button"></button>`;
+
+        const button = document.querySelector('.clear-button');
+        jest.spyOn(window, 'confirm').mockReturnValue(true);
+        jest.spyOn(board, 'clearBoard');
+
+        boardUI.registerClearButtons([button]);
+        button.click();
+
+        expect(window.confirm).toHaveBeenCalled();
+        expect(board.clearBoard).toHaveBeenCalled();
+    });
+
+    test('should handle zooming properly', () => {
+        const zoomInEvent = { clientX: 100, clientY: 100, deltaY: -1, ctrlKey: false };
+        const zoomOutEvent = { clientX: 100, clientY: 100, deltaY: 1, ctrlKey: false };
+
+        boardUI.handleZoom(zoomInEvent);
+        expect(boardUI.scale).toBeGreaterThan(1);
+
+        boardUI.handleZoom(zoomOutEvent);
+        expect(boardUI.scale).toBeLessThan(1);
+    });
+
+
 });

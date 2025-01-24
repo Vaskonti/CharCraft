@@ -53,8 +53,6 @@ function loadPreviewBoard() {
     previewCanvasBoard = ImageConverter.parseImageToBoard(img, options);
     previewCanvasBoard = CharacterBoard.parseCopyBoard(previewCanvasBoard, CanvasBoard, [cellWidth, cellHeight]);
     previewCanvasBoard.initialiseContainer(previewCanvasSection);
-    //previewCanvasBoard.canvas.style.maxWidth = "100%";
-    //previewCanvasBoard.canvas.style.maxHeight = "100%";
 }
 
 function showPopup() {
@@ -161,19 +159,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    //TODO: add remove image
     imageInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = () => {
+        if (!file) {
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
             img.src = reader.result;
             img.onload = () => {
                 loadPreviewBoard();
             };
-          };
-          reader.readAsDataURL(file);
-        }
+        };
+        reader.readAsDataURL(file);
       });
 
 
@@ -226,6 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.click();
     });
 
-    //TODO: Implement local save and save to profile
+    //TODO: Implement save to profile
 
 });
