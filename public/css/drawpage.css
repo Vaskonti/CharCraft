@@ -77,8 +77,8 @@ main
     display: none; 
 }
 
-.popup 
-{ 
+.popup { 
+    color: black;
     position: fixed; 
     top: 50%; 
     left: 50%; 
@@ -87,16 +87,26 @@ main
     padding: 20px; 
     border-radius: 10px; 
     z-index: 1000; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 90vw;
+    max-height: 90vh; 
+    overflow: auto; /* Allow scrolling inside the popup if content exceeds size */
 }
-  
-.popup-content 
-{ 
+
+.popup-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
-  
+
+#preview-canvas-section canvas {
+    display: block;
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+    margin: auto;
+}
+
 .close-btn 
 { 
     position: absolute;
