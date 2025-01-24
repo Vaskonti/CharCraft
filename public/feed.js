@@ -75,15 +75,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (commentText === "") return;
 
                 const formData = new FormData();
-                formData.append('postId', post.id);
-                formData.append('comment', commentText);
+                formData.append('post_id', post.id);
+                formData.append('content', commentText);
 
                 fetch('https://example.com/api/submit', {  // Replace with actual API endpoint
                     method: 'POST',
-                    body: formData
+                    body: formData,
+                    headers: { 'Content-Type': 'application/json'}
                 })
                 .then(response => {
                     if (!response.ok) {
+                        //TODO: Pop-up 
                         throw new Error('Failed to submit comment');
                     }
                     return response.json();

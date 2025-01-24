@@ -36,7 +36,7 @@
             <button style="background-color: #00A2E8;" data-color="#00A2E8"></button>
             <button style="background-color: #3F48CC;" data-color="#3F48CC"></button>
             <button style="background-color: #A349A4;" data-color="#A349A4"></button>
-            <button style="background-color: #FFFFFF;" data-color="#FFFFFF"></button>
+            <button style="background-color: #FFFFFF;" data-color="#FFFFFF" class="selected"></button>
             <button style="background-color: #C3C3C3;" data-color="#C3C3C3"></button>
             <button style="background-color: #B97A57;" data-color="#B97A57"></button>
             <button style="background-color: #FFAEC9;" data-color="#FFAEC9"></button>
@@ -82,6 +82,8 @@
 
             <section id="character-picker-section">
                 <button id="character-picker-btn" title="character picker"><input type="text" id="character-picker" hidden>o</button>
+                <button id="brush-size-btn" title="brush size">1</button>
+                <input type="range" id="brush-size" min="0" max="10" value="1" class="hidden">
             </section>
 
             <section id="image-loader-section">
