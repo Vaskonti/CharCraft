@@ -4,13 +4,18 @@ import { Brush, ToolType, BrushShape, BrushType } from './brush.js';
 export class DrawingBoardUI {
     constructor(drawingBoard, brush) {
         this.drawingBoard = drawingBoard;
-        this.isMouseDown = false;
+        this.isLeftMouseDown = false;
+        this.isRightMouseDown = false;
         this.drawBoardElement = null;
-        this.lastDrawnCell = null;
+        this.lastLeftMoveCell = null;
+        this.lastRightMoveCoordinates = null;
         this.scale = 1;
         this.offsetX = 0;
         this.offsetY = 0;
         this.brush = brush;
+        this.captureMouseEventsCleanupCallback = null;
+        this.disableAndCaptureScrollAndZoomCleanupCallback = null;
+
     }
 
     init() {
@@ -20,36 +25,96 @@ export class DrawingBoardUI {
             return;
         }
 
+        // Disable scrolling and hide scrollbars
+        // NOTE: make it css?
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+
         this.drawBoardElement = collection[0];
+        this.drawBoardElement.style.transformOrigin = `${0} ${0}`;
+        this.centerCanvas();
         this.drawingBoard.initialiseContainer(this.drawBoardElement);
 
-        this.captureDrawEvents();
-        this.disableAndCaptureScrollAndZoom();
+        window.oncontextmenu = function ()
+        {
+            return false; //cancel default menu
+        }
+    }
 
-        const rect = this.drawBoardElement.getBoundingClientRect();
-        this.offsetX = 0; //rect.left;
-        this.offsetY = 0; //rect.top;
-        this.drawBoardElement.style.transformOrigin = `${0} ${0}`;
-        this.updateTransform();
+    enableBoardUI() {
+        this.captureMouseEventsCleanupCallback = this.captureMouseEvents();
+        this.disableAndCaptureScrollAndZoomCleanupCallback = this.disableAndCaptureScrollAndZoom();
+    }
+
+    disableBoardUI() {
+        this.captureMouseEventsCleanupCallback();
+        this.disableAndCaptureScrollAndZoomCleanupCallback()
     }
 
     /* returns cleanup function */
-    captureDrawEvents() {
-        const mouseUpHandler = () => { this.isMouseDown = false; };
+    captureMouseEvents() {
+        const clickHandler = (event) => { 
+            if (event.button === 0)
+            {
+                this.draw(event); 
+            }
+            else
+            {
+                /* nothing to do */
+            }
+        };
 
-        this.drawBoardElement.addEventListener("click", (e) => this.draw(e)); // prevent drawing when clicking outside the board.
-        this.drawBoardElement.addEventListener("mousedown", (e) => this.mouseDown(e));
+        const mouseUpHandler = (event) => { 
+            if (event.button === 0)
+            {
+                this.isLeftMouseDown = false;
+            }
+            else
+            {
+                this.isRightMouseDown = false;
+            }
+        };
 
+        const LeftMouseDownHandler = (event) => { 
+            if (event.button === 0)
+            {
+                this.leftMouseDown(event);
+            }
+        };
+
+        const rightMouseDownHandler = (event) => {
+            if (event.button !== 0)
+            {
+                this.rightMouseDown(event);
+            }
+        }
+
+        const mouseMoveHandler = (event) => { 
+            if (this.isLeftMouseDown)
+            {
+                this.leftMouseMove(event);
+            }
+            if (this.isRightMouseDown)
+            {
+                this.rightMouseMove(event);
+            }
+        };
+
+        this.drawBoardElement.addEventListener("click", clickHandler); // prevent drawing when clicking outside the board.
+        this.drawBoardElement.addEventListener("mousedown", LeftMouseDownHandler);
+
+        document.addEventListener("mousedown", rightMouseDownHandler);
         document.addEventListener("mouseup", mouseUpHandler); // can turn off drawing even when outside the board.
-        document.addEventListener("mousemove", (e) => this.mouseMove(e));
+        document.addEventListener("mousemove", mouseMoveHandler);
 
 
         return () => {
-            this.drawBoardElement.removeEventListener("click", this.draw);
-            this.drawBoardElement.removeEventListener("mousedown", this.mouseDown);
+            this.drawBoardElement.removeEventListener("click", clickHandler);
+            this.drawBoardElement.removeEventListener("mousedown", LeftMouseDownHandler);
 
+            document.removeEventListener("mousedown", rightMouseDownHandler);
             document.removeEventListener("mouseup", mouseUpHandler);
-            document.removeEventListener("mousemove", this.mouseMove);
+            document.removeEventListener("mousemove", mouseMoveHandler);
         };
     }
 
@@ -74,7 +139,7 @@ export class DrawingBoardUI {
     
         document.addEventListener("wheel", wheelHandler, { passive: false });
         document.addEventListener("keydown", keyHandler);
-    
+
         return () => {
             document.removeEventListener("wheel", wheelHandler, { passive: false });
             document.removeEventListener("keydown", keyHandler);
@@ -108,28 +173,40 @@ export class DrawingBoardUI {
         return { clickedRow, clickedCol };
     }
 
-    mouseDown(event) {
-        this.isMouseDown = true;
-        this.lastClickedCell = this.getClickedCellCoordinates(event);
+    leftMouseDown(event) {
+        this.isLeftMouseDown = true;
+        this.lastLeftMoveCell = this.getClickedCellCoordinates(event);
     }
 
-    mouseMove(event) {
-        if (!this.isMouseDown || !this.lastClickedCell) {
+    rightMouseDown(event) {
+        this.isRightMouseDown = true;
+        this.lastRightMoveCoordinates = { clientX: event.clientX, clientY: event.clientY };
+    }
+
+    leftMouseMove(event) {
+        if (!this.isLeftMouseDown || !this.lastLeftMoveCell) {
             return;
         }
 
         const currentCell = this.getClickedCellCoordinates(event);
 
-        if (currentCell.clickedRow !== this.lastClickedCell.clickedRow || currentCell.clickedCol !== this.lastClickedCell.clickedCol) {
+        if (currentCell.clickedRow !== this.lastLeftMoveCell.clickedRow || currentCell.clickedCol !== this.lastLeftMoveCell.clickedCol) {
             this.brush.drawLine(
                 this.drawingBoard,
-                this.lastClickedCell.clickedRow,
-                this.lastClickedCell.clickedCol,
+                this.lastLeftMoveCell.clickedRow,
+                this.lastLeftMoveCell.clickedCol,
                 currentCell.clickedRow,
                 currentCell.clickedCol
             );
-            this.lastClickedCell = currentCell;
+            this.lastLeftMoveCell = currentCell;
         }
+    }
+
+    rightMouseMove(event) {
+        this.offsetX -= this.lastRightMoveCoordinates.clientX - event.clientX;
+        this.offsetY -= this.lastRightMoveCoordinates.clientY - event.clientY;
+        this.lastRightMoveCoordinates = { clientX: event.clientX, clientY: event.clientY };
+        this.updateTransform();
     }
 
     draw(event) {
@@ -156,6 +233,17 @@ export class DrawingBoardUI {
         this.updateTransform();
     }
 
+    centerCanvas() {
+        const boardRect = this.drawBoardElement.getBoundingClientRect();
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+    
+        this.offsetX = (screenWidth - boardRect.width * this.scale) / 2;
+        this.offsetY = (screenHeight - boardRect.height * this.scale) / 2;
+    
+        this.updateTransform();
+    }
+
     updateTransform() {
         this.drawBoardElement.style.transform = `translate(${this.offsetX}px, ${this.offsetY}px) scale(${this.scale})`;
     }
@@ -175,8 +263,8 @@ export class DrawingBoardUI {
         if (!file) return;
 
         const reader = new FileReader();
-        reader.onload = (e) => {
-            const boardData = e.target.result;
+        reader.onload = (event) => {
+            const boardData = event.target.result;
             this.drawingBoard.importBoardFromJSON(boardData);
             this.drawingBoard.initialiseContainer(this.drawBoardElement);
         };

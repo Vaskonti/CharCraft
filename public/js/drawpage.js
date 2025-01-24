@@ -24,6 +24,17 @@ const edgeDetectionStrength = document.getElementById('edge-detection-strength')
 var previewCanvasBoard = new CanvasBoard(0, 0);
 let img = new Image();
 
+const boardSize = 100;
+const cellWidth = 12;
+const cellHeight = cellWidth*1.3;
+
+let drawingBoard = new CanvasBoard(boardSize, boardSize*1.5, cellWidth, cellHeight);
+const brush = new Brush();
+var drawingBoardUI = null;
+var mouseRadius = 1;
+
+const downloadButton = document.getElementById('download-btn');
+
 function getImageOptions() {
     const options = new ImageParseOptions();
     options.brightnessFactor = parseFloat(brightnessInput.value);
@@ -40,31 +51,28 @@ function getImageOptions() {
 function loadPreviewBoard() {
     const options = getImageOptions();
     previewCanvasBoard = ImageConverter.parseImageToBoard(img, options);
-    previewCanvasBoard = CharacterBoard.parseCopyBoard(previewCanvasBoard, CanvasBoard, [4, 4]);
+    previewCanvasBoard = CharacterBoard.parseCopyBoard(previewCanvasBoard, CanvasBoard, [cellWidth, cellHeight]);
     previewCanvasBoard.initialiseContainer(previewCanvasSection);
-    //previewCanvasBoard.canvas.style.width = "100%";
-    //previewCanvasBoard.canvas.style.height = "100%";
-    previewCanvasBoard.canvas.style.maxWidth = "100%";
-    previewCanvasBoard.canvas.style.maxHeight = "100%";
 }
 
-var drawingBoardUI = null;
-const brush = new Brush();
-let mouseRadius = 1;
+function showPopup() {
+    imagePopup.classList.remove('hidden');
+    drawingBoardUI.disableBoardUI();
+}
 
-const boardSize = 100;
-const cellWidth = 12;
-const cellHeight = cellWidth*1.3;
+function hidePopup() {
+    imagePopup.classList.add('hidden');
+    drawingBoardUI.enableBoardUI();
+}
 
-const downloadButton = document.getElementById('download-btn');
 
 document.addEventListener('DOMContentLoaded', () => {
-    let drawingBoard = new CanvasBoard(boardSize, boardSize*1.5, cellWidth, cellHeight);
     brush.setMouseRadius(mouseRadius);
     brush.setBrushShape(BrushShape.CIRCLE);
     brush.setToolType(ToolType.NORMAL);
-    let drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
+    drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
     drawingBoardUI.init();
+    drawingBoardUI.enableBoardUI();
 
     const colorButtons = document.querySelectorAll('#color-pallet button');
     drawingBoardUI.registerColorButtons(colorButtons, 'data-color');
@@ -151,28 +159,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    openPopup.addEventListener('click', () => imagePopup.classList.remove('hidden'));
-    closePopup.addEventListener('click', () => imagePopup.classList.add('hidden'));
-    cancelSettings.addEventListener('click', () => imagePopup.classList.add('hidden'));
-
-    //TODO: add remove image
     imageInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = () => {
+        if (!file) {
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
             img.src = reader.result;
             img.onload = () => {
                 loadPreviewBoard();
             };
-          };
-          reader.readAsDataURL(file);
-        }
+        };
+        reader.readAsDataURL(file);
       });
 
 
     //TODO: maybe add the other options?
-    const allButtons = [ // todo: rename
+    const allImageOptionInputs = [
         resolutionXInput, 
         resolutionYInput, 
         brightnessInput, 
@@ -182,18 +186,31 @@ document.addEventListener('DOMContentLoaded', () => {
         edgeDetectionStrength
     ];
 
-    allButtons.forEach(button => {
+    allImageOptionInputs.forEach(button => {
         button.addEventListener('change', (_) => {
             loadPreviewBoard();
+            drawingBoardUI.disableBoardUI();
         });
     });
 
+    openPopup.addEventListener('click', () => {
+        showPopup();
+    });
+
     applySettings.addEventListener('click', () => {
-        imagePopup.classList.add('hidden')
         drawingBoard = ImageConverter.parseImageToBoard(img, getImageOptions());
         drawingBoard = CharacterBoard.parseCopyBoard(drawingBoard, CanvasBoard, [cellWidth, cellHeight]);
         drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
         drawingBoardUI.init();
+        hidePopup();
+    });
+
+    closePopup.addEventListener('click', () => {
+        hidePopup();
+    });
+
+    cancelSettings.addEventListener('click', () => {
+        hidePopup();
     });
 
     let filename = null;
@@ -207,6 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.click();
     });
 
-    //TODO: Implement local save and save to profile
+    //TODO: Implement save to profile
 
 });
