@@ -13,11 +13,72 @@ export class ImageConverter {
         options.resolutionY = options.resolutionY || img.height;
 
         const pixels = ImageConverter.getImagePixels(img, options);
-        ImageConverter.applyBrightnessFactor(pixels, options);
-        ImageConverter.applyGammaCorrection(pixels, options);
-        ImageConverter.applyEdgeDetection(pixels, options);
+        ImageConverter.applyImageProcessing(pixels, options);
         const board = ImageConverter.createBoardFromPixels(pixels, options);
         return board;
+    }
+
+
+    static applyImageProcessing(pixels, options) {
+        const width = pixels.width;
+        const height = pixels.height;
+
+        // Precompute gamma correction and edge threshold for efficiency
+        const gammaLookup = new Array(256).fill(0).map((_, i) => 
+            Math.min(Math.pow(i / 255, options.gammaCorrection) * 255, 255)
+        );
+
+        const sobelX = [-1, 0, 1, -2, 0, 2, -1, 0, 1];
+        const sobelY = [-1, -2, -1, 0, 0, 0, 1, 2, 1];
+        const outputData = new Uint8ClampedArray(pixels.data.length);
+
+        // Loop through each pixel for combined processing
+        for (let y = 1; y < height - 1; y++) {
+            for (let x = 1; x < width - 1; x++) {
+                const pixelIndex = (y * width + x) * 4;
+
+                // Apply brightness and gamma correction
+                const r = Math.min(pixels.data[pixelIndex] * options.brightnessFactor, 255);
+                const g = Math.min(pixels.data[pixelIndex + 1] * options.brightnessFactor, 255);
+                const b = Math.min(pixels.data[pixelIndex + 2] * options.brightnessFactor, 255);
+                const correctedR = gammaLookup[Math.floor(r)];
+                const correctedG = gammaLookup[Math.floor(g)];
+                const correctedB = gammaLookup[Math.floor(b)];
+
+                // Compute intensity for edge detection
+                let Gx = 0, Gy = 0;
+                for (let ky = -1; ky <= 1; ky++) {
+                    for (let kx = -1; kx <= 1; kx++) {
+                        const neighborIndex = ((y + ky) * width + (x + kx)) * 4;
+                        const intensity = 
+                            pixels.data[neighborIndex] * 0.3 +
+                            pixels.data[neighborIndex + 1] * 0.59 +
+                            pixels.data[neighborIndex + 2] * 0.11;
+
+                        Gx += intensity * sobelX[(ky + 1) * 3 + (kx + 1)];
+                        Gy += intensity * sobelY[(ky + 1) * 3 + (kx + 1)];
+                    }
+                }
+
+                const magnitude = Math.sqrt(Gx * Gx + Gy * Gy);
+
+                // Apply edge detection
+                if (magnitude > options.edgeDetectionThreshold) {
+                    outputData[pixelIndex] = 0;
+                    outputData[pixelIndex + 1] = 0;
+                    outputData[pixelIndex + 2] = 0;
+                    outputData[pixelIndex + 3] = 0;
+                } else {
+                    outputData[pixelIndex] = correctedR;
+                    outputData[pixelIndex + 1] = correctedG;
+                    outputData[pixelIndex + 2] = correctedB;
+                    outputData[pixelIndex + 3] = pixels.data[pixelIndex + 3]; // Preserve alpha
+                }
+            }
+        }
+
+        // Copy results back to pixels
+        pixels.data.set(outputData);
     }
 
     static createBoardFromPixels(pixels, options) {

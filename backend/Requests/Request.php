@@ -90,10 +90,18 @@ class Request
                         $this->addError($field, str_replace(':field', $field, $messages["confirmed"] ?? "$field must match {$field}_confirmation."));
                     }
                 }
+
                 if (str_starts_with($rule, 'unique:')) {
                     [$table, $column] = explode(',', substr($rule, 7));
                     if ($this->valueExists($table, $column, $data[$field] ?? '')) {
                         $this->addError($field, str_replace(':field', $field, $messages["unique"] ?? "$field is already taken."));
+                    }
+                }
+
+                if (str_starts_with($rule, 'in:')) {
+                    $allowedValues = explode(',', substr($rule, 3));
+                    if (isset($data[$field]) && !in_array($data[$field], $allowedValues)) {
+                        $this->addError($field, str_replace(':field', $field, $this->messages()["in"] ?? "$field must be one of: " . implode(', ', $allowedValues)));
                     }
                 }
             }
