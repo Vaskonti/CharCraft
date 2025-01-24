@@ -90,3 +90,34 @@ main
     height: calc(100% - var(--header-height)); 
     margin-top: var(--header-height);
 }
+
+@media (max-width: 768px) {
+
+    header .logo {
+        max-height: 30px;
+    }
+
+    #name 
+    {
+        padding: 0%;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    header .logo {
+        max-height: 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
