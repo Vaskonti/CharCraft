@@ -69,7 +69,7 @@ function hidePopup() {
 document.addEventListener('DOMContentLoaded', () => {
     brush.setMouseRadius(mouseRadius);
     brush.setBrushShape(BrushShape.CIRCLE);
-    brush.setToolType(ToolType.NORMAL);
+    brush.setToolType(ToolType.BRUSH);
     drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
     drawingBoardUI.init();
     drawingBoardUI.enableBoardUI();
