@@ -2,6 +2,8 @@
 
 namespace Backend\Requests;
 
+use Backend\Auth\Auth;
+
 class CreateCommentRequest extends Request
 {
     public function rules(): array
@@ -15,6 +17,10 @@ class CreateCommentRequest extends Request
 
     public function authorize(): bool
     {
-        return isset($_SESSION['user_id']) && $_SESSION['user_id'];
+        if ($cookie = $this->getCookie('auth_token')) {
+            $user = Auth::validateToken($cookie);
+            return $user && $user->sub;
+        }
+        return false;
     }
 }

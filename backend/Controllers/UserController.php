@@ -2,13 +2,18 @@
 
 namespace Backend\Controllers;
 
+use Backend\Auth\Auth;
 use Backend\Models\User;
 use Backend\Requests\CreateUserRequest;
 use Backend\Requests\LoginRequest;
 use Backend\Responses\JsonResponse;
+use Exception;
 
 class UserController extends Controller
 {
+    /**
+     * @throws Exception
+     */
     public function createUser(CreateUserRequest $request): JsonResponse
     {
         if (!$request->validate()) {
@@ -18,17 +23,28 @@ class UserController extends Controller
         }
 
         $data = $request->validated();
-        User::create([
+        $user = User::create([
             'username' => $data['username'],
             'password' => password_hash($data['password'], PASSWORD_DEFAULT),
             'email' => $data['email'],
         ]);
+        $token = Auth::generateToken($user->id);
+        $this->setCookie(
+            name: 'auth_token',
+            value: $token,
+            expire: time() + 60 * 60 * (int)config('auth.token_lifetime'),
+            httponly: true
+        );
+        setcookie('auth_token', $token, time() + 60 * 60 * (int)config('auth.token_lifetime'), '/', '', true, true);
 
         return $this->jsonResponse([
             'message' => 'User created successfully!',
         ]);
     }
 
+    /**
+     * @throws Exception
+     */
     public function login(LoginRequest $request): JsonResponse
     {
         if (!$request->validate()) {
@@ -42,8 +58,13 @@ class UserController extends Controller
 
         if (password_verify($data['password'], $user->password)) {
             session_start();
-            $_SESSION['user_id'] = $user->id;
-            $_SESSION['logged_id'] = true;
+            $token = Auth::generateToken($user->id);
+            $this->setCookie(
+                name: 'auth_token',
+                value: $token,
+                expire: time() + 60 * 60 * (int)config('auth.token_lifetime'),
+                httponly: true
+            );
 
             return $this->jsonResponse([
                 'message' => 'Successful login!'
@@ -55,9 +76,17 @@ class UserController extends Controller
         ], 401);
     }
 
+    /**
+     * @throws Exception
+     */
     public function logout(): JsonResponse
     {
-        session_destroy();
+        $this->setCookie(
+            name: 'auth_token',
+            value: '',
+            expire: time() - 3600,
+            httponly: true
+        );
         return $this->jsonResponse([
             'message' => 'Logged out successfully!'
         ]);

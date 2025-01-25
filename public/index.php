@@ -3,6 +3,7 @@
 use Backend\Controllers\PostController;
 use Backend\Controllers\ImageController;
 use Backend\Controllers\UserController;
+use Backend\Misc\Log;
 use Backend\Routes\Router;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -13,9 +14,12 @@ $router->post('/login', [UserController::class, 'login']);
 $router->post('/logout', [UserController::class, 'logout']);
 $router->post('/post', [PostController::class, 'createPost']);
 $router->post('/image', [ImageController::class, 'store']);
+$router->delete('/post/remove', [PostController::class, 'removePost']);
+$router->post('/like', [LikeEntityController::class, 'likeEntity']);
+$router->delete('/like/remove', [LikeEntityController::class, 'removeLikeEntity']);
 
 try {
     $router->resolve(method(), uri());
 } catch (ReflectionException $e) {
-    log_issue($e);
+    Log::error($e);
 }
