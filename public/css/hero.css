@@ -14,7 +14,7 @@ body{
     width: 70%;
     height: 100%;
     background-color: var(--light-gray);
-    padding-bottom: 2%;
+    padding: 2%;
     margin:auto;
     border: 2px outset var(--orange);
 }
@@ -41,6 +41,7 @@ body{
     padding-top: 2%;
     padding-bottom: 2%;
     font-size: 3em;
+    text-align: center;
 }
 #hero p {
     /* background-color: rgba(0, 0, 0, 0.8); */
@@ -49,6 +50,7 @@ body{
     font-size: 1.5em;
     padding-top: 2%;
     padding-bottom: 2%;
+    text-align: center;
 }
 #hero button {
     margin-top: 2%;

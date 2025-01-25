@@ -1,6 +1,7 @@
 <?php
 
 use Backend\Controllers\PostController;
+use Backend\Controllers\ImageController;
 use Backend\Controllers\UserController;
 use Backend\Routes\Router;
 
@@ -11,6 +12,7 @@ $router->post('/register', [UserController::class, 'createUser']);
 $router->post('/login', [UserController::class, 'login']);
 $router->post('/logout', [UserController::class, 'logout']);
 $router->post('/post', [PostController::class, 'createPost']);
+$router->post('/image', [ImageController::class, 'store']);
 
 try {
     $router->resolve(method(), uri());
