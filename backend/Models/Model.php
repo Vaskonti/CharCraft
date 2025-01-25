@@ -90,13 +90,6 @@ class Model
         return $instance;
     }
 
-    public function delete(): void
-    {
-        $db = self::connect();
-        $stmt = $db->prepare("DELETE FROM " . static::$table . " WHERE id = ?");
-        $stmt->execute([$this->id]);
-    }
-
     public function first(): ?static
     {
         $db = self::connect();

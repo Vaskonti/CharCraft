@@ -6,10 +6,10 @@ class EntityLike extends Model
 {
     protected static string $table = 'entity_likes';
 
-    private int $id;
-    private int $user_id;
-    private int $entity_id;
-    private string $entity_type;
+    protected int $id;
+    protected int $user_id;
+    protected int $entity_id;
+    protected string $entity_type;
 
     public function __construct($data = null)
     {

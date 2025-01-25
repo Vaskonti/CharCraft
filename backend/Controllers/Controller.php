@@ -24,4 +24,13 @@ class Controller
         return new XmlResponse($data, $statusCode);
     }
 
+    /**
+     * @throws \Exception
+     */
+    protected function setCookie($name, $value, $expire = 0, $path = '/', $domain = '', $secure = false, $httponly = false): void
+    {
+        if ($domain === '')
+            $domain = config('app.host');
+        setcookie($name, $value, $expire, $path, $domain, $secure, $httponly);
+    }
 }

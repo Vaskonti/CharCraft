@@ -2,6 +2,11 @@
 
 use Backend\Controllers\Controller;
 use Backend\Models\EntityLike;
+use Backend\Requests\CreateLikeEntityRequest;
+use Backend\Requests\RemoveLikeEntityRequest;
+use Backend\Responses\JsonResponse;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 class LikeEntityController extends Controller
 {
@@ -13,20 +18,22 @@ class LikeEntityController extends Controller
                 'errors' => $request->errors(),
             ], 409);
         }
-
         $data = $request->validated();
+        $user = $request->getAuthUser();
         EntityLike::create([
-            'user_id' => $data['user_id'],
+            'user_id' => $user->id,
             'entity_id' => $data['entity_id'],
             'entity_type' => $data['entity_type'],
-            'created_at' => date('Y-m-d H:i:s'),
         ]);
-        
+
         return $this->jsonResponse([
             'message' => 'Like created successfully!',
         ]);
     }
 
+    /**
+     * @throws Exception
+     */
     public function removeLikeEntity(RemoveLikeEntityRequest $request): JsonResponse
     {
         if (!$request->validate()) {
@@ -36,7 +43,11 @@ class LikeEntityController extends Controller
         }
 
         $data = $request->validated();
-        $like = EntityLike::find($data['id']);
+        $user = $request->getAuthUser();
+        $like = EntityLike::where('entity_id', $data['entity_id'])
+            ->where('entity_type', $data['entity_type'])
+            ->where('user_id', $user->id)
+            ->first();
 
         if (!$like) {
             return $this->jsonResponse([
