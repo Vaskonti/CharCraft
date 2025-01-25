@@ -16,9 +16,9 @@ class LikeEntityController extends Controller
 
         $data = $request->validated();
         EntityLike::create([
-            'userId' => $data['user_id'],
-            'entityId' => $data['entity_id'],
-            'entityType' => $data['entity_type'],
+            'user_id' => $data['user_id'],
+            'entity_id' => $data['entity_id'],
+            'entity_type' => $data['entity_type'],
             'created_at' => date('Y-m-d H:i:s'),
         ]);
         

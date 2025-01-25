@@ -65,7 +65,10 @@ export class CharacterBoard {
 
         this._setCell(row, col, character, color);
     }
+    
 
+
+    //TODO: make more efficient safe.
     exportBoardAsJSON() {
         return JSON.stringify(this.boardMatrix);
     }
