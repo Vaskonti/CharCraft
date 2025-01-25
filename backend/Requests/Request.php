@@ -131,20 +131,21 @@ class Request
                     if (!in_array($fileMimeType, $allowedTypes)) {
                         $this->addError($field, "The $field must be of type: " . implode(', ', $allowedTypes));
 
-                if (str_starts_with($rule, 'in:')) {
-                    $allowedValues = explode(',', substr($rule, 3));
-                    if (isset($data[$field]) && !in_array($data[$field], $allowedValues)) {
-                        $this->addError($field, str_replace(':field', $field, $this->messages()["in"] ?? "$field must be one of: " . implode(', ', $allowedValues)));
+                        if (str_starts_with($rule, 'in:')) {
+                            $allowedValues = explode(',', substr($rule, 3));
+                            if (isset($data[$field]) && !in_array($data[$field], $allowedValues)) {
+                                $this->addError($field, str_replace(':field', $field, $this->messages()["in"] ?? "$field must be one of: " . implode(', ', $allowedValues)));
+                            }
+                        }
                     }
+                }
+                if (!empty($this->errors)) {
+                    http_response_code(422);
+                    echo json_encode(["errors" => $this->errors]);
+                    exit;
                 }
             }
         }
-        if (!empty($this->errors)) {
-            http_response_code(422);
-            echo json_encode(["errors" => $this->errors]);
-            exit;
-        }
-
         return true;
     }
 
