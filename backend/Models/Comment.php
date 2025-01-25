@@ -8,8 +8,8 @@ class Comment extends Model
 
     private int $id;
     private string $content;
-    private int $postId;
-    private int $userId;
+    private int $post_id;
+    private int $user_id;
     private int $likes;
 
     public function __construct($data = null)
