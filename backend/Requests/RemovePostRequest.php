@@ -2,7 +2,7 @@
 
 namespace Backend\Requests;
 
-class CreatePostRequest extends Request
+class RemovePostRequest extends Request
 {
     public function rules(): array
     {
