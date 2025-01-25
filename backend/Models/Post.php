@@ -11,7 +11,7 @@ class Post extends Model
     private string $description;
     private int $ascii_image_id;
     private int $likes;
-    private bool $isArchived;
+    private bool $is_archived;
 
     public function __construct($data = null)
     {
