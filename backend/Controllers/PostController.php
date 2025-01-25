@@ -17,10 +17,7 @@ class PostController extends Controller
             ], 409);
         }
 
-        $data = $request->validated();
-        $data['likes'] = 0;
-        $data['is_archived'] = false;
-        $post = Post::create($data);
+        $post = Post::create($request->validated());
 
         return $this->jsonResponse([
             'message' => 'Post created successfully!',

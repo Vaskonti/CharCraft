@@ -40,6 +40,7 @@ class Router
      */
     public function resolve($method, $uri): void
     {
+        $uri = parse_url($uri, PHP_URL_PATH);
         if (!isset($this->routes[$uri])) {
             http_response_code(404);
             echo "404 Not Found";

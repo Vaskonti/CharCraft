@@ -2,6 +2,7 @@
 
 namespace Backend\Requests;
 
+use Backend\Constants\HttpMethods;
 use Backend\Constants\ImageType;
 use Backend\Database\Database;
 
@@ -20,8 +21,12 @@ class Request
             echo json_encode(["error" => "Forbidden"]);
             exit;
         }
+        if (method() === HttpMethods::GET) {
+            $this->data = $_GET;
+            return;
+        }
 
-        $this->data = $_SERVER['REQUEST_METHOD'] === 'POST'
+        $this->data = $_SERVER['REQUEST_METHOD'] === HttpMethods::POST
             ? json_decode(file_get_contents("php://input"), true) ?? $_POST
             : $_GET;
     }
@@ -59,6 +64,7 @@ class Request
         $data = $this->data;
 
         foreach ($rules as $field => $ruleSet) {
+            $ruleSet = is_array($ruleSet) ? $ruleSet : explode('|', $ruleSet);
             foreach ($ruleSet as $rule) {
                 if ($rule === 'required') {
                     if ((!isset($data[$field]) || trim($data[$field]) === '') && !isset($_FILES[$field])) {
@@ -131,22 +137,23 @@ class Request
                     if (!in_array($fileMimeType, $allowedTypes)) {
                         $this->addError($field, "The $field must be of type: " . implode(', ', $allowedTypes));
 
-                if (str_starts_with($rule, 'in:')) {
-                    $allowedValues = explode(',', substr($rule, 3));
-                    if (isset($data[$field]) && !in_array($data[$field], $allowedValues)) {
-                        $this->addError($field, str_replace(':field', $field, $this->messages()["in"] ?? "$field must be one of: " . implode(', ', $allowedValues)));
+                        if (str_starts_with($rule, 'in:')) {
+                            $allowedValues = explode(',', substr($rule, 3));
+                            if (isset($data[$field]) && !in_array($data[$field], $allowedValues)) {
+                                $this->addError($field, str_replace(':field', $field, $this->messages()["in"] ?? "$field must be one of: " . implode(', ', $allowedValues)));
+                            }
+                        }
                     }
+                }
+                if (!empty($this->errors)) {
+                    http_response_code(422);
+                    echo json_encode(["errors" => $this->errors]);
+                    exit;
                 }
             }
         }
-        if (!empty($this->errors)) {
-            http_response_code(422);
-            echo json_encode(["errors" => $this->errors]);
-            exit;
-        }
-
         return true;
-    }
+}
 
     protected function addError(string $field, string $message): void
     {
