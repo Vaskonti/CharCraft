@@ -6,11 +6,11 @@ class Comment extends Model
 {
     protected static string $table = 'comments';
 
-    private int $id;
-    private string $content;
-    private int $post_id;
-    private int $user_id;
-    private int $likes;
+    protected int $id;
+    protected string $content;
+    protected int $post_id;
+    protected int $user_id;
+    protected int $likes;
 
     public function __construct($data = null)
     {
