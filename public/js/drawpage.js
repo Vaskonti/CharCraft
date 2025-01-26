@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedColor = event.target.value;
         colorPickerBtn.style.backgroundColor = selectedColor;
         colorPickerBtn.setAttribute("data-color", selectedColor);
+        drawingBoardUI.registerColorButtons(colorButtons, 'data-color');
     });
 
     const palletButtons = document.querySelectorAll("#color-pallet button");
@@ -226,4 +227,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //TODO: Implement save to profile
 
+    const brushSizeBtn = document.getElementById("brush-size-btn");
+    const brushSizeSlider = document.getElementById("brush-size");
+
+    brushSizeBtn.addEventListener("click", () => {
+        brushSizeSlider.classList.toggle("hidden");
+    });
+
+    brushSizeSlider.addEventListener("input", () => {
+        brushSizeBtn.textContent = brushSizeSlider.value;
+        brush.setMouseRadius(brushSizeSlider.value);
+    });
+
 });
+
