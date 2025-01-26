@@ -29,7 +29,6 @@
         <section class="pallet" id="color-pallet">
             <button style="background-color: #000000;" data-color="#000000"></button>
             <button style="background-color: #7F7F7F;" data-color="#7F7F7F"></button>
-            <!-- <button style="background-color: #880015;" data-color="#880015"></button> -->
             <button style="background-color: #ED1C24;" data-color="#ED1C24"></button>
             <button style="background-color: #FF7F27;" data-color="#FF7F27"></button>
             <button style="background-color: #FFF200;" data-color="#FFF200"></button>
@@ -37,7 +36,7 @@
             <button style="background-color: #00A2E8;" data-color="#00A2E8"></button>
             <button style="background-color: #3F48CC;" data-color="#3F48CC"></button>
             <button style="background-color: #A349A4;" data-color="#A349A4"></button>
-            <button style="background-color: #FFFFFF;" data-color="#FFFFFF"></button>
+            <button style="background-color: #FFFFFF;" data-color="#FFFFFF" class="selected"></button>
             <button style="background-color: #C3C3C3;" data-color="#C3C3C3"></button>
             <button style="background-color: #B97A57;" data-color="#B97A57"></button>
             <button style="background-color: #FFAEC9;" data-color="#FFAEC9"></button>
@@ -64,17 +63,17 @@
             </section>
 
             <section class="tool-buttons"a>
+                <button data-style="brush" class="selected"><img src="assets/images/icons/paintbrush.png" alt="brush" class="icon" title="brush"></button>
                 <button data-style="bucket"><img src="assets/images/icons/paint-bucket.png" alt="bucket" class="icon" title="bucket"></button>
-                <button data-style="brush"><img src="assets/images/icons/paintbrush.png" alt="brush" class="icon" title="brush"></button>
             </section>
 
             <section class="draw-buttons">
-                <button data-draw="circle"><img src="assets/images/icons/dry-clean.png" alt="circle" class="icon" title="circle brush"></button>
+                <button data-draw="circle" class="selected"><img src="assets/images/icons/dry-clean.png" alt="circle" class="icon" title="circle brush"></button>
                 <button data-draw="square"><img src="assets/images/icons/stop.png" alt="square" class="icon" title="square brush"></button>
             </section>
 
             <section class="brush-buttons">
-                <button data-brush="normal"><img src="assets/images/icons/brush.png" alt="normal" class="icon" title="normal"></button>
+                <button data-brush="normal" class="selected"><img src="assets/images/icons/brush.png" alt="normal" class="icon" title="normal"></button>
                 <button data-brush="color-only"><img src="assets/images/icons/coloring-tool.png" alt="color only"class="icon" title="color only"></button>
                 <button data-brush="character-only"><img src="assets/images/icons/abc.png" alt="character only"class="icon" title="character only"></button>
                 <button data-brush="embolden"><img src="assets/images/icons/bold.png" alt="embolden"class="icon" title="embolden"></button>
@@ -83,6 +82,8 @@
 
             <section id="character-picker-section">
                 <button id="character-picker-btn" title="character picker"><input type="text" id="character-picker" hidden>o</button>
+                <button id="brush-size-btn" title="brush size">1</button>
+                <input type="range" id="brush-size" min="0" max="10" value="1" class="hidden">
             </section>
 
             <section id="image-loader-section">
