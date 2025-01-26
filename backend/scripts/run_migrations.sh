@@ -4,7 +4,7 @@ if [ ! -f .env ]; then
     exit 1
 fi
 source .env  # Load environment variables
-MIGRATIONS_DIR="backend/migrations/up"
+MIGRATIONS_DIR="/migrations/up"
 
 # Check if MySQL is accessible
 if ! command -v mysql &> /dev/null; then
@@ -13,7 +13,7 @@ if ! command -v mysql &> /dev/null; then
 fi
 
 # Create the Database if it does not exist
-echo "🚀 Checking if database '$DB_DATABASE' exists..."
+echo "🚀  Checking if database '$DB_DATABASE' exists..."
 DB_EXISTS=$(mysql -u "$DB_USERNAME" -p"$DB_PASSWORD" -se "SHOW DATABASES LIKE '$DB_DATABASE';")
 
 if [ -z "$DB_EXISTS" ]; then

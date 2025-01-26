@@ -114,7 +114,7 @@ class Model
         return $data ? new static($data) : null;
     }
 
-    public function all(): ?static
+    public function all(): ?array
     {
         $db = self::connect();
         $query = "SELECT * FROM " . static::$table;
@@ -132,9 +132,9 @@ class Model
         
         $stmt = $db->prepare($query);
         $stmt->execute($params);
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $data ? new static($data) : null;
+        return $data ?? null;
     }
 
     /**

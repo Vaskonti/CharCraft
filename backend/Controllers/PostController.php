@@ -4,6 +4,7 @@ namespace Backend\Controllers;
 
 use Backend\Models\Post;
 use Backend\Requests\CreatePostRequest;
+use Backend\Requests\GetUserPostsRequest;
 use Backend\Requests\RemovePostRequest;
 use Backend\Responses\JsonResponse;
 
@@ -55,5 +56,15 @@ class PostController extends Controller
         $posts = Post::random(10);
 
         return $this->jsonResponse($posts);
+    }
+
+    public function getUserPosts(GetUserPostsRequest $request): JsonResponse
+    {
+        $user = $request->getAuthUser();
+        $posts = Post::where('user_id', $user->sub)->all();
+
+        return $this->jsonResponse(array_map(function ($post) {
+            return $post->toArray();
+        }, $posts));
     }
 }
