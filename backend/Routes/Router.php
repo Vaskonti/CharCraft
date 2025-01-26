@@ -1,6 +1,7 @@
 <?php
 
 namespace Backend\Routes;
+use Backend\Constants\HttpMethods;
 use ReflectionException;
 use ReflectionFunction;
 use ReflectionMethod;
@@ -11,12 +12,27 @@ class Router
 
     public function get(string $path, callable|array $callback): void
     {
-        $this->routes['GET'][$path] = $callback;
+        $this->routes[$path][HttpMethods::GET] = $callback;
     }
 
     public function post(string $path, callable|array $callback): void
     {
-        $this->routes['POST'][$path] = $callback;
+        $this->routes[$path][HttpMethods::POST] = $callback;
+    }
+
+    public function patch(string $path, callable|array $callback): void
+    {
+        $this->routes[$path][HttpMethods::PATCH] = $callback;
+    }
+
+    public function put(string $path, callable|array $callback): void
+    {
+        $this->routes[$path][HttpMethods::PUT] = $callback;
+    }
+
+    public function delete(string $path, callable|array $callback): void
+    {
+        $this->routes[$path][HttpMethods::DELETE] = $callback;
     }
 
     /**
@@ -24,13 +40,20 @@ class Router
      */
     public function resolve($method, $uri): void
     {
-        if (!isset($this->routes[$method][$uri])) {
+        $uri = parse_url($uri, PHP_URL_PATH);
+        if (!isset($this->routes[$uri])) {
             http_response_code(404);
             echo "404 Not Found";
             return;
         }
+        if (!isset($this->routes[$uri][$method])) {
+            http_response_code(405);
+            header("Allow: " . implode(", ", array_keys($this->routes[$uri])));
+            echo "405 Method Not Allowed";
+            return;
+        }
 
-        $action = $this->routes[$method][$uri];
+        $action = $this->routes[$uri][$method];
 
         if (is_array($action)) {
             [$controller, $method] = $action;

@@ -22,7 +22,6 @@ class UserController extends Controller
             'username' => $data['username'],
             'password' => password_hash($data['password'], PASSWORD_DEFAULT),
             'email' => $data['email'],
-            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         return $this->jsonResponse([

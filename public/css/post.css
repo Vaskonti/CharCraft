@@ -92,7 +92,7 @@ p
 }
 
 
-#posts-container
+.posts-container
 {
     width: 100%;
     display: flex;
