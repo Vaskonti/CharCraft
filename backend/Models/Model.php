@@ -37,6 +37,31 @@ class Model
         return static::find($id);
     }
 
+    /**
+     * @throws Exception
+     */
+    public function delete(): bool
+    {
+        $db = self::connect();
+
+        if (!property_exists($this, 'id') || empty($this->id)) {
+            throw new Exception("Cannot delete record: 'id' property is missing or not set.");
+        }
+
+        $stmt = $db->prepare("DELETE FROM " . static::$table . " WHERE id = ?");
+        return $stmt->execute([$this->id]);
+    }
+
+    public static function random(int $limit): array
+    {
+        $db = self::connect();
+        $stmt = $db->prepare("SELECT * FROM " . static::$table . " ORDER BY RAND() LIMIT ?");
+        $stmt->bindValue(1, $limit, \PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     private static function getConnection()
     {
         static $db;
@@ -87,6 +112,34 @@ class Model
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
         return $data ? new static($data) : null;
+    }
+
+    public function all(): ?array
+    {
+        $db = self::connect();
+        $query = "SELECT * FROM " . static::$table;
+        $params = [];
+
+        if (!empty($this->query)) {
+            $conditions = [];
+            foreach ($this->query as [$field, $value]) {
+                $conditions[] = "$field = ?";
+                $params[] = $value;
+            }
+
+            $query .= " WHERE " . implode(" AND ", $conditions);
+        }
+        
+        $stmt = $db->prepare($query);
+        $stmt->execute($params);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return array_map(fn($item) => new static($item), $data);
+    }
+
+    public function toArray(): array
+    {
+        return get_object_vars($this);
     }
 
     /**

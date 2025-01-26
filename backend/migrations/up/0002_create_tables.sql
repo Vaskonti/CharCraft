@@ -2,7 +2,7 @@ CREATE TABLE `follows` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
   `following_user_id` integer,
   `followed_user_id` integer,
-  `created_at` timestamp
+  `created_at` timestamp default CURRENT_TIMESTAMP
 );
 
 CREATE TABLE `users` (
@@ -10,16 +10,16 @@ CREATE TABLE `users` (
   `username` varchar(255),
   `password` varchar(255),
   `email` varchar(255),
-  `created_at` timestamp
+  `created_at` timestamp default CURRENT_TIMESTAMP
 );
 
 CREATE TABLE `ascii_images` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
   `user_id` integer,
   `path` varchar(255),
-  `created_at` timestamp,
-  `updated_at` timestamp,
-  `is_archived` boolean
+  `created_at` timestamp default CURRENT_TIMESTAMP,
+  `updated_at` timestamp default CURRENT_TIMESTAMP,
+  `is_archived` boolean default false
 );
 
 CREATE TABLE `posts` (
@@ -28,8 +28,8 @@ CREATE TABLE `posts` (
   `description` varchar(255),
   `user_id` integer,
   `ascii_image_id` integer,
-  `created_at` timestamp,
-  `likes` bigint
+  `created_at` timestamp default CURRENT_TIMESTAMP,
+  `likes` bigint default 0
 );
 
 CREATE TABLE `comments` (
@@ -37,7 +37,7 @@ CREATE TABLE `comments` (
   `content` varchar(255),
   `post_id` integer,
   `user_id` integer,
-  `likes` bigint
+  `likes` bigint default 0
 );
 
 CREATE TABLE `entity_likes` (
@@ -45,7 +45,7 @@ CREATE TABLE `entity_likes` (
   `user_id` integer,
   `entity_type` varchar(255),
   `entity_id` integer,
-  `created_at` timestamp
+  `created_at` timestamp default CURRENT_TIMESTAMP
 );
 
 ALTER TABLE `posts` ADD FOREIGN KEY (`ascii_image_id`) REFERENCES `ascii_images` (`id`);
