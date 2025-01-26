@@ -90,13 +90,6 @@ class Model
         return $instance;
     }
 
-    public function delete(): void
-    {
-        $db = self::connect();
-        $stmt = $db->prepare("DELETE FROM " . static::$table . " WHERE id = ?");
-        $stmt->execute([$this->id]);
-    }
-
     public function first(): ?static
     {
         $db = self::connect();
@@ -121,7 +114,7 @@ class Model
         return $data ? new static($data) : null;
     }
 
-    public function all(): ?static
+    public function all(): ?array
     {
         $db = self::connect();
         $query = "SELECT * FROM " . static::$table;
@@ -139,9 +132,14 @@ class Model
         
         $stmt = $db->prepare($query);
         $stmt->execute($params);
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $data ? new static($data) : null;
+        return array_map(fn($item) => new static($item), $data);
+    }
+
+    public function toArray(): array
+    {
+        return get_object_vars($this);
     }
 
     /**

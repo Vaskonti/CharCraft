@@ -2,6 +2,7 @@
 
 namespace Backend\Requests;
 
+use Backend\Constants\HttpMethods;
 use Backend\Constants\ImageType;
 use Backend\Database\Database;
 
@@ -20,8 +21,12 @@ class Request
             echo json_encode(["error" => "Forbidden"]);
             exit;
         }
+        if (method() === HttpMethods::GET) {
+            $this->data = $_GET;
+            return;
+        }
 
-        $this->data = $_SERVER['REQUEST_METHOD'] === 'POST'
+        $this->data = $_SERVER['REQUEST_METHOD'] === HttpMethods::POST
             ? json_decode(file_get_contents("php://input"), true) ?? $_POST
             : $_GET;
     }
@@ -59,6 +64,7 @@ class Request
         $data = $this->data;
 
         foreach ($rules as $field => $ruleSet) {
+            $ruleSet = is_array($ruleSet) ? $ruleSet : explode('|', $ruleSet);
             foreach ($ruleSet as $rule) {
                 if ($rule === 'required') {
                     if ((!isset($data[$field]) || trim($data[$field]) === '') && !isset($_FILES[$field])) {
@@ -147,7 +153,7 @@ class Request
             }
         }
         return true;
-    }
+}
 
     protected function addError(string $field, string $message): void
     {

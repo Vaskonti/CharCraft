@@ -9,12 +9,12 @@ class CreateCommentRequest extends Request
         return [
             'content' => ['required', 'string', 'max:255'],
             'post_id' => ['required', 'integer'],
-            'user_id' => ['required', 'integer'],
+            'user_id' => ['required', 'exists:users,id'],
         ];
     }
 
     public function authorize(): bool
     {
-        return isset($_SESSION['user_id']) && $_SESSION['user_id'];
+        return true;
     }
 }
