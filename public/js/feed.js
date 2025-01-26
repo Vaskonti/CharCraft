@@ -1,18 +1,38 @@
-const postsData = [
-    {
-        "id": 1,
-        "username": "John Doe",
-        "time": "12:30, 20/01/2025",
-        "image_id": "logo",
-        "title": "Beautiful Sunset",
-        "likes": 98,
-        "description": "Vestibulum auctor dapibus neque, eu efficitur lectus pharetra et.",
-        "comments": [
-            { "username": "Alice", "content": "Wow, amazing shot!" },
-            { "username": "Bob", "content": "Looks fantastic!" }
-        ]
+import { hostName } from "./config.js";
+
+// const postsData = [
+//     {
+//         "id": 1,
+//         "username": "John Doe",
+//         "time": "12:30, 20/01/2025",
+//         "image_id": "logo",
+//         "title": "Beautiful Sunset",
+//         "likes": 98,
+//         "description": "Vestibulum auctor dapibus neque, eu efficitur lectus pharetra et.",
+//         "comments": [
+//             { "username": "Alice", "content": "Wow, amazing shot!" },
+//             { "username": "Bob", "content": "Looks fantastic!" }
+//         ]
+//     }
+// ];
+
+const postsData = fetch(hostName + '/post', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json'}
+})
+.then(response => {
+    if (!response.ok) {
+        alert(`Something went wrong! \n${response.status}`);
+        throw new Error('Failed to submit comment');
     }
-];
+    // generatePosts(response.json());
+    // return null;
+    console.log(response);
+    return response.json();
+})
+.catch(error => {
+    console.error('Error:', error);
+});
 
 export function generatePost(post)
 {
@@ -75,14 +95,14 @@ export function generatePost(post)
             formData.append('post_id', post.id);
             formData.append('content', commentText);
 
-            fetch('https://example.com/api/submit', {  // Replace with actual API endpoint
+            fetch(hostName + '/post/comment', {
                 method: 'POST',
                 body: formData,
                 headers: { 'Content-Type': 'application/json'}
             })
             .then(response => {
                 if (!response.ok) {
-                    //TODO: Pop-up 
+                    alert(`Something went wrong! \n${response.status}`);
                     throw new Error('Failed to submit comment');
                 }
                 return response.json();
@@ -104,6 +124,7 @@ export function generatePost(post)
 }
 function generatePosts(posts) {
     const postsContainer = document.querySelectorAll(".posts-container")[0];
+    console.log(posts);
     posts.forEach(post => {
 
         const postElement = generatePost(post);
@@ -112,29 +133,64 @@ function generatePosts(posts) {
 }
 
 document.addEventListener("DOMContentLoaded", function () { 
-    generatePosts(postsData);
+    // generatePosts(postsData);
+
+    // const postCreationForm = document.getElementById('post-creation-form');
+    //     if(!postCreationForm)
+    //     {
+    //         return;
+    //     }
+    //     postCreationForm.addEventListener('submit', function(event) {
+    //     event.preventDefault(); 
+    //     let formData = new FormData(this);
+    
+    //     fetch(hostName + '/post', { 
+    //         method: 'POST',
+    //         body: formData,
+    //         headers: { 'Content-Type': 'application/json'}
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         alert(`Post created successfully`);
+    //         console.log('Success:', data);
+    //     })
+    //     .catch(error => {
+    //         alert(`There has been an error! Try again!`);
+    //         console.error('Error:', error);
+    //     });
+    // });
+});
+
+document.addEventListener("DOMContentLoaded", function () { 
+    postsData.then(posts => {
+        generatePosts(posts);
+    }).catch(error => {
+        console.error('Error fetching posts:', error);
+        alert('Failed to load posts. Please try again later.');
+    });
 
     const postCreationForm = document.getElementById('post-creation-form');
-        if(!postCreationForm)
-        {
-            return;
-        }
-        postCreationForm.addEventListener('submit', function(event) {
+    if (!postCreationForm) {
+        return;
+    }
+    postCreationForm.addEventListener('submit', function(event) {
         event.preventDefault(); 
         let formData = new FormData(this);
     
-        fetch('https://example.com/api/submit', { // Replace with your endpoint
+        fetch(hostName + '/post', { 
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: { 'Content-Type': 'application/json'}
         })
         .then(response => response.json())
         .then(data => {
+            alert(`Post created successfully`);
             console.log('Success:', data);
         })
         .catch(error => {
+            alert(`There has been an error! Try again!`);
             console.error('Error:', error);
         });
     });
 });
-
 
