@@ -19,7 +19,10 @@ class CreateCommentRequest extends Request
     {
         if ($cookie = $this->getCookie('auth_token')) {
             $user = Auth::validateToken($cookie);
-            return $user && $user->sub;
+            if ($user && $user->sub) {
+                $this->setAuthUser($user);
+                return true;
+            }
         }
         return false;
     }
