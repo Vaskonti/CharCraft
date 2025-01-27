@@ -39,7 +39,7 @@ main
     row-gap: 0px;
 }
 
-.pallet, .pallet section
+.pallet
 {
     display: flex;
     flex-direction: column;
@@ -53,6 +53,16 @@ main
     z-index: 100; 
 }
 
+.pallet section
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-self: space-between;
+    flex: 0 1 auto; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
+}
 .pallet button
 {
     width: 30px;
@@ -193,11 +203,11 @@ label, h2, p {
 {
     #color-pallet, #buttons
     {
-        width: 10vw; 
+        width: 13vw; 
     }
 
     .idk-draw-something
     {
-        width: 75vw;
+        width: 70vw;
     }
 }

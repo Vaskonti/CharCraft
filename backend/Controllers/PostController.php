@@ -51,7 +51,7 @@ class PostController extends Controller
 
     public function getPosts(): JsonResponse
     {
-        $posts = Post::random(10);
+        $posts = Post::random(2);
 
         return $this->jsonResponse($posts);
     }

@@ -1,5 +1,5 @@
 import {generatePost} from './feed.js';
-
+import { hostName } from './config.js';
 const profileData = 
 {
     "username": "ascii_artist123",
@@ -51,6 +51,22 @@ const profileData =
     ]
   }
   
+// const profileData = fetch(hostName + '/user/posts', {
+//   method: 'GET',
+//   body: formData,
+//   headers: { 'Content-Type': 'application/json'}
+// })
+// .then(response => {
+//   if (!response.ok) {
+//       alert(`Something went wrong! \n${response.status}`);
+//       throw new Error('Failed to submit comment');
+//   }
+//   return response.json();
+// })
+// .catch(error => {
+//   console.error('Error:', error);
+// });
+
 function generateProfile(profileData) {
   const profileContainer = document.getElementById("profile-container");
 

@@ -192,5 +192,10 @@ document.addEventListener('DOMContentLoaded', () => {
         brush.setMouseRadius(brushSizeSlider.value);
     });
 
+    const centerBtn = document.getElementById("center-btn");
+    centerBtn.addEventListener("click", () => {
+        drawingBoardUI.centerCanvas();
+    });
+
 });
 
