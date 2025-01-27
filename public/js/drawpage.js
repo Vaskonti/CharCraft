@@ -65,6 +65,30 @@ function hidePopup() {
     drawingBoardUI.enableBoardUI();
 }
 
+function dataURLToBlob(dataURL) {
+    const [header, base64] = dataURL.split(',');
+    const byteString = atob(base64);
+    const mimeString = header.split(':')[1].split(';')[0];
+    const buffer = new Uint8Array(byteString.length);
+
+    for (let i = 0; i < byteString.length; i++) {
+        buffer[i] = byteString.charCodeAt(i);
+    }
+
+    return new Blob([buffer], { type: mimeString });
+}
+
+
+function convertBoardToImage() {
+    const canvas = drawingBoard.canvas;
+    const imageDataUrl = canvas.toDataURL('image/png');
+    const blob = dataURLToBlob(imageDataUrl);
+
+    const formData = new FormData();
+    formData.append('file', blob, 'canvas-image.png');
+
+    return formData;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     brush.setMouseRadius(mouseRadius);
@@ -199,10 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const saveBtn = document.getElementById("save-btn");
     saveBtn.addEventListener("click", () => {
-        const boardJSON = drawingBoardUI.drawingBoard.exportBoardAsJSON();
+        const image = convertBoardToImage(drawingBoardUI.saveBoard)
         fetch("http://localhost:8000" + '/image', {
             method: 'POST',
-            body: boardJSON,
+            body: image,
             headers: { 'Content-Type': 'application/json'},
         })
         .then(response => {console.log(response); response.json()})
