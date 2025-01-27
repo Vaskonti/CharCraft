@@ -351,6 +351,11 @@ export class DrawingBoardUI {
                     this.brush.setBrushType(BrushType.FADE_CHARACTER);
                 });
             }
+            else if (strType == "erase") {
+                button.addEventListener('click', () => {
+                    this.brush.setBrushType(BrushType.ERASE);
+                });
+            }
         });
     }
 }
