@@ -12,6 +12,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./:/var/www/html
+      - ./scripts/entrypoint.sh:/startup/00-migration
     working_dir: /var/www/html
     networks:
       - app_network
@@ -30,7 +31,7 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_data2:/var/lib/mysql
     networks:
       - app_network
 
@@ -38,4 +39,4 @@ networks:
   app_network:
 
 volumes:
-  mysql_data:
+  mysql_data2:

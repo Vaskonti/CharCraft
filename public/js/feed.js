@@ -17,9 +17,9 @@ export function generatePost(post)
     const postElement = document.createElement("section");
     postElement.classList.add("post");
     postElement.innerHTML = `
-            <h3 class="username">${post.username}</h3>
-            <time class="created-at">${post.time}</time>
-            <img src="/public/assets/images/${post.image_id}.png" alt="ASCII image" class="ASCII-image">
+                <h3 class="username">${post.title}</h3>
+            <time class="created-at">${post.created_at}</time>
+            <img src="/public/assets/images/${post.ascii_image_id}.png" alt="ASCII image" class="ASCII-image">
             <h3 class="title">${post.title}</h3>
             <section class="likes">
                 <img src="/public/assets/images/icons/heart-empty.png" 
@@ -86,7 +86,6 @@ export function generatePost(post)
                 return response.json();
             })
             .then(data => {
-                console.log('Success:', data);
                 const newComment = document.createElement("li");
                 newComment.innerHTML = `You: ${commentText}`;
                 commentList.appendChild(newComment);

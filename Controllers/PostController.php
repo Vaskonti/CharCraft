@@ -55,7 +55,9 @@ class PostController extends Controller
     {
         $posts = Post::random(2);
 
-        return $this->jsonResponse($posts);
+        return $this->jsonResponse(array_map(function ($post) {
+            return $post->toArray();
+        }, $posts));
     }
 
     public function getUserPosts(GetUserPostsRequest $request): JsonResponse
