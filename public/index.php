@@ -8,6 +8,7 @@ use Backend\Misc\Log;
 use Backend\Routes\Router;
 
 require __DIR__ . '/../vendor/autoload.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     // Send preflight response
     header("Access-Control-Allow-Origin: *");
@@ -37,7 +38,7 @@ $router->get('/post/comments', [CommentController::class, 'getComments']);
 $router->post('/post/comments', [CommentController::class, 'createComment']);
 
 try {
-    $router->resolve(method(), uri());
+    $router->resolve($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 } catch (ReflectionException $e) {
     Log::error($e);
 }

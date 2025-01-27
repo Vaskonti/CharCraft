@@ -1,6 +1,6 @@
-import { TextBoard } from '../../src/js/text_board.js';
-import { Character } from '../../src/js/character.js';
-import { defaultColor } from '../../src/js/utils.js';
+import { TextBoard } from '../../public/src/js/text_board.js';
+import { Character } from '../../public/src/js/character.js';
+import { defaultColor } from '../../public/src/js/utils.js';
 
 const { describe, test, expect, beforeEach, jest } = require('@jest/globals');
 

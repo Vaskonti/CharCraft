@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CharCraft - Register & Login</title>
+    <link rel="stylesheet" href="css/header-and-footer.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <script type="module" src="/js/registration-and-logging-in.js"></script>
+</head>
+
+<body>
+<header>
+    <a href="/hero.html"><img src="assets/images/logo2.PNG" alt="logo" class="logo"></a>
+    <a href="/hero.html"><img src="assets/images/name.PNG" alt="name" class="logo" id="name"></a>
+
+    <nav>
+        <a href="./drawpage.html">Drawpage</a>
+        <a href="./hero.html">Home</a>
+    </nav>
+</header>
+
+<main>
+    <!-- Registration Form -->
+    <form id="registration" class="form">
+        <h2>Create an Account</h2>
+        <p>Join CharCraft and explore the world of ASCII art.</p>
+        <div class="input-group">
+            <input type="text" placeholder="Username" name="username" required>
+        </div>
+        <div class="input-group">
+            <input type="email" placeholder="Email" name="email" required>
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Password" name="password" required>
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Confirm password" name="password_confirmation" required>
+        </div>
+        <button type="submit">Sign Up</button>
+        <button type="button" class="switch-form" onclick="toggleForm('login')">Already have an account?</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="login" class="form hidden">
+        <h2>Welcome Back</h2>
+        <p>Log in to continue your journey.</p>
+        <div class="input-group">
+            <input type="email" placeholder="Email" name="email" required>
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Password" name="password" required>
+        </div>
+        <button type="submit">Log In</button>
+        <button type="button" class="switch-form" onclick="toggleForm('registration')">Not a member yet? Create an account</button>
+    </form>
+</main>
+
+<footer>
+    <p>2025 CharCraft. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleForm(formId) {
+        document.getElementById('registration').classList.toggle('hidden');
+        document.getElementById('login').classList.toggle('hidden');
+    }
+</script>
+</body>
+</html>

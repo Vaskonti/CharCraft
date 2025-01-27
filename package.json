@@ -16,7 +16,7 @@
     },
     "scripts": {
         "test": "jest",
-        "build": "babel src --out-dir dist --ignore '**/*.test.js'"
+        "build": "babel public/src --out-dir dist --ignore '**/*.test.js'"
     },
     "jest": {
         "setupFiles": [

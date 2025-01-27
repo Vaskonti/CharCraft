@@ -22,7 +22,7 @@ class Request
             echo json_encode(["error" => "Forbidden"]);
             exit;
         }
-        if (method() === HttpMethods::GET) {
+        if ($_SERVER['REQUEST_METHOD'] === HttpMethods::GET) {
             $this->data = $_GET;
             return;
         }

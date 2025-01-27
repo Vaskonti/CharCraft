@@ -1,5 +1,5 @@
 import { Character } from './character.js';
-import { emptyCharacter, defaultColor, reducedAsciiVisibilityRank, getVisibilityRankIndexOfCharacter, defaultBackgroundColor } from '../../src/js/utils.js';
+import { emptyCharacter, defaultColor, reducedAsciiVisibilityRank, getVisibilityRankIndexOfCharacter, defaultBackgroundColor } from './utils.js';
 
 export class CharacterBoard {
     constructor(sizeX, sizeY) {

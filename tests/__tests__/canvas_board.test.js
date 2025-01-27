@@ -1,6 +1,6 @@
-import { CanvasBoard } from '../../src/js/canvas_board.js';
-import { Character } from '../../src/js/character.js';
-import { defaultColor } from '../../src/js/utils.js';
+import { CanvasBoard } from '../../public/src/js/canvas_board.js';
+import { Character } from '../../public/src/js/character.js';
+import { defaultColor } from '../../public/src/js/utils.js';
 
 const { describe, test, expect, beforeEach, jest } = require('@jest/globals');
 
