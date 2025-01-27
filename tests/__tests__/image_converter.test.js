@@ -1,6 +1,6 @@
-import { ImageConverter, ImageParseOptions } from '../../src/js/image_converter.js';
-import { CharacterBoard } from '../../src/js/character_board.js';
-import { Character } from '../../src/js/character.js';
+import { ImageConverter, ImageParseOptions } from '../../public/src/js/image_converter.js';
+import { CharacterBoard } from '../../public/src/js/character_board.js';
+import { Character } from '../../public/src/js/character.js';
 
 const img = {
     width: 10,

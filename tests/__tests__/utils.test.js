@@ -5,7 +5,7 @@ import {
     getVisibilityRankIndexOfCharacter, 
     densityCache, 
     densityIndexCache 
-  } from '../../src/js/utils.js'; 
+  } from '../../public/src/js/utils.js';
   
   beforeAll(() => {
     precomputeDensityForReducedVisibilityRank();

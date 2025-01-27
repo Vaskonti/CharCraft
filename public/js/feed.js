@@ -1,32 +1,10 @@
 import { hostName } from "./config.js";
 
-// const postsData = [
-//     {
-//         "id": 1,
-//         "username": "John Doe",
-//         "time": "12:30, 20/01/2025",
-//         "image_id": "logo",
-//         "title": "Beautiful Sunset",
-//         "likes": 98,
-//         "description": "Vestibulum auctor dapibus neque, eu efficitur lectus pharetra et.",
-//         "comments": [
-//             { "username": "Alice", "content": "Wow, amazing shot!" },
-//             { "username": "Bob", "content": "Looks fantastic!" }
-//         ]
-//     }
-// ];
-
-const postsData = fetch(hostName + '/post', {
+const postsData = await fetch(hostName + '/user/posts', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json'}
 })
 .then(response => {
-    // if (!response.ok) {
-    //     alert(`Something went wrong! \n${response.status}`);
-    //     throw new Error('Failed to submit comment');
-    // }
-    // generatePosts(response.json());
-    // return null;
     console.log(response);
     return response.json();
 })

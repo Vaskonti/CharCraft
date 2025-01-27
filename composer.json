@@ -2,11 +2,8 @@
     "name": "vasilhristov/char-craft",
     "autoload": {
         "psr-4": {
-            "Backend\\": "backend/"
-        },
-        "files": [
-            "backend/Helpers/helper.php"
-        ]
+            "Backend\\": "./"
+        }
     },
     "authors": [
         {

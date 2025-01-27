@@ -4,7 +4,7 @@ if [ ! -f .env ]; then
     exit 1
 fi
 source .env  # Load environment variables
-MIGRATIONS_DIR="/migrations/up"
+MIGRATIONS_DIR="/migrations/up/"
 
 # Check if MySQL is accessible
 if ! command -v mysql &> /dev/null; then

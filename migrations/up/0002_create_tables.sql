@@ -1,10 +1,3 @@
-CREATE TABLE `follows` (
-  `id` integer PRIMARY KEY AUTO_INCREMENT,
-  `following_user_id` integer,
-  `followed_user_id` integer,
-  `created_at` timestamp default CURRENT_TIMESTAMP
-);
-
 CREATE TABLE `users` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(255),

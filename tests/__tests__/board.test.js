@@ -1,7 +1,7 @@
 const { describe, test, expect, beforeEach } = require('@jest/globals');
-import { CharacterBoard } from '../../src/js/character_board.js';
-import { Character } from '../../src/js/character.js';
-import { asciiVisibilityRank, defaultColor, emptyCharacter, reducedAsciiVisibilityRank } from '../../src/js/utils.js';
+import { CharacterBoard } from '../../public/src/js/character_board.js';
+import { Character } from '../../public/src/js/character.js';
+import { asciiVisibilityRank, defaultColor, emptyCharacter, reducedAsciiVisibilityRank } from '../../public/src/js/utils.js';
 
 describe('CharacterBoard Class Tests', () => {
     let board;

@@ -1,8 +1,8 @@
-import { DrawingBoardUI } from '../../src/js/drawing_board_ui.js';
-import { CanvasBoard } from '../../src/js/canvas_board.js';
-import { Brush, ToolType, BrushShape, BrushType} from '../../src/js/brush.js';
-import { ImageConverter, ImageParseOptions } from '../../src/js/image_converter.js';
-import { CharacterBoard } from '../../src/js/character_board.js';
+import { DrawingBoardUI } from '../src/js/drawing_board_ui.js';
+import { CanvasBoard } from '../src/js/canvas_board.js';
+import { Brush, ToolType, BrushShape, BrushType} from '../src/js/brush.js';
+import { ImageConverter, ImageParseOptions } from '../src/js/image_converter.js';
+import { CharacterBoard } from '../src/js/character_board.js';
 
 
 const imageInput = document.getElementById('image-input');
