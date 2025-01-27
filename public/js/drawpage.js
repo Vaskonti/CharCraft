@@ -111,9 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorPickerInput = document.getElementById("color-picker");
     const colorPickerBtn = document.querySelector(".color-picker-btn");
 
-    colorPickerBtn.addEventListener("click", () => {
-        colorPickerInput.click();
-    });
+    drawingBoardUI.registerColorPicker(colorPickerBtn, colorPickerInput);
 
     imageInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
@@ -182,4 +180,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //TODO: Implement save to profile
 
+    const brushSizeBtn = document.getElementById("brush-size-btn");
+    const brushSizeSlider = document.getElementById("brush-size");
+
+    brushSizeBtn.addEventListener("click", () => {
+        brushSizeSlider.classList.toggle("hidden");
+    });
+
+    brushSizeSlider.addEventListener("input", () => {
+        brushSizeBtn.textContent = brushSizeSlider.value;
+        brush.setMouseRadius(brushSizeSlider.value);
+    });
+
 });
+
