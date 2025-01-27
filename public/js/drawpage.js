@@ -197,5 +197,24 @@ document.addEventListener('DOMContentLoaded', () => {
         drawingBoardUI.centerCanvas();
     });
 
+    const saveBtn = document.getElementById("save-btn");
+    saveBtn.addEventListener("click", () => {
+        const boardJSON = drawingBoardUI.drawingBoard.exportBoardAsJSON();
+        fetch("http://localhost:8000" + '/image', {
+            method: 'POST',
+            body: boardJSON,
+            headers: { 'Content-Type': 'application/json'},
+        })
+        .then(response => {console.log(response); response.json()})
+        .then(data => {
+            alert(`Save successful.`);
+            console.log('Success:', data);
+        })
+        .catch(error => {
+            alert(`Something went wrong! \n${error.message}`);
+            console.error('Error:', error);
+        });
+    });
+
 });
 
