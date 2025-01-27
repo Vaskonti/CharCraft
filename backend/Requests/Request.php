@@ -11,6 +11,7 @@ class Request
     protected array $data;
     protected array $errors = [];
     protected \PDO $pdo;
+    protected $authUser;
 
     public function __construct()
     {
@@ -185,5 +186,25 @@ class Request
             return null;
         }
         return $_FILES[$field];
+    }
+
+    private function hasCookie(string $name): bool
+    {
+        return isset($_COOKIE[$name]);
+    }
+
+    public function getCookie(string $name): ?string
+    {
+        return $_COOKIE[$name] ?? null;
+    }
+
+    public function getAuthUser()
+    {
+        return $this->authUser;
+    }
+
+    public function setAuthUser($user): void
+    {
+        $this->authUser = $user;
     }
 }

@@ -1,4 +1,7 @@
 <?php
+
+use Backend\Misc\Log;
+
 require_once "env.php";
 /**
  * @throws Exception
@@ -30,7 +33,7 @@ function config($key):array|string|null
 
         return $configCache[$file][$setting];
     } catch (Exception $exception) {
-        log_issue($exception);
+        Log::error($exception);
         return null;
     }
 }

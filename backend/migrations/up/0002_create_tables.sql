@@ -25,7 +25,7 @@ CREATE TABLE `ascii_images` (
 CREATE TABLE `posts` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(255),
-  `description` varchar(255),
+  `content` varchar(255),
   `user_id` integer,
   `ascii_image_id` integer,
   `created_at` timestamp default CURRENT_TIMESTAMP,

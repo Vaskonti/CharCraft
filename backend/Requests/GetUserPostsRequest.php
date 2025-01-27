@@ -3,18 +3,10 @@
 namespace Backend\Requests;
 
 use Backend\Auth\Auth;
+use Firebase\JWT\JWT;
 
-class CreatePostRequest extends Request
+class GetUserPostsRequest extends Request
 {
-    public function rules(): array
-    {
-        return [
-            'title' => ['required', 'string', 'min:3'],
-            'content' => ['required', 'string', 'min:3'],
-            'ascii_image_id' => ['required', 'integer'],
-        ];
-    }
-
     public function authorize(): bool
     {
         if ($cookie = $this->getCookie('auth_token')) {

@@ -6,9 +6,9 @@ class UserFollows extends Model
 {
     protected static string $table = 'follows';
 
-    private int $id;
-    private int $followerId;
-    private int $followedId;
+    protected int $id;
+    protected int $follower_id;
+    protected int $followed_id;
 
     public function __construct($data = null)
     {

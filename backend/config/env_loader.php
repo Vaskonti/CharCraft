@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '/../misc/log.php';
+
+use Backend\Misc\Log;
+
+require_once __DIR__ . '/../misc/Log.php';
 /**
  * @throws Exception
  */
@@ -32,5 +35,5 @@ function load_env($filePath): void
 try {
     load_env(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '.env');
 } catch (\Exception $e) {
-    log_issue($e);
+    Log::error($e);
 }
