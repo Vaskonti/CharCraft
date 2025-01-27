@@ -134,7 +134,12 @@ class Model
         $stmt->execute($params);
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $data ?? null;
+        return array_map(fn($item) => new static($item), $data);
+    }
+
+    public function toArray(): array
+    {
+        return get_object_vars($this);
     }
 
     /**

@@ -69,13 +69,13 @@ function hidePopup() {
 document.addEventListener('DOMContentLoaded', () => {
     brush.setMouseRadius(mouseRadius);
     brush.setBrushShape(BrushShape.CIRCLE);
-    brush.setToolType(ToolType.NORMAL);
+    brush.setToolType(ToolType.BRUSH);
     drawingBoardUI = new DrawingBoardUI(drawingBoard, brush);
     drawingBoardUI.init();
     drawingBoardUI.enableBoardUI();
 
-    const colorButtons = document.querySelectorAll('#color-pallet button');
-    drawingBoardUI.registerColorButtons(colorButtons, 'data-color');
+    const palletButtons = document.querySelectorAll("#color-pallet button");
+    drawingBoardUI.registerColorButtons(palletButtons, 'data-color');
     const clearButtons = document.querySelectorAll('.clear-buttons button');
     drawingBoardUI.registerClearButtons(clearButtons);
     const toolButtons = document.querySelectorAll('.tool-buttons button');
@@ -111,53 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorPickerInput = document.getElementById("color-picker");
     const colorPickerBtn = document.querySelector(".color-picker-btn");
 
-    colorPickerBtn.addEventListener("click", () => {
-        colorPickerInput.click();
-    });
-
-    colorPickerInput.addEventListener("input", (event) => {
-        const selectedColor = event.target.value;
-        colorPickerBtn.style.backgroundColor = selectedColor;
-        colorPickerBtn.setAttribute("data-color", selectedColor);
-    });
-
-    const palletButtons = document.querySelectorAll("#color-pallet button");
-
-    function removeSelection(type) {
-        if (type == "pallet") palletButtons.forEach((btn) => btn.classList.remove("selected"));
-        if (type == "tool") toolButtons.forEach((btn) => btn.classList.remove("selected"));
-        if (type == "draw") drawButtons.forEach((btn) => btn.classList.remove("selected"));
-        if (type == "brush") brushButtons.forEach((brush_buttons) => brush_buttons.classList.remove("selected"));
-        
-    }
-
-    palletButtons.forEach((palletButton) => {
-        palletButton.addEventListener("click", () => {
-            removeSelection("pallet");
-            palletButton.classList.add("selected");
-        });
-    });
-
-    toolButtons.forEach((toolButton) => {
-        toolButton.addEventListener("click", () => {
-            removeSelection("tool");
-            toolButton.classList.add("selected");
-        });
-    });
-
-    drawButtons.forEach((drawButton) => {
-        drawButton.addEventListener("click", () => {
-            removeSelection("draw");
-            drawButton.classList.add("selected");
-        });
-    });
-
-    brushButtons.forEach((brushButton) => {
-        brushButton.addEventListener("click", () => {
-            removeSelection("brush");
-            brushButton.classList.add("selected");
-        });
-    });
+    drawingBoardUI.registerColorPicker(colorPickerBtn, colorPickerInput);
 
     imageInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
@@ -226,4 +180,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //TODO: Implement save to profile
 
+    const brushSizeBtn = document.getElementById("brush-size-btn");
+    const brushSizeSlider = document.getElementById("brush-size");
+
+    brushSizeBtn.addEventListener("click", () => {
+        brushSizeSlider.classList.toggle("hidden");
+    });
+
+    brushSizeSlider.addEventListener("input", () => {
+        brushSizeBtn.textContent = brushSizeSlider.value;
+        brush.setMouseRadius(brushSizeSlider.value);
+    });
+
+    const centerBtn = document.getElementById("center-btn");
+    centerBtn.addEventListener("click", () => {
+        drawingBoardUI.centerCanvas();
+    });
+
 });
+

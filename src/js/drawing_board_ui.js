@@ -13,6 +13,10 @@ export class DrawingBoardUI {
         this.offsetX = 0;
         this.offsetY = 0;
         this.brush = brush;
+        this.palletButtons = [];
+        this.brushButtons = [];
+        this.toolButtons = [];
+        this.drawButtons = [];
         this.captureMouseEventsCleanupCallback = null;
         this.disableAndCaptureScrollAndZoomCleanupCallback = null;
 
@@ -235,12 +239,12 @@ export class DrawingBoardUI {
 
     centerCanvas() {
         const boardRect = this.drawBoardElement.getBoundingClientRect();
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
+        const parentRect = this.drawBoardElement.parentNode.getBoundingClientRect();
+        console.log(boardRect.width, boardRect.height);
+        console.log(parentRect.width, parentRect.height);
+        this.offsetX = (parentRect.width - boardRect.width) / 2;
+        this.offsetY = (parentRect.height - boardRect.height) / 2;
     
-        this.offsetX = (screenWidth - boardRect.width * this.scale) / 2;
-        this.offsetY = (screenHeight - boardRect.height * this.scale) / 2;
-
         this.updateTransform();
     }
 
@@ -272,11 +276,23 @@ export class DrawingBoardUI {
     }
 
 
-    registerColorButtons(buttons, dataName = 'data-color') {
-        buttons.forEach(button => {
+    registerColorButtons(palletButtons, dataName = 'data-color') {
+        this.palletButtons = palletButtons;
+        palletButtons.forEach(button => {
+            const color = button.getAttribute(dataName);
             button.addEventListener('click', () => {
-                const color = button.getAttribute(dataName);
                 this.brush.setDrawColor(color);
+            });
+            if (this.brush.drawColor === color)
+            {
+                button.classList.add("selected");
+            }
+        });
+
+        this.palletButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                this.removeSelection("pallet");
+                button.classList.add("selected");
             });
         });
     }
@@ -292,65 +308,137 @@ export class DrawingBoardUI {
     }
 
     registerToolButtons(toolButtons, dataName = 'data-style') {
+        this.toolButtons = toolButtons;
         toolButtons.forEach(button => {
             const strType = button.getAttribute(dataName);
+            var toolType = ToolType.BRUSH;
+
             if (strType == "bucket") {
-                button.addEventListener('click', () => {
-                    this.brush.setToolType(ToolType.BUCKET);
-                });
+                toolType = ToolType.BUCKET;
             }
             else if (strType == "brush") {
-                button.addEventListener('click', () => {
-                    this.brush.setToolType(ToolType.NORMAL);
-                });
+                toolType = ToolType.BRUSH
             }
+
+            button.addEventListener('click', () => {
+                this.brush.setToolType(toolType);
+            });
+
+            if (this.brush.toolType === toolType)
+            {
+                button.classList.add("selected");
+            }
+        });
+
+        this.toolButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                this.removeSelection("tool");
+                button.classList.add("selected");
+            });
         });
     }
 
     registerDrawButtons(drawButtons, dataName = 'data-draw') {
+        this.drawButtons = drawButtons;
         drawButtons.forEach(button => {
             const strType = button.getAttribute(dataName);
+            var brushShape = BrushShape.CIRCLE;
+
             if (strType == "circle") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushShape(BrushShape.CIRCLE);
-                });
+                brushShape = BrushShape.CIRCLE;
             }
             else if (strType == "square") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushShape(BrushShape.NORMAL);
-                });
+                brushShape = BrushShape.SQUARE;
             }
+
+            button.addEventListener('click', () => {
+                this.brush.setBrushShape(brushShape);
+            });
+            if (this.brush.brushShape === brushShape)
+            {
+                button.classList.add("selected");
+            }
+            
+        });
+
+        this.drawButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                this.removeSelection("draw");
+                button.classList.add("selected");
+            });
         });
     }
 
     registerBrushButtons(brushButtons, dataName = 'data-brush') {
+        this.brushButtons = brushButtons;
         brushButtons.forEach(button => {
             const strType = button.getAttribute(dataName);
+            var brushType = BrushType.NORMAL;
             if (strType == "normal") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.NORMAL);
-                });
+                brushType = BrushType.NORMAL;
             }
             else if (strType == "color-only") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.COLOR_ONLY);
-                });
+                brushType = BrushType.COLOR_ONLY;
             }
             else if (strType == "character-only") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.CHARACTER_ONLY);
-                });
+                brushType = BrushType.CHARACTER_ONLY;
             }
             else if (strType == "embolden") {
-                button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.EMBOLDEN_CHARACTER);
-                });
+                brushType = BrushType.EMBOLDEN_CHARACTER;
             }
             else if (strType == "fade") {
+                brushType = BrushType.FADE_CHARACTER;
+            }
+            else if (strType == "erase") {
+                brushType = BrushType.ERASE;
+            }
+
+            button.addEventListener('click', () => {
+                this.brush.setBrushType(brushType);
+            });
+            if (this.brush.brushType === brushType)
+            {
+                button.classList.add("selected");
+            }
+            else if (strType == "erase") {
                 button.addEventListener('click', () => {
-                    this.brush.setBrushType(BrushType.FADE_CHARACTER);
+                    this.brush.setBrushType(BrushType.ERASE);
                 });
             }
         });
+
+        this.brushButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                this.removeSelection("brush");
+                button.classList.add("selected");
+            });
+        });
+    }
+
+
+    registerColorPicker(colorPickerBtn, colorPickerInput) {
+        colorPickerBtn.addEventListener("click", () => {
+            colorPickerInput.click();
+            const selectedColor = colorPickerBtn.style.backgroundColor;
+            this.brush.setDrawColor(selectedColor);
+            this.removeSelection("pallet");
+            colorPickerBtn.classList.add("selected")
+        });
+    
+        colorPickerInput.addEventListener("input", (event) => {
+            const selectedColor = event.target.value;
+            colorPickerBtn.style.backgroundColor = selectedColor;
+            this.brush.setDrawColor(selectedColor);
+            this.removeSelection("pallet");
+            colorPickerBtn.classList.add("selected")
+        });
+    }
+
+
+    removeSelection(type) {
+        if (type == "pallet") this.palletButtons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "tool") this.toolButtons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "draw") this.drawButtons.forEach((btn) => btn.classList.remove("selected"));
+        if (type == "brush") this.brushButtons.forEach((brush_buttons) => brush_buttons.classList.remove("selected"));
     }
 }

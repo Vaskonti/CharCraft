@@ -6,7 +6,9 @@
     <title>CharCraft Registration and logging in</title>
     <link rel="stylesheet" href="css/header-and-footer.css">
     <link rel="stylesheet" href="css/forms.css">
+    <script type="module" src="/public/js/registration-and-logging-in.js"></script>
 </head>
+
 <body>
     <header>
         <a href="/public/hero.html"><img src="assets/images/logo2.PNG" alt="logo" class = "logo"></a>
@@ -22,23 +24,23 @@
     <main>
         <form id="registration" class="form">
             <h2>New user?</h2>
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm password">
-            <input type="submit" value="Register">
+            <input type="text" placeholder="Username" name="username">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password" name="password">
+            <input type="password" placeholder="Confirm password" name="password">
+            <input type="submit" value="Sign up">
         </form>
 
         <form id="logging-in" class="form">
             <h2>Coming back?</h2>
             <input type="email" placeholder="Email">
             <input type="password" placeholder="Password">
-            <input type="submit" value="Login">
+            <input type="submit" value="Sign in">
         </form>
     </main>
 
     <footer>
-        <p>2024 CharCraft. All rights reserved.</p>
+        <p>2025 CharCraft. All rights reserved.</p>
     </footer>
 </body>
 </html>

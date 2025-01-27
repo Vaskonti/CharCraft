@@ -4,6 +4,7 @@ namespace Backend\Controllers;
 
 use Backend\Models\Comment;
 use Backend\Requests\CreateCommentRequest;
+use Backend\Requests\GetCommentsInPostRequest;
 use Backend\Responses\JsonResponse;
 
 class CommentController extends Controller
@@ -16,21 +17,14 @@ class CommentController extends Controller
             ], 409);
         }
 
-        $data = $request->validated();
-        $comment = Comment::create([
-            'content' => $data['content'],
-            'post_id' => $data['post_id'],
-            'user_id' => $data['user_id'],
-            'likes' => 0,
-        ]);
-
+        $comment = Comment::create($request->validated());
         return $this->jsonResponse([
             'message' => 'Comment created successfully!',
             'comment_id' => $comment->id,
         ]);
     }
 
-    public function getCommentsInPostRequest(GetCommentsInPostRequest $request): JsonResponse
+    public function getComments(GetCommentsInPostRequest $request): JsonResponse
     {
         if (!$request->validate()) {
             return $this->jsonResponse([
@@ -40,7 +34,7 @@ class CommentController extends Controller
 
         $data = $request->validated();
         $comments = Comment::where('post_id', $data['post_id'])->all();
-
+        //TODO: Implement pagination
         return $this->jsonResponse($comments);
     }
 }
