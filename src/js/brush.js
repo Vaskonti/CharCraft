@@ -8,7 +8,7 @@ export const BrushShape = {
 
 
 export const ToolType = {
-    NORMAL: 'normal',
+    BRUSH: 'normal',
     BUCKET: 'bucket',
 };
 
@@ -28,7 +28,7 @@ export class Brush {
         this.drawCharacter = '0';
         this.defaultCharacter = emptyCharacter;
         this.defaultColor = defaultColor;
-        this.toolType = ToolType.NORMAL;
+        this.toolType = ToolType.BRUSH;
         this.brushShape = BrushShape.CIRCLE;
         this.brushType = BrushType.NORMAL;
     }

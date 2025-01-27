@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CharCraft Feed</title>
+    <title>User Profile</title>
     <link rel="stylesheet" href="css/header-and-footer.css">
-    <link rel="stylesheet" href="css/post.css">
-    <script type="module" src="/public/js/feed.js"></script>
-
+    <link rel="stylesheet" href="css/profile.css">
+    <script type="module" src="/public/js/profile.js"></script>
 </head>
 <body>
     <header>
@@ -15,27 +14,16 @@
         <a href="/public/hero.html"><img src="assets/images/name.PNG" alt="name" class="logo" id="name"></a>
         
         <nav>
-            <a href="/public/hero.html">Home</a>
+            <a href="/public/feed.html">Feed</a>
             <a href="/public/drawpage.html">Draw</a>
             <a href="/public/registration-and-logging-in.html">Log out</a>
         </nav>
     </header>
-    <main>
-        <section id="create-post">
-            
-            <form id="post-creation-form">
-                <h2>Create a Post</h2>
-                <input type="text" id="title" name="title" placeholder="Title" required>
-                <textarea id="description" name="content" placeholder="Description"></textarea>
-                <input type="file" placeholder="ASCII image" required> 
-                <!-- TODO: To allow posting images from user profile -->
-                <input type="submit" value="Post">
-            </form>
-        </section>
 
+    <main id="profile-container">
         <section class="posts-container"></section>
     </main>
-
+    
     <footer>
         <p>2025 CharCraft. All rights reserved.</p>
     </footer>

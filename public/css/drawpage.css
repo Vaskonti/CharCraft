@@ -4,8 +4,8 @@ main
     margin-top: var(--header-height);
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 10px; 
     padding: 10px;
     flex-wrap: wrap;
@@ -14,9 +14,12 @@ main
 
 .idk-draw-something
 {
-    height: 100%;
-    width: 90%;
+    width: 90vw;
+    height: 85vh; 
     border-radius: 10px;
+    overflow: hidden;
+    padding-top: 10px; 
+    padding-bottom: 10px;
 }
 
 .prevent-select {
@@ -36,30 +39,55 @@ main
     row-gap: 0px;
 }
 
-.pallet, .pallet section
+.pallet
 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-self: space-between;
     flex: 0 1 auto; 
-    padding: 10px; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
     background-color: var(--black);
     border-radius: 25px;
-    z-index: 100;
+    z-index: 100; 
 }
 
+.pallet section
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-self: space-between;
+    flex: 0 1 auto; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
+}
 .pallet button
 {
     width: 30px;
     height: 30px; 
     border-radius: 50%;
     cursor: pointer;
+    box-sizing: border-box; 
+}
+
+#color-pallet, #buttons
+{
+    margin: 0px;
+    padding: 0px;
+    width: 4vw; 
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+    padding-top:10px;
+    padding-bottom:10px;
+
 }
 
 .selected
 {
-    border: 3px groove var(--orange);
+    outline: 3px groove var(--orange);
 }
 
 .icon
@@ -76,20 +104,28 @@ main
     display: none; 
 }
 
-.popup { 
-    color: black;
+.popup 
+{ 
+    color: var(--white);
     position: fixed; 
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    background: white; 
+    background: var(--gray); 
     padding: 20px; 
     border-radius: 10px; 
     z-index: 1000; 
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     max-width: 90vw;
     max-height: 90vh; 
-    overflow: auto; /* Allow scrolling inside the popup if content exceeds size */
+    overflow: auto; 
+    border: 2px outset var(--orange);
+}
+
+label input
+{
+    width: 40px;
+    align-self: flex-end;
 }
 
 .popup-content {
@@ -116,11 +152,62 @@ main
 }
 
 
-/* TODO: style */
-label {
-    color: black;
+label, h2, p {
+    color: var(--white);
 }
 
-h2 {
-    color: black;
+
+#brush-size {
+    position: absolute;
+    translate: -120% 350%;
+    width: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
+#apply-settings, #cancel-settings
+{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: var(--black);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px outset var(--gray);
+    font: var(--font);
+}
+
+#apply-settings:hover, #cancel-settings:hover
+{
+    background-color: var(--orange);
+    border: 2px inset var(--gray);
+}
+
+@media (max-height: 700px) 
+{
+    #color-pallet, #buttons
+    {
+        width: 8vw; 
+    }
+
+    .idk-draw-something
+    {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 1000px)
+{
+    #color-pallet, #buttons
+    {
+        width: 13vw; 
+    }
+
+    .idk-draw-something
+    {
+        width: 70vw;
+    }
 }

@@ -1,0 +1,161 @@
+main
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    flex-wrap: wrap;
+    height: 20vh;
+    gap: 30px;
+}
+
+.user-header h2
+{
+    font-size: 3em;
+}
+
+.user-header button
+{
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: var(--black);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px outset var(--gray);
+    font: var(--font);
+}
+.hidden
+{
+    display:none;
+}
+
+
+.pop-up 
+{ 
+    color: var(--white);
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background: var(--gray); 
+    padding: 20px; 
+    border-radius: 10px; 
+    z-index: 1000; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 60vw;
+    max-height: 80vh; 
+    overflow: auto; 
+    border: 2px outset var(--orange);
+    align-items: center;
+}
+
+.post
+{
+    width: 100%;
+    height: 100%;
+}
+
+.post img
+{
+    max-width: 400px;
+    max-height: 400px;
+}
+.likes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.likes p {
+    margin: 0;
+    padding: 0;
+    font: var(--font);
+}
+
+.ASCII-image
+{
+    display: block;
+    border-radius: 10px;
+    border: 2px outset var(--orange);
+}
+
+.icon
+{
+    width:20px;
+    height: 20px;
+    display: inline;
+}
+
+.close-btn 
+{ 
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    cursor: pointer;
+    color: black
+}
+
+form input[type="submit"]
+{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: var(--black);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px outset var(--gray);
+    font: var(--font);
+}
+
+form input[type="submit"]:hover
+{
+    background-color: var(--orange);
+    border: 2px inset var(--gray);
+}
+
+form input[type="text"]
+{
+    width: 98%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin:0;
+    border-radius: 10px;
+    font: var(--font);
+    text-align: center;
+    align-self: center;
+}
+
+.image-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.image-container button
+{
+    max-width: 250px;
+    max-height: 250px;
+    min-width: 100px;
+    min-height: 100px;
+    overflow: hidden;
+    border: none; 
+    background: none; 
+    padding: 0;
+    cursor: pointer;
+}
