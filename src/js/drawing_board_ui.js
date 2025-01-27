@@ -411,6 +411,25 @@ export class DrawingBoardUI {
     }
 
 
+    registerColorPicker(colorPickerBtn, colorPickerInput) {
+        colorPickerBtn.addEventListener("click", () => {
+            colorPickerInput.click();
+            const selectedColor = colorPickerBtn.style.backgroundColor;
+            this.brush.setDrawColor(selectedColor);
+            this.removeSelection("pallet");
+            colorPickerBtn.classList.add("selected")
+        });
+    
+        colorPickerInput.addEventListener("input", (event) => {
+            const selectedColor = event.target.value;
+            colorPickerBtn.style.backgroundColor = selectedColor;
+            this.brush.setDrawColor(selectedColor);
+            this.removeSelection("pallet");
+            colorPickerBtn.classList.add("selected")
+        });
+    }
+
+
     removeSelection(type) {
         if (type == "pallet") this.palletButtons.forEach((btn) => btn.classList.remove("selected"));
         if (type == "tool") this.toolButtons.forEach((btn) => btn.classList.remove("selected"));

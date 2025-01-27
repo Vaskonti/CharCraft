@@ -3,3 +3,5 @@ CREATE TABLE IF NOT EXISTS migrations_log (
     filename VARCHAR(255) NOT NULL,
     executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO migrations_log (filename) VALUES ('0001_create_migrations_log_table.sql');
