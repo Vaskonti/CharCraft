@@ -21,10 +21,10 @@ const postsData = fetch(hostName + '/post', {
     headers: { 'Content-Type': 'application/json'}
 })
 .then(response => {
-    if (!response.ok) {
-        alert(`Something went wrong! \n${response.status}`);
-        throw new Error('Failed to submit comment');
-    }
+    // if (!response.ok) {
+    //     alert(`Something went wrong! \n${response.status}`);
+    //     throw new Error('Failed to submit comment');
+    // }
     // generatePosts(response.json());
     // return null;
     console.log(response);
