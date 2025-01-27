@@ -1,6 +1,7 @@
 <?php
 
 namespace Backend\Database;
+use Backend\Misc\Log;
 use PDO;
 use PDOException;
 require __DIR__ . '/../config/config.php';
@@ -22,6 +23,7 @@ class Database {
                 PDO::ATTR_EMULATE_PREPARES => false,
             ]);
         } catch (PDOException $e) {
+            Log::error($e);
             die("Database connection failed: " . $e->getMessage());
         }
     }

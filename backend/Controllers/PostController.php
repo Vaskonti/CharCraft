@@ -4,6 +4,7 @@ namespace Backend\Controllers;
 
 use Backend\Models\Post;
 use Backend\Requests\CreatePostRequest;
+use Backend\Requests\GetUserPostsRequest;
 use Backend\Requests\RemovePostRequest;
 use Backend\Responses\JsonResponse;
 
@@ -17,7 +18,8 @@ class PostController extends Controller
             ], 409);
         }
 
-        $post = Post::create($request->validated());
+        $user = $request->getAuthUser();
+        $post = Post::create(array_merge($request->validated(), ['user_id' => $user->sub]));
 
         return $this->jsonResponse([
             'message' => 'Post created successfully!',
@@ -54,5 +56,15 @@ class PostController extends Controller
         $posts = Post::random(2);
 
         return $this->jsonResponse($posts);
+    }
+
+    public function getUserPosts(GetUserPostsRequest $request): JsonResponse
+    {
+        $user = $request->getAuthUser();
+        $posts = Post::where('user_id', $user->sub)->all();
+
+        return $this->jsonResponse(array_map(function ($post) {
+            return $post->toArray();
+        }, $posts));
     }
 }
