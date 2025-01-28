@@ -11,7 +11,6 @@ class CreateCommentRequest extends Request
         return [
             'content' => ['required', 'string', 'max:255'],
             'post_id' => ['required', 'integer'],
-            'user_id' => ['required', 'exists:users,id'],
         ];
     }
 

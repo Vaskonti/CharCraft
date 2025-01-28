@@ -142,6 +142,20 @@ class Model
         return get_object_vars($this);
     }
 
+    public function save(): void
+    {
+        $db = self::connect();
+        $fields = [];
+        $values = [];
+        foreach ($this as $key => $value) {
+            $fields[] = "$key = ?";
+            $values[] = $value;
+        }
+        $values[] = $this->id;
+        $stmt = $db->prepare("UPDATE " . static::$table . " SET " . implode(', ', $fields) . " WHERE id = ?");
+        $stmt->execute($values);
+    }
+
     /**
      * @throws Exception
      */

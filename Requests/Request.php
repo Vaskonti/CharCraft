@@ -68,7 +68,7 @@ class Request
             $ruleSet = is_array($ruleSet) ? $ruleSet : explode('|', $ruleSet);
             foreach ($ruleSet as $rule) {
                 if ($rule === 'required') {
-                    if ((!isset($data[$field]) || trim($data[$field]) === '') && !isset($_FILES[$field])) {
+                    if (!isset($data[$field]) && !isset($_FILES[$field])) {
                         $this->addError($field, $messages["required"] ?? "$field is required.");
                     }
                 }

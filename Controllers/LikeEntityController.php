@@ -1,12 +1,12 @@
 <?php
 
-use Backend\Controllers\Controller;
+namespace Backend\Controllers;
+
 use Backend\Models\EntityLike;
+use Backend\Models\Post;
 use Backend\Requests\CreateLikeEntityRequest;
 use Backend\Requests\RemoveLikeEntityRequest;
 use Backend\Responses\JsonResponse;
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 
 class LikeEntityController extends Controller
 {
@@ -21,10 +21,13 @@ class LikeEntityController extends Controller
         $data = $request->validated();
         $user = $request->getAuthUser();
         EntityLike::create([
-            'user_id' => $user->id,
+            'user_id' => $user->sub,
             'entity_id' => $data['entity_id'],
             'entity_type' => $data['entity_type'],
         ]);
+
+        $post = Post::where('id', $data['entity_id'])->first();
+        $post->incrementLike();
 
         return $this->jsonResponse([
             'message' => 'Like created successfully!',
@@ -46,7 +49,7 @@ class LikeEntityController extends Controller
         $user = $request->getAuthUser();
         $like = EntityLike::where('entity_id', $data['entity_id'])
             ->where('entity_type', $data['entity_type'])
-            ->where('user_id', $user->id)
+            ->where('user_id', $user->sub)
             ->first();
 
         if (!$like) {
@@ -55,6 +58,8 @@ class LikeEntityController extends Controller
             ], 404);
         }
 
+        $post = Post::where('id', $data['entity_id'])->first();
+        $post->decrementLike();
         $success = $like->delete();
 
         return $this->jsonResponse([

@@ -9,7 +9,6 @@ class CreateLikeEntityRequest extends Request
     public function rules(): array
     {
         return [
-            'user_id' => ['required', 'integer'],
             'entity_type' => ['required', 'string', 'in:post,comment'],
             'entity_id' => ['required', 'integer']
         ];

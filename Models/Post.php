@@ -19,4 +19,16 @@ class Post extends Model
     {
         parent::__construct($data);
     }
+
+    public function incrementLike(): void
+    {
+        $this->likes++;
+        $this->save();
+    }
+
+    public function decrementLike(): void
+    {
+        $this->likes--;
+        $this->save();
+    }
 }

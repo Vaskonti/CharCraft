@@ -2,6 +2,7 @@
 
 use Backend\Controllers\CommentController;
 use Backend\Controllers\ImageController;
+use Backend\Controllers\LikeEntityController;
 use Backend\Controllers\PostController;
 use Backend\Controllers\UserController;
 use Backend\Misc\Log;
@@ -33,9 +34,9 @@ $router->get('/user/posts', [PostController::class, 'getUserPosts']);
 $router->post('/image', [ImageController::class, 'store']);
 $router->delete('/post/remove', [PostController::class, 'removePost']);
 $router->post('/like', [LikeEntityController::class, 'likeEntity']);
-$router->delete('/like/remove', [LikeEntityController::class, 'removeLikeEntity']);
+$router->post('/unlike', [LikeEntityController::class, 'removeLikeEntity']);
 $router->get('/post/comments', [CommentController::class, 'getComments']);
-$router->post('/post/comments', [CommentController::class, 'createComment']);
+$router->post('/post/comment', [CommentController::class, 'createComment']);
 
 try {
     $router->resolve($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
