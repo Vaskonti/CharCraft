@@ -16,8 +16,12 @@ class CommentController extends Controller
                 'errors' => $request->errors(),
             ], 409);
         }
+        $user = $request->getAuthUser();
 
-        $comment = Comment::create($request->validated());
+        $comment = Comment::create(array_merge(
+            $request->validated(),
+            ['user_id' => $user->sub]
+        ));
         return $this->jsonResponse([
             'message' => 'Comment created successfully!',
             'comment_id' => $comment->id,
@@ -34,7 +38,13 @@ class CommentController extends Controller
 
         $data = $request->validated();
         $comments = Comment::where('post_id', $data['post_id'])->all();
-        //TODO: Implement pagination
-        return $this->jsonResponse($comments);
+        return $this->jsonResponse(array_map(function ($comment) {
+            return [
+                'id' => $comment->id,
+                'content' => $comment->content,
+                'likes' => $comment->likes,
+                'created_at' => $comment->created_at,
+            ];
+        }, $comments));
     }
 }

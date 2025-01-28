@@ -2,6 +2,7 @@
 
 namespace Backend\Controllers;
 
+use Backend\Models\Comment;
 use Backend\Models\Post;
 use Backend\Requests\CreatePostRequest;
 use Backend\Requests\GetUserPostsRequest;
@@ -53,11 +54,8 @@ class PostController extends Controller
 
     public function getPosts(): JsonResponse
     {
-        $posts = Post::random(2);
-
-        return $this->jsonResponse(array_map(function ($post) {
-            return $post->toArray();
-        }, $posts));
+        $posts = Post::random(10);
+        return $this->jsonResponse($posts);
     }
 
     public function getUserPosts(GetUserPostsRequest $request): JsonResponse

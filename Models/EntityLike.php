@@ -10,6 +10,7 @@ class EntityLike extends Model
     protected int $user_id;
     protected int $entity_id;
     protected string $entity_type;
+    protected string $created_at;
 
     public function __construct($data = null)
     {

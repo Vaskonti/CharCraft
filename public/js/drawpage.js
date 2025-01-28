@@ -3,6 +3,7 @@ import { CanvasBoard } from '../src/js/canvas_board.js';
 import { Brush, ToolType, BrushShape, BrushType} from '../src/js/brush.js';
 import { ImageConverter, ImageParseOptions } from '../src/js/image_converter.js';
 import { CharacterBoard } from '../src/js/character_board.js';
+import {hostName} from "./config.js";
 
 
 const imageInput = document.getElementById('image-input');
@@ -85,7 +86,7 @@ function convertBoardToImage() {
     const blob = dataURLToBlob(imageDataUrl);
 
     const formData = new FormData();
-    formData.append('file', blob, 'canvas-image.png');
+    formData.append('image', blob, 'canvas-image.png');
 
     return formData;
 }
@@ -122,8 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener("keydown", (event) => {
         if (isWaitingForKey) {
             currentAsciiChar = event.key;
-            if (currentAsciiChar == "Shift")
+            if (currentAsciiChar === "Shift")
             {
+                let secondAsciiChar;
                 secondAsciiChar = event.key;
             }
             asciiKeyBtn.textContent = currentAsciiChar;
@@ -223,15 +225,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const saveBtn = document.getElementById("save-btn");
     saveBtn.addEventListener("click", () => {
-        const image = convertBoardToImage(drawingBoardUI.saveBoard)
-        fetch("http://localhost:8000" + '/image', {
+        const image = convertBoardToImage(drawingBoard);
+        fetch(hostName + '/image', {
             method: 'POST',
             body: image,
-            headers: { 'Content-Type': 'application/json'},
         })
         .then(response => {console.log(response); response.json()})
         .then(data => {
-            alert(`Save successful.`);
             console.log('Success:', data);
         })
         .catch(error => {
