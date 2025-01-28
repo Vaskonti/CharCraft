@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(`Something went wrong! \n${response.message}`);
             throw new Error('Failed to submit comment');
         }
-
+        window.location.href = '/drawpage.html';
         alert(`Registration successful.`);
     });
     const loginForm = document.getElementById('login');
@@ -40,5 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(`Something went wrong! \n${response.message}`);
             throw new Error('Failed to submit comment');
         }
+        window.location.href = '/drawpage.html';
+        alert(`Login successful.`);
     });
 });

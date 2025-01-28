@@ -1,7 +1,7 @@
 @font-face {
-    font-family: 'ThickBoy-Regular';	
+    font-family: 'ThickBoy-Regular';
     src: url('../assets/fonts/thicccboi/fonts/TTF/THICCCBOI-Regular.ttf') format('ttf'),
-         url('../assets/fonts/thicccboi/fonts/Webfont/THICCCBOI-Regular.woff2') format('woff2');
+    url('../assets/fonts/thicccboi/fonts/Webfont/THICCCBOI-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -13,7 +13,7 @@
     --orange: #F9AA0C;
     --black: #000000;
     --gray: #272732f3;
-    --light-gray:#55555ef3;
+    --light-gray: #55555ef3;
     --white: #FFFFFF;
     --font: ThickBoy-Regular;
     --header-height: 50px;
@@ -43,22 +43,38 @@ header {
     padding: 0;
     margin: 0;
 }
+.menu {
+    display: flex;
+    width: 100%;
+}
+
+.menu-item {
+  flex: 1;
+  display: flex;
+    width: 30%;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item.left {
+  justify-content: flex-start;
+}
+
+.menu-item.center {
+  justify-content: center;
+}
+
+.menu-item.right {
+  justify-content: flex-end;
+}
 
 .logo {
     width: auto;
     height: 100%;
-    padding: 0;
-    margin: 0;
+    align-content: center;
 }
 
-#name
-{
-    padding-left: 20%;
-    margin: 0;
-}
-
-a
-{
+a {
     display: inline-block;
     padding: 0;
     margin: 0;
@@ -85,35 +101,27 @@ nav a:hover {
 }
 
 footer {
-    position:fixed;
+    position: fixed;
     text-align: center;
     background-color: var(--black);
     color: var(--white);
-    bottom:0px; 
-    height:5%; 
-    left:0px; 
-    right:0px; 
+    bottom: 0px;
+    height: 5%;
+    left: 0px;
+    right: 0px;
     opacity: 0.8;
 }
 
-main
-{
-    width: 100%;
-    height: calc(100% - var(--header-height)); 
+main {
+    height: calc(100% - var(--header-height));
     margin-top: var(--header-height);
 }
 
 @media (max-width: 900px) {
 
-    a
-    {
+    a {
         max-height: 25px;
     }
-
-    /* #name 
-    {
-        padding: 0%;
-    } */
 
     nav a {
         font-size: 16px;
@@ -127,8 +135,7 @@ main
 }
 
 @media (max-width: 480px) {
-    a
-    {
+    a {
         max-height: 20px;
     }
 
@@ -139,6 +146,4 @@ main
     nav a {
         font-size: 14px;
     }
-
-    
 }

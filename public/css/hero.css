@@ -12,22 +12,39 @@ body {
     background: linear-gradient(135deg, #1a1a1a, #333);
     color: white;
 }
+main {
+    display: flex;
+    justify-content: space-around;
+}
 
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/1.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+}
 /* Hero Section */
 #hero {
     display: flex;
     flex-direction: column;
+    width: 50%;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 50px 20px;
     max-width: 600px;
+    min-width: 500px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-#name {
 }
 
 /* Hero Title */

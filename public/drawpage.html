@@ -12,7 +12,6 @@
 </head>
 
 
-
 <body>
     <header>
         <a href="/hero.html"><img src="assets/images/logo2.PNG" alt="logo" class = "logo"></a>
@@ -21,108 +20,124 @@
         <nav>
             <a href="/hero.html">Home</a>
             <a href="/feed.html">Feed</a>
-            <a href="/register.html">Log out</a>
+            <a href="/register-and-login.html">Log out</a>
         </nav>
     </header>
 
-    <main>
-        <section class="pallet" id="color-pallet">
-            <button style="background-color: #000000;" data-color="#000000"></button>
-            <button style="background-color: #7F7F7F;" data-color="#7F7F7F"></button>
-            <button style="background-color: #ED1C24;" data-color="#ED1C24"></button>
-            <button style="background-color: #FF7F27;" data-color="#FF7F27"></button>
-            <button style="background-color: #FFF200;" data-color="#FFF200"></button>
-            <button style="background-color: #22B14C;" data-color="#22B14C"></button>
-            <button style="background-color: #00A2E8;" data-color="#00A2E8"></button>
-            <button style="background-color: #3F48CC;" data-color="#3F48CC"></button>
-            <button style="background-color: #A349A4;" data-color="#A349A4"></button>
-            <button style="background-color: #FFFFFF;" data-color="#FFFFFF" class="selected"></button>
-            <button style="background-color: #C3C3C3;" data-color="#C3C3C3"></button>
-            <button style="background-color: #B97A57;" data-color="#B97A57"></button>
-            <button style="background-color: #FFAEC9;" data-color="#FFAEC9"></button>
-            <button style="background-color: #FFC90E;" data-color="#FFC90E"></button>
-            <button style="background-color: #EFE4B0;" data-color="#EFE4B0"></button>
-            <button style="background-color: #B5E61D;" data-color="#B5E61D"></button>
-            <button style="background-color: #99D9EA;" data-color="#99D9EA"></button>
-            <button style="background-color: #7092BE;" data-color="#7092BE"></button>
-            <button style="background-color: #C8BFE7;" data-color="#C8BFE7"></button>
+<main>
+    <section class="pallet" id="color-pallet">
+        <button style="background-color: #000000;" data-color="#000000"></button>
+        <button style="background-color: #7F7F7F;" data-color="#7F7F7F"></button>
+        <button style="background-color: #ED1C24;" data-color="#ED1C24"></button>
+        <button style="background-color: #FF7F27;" data-color="#FF7F27"></button>
+        <button style="background-color: #FFF200;" data-color="#FFF200"></button>
+        <button style="background-color: #22B14C;" data-color="#22B14C"></button>
+        <button style="background-color: #00A2E8;" data-color="#00A2E8"></button>
+        <button style="background-color: #3F48CC;" data-color="#3F48CC"></button>
+        <button style="background-color: #A349A4;" data-color="#A349A4"></button>
+        <button style="background-color: #FFFFFF;" data-color="#FFFFFF" class="selected"></button>
+        <button style="background-color: #C3C3C3;" data-color="#C3C3C3"></button>
+        <button style="background-color: #B97A57;" data-color="#B97A57"></button>
+        <button style="background-color: #FFAEC9;" data-color="#FFAEC9"></button>
+        <button style="background-color: #FFC90E;" data-color="#FFC90E"></button>
+        <button style="background-color: #EFE4B0;" data-color="#EFE4B0"></button>
+        <button style="background-color: #B5E61D;" data-color="#B5E61D"></button>
+        <button style="background-color: #99D9EA;" data-color="#99D9EA"></button>
+        <button style="background-color: #7092BE;" data-color="#7092BE"></button>
+        <button style="background-color: #C8BFE7;" data-color="#C8BFE7"></button>
 
-            <button class="color-picker-btn"><input type="color" id="color-picker" hidden><img src="assets/images/icons/color-picker.png" alt="color-wheel" class="icon" title="color picker"></button>
+        <button class="color-picker-btn"><input type="color" id="color-picker" hidden><img
+                src="assets/images/icons/color-picker.png" alt="color-wheel" class="icon" title="color picker"></button>
+    </section>
+
+
+    <section class="idk-draw-something">
+        <pre class="draw-board prevent-select"></pre>
+    </section>
+
+
+    <section class="pallet" id="buttons">
+        <section class="clear-buttons">
+            <button><img src="assets/images/icons/broom.png" alt="clear" class="icon" title="clear"></button>
         </section>
 
-       
-        
-        <section class="idk-draw-something">
-            <pre class="draw-board prevent-select"></pre>
+        <section class="tool-buttons" a>
+            <button data-style="brush" class="selected"><img src="assets/images/icons/paintbrush.png" alt="brush"
+                                                             class="icon" title="brush"></button>
+            <button data-style="bucket"><img src="assets/images/icons/paint-bucket.png" alt="bucket" class="icon"
+                                             title="bucket"></button>
         </section>
 
-        
-        <section class="pallet" id="buttons">
-            <section class="clear-buttons">
-                <button><img src="assets/images/icons/broom.png" alt="clear" class="icon" title="clear"></button>
-            </section>
-
-            <section class="tool-buttons"a>
-                <button data-style="brush" class="selected"><img src="assets/images/icons/paintbrush.png" alt="brush" class="icon" title="brush"></button>
-                <button data-style="bucket"><img src="assets/images/icons/paint-bucket.png" alt="bucket" class="icon" title="bucket"></button>
-            </section>
-
-            <section class="draw-buttons">
-                <button data-draw="circle" class="selected"><img src="assets/images/icons/dry-clean.png" alt="circle" class="icon" title="circle brush"></button>
-                <button data-draw="square"><img src="assets/images/icons/stop.png" alt="square" class="icon" title="square brush"></button>
-            </section>
-
-            <section class="brush-buttons">
-                <button data-brush="normal" class="selected"><img src="assets/images/icons/brush.png" alt="normal" class="icon" title="normal"></button>
-                <button data-brush="color-only"><img src="assets/images/icons/coloring-tool.png" alt="color only"class="icon" title="color only"></button>
-                <button data-brush="character-only"><img src="assets/images/icons/abc.png" alt="character only"class="icon" title="character only"></button>
-                <button data-brush="embolden"><img src="assets/images/icons/bold.png" alt="embolden"class="icon" title="embolden"></button>
-                <button data-brush="fade"><img src="assets/images/icons/fog.png" alt="fade" class="icon" title="fade"></button>
-                <button data-brush = "erase"><img src="assets/images/icons/clear-format.png" alt="erase" class="icon" title="erase"></button>
-            </section>
-
-            <section id="character-picker-section">
-                <button id="character-picker-btn" title="character picker"><input type="text" id="character-picker" hidden>o</button>
-                <button id="brush-size-btn" title="brush size">1</button>
-                <input type="range" id="brush-size" min="0" max="10" value="1" class="hidden">
-                <button id="center-btn" title="center"><img src="assets/images/icons/focus.png" alt="center" class="icon"></button>
-            </section>
-
-            <section id="image-loader-section">
-                <button id="image-loader-btn" title="image loader"><input type="image" id="image-loader" hidden><img src="assets/images/icons/image-gallery.png" alt="image loader" class="icon"></button>
-            </section>
-
-            <section id="save-selection">
-                <button id="download-btn" title="download"><img src="assets/images/icons/download.png" alt="download" class="icon"></button>
-                <button id="save-btn"> <img src="assets/images/icons/tick.png" alt="save" class="icon" title="save"></button>
-            </section>
+        <section class="draw-buttons">
+            <button data-draw="circle" class="selected"><img src="assets/images/icons/dry-clean.png" alt="circle"
+                                                             class="icon" title="circle brush"></button>
+            <button data-draw="square"><img src="assets/images/icons/stop.png" alt="square" class="icon"
+                                            title="square brush"></button>
         </section>
-    </main>
-    
-    <section id="image-popup" class="popup hidden">
-        <section class="popup-content">
-            <span id="close-popup" class="close-btn">&times;</span>
-            <h2>Customize Your Image</h2>
-            <input type="file" id="image-input" accept="image/*" />
-            <ul>
-                <li><label>Resolution X: <input  placeholder="Resolution X:" type="number" id="resolutionX" value="150" /></label></li>
-                <li><label>Resolution Y: <input type="number" id="resolutionY" value="100" /></label></li>
-                <li><label>Brightness: <input type="number" id="brightness" value="1" step="0.1" /></label></li>
-                <li><label>Gamma Correction: <input type="number" id="gamma" value="1" step="0.1" /></label></li>
-                <li><label>Use less ascii characters: <input type="checkbox" id="use-reduced-set"/></label></li>
-                <li><label>Edge detection: <input type="checkbox" id="edge-detection"/></label></li>
-                <li><label>Edge detection strength: <input type="number" id="edge-detection-strength" value="245" step="5" /></label></li>
-            </ul>
-            <section id="preview-canvas-section"></section>
-            <button id="apply-settings">Apply</button>
-            <button id="cancel-settings">Cancel</button>
+
+        <section class="brush-buttons">
+            <button data-brush="normal" class="selected"><img src="assets/images/icons/brush.png" alt="normal"
+                                                              class="icon" title="normal"></button>
+            <button data-brush="color-only"><img src="assets/images/icons/coloring-tool.png" alt="color only"
+                                                 class="icon" title="color only"></button>
+            <button data-brush="character-only"><img src="assets/images/icons/abc.png" alt="character only" class="icon"
+                                                     title="character only"></button>
+            <button data-brush="embolden"><img src="assets/images/icons/bold.png" alt="embolden" class="icon"
+                                               title="embolden"></button>
+            <button data-brush="fade"><img src="assets/images/icons/fog.png" alt="fade" class="icon" title="fade">
+            </button>
+            <button data-brush="erase"><img src="assets/images/icons/clear-format.png" alt="erase" class="icon"
+                                            title="erase"></button>
+        </section>
+
+        <section id="character-picker-section">
+            <button id="character-picker-btn" title="character picker"><input type="text" id="character-picker" hidden>o
+            </button>
+            <button id="brush-size-btn" title="brush size">1</button>
+            <input type="range" id="brush-size" min="0" max="10" value="1" class="hidden">
+            <button id="center-btn" title="center"><img src="assets/images/icons/focus.png" alt="center" class="icon">
+            </button>
+        </section>
+
+        <section id="image-loader-section">
+            <button id="image-loader-btn" title="image loader"><input type="image" id="image-loader" hidden><img
+                    src="assets/images/icons/image-gallery.png" alt="image loader" class="icon"></button>
+        </section>
+
+        <section id="save-selection">
+            <button id="download-btn" title="download"><img src="assets/images/icons/download.png" alt="download"
+                                                            class="icon"></button>
+            <button id="save-btn"><img src="assets/images/icons/tick.png" alt="save" class="icon" title="save"></button>
         </section>
     </section>
-    
-    
-    <footer>
-        <p>2025 CharCraft. All rights reserved.</p>
-    </footer>
+</main>
+
+<section id="image-popup" class="popup hidden">
+    <section class="popup-content">
+        <span id="close-popup" class="close-btn">&times;</span>
+        <h2>Customize Your Image</h2>
+        <input type="file" id="image-input" accept="image/*"/>
+        <ul>
+            <li><label>Resolution X: <input placeholder="Resolution X:" type="number" id="resolutionX"
+                                            value="150"/></label></li>
+            <li><label>Resolution Y: <input type="number" id="resolutionY" value="100"/></label></li>
+            <li><label>Brightness: <input type="number" id="brightness" value="1" step="0.1"/></label></li>
+            <li><label>Gamma Correction: <input type="number" id="gamma" value="1" step="0.1"/></label></li>
+            <li><label>Use less ascii characters: <input type="checkbox" id="use-reduced-set"/></label></li>
+            <li><label>Edge detection: <input type="checkbox" id="edge-detection"/></label></li>
+            <li><label>Edge detection strength: <input type="number" id="edge-detection-strength" value="245" step="5"/></label>
+            </li>
+        </ul>
+        <section id="preview-canvas-section"></section>
+        <button id="apply-settings">Apply</button>
+        <button id="cancel-settings">Cancel</button>
+    </section>
+</section>
+
+
+<footer>
+    <p>2025 CharCraft. All rights reserved.</p>
+</footer>
 </body>
 
 </html>
