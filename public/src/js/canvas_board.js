@@ -72,4 +72,9 @@ export class CanvasBoard extends CharacterBoard {
             }
         }
     }
+
+    clearBoard() {
+        super.clearBoard();
+        this.redrawBoard();
+    }
 }

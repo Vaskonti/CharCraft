@@ -240,8 +240,6 @@ export class DrawingBoardUI {
     centerCanvas() {
         const boardRect = this.drawBoardElement.getBoundingClientRect();
         const parentRect = this.drawBoardElement.parentNode.getBoundingClientRect();
-        console.log(boardRect.width, boardRect.height);
-        console.log(parentRect.width, parentRect.height);
         this.offsetX = (parentRect.width - boardRect.width) / 2;
         this.offsetY = (parentRect.height - boardRect.height) / 2;
     
