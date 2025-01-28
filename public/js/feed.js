@@ -69,7 +69,7 @@ export function generatePost(post, comments) {
     console.log(commentList);
     comments.then(comment => comment.forEach(comment => {
         const commentItem = document.createElement("li");
-        commentItem.innerHTML = `Anonymous: ${comment.content}`;
+        commentItem.innerHTML = `${comment.username}: ${comment.content}`;
         commentList.appendChild(commentItem);
     }));
 

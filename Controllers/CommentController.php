@@ -3,6 +3,7 @@
 namespace Backend\Controllers;
 
 use Backend\Models\Comment;
+use Backend\Models\User;
 use Backend\Requests\CreateCommentRequest;
 use Backend\Requests\GetCommentsInPostRequest;
 use Backend\Responses\JsonResponse;
@@ -44,6 +45,7 @@ class CommentController extends Controller
                 'content' => $comment->content,
                 'likes' => $comment->likes,
                 'created_at' => $comment->created_at,
+                'username' => User::find($comment->user_id)->username,
             ];
         }, $comments));
     }

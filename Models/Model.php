@@ -71,7 +71,7 @@ class Model
         return $db;
     }
 
-    public static function find($id): ?static
+    public static function find(int $id): ?static
     {
         $db = self::connect();
         $stmt = $db->prepare("SELECT * FROM " . static::$table . " WHERE id = ?");
