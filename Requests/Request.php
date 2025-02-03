@@ -19,7 +19,7 @@ class Request
         $this->pdo = Database::connect();
         if (!$this->authorize()) {
             http_response_code(403);
-            echo json_encode(["error" => "Forbidden"]);
+            echo json_encode(["error" => "Unauthorized access."]);
             exit;
         }
         if ($_SERVER['REQUEST_METHOD'] === HttpMethods::GET) {

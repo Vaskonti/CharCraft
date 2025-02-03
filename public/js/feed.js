@@ -22,12 +22,13 @@ export async function getComments(postId) {
         return data
     });
 }
-export async function like(postId, isLiked) {
+
+export async function like(entityId, type, isLiked) {
     const data = {
-        entity_id: postId,
-        entity_type: 'post'
+        entity_id: entityId,
+        entity_type: type
     }
-    return fetch(hostName + (isLiked ? '/unlike': '/like'), {
+    return fetch(hostName + (isLiked ? '/unlike' : '/like'), {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {'Content-Type': 'application/json'}
@@ -55,8 +56,8 @@ export function generatePost(post, comments) {
             <p class="description">${post.content}</p>
             
             <section class="comments">
-                <h4>Comments</h4>
-                <ul class="comment-list"></ul>
+                <h4>Comments:</h4>
+                <section class="comment-list"></section>
                 <form class="comment-form">
                     <input type="hidden" name="postId" value="${post.id}">
                     <input type="text" name="comment" class="comment-input" placeholder="Add a comment..." required />
@@ -66,31 +67,47 @@ export function generatePost(post, comments) {
         `;
 
     const commentList = postElement.querySelector(".comment-list");
-    console.log(commentList);
     comments.then(comment => comment.forEach(comment => {
-        const commentItem = document.createElement("li");
-        commentItem.innerHTML = `${comment.username}: ${comment.content}`;
+        const htmlValue =`
+            <img src="/assets/images/icons/heart-empty.png" 
+                     alt="like" 
+                     class="icon like-icon">
+                     <section class="like-count">${comment.likes}</section>
+                    <section class="comment-text">${comment.username} : ${comment.content}</section>`;
+        const commentItem = document.createElement("section");
+        commentItem.classList.add("comment-item");
+        commentItem.innerHTML = htmlValue;
+        const likeIcon = commentItem.querySelector(".like-icon");
+        likeIcon.addEventListener("click", function () {
+                if (likeIcon.src.includes("heart-empty.png")) {
+                    likeIcon.src = "/assets/images/icons/heart-full.png";
+                    like(comment.id, 'comment', false);
+                    comment.likes++;
+                } else {
+                    likeIcon.src = "/assets/images/icons/heart-empty.png";
+                    like(comment.id, 'comment', true);
+                    comment.likes--;
+                }
+                commentItem.querySelector(".like-count").textContent = comment.likes;
+            });
         commentList.appendChild(commentItem);
     }));
 
     const likeIcon = postElement.querySelector(".like-icon");
     likeIcon.addEventListener("click", function () {
-        console.log("KUR")
         if (likeIcon.src.includes("heart-empty.png")) {
             likeIcon.src = "/assets/images/icons/heart-full.png";
-            like(post.id, false);
+            like(post.id, 'post', false);
             post.likes++;
         } else {
             likeIcon.src = "/assets/images/icons/heart-empty.png";
-            like(post.id, true);
+            like(post.id, 'post', true);
             post.likes--;
         }
         postElement.querySelector(".like-count").textContent = post.likes;
     });
 
     const commentForm = postElement.querySelector(".comment-form");
-    console.log(commentForm);
-
     commentForm.addEventListener("submit", async function (event) {
         event.preventDefault();
 
@@ -121,8 +138,27 @@ export function generatePost(post, comments) {
                 return response.json();
             })
             .then(data => {
-                const newComment = document.createElement("li");
-                newComment.innerHTML = `You: ${commentText}`;
+                const commentHtml = `<img src="/assets/images/icons/heart-empty.png" 
+                     alt="like" 
+                     class="icon like-icon">
+                     <section class="like-count">0</section>
+                    <section class="comment-text">You : ${commentText}</section>`;
+                const newComment = document.createElement("section");
+                newComment.classList.add("comment-item");
+                const likeIcon = newComment.querySelector(".like-icon");
+                likeIcon.addEventListener("click", function () {
+                    if (likeIcon.src.includes("heart-empty.png")) {
+                        likeIcon.src = "/assets/images/icons/heart-full.png";
+                        like(data.id, 'comment', false);
+                        data.likes++;
+                    } else {
+                        likeIcon.src = "/assets/images/icons/heart-empty.png";
+                        like(data.id, 'comment', true);
+                        data.likes--;
+                    }
+                    commentItem.querySelector(".like-count").textContent = comment.likes;
+                });
+                newComment.innerHTML = commentHtml;
                 commentList.appendChild(newComment);
 
                 commentInput.value = "";
