@@ -2,6 +2,7 @@
 
 namespace Backend\Controllers;
 
+use Backend\Models\Comment;
 use Backend\Models\EntityLike;
 use Backend\Models\Post;
 use Backend\Requests\CreateLikeEntityRequest;
@@ -25,9 +26,14 @@ class LikeEntityController extends Controller
             'entity_id' => $data['entity_id'],
             'entity_type' => $data['entity_type'],
         ]);
-
-        $post = Post::where('id', $data['entity_id'])->first();
-        $post->incrementLike();
+        if ($data['entity_type'] === 'post') {
+            $post = Post::where('id', $data['entity_id'])->first();
+            $post->incrementLike();
+        }
+        if ($data['entity_type'] === 'comment') {
+            $comment = Comment::where('id', $data['entity_id'])->first();
+            $comment->incrementLike();
+        }
 
         return $this->jsonResponse([
             'message' => 'Like created successfully!',
@@ -58,8 +64,14 @@ class LikeEntityController extends Controller
             ], 404);
         }
 
-        $post = Post::where('id', $data['entity_id'])->first();
-        $post->decrementLike();
+        if ($data['entity_type'] === 'comment') {
+            $comment = Comment::where('id', $data['entity_id'])->first();
+            $comment->decrementLike();
+        }
+        if ($data['entity_type'] === 'post') {
+            $post = Post::where('id', $data['entity_id'])->first();
+            $post->decrementLike();
+        }
         $success = $like->delete();
 
         return $this->jsonResponse([

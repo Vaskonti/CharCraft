@@ -9,6 +9,9 @@ use Backend\Storage\Storage;
 
 class ImageController extends Controller
 {
+    /**
+     * @throws \Exception
+     */
     public function store(StoreImageRequest $request): JsonResponse
     {
         if (!$request->validate()) {

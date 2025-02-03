@@ -4,7 +4,7 @@ namespace Backend\Storage;
 
 class Storage
 {
-    protected static string $storagePath = PROJECT_ROOT . '/backend/storage/';
+    protected static string $storagePath = PROJECT_ROOT . '/public/storage/';
 
     public static function put(string $path, array $file): ?string
     {
