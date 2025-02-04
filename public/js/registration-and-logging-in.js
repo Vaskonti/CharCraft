@@ -37,7 +37,7 @@ document.getElementById('logging-in').addEventListener('submit', function(event)
         else
         {
             alert(`Login successful.`);
-            window.location.assign("../profile.html");
+            window.location.assign("../feed.html");
             console.log('Success:');
         }
         
