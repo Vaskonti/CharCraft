@@ -6,6 +6,7 @@ use Backend\Auth\Auth;
 use Backend\Models\User;
 use Backend\Requests\CreateUserRequest;
 use Backend\Requests\LoginRequest;
+use Backend\Requests\GetUsernameRequest;
 use Backend\Responses\JsonResponse;
 use Exception;
 
@@ -93,6 +94,39 @@ class UserController extends Controller
         );
         return $this->jsonResponse([
             'message' => 'Logged out successfully!'
+        ]);
+    }
+    
+    /**
+     * @throws Exception
+     */
+    public function getUsername(GetUsernameRequest $request): JsonResponse
+    {
+        if (!isset($_COOKIE['auth_token'])) {
+            return $this->jsonResponse([
+                'message' => 'You are not logged in!'
+            ], 401);
+        }
+
+        if (!$request->authorize()) {
+            return $this->jsonResponse([
+                'message' => 'Invalid or expired token!'
+            ], 401);
+        }
+
+        $authUser = $request->getAuthUser();
+        $userId = $authUser->sub;
+        $user = User::find($userId);
+
+        if (!$user) {
+            return $this->jsonResponse([
+                'message' => 'User not found!'
+            ], 404);
+        }
+        
+        
+        return $this->jsonResponse([
+            'username' => $user->username
         ]);
     }
 }

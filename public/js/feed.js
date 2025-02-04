@@ -1,4 +1,10 @@
-import {hostName} from "./config.js";
+import {hostName} from "../src/js/config.js";
+import { isUserLoggedIn, redirectToRegistration } from "../src/js/user_details.js";
+
+if (!isUserLoggedIn()) {
+    redirectToRegistration();
+}
+
 
 const postsData = await fetch(hostName + '/posts', {
     method: 'GET',
@@ -175,7 +181,6 @@ function generatePosts(posts) {
     const postsContainer = document.querySelectorAll(".posts-container")[0];
     for (const post of posts) {
         const comments = getComments(post.id);
-        console.log(comments);
         const postElement = generatePost(post, comments);
         postsContainer.appendChild(postElement);
     }
