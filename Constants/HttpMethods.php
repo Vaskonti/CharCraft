@@ -29,4 +29,9 @@ class HttpMethods
             self::TRACE
         ];
     }
+
+    public static function usesBody(string $method): bool
+    {
+        return in_array($method, [self::POST, self::PUT, self::DELETE, self::PATCH]);
+    }
 }

@@ -2,7 +2,6 @@
 
 namespace Backend\Controllers;
 
-use Backend\Models\Comment;
 use Backend\Models\Post;
 use Backend\Requests\CreatePostRequest;
 use Backend\Requests\GetUserPostsRequest;
@@ -37,7 +36,7 @@ class PostController extends Controller
         }
 
         $data = $request->validated();
-        $post = Post::find($data['id']);
+        $post = Post::find($data['post_id']);
 
         if (!$post) {
             return $this->jsonResponse([
@@ -45,16 +44,17 @@ class PostController extends Controller
             ], 404);
         }
 
-        $success = $post->delete();
+        $post->is_archived = true;
+        $post->save();
 
         return $this->jsonResponse([
-            'message' => $success ? 'Post removed successfully!' : 'Failed to remove post.',
+            'message' => 'Post removed successfully!'
         ]);
     }
 
     public function getPosts(): JsonResponse
     {
-        $posts = Post::random(10);
+        $posts = Post::where('is_archived', false)->randomGet(10);
         return $this->jsonResponse($posts);
     }
 

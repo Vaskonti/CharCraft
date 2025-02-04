@@ -20,7 +20,8 @@ CREATE TABLE `posts` (
                          `user_id` integer,
                          `ascii_image_id` integer,
                          `created_at` timestamp default CURRENT_TIMESTAMP,
-                         `likes` bigint default 0
+                         `likes` bigint default 0,
+                         `is_archived` boolean default false
 );
 CREATE TABLE `comments` (
                             `id` integer PRIMARY KEY AUTO_INCREMENT,

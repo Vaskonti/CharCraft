@@ -9,7 +9,7 @@ class RemovePostRequest extends Request
     public function rules(): array
     {
         return [
-            'id' => ['required', 'integer'],
+            'post_id' => ['required', 'integer', 'exists:posts,id'],
         ];
     }
 

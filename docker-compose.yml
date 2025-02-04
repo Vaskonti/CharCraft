@@ -21,17 +21,18 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: mysql_db
-    restart: unless-stopped
+    container_name: mysql
+    restart: always
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: char_craft
+      MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - mysql_data2:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
+      - ./migrations/up/0000_create_database.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - app_network
 
@@ -39,4 +40,4 @@ networks:
   app_network:
 
 volumes:
-  mysql_data2:
+  mysql_data:

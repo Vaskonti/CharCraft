@@ -27,7 +27,7 @@ class Request
             return;
         }
 
-        $this->data = $_SERVER['REQUEST_METHOD'] === HttpMethods::POST
+        $this->data = HttpMethods::usesBody($_SERVER['REQUEST_METHOD'])
             ? json_decode(file_get_contents("php://input"), true) ?? $_POST
             : $_GET;
     }

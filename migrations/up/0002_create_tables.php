@@ -22,7 +22,8 @@ $db->query("CREATE TABLE `posts` (
   `user_id` integer,
   `ascii_image_id` integer,
   `created_at` timestamp default CURRENT_TIMESTAMP,
-  `likes` bigint default 0
+  `likes` bigint default 0,
+    `is_archived` boolean default false
 );");
 
 $db->query("CREATE TABLE `comments` (
@@ -59,9 +60,9 @@ $db->query("CREATE TABLE `follows` (
 );");
 
 $db->query("ALTER TABLE `posts` ADD FOREIGN KEY (`ascii_image_id`) REFERENCES `ascii_images` (`id`);");
-$db->query("ALTER TABLE `posts` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);");
-$db->query("ALTER TABLE `entity_likes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);");
-$db->query("ALTER TABLE `comments` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);");
-$db->query("ALTER TABLE `comments` ADD FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`);");
-$db->query("ALTER TABLE `follows` ADD FOREIGN KEY (`following_user_id`) REFERENCES `users` (`id`);");
-$db->query("ALTER TABLE `follows` ADD FOREIGN KEY (`followed_user_id`) REFERENCES `users` (`id`);");
+$db->query("ALTER TABLE `posts` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;");
+$db->query("ALTER TABLE `entity_likes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;");
+$db->query("ALTER TABLE `comments` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;");
+$db->query("ALTER TABLE `comments` ADD FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE;");
+$db->query("ALTER TABLE `follows` ADD FOREIGN KEY (`following_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;");
+$db->query("ALTER TABLE `follows` ADD FOREIGN KEY (`followed_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;");

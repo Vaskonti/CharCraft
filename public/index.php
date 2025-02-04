@@ -34,12 +34,12 @@ $router->get('/user/posts', [PostController::class, 'getUserPosts']);
 $router->post('/image', [ImageController::class, 'store']);
 $router->delete('/post/remove', [PostController::class, 'removePost']);
 $router->post('/like', [LikeEntityController::class, 'likeEntity']);
-$router->post('/unlike', [LikeEntityController::class, 'removeLikeEntity']);
+$router->delete('/unlike', [LikeEntityController::class, 'removeLikeEntity']);
 $router->get('/post/comments', [CommentController::class, 'getComments']);
 $router->post('/post/comment', [CommentController::class, 'createComment']);
 
 try {
     $router->resolve($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
-} catch (ReflectionException $e) {
+} catch (\Exception $e) {
     Log::error($e);
 }
