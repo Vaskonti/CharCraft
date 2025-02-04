@@ -27,7 +27,7 @@ let img = new Image();
 
 const boardSize = 100;
 const cellWidth = 12;
-const cellHeight = cellWidth*1.3;
+const cellHeight = cellWidth*1.8;
 
 let drawingBoard = new CanvasBoard(boardSize, boardSize*1.5, cellWidth, cellHeight);
 const brush = new Brush();
@@ -35,6 +35,7 @@ var drawingBoardUI = null;
 var mouseRadius = 1;
 
 const downloadButton = document.getElementById('download-btn');
+const downloadAsTextButton = document.getElementById('download-as-text-btn');
 
 function getImageOptions() {
     const options = new ImageParseOptions();
@@ -202,6 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
         link.href = imageURL;
         link.download = filename || 'ascii_image.png';
         link.click();
+    });
+
+    downloadAsTextButton.addEventListener('click', () => {
+        drawingBoardUI.saveBoardAsTxt();
     });
 
     //TODO: Implement save to profile

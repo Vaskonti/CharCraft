@@ -250,12 +250,22 @@ export class DrawingBoardUI {
         this.drawBoardElement.style.transform = `translate(${this.offsetX}px, ${this.offsetY}px) scale(${this.scale})`;
     }
 
-    saveBoard() {
-        const fileContent = this.drawingBoard.exportBoardAsJSON();
+    saveBoardAsJSON() {
+        const fileContent = this.drawingBoard.exportAsJSON();
         const blob = new Blob([fileContent], { type: "application/json" });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
         a.download = "drawing.json";
+        a.click();
+        URL.revokeObjectURL(a.href);
+    }
+
+    saveBoardAsTxt() {
+        const fileContent = this.drawingBoard.exportAsTxt();
+        const blob = new Blob([fileContent], { type: "application/txt" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "drawing.txt";
         a.click();
         URL.revokeObjectURL(a.href);
     }

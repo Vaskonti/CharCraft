@@ -101,7 +101,7 @@ describe('CharacterBoard Class Tests', () => {
 
     test('should export and import board as JSON correctly', () => {
         board.fillBoardWithCharacter('A', '#FFFFFF');
-        const exportedData = board.exportBoardAsJSON();
+        const exportedData = board.exportAsJSON();
 
         const newBoard = new CharacterBoard(10, 5);
         newBoard.importBoardFromJSON(exportedData);

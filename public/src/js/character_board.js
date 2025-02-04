@@ -69,8 +69,19 @@ export class CharacterBoard {
 
 
     //TODO: make more efficient safe.
-    exportBoardAsJSON() {
+    exportAsJSON() {
         return JSON.stringify(this.boardMatrix);
+    }
+
+    exportAsTxt() {
+        let str = "";
+        this.boardMatrix.forEach( row => {
+            row.forEach ( element => {
+                str += element.character;
+            });
+            str += "\n";
+        });
+        return str;
     }
 
     importBoardFromJSON(boardData) {
@@ -119,7 +130,7 @@ export class CharacterBoard {
     static parseCopyBoard(parsedBoard, TargetBoardClass, additionalArgs = []) {
         const rows = parsedBoard.rows;
         const cols = parsedBoard.cols;
-        const boardMatrixJSON = parsedBoard.exportBoardAsJSON(); 
+        const boardMatrixJSON = parsedBoard.exportAsJSON(); 
         const newBoard = new TargetBoardClass(rows, cols, ...additionalArgs);
         newBoard.importBoardFromJSON(boardMatrixJSON);
     

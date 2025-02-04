@@ -113,7 +113,7 @@ describe('DrawingBoardUI Tests', () => {
             href: 'mocked-url',
         });
         
-        boardUI.saveBoard();
+        boardUI.saveBoardAsJSON();
         
         expect(spy).toHaveBeenCalled();
         expect(downloadSpy).toHaveBeenCalled();
