@@ -1,4 +1,5 @@
 import { hostName } from "./config.js";
+import { printCookie } from "../src/js/user_details.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById('registration');
@@ -9,12 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
+
         const response = await fetch(hostName + '/register', {
             method: 'POST',
             body: JSON.stringify(jsonData),
             headers: {'Content-Type': 'application/json'},
         });
 
+        console.log(response.body);
         if (!response.ok) {
             alert(`Something went wrong! \n${response.message}`);
             throw new Error('Failed to submit comment');
@@ -40,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(`Something went wrong! \n${response.message}`);
             throw new Error('Failed to submit comment');
         }
+        printCookie();
         window.location.href = '/drawpage.html';
         alert(`Login successful.`);
     });
