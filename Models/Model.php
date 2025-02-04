@@ -62,6 +62,26 @@ class Model
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function randomGet(int $limit): array
+    {
+        $db = self::connect();
+        $query = "SELECT * FROM " . static::$table;
+        $params = [];
+        if (!empty($this->query)) {
+            $conditions = [];
+            foreach ($this->query as [$field, $value]) {
+                $conditions[] = "$field = ?";
+                $params[] = $value;
+            }
+            $query .= " WHERE " . implode(" AND ", $conditions);
+        }
+        $query .= " ORDER BY RAND() LIMIT ?";
+        $params[] = $limit;
+        $statement = $db->prepare($query);
+        $statement->execute($params);
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     private static function getConnection()
     {
         static $db;

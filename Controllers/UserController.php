@@ -57,7 +57,6 @@ class UserController extends Controller
         $user = User::where('email', $data['email'])->first();
 
         if (password_verify($data['password'], $user->password)) {
-            session_start();
             $token = Auth::generateToken($user->id);
             $this->setCookie(
                 name: 'auth_token',
@@ -81,6 +80,11 @@ class UserController extends Controller
      */
     public function logout(): JsonResponse
     {
+        if ($_COOKIE['auth_token'] === null) {
+            return $this->jsonResponse([
+                'message' => 'You are not logged in!'
+            ], 401);
+        }
         $this->setCookie(
             name: 'auth_token',
             value: '',
