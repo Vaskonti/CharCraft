@@ -28,7 +28,8 @@ CREATE TABLE `comments` (
                             `content` varchar(255),
                             `post_id` integer,
                             `user_id` integer,
-                            `likes` bigint default 0
+                            `likes` bigint default 0,
+                            `created_at` timestamp default CURRENT_TIMESTAMP
 );
 CREATE TABLE `entity_likes` (
                                 `id` integer PRIMARY KEY AUTO_INCREMENT,
