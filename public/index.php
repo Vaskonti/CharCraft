@@ -28,7 +28,7 @@ $router = new Router();
 $router->post('/register', [UserController::class, 'createUser']);
 $router->post('/login', [UserController::class, 'login']);
 $router->post('/logout', [UserController::class, 'logout']);
-$router->post('/username', [UserController::class, 'getUsername']);
+$router->get('/username', [UserController::class, 'getUsername']);
 $router->post('/post', [PostController::class, 'createPost']);
 $router->get('/posts', [PostController::class, 'getPosts']);
 $router->get('/user/posts', [PostController::class, 'getUserPosts']);

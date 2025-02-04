@@ -1,5 +1,9 @@
-import { hostName } from "./config.js";
-import { printCookie } from "../src/js/user_details.js";
+import { hostName } from "../src/js/config.js";
+import { isUserLoggedIn, redirectToFeed } from "../src/js/user_details.js";
+
+if (isUserLoggedIn()) {
+    redirectToFeed();
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById('registration');
@@ -25,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = '/drawpage.html';
         alert(`Registration successful.`);
     });
+
     const loginForm = document.getElementById('login');
     loginForm.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -43,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(`Something went wrong! \n${response.message}`);
             throw new Error('Failed to submit comment');
         }
-        printCookie();
+
         window.location.href = '/drawpage.html';
         alert(`Login successful.`);
     });
