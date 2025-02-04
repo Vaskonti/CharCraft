@@ -7,4 +7,4 @@ printf "\n✅  Tables created\n"
 php /var/www/html/migrations/up/0003_add_dummy_data.php
 printf "\n✅  Dummy data added\n"
 
-exec php-fpm -D && nginx -g 'daemon off;'
+exec php-fpm -D

@@ -95,4 +95,38 @@ class UserController extends Controller
             'message' => 'Logged out successfully!'
         ]);
     }
+    
+    /**
+     * @throws Exception
+     */
+    public function getUsername(): JsonResponse
+    {
+        if (!isset($_COOKIE['auth_token'])) {
+            return $this->jsonResponse([
+                'message' => 'You are not logged in!'
+            ], 401);
+        }
+
+        $token = $_COOKIE['auth_token'];
+        $decodedToken = Auth::validateToken($token);
+
+        if (!$decodedToken) {
+            return $this->jsonResponse([
+                'message' => 'Invalid or expired token!'
+            ], 401);
+        }
+
+        $userId = $decodedToken->sub;
+        $user = User::find($userId);
+
+        if (!$user) {
+            return $this->jsonResponse([
+                'message' => 'User not found!'
+            ], 404);
+        }
+
+        return $this->jsonResponse([
+            'username' => $user->username
+        ]);
+    }
 }
