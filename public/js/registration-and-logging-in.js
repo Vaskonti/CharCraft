@@ -1,4 +1,9 @@
-import { hostName } from "./config.js";
+import { hostName } from "../src/js/config.js";
+import { isUserLoggedIn, redirectToFeed } from "../src/js/user_details.js";
+
+if (isUserLoggedIn()) {
+    redirectToFeed();
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById('registration');
@@ -9,19 +14,22 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
+
         const response = await fetch(hostName + '/register', {
             method: 'POST',
             body: JSON.stringify(jsonData),
             headers: {'Content-Type': 'application/json'},
         });
 
+        console.log(response.body);
         if (!response.ok) {
             alert(`Something went wrong! \n${response.message}`);
             throw new Error('Failed to submit comment');
         }
-        window.location.href = '/drawpage.html';
+        window.location.href = '/feed.html';
         alert(`Registration successful.`);
     });
+
     const loginForm = document.getElementById('login');
     loginForm.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -40,7 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(`Something went wrong! \n${response.message}`);
             throw new Error('Failed to submit comment');
         }
-        window.location.href = '/drawpage.html';
+
+        window.location.href = '/feed.html';
         alert(`Login successful.`);
     });
 });

@@ -28,6 +28,7 @@ $router = new Router();
 $router->post('/register', [UserController::class, 'createUser']);
 $router->post('/login', [UserController::class, 'login']);
 $router->post('/logout', [UserController::class, 'logout']);
+$router->get('/username', [UserController::class, 'getUsername']);
 $router->post('/post', [PostController::class, 'createPost']);
 $router->get('/posts', [PostController::class, 'getPosts']);
 $router->get('/user/posts', [PostController::class, 'getUserPosts']);
@@ -40,6 +41,6 @@ $router->post('/post/comment', [CommentController::class, 'createComment']);
 
 try {
     $router->resolve($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
-} catch (\Exception $e) {
+} catch (\ReflectionException $e) {
     Log::error($e);
 }

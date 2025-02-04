@@ -28,7 +28,8 @@ CREATE TABLE `comments` (
                             `content` varchar(255),
                             `post_id` integer,
                             `user_id` integer,
-                            `likes` bigint default 0
+                            `likes` bigint default 0,
+                            `created_at` timestamp default CURRENT_TIMESTAMP
 );
 CREATE TABLE `entity_likes` (
                                 `id` integer PRIMARY KEY AUTO_INCREMENT,
@@ -37,11 +38,10 @@ CREATE TABLE `entity_likes` (
                                 `entity_id` integer,
                                 `created_at` timestamp default CURRENT_TIMESTAMP
 );
+
 ALTER TABLE `posts` ADD FOREIGN KEY (`ascii_image_id`) REFERENCES `ascii_images` (`id`);
 ALTER TABLE `posts` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-ALTER TABLE `follows` ADD FOREIGN KEY (`following_user_id`) REFERENCES `users` (`id`);
 ALTER TABLE `ascii_images` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-ALTER TABLE `follows` ADD FOREIGN KEY (`followed_user_id`) REFERENCES `users` (`id`);
 ALTER TABLE `comments` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 ALTER TABLE `comments` ADD FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`);
 ALTER TABLE `entity_likes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
