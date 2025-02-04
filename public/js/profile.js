@@ -1,5 +1,11 @@
 import {generatePost} from './feed.js';
 import { hostName } from './config.js';
+import { isUserLoggedIn, redirectToRegistration } from "../src/js/user_details.js";
+
+if (!isUserLoggedIn()) {
+    redirectToRegistration();
+}
+
 const profileData = 
 {
     "username": "ascii_artist123",

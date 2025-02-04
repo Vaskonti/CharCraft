@@ -3,8 +3,8 @@ import { CanvasBoard } from '../src/js/canvas_board.js';
 import { Brush, ToolType, BrushShape, BrushType} from '../src/js/brush.js';
 import { ImageConverter, ImageParseOptions } from '../src/js/image_converter.js';
 import { CharacterBoard } from '../src/js/character_board.js';
-import {hostName} from "./config.js";
-import { isAuthCookieSet } from "../src/js/user_details.js";
+import {hostName} from "../src/js/config.js";
+import { getUserUsername } from "../src/js/user_details.js";
 
 const imageInput = document.getElementById('image-input');
 const openPopup = document.getElementById('image-loader-btn');
@@ -93,7 +93,7 @@ function convertBoardToImage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log(isAuthCookieSet());
+    console.log(getUserUsername());
     brush.setMouseRadius(mouseRadius);
     brush.setBrushShape(BrushShape.CIRCLE);
     brush.setToolType(ToolType.BRUSH);

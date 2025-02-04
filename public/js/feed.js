@@ -1,4 +1,10 @@
 import {hostName} from "./config.js";
+import { isUserLoggedIn, redirectToRegistration } from "../src/js/user_details.js";
+
+if (!isUserLoggedIn()) {
+    redirectToRegistration();
+}
+
 
 const postsData = await fetch(hostName + '/posts', {
     method: 'GET',
