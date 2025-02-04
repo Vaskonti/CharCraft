@@ -43,12 +43,11 @@ async function fetchUserUsername() {
     return data.username;
 }
 
-export async function getUserUsername() {
-    try {
-        const username = await fetchUserUsername();
+export function getUserUsername() {
+    return fetchUserUsername().then(username => {
         return username;
-    } catch (error) {
+    }).catch(error => {
         console.error('Error:', error.message);
-    }
-    return "";
+        return "";
+    });
 }
