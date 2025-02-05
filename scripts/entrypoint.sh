@@ -6,5 +6,4 @@ php /var/www/html/migrations/up/0002_create_tables.php
 printf "\n✅  Tables created\n"
 php /var/www/html/migrations/up/0003_add_dummy_data.php
 printf "\n✅  Dummy data added\n"
-
 exec php-fpm -D

@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS `char_craft`;
+
+CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';
+GRANT ALL PRIVILEGES ON char_craft.* TO 'admin'@'%';
+FLUSH PRIVILEGES;
