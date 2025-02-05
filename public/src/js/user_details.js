@@ -17,6 +17,10 @@ export function isUserLoggedIn() {
     return isAuthCookieSet();
 }
 
+export function redirectToDrawpage() {
+    window.location.href = "drawpage.html";
+}
+
 export function redirectToFeed() {
     window.location.href = "feed.html";
 }
