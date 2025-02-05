@@ -2,8 +2,6 @@
 
 namespace Backend\Requests;
 
-use Backend\Auth\Auth;
-use Firebase\JWT\JWT;
 
 class GetUsernameRequest extends Request
 {
