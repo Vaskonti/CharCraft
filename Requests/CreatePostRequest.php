@@ -2,8 +2,6 @@
 
 namespace Backend\Requests;
 
-use Backend\Auth\Auth;
-
 class CreatePostRequest extends Request
 {
     public function rules(): array

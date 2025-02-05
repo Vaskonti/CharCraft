@@ -2,8 +2,6 @@
 
 namespace Backend\Requests;
 
-use Backend\Auth\Auth;
-
 class CreateLikeEntityRequest extends Request
 {
     public function rules(): array
