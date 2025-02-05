@@ -5,14 +5,15 @@ namespace Backend\Requests;
 use Backend\Constants\HttpMethods;
 use Backend\Constants\ImageType;
 use Backend\Database\Database;
+use Backend\Requests\Traits\HasProtectedRoute;
 
 class Request
 {
+    use HasProtectedRoute;
+
     protected array $data;
     protected array $errors = [];
-    protected array $messages = [];
     protected \PDO $pdo;
-    protected $authUser;
 
     public function __construct()
     {
@@ -138,7 +139,7 @@ class Request
             }
         }
         return true;
-}
+    }
 
     protected function addError(string $field, string $message): void
     {
@@ -148,16 +149,6 @@ class Request
     public function errors(): array
     {
         return $this->errors;
-    }
-
-    public function setMessage(string $key, string $message)
-    {
-        $this->messages[$key] = $message;
-    }
-
-    public function getMessage(string $key)
-    {
-        return $this->messages[$key];
     }
 
     protected function valueExists(string $table, string $column, string $value): bool
@@ -180,25 +171,5 @@ class Request
             return null;
         }
         return $_FILES[$field];
-    }
-
-    private function hasCookie(string $name): bool
-    {
-        return isset($_COOKIE[$name]);
-    }
-
-    public function getCookie(string $name): ?string
-    {
-        return $_COOKIE[$name] ?? null;
-    }
-
-    public function getAuthUser()
-    {
-        return $this->authUser;
-    }
-
-    public function setAuthUser($user): void
-    {
-        $this->authUser = $user;
     }
 }
