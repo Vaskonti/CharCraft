@@ -1,3 +1,8 @@
+# Run this before running the script: Set-ExecutionPolicy AllSigned
+# Or run this one: Set-ExecutionPolicy RemoteSigned
+# This script copies the desired Apache configuration and creates a backup for the old one, so a person can easily switch between the two
+# Please fill out the correct paths and configs before you run the script
+# THIS SCRIPT IS WINDOWS OS EXCLUSIVE
 # Define Paths
 $xamppPath = "C:\xampp\apache\conf"
 $projectRoot = "C:\xampp\htdocs\CharCraft"
@@ -17,13 +22,13 @@ Copy-Item -Path $httpdConf -Destination $backupConf -Force
 # Append custom configurations
 Get-Content $customConf | Add-Content -Path $httpdConf
 
-# # Run SQL Migrations
-# $mysqlPath = "C:\xampp\mysql\bin\mysql.exe"
-# $database = "your_database"
-# $mysqlUser = "root"
-# $mysqlPassword = "YourPassword"
-# $sqlScriptPath = "C:\xampp\htdocs\CharCraft\migrations\up\all.sql"
+# Run SQL Migrations
+$mysqlPath = "C:\xampp\mysql\bin\mysql.exe"
+$database = "char_craft"
+$mysqlUser = "root"
+$mysqlPassword = ""
+$sqlScriptPath = "$projectRoot\migrations\up\all.sql"
 
-# Get-Content $sqlScriptPath | & $mysqlPath -u $mysqlUser -p$mysqlPassword $database
+Get-Content $sqlScriptPath | & $mysqlPath -u $mysqlUser -p$mysqlPassword $database
 
 Write-Host "Setup complete!"
