@@ -1,5 +1,5 @@
 # CharCraft
-![CharCraft Logo](public\assets\images\logo.png)
+![CharCraft Logo](https://github.com/Vaskonti/CharCraft/public/assets/logo.png)
 
 ## Contents
 - [English](#english)
