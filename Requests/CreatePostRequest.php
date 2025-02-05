@@ -24,6 +24,7 @@ class CreatePostRequest extends Request
                 return true;
             }
         }
+        $this->setMessage("access_denied", "Invalid token!");
         return false;
     }
 }

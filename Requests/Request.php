@@ -10,6 +10,7 @@ class Request
 {
     protected array $data;
     protected array $errors = [];
+    protected array $messages = [];
     protected \PDO $pdo;
     protected $authUser;
 
@@ -19,7 +20,7 @@ class Request
         $this->pdo = Database::connect();
         if (!$this->authorize()) {
             http_response_code(403);
-            echo json_encode(["error" => "Unauthorized access."]);
+            echo json_encode(["error" => $this->getMessage("access_denied")]);
             exit;
         }
         if ($_SERVER['REQUEST_METHOD'] === HttpMethods::GET) {
@@ -40,23 +41,6 @@ class Request
     public function authorize(): bool
     {
         return true;
-    }
-
-    public function messages(): array
-    {
-        return [
-            "required" => ":field is required.",
-            "string" => ":field must be a string.",
-            "email" => ":field must be a valid email address.",
-            "min" => ":field must be at least :min characters.",
-            "max" => ":field must not exceed :max characters.",
-            "confirmed" => ":field must match :field_confirmation.",
-            "unique" => ":field is already taken.",
-            "exists" => ":field does not exist.",
-            "image" => ":field must be an image.",
-            "maxSize" => "The :field must not exceed :maxSize MB.",
-            "mimes" => "The :field must be of type: :mimes"
-        ];
     }
 
     public function validate(): bool
@@ -164,6 +148,16 @@ class Request
     public function errors(): array
     {
         return $this->errors;
+    }
+
+    public function setMessage(string $key, string $message)
+    {
+        $this->messages[$key] = $message;
+    }
+
+    public function getMessage(string $key)
+    {
+        return $this->messages[$key];
     }
 
     protected function valueExists(string $table, string $column, string $value): bool

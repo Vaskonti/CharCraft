@@ -1,13 +1,9 @@
 <?php
+namespace Backend\Requests\Traits;
 
-namespace Backend\Requests;
-
-use Backend\Auth\Auth;
-use Firebase\JWT\JWT;
-
-class GetUsernameRequest extends Request
+trait HasProtectedRoute
 {
-    public function authorize(): bool
+    protected function authorizeAccess()
     {
         if ($cookie = $this->getCookie('auth_token')) {
             $user = Auth::validateToken($cookie);
@@ -16,7 +12,6 @@ class GetUsernameRequest extends Request
                 return true;
             }
         }
-        $this->setMessage("access_denied", "Invalid token!");
         return false;
     }
 }
