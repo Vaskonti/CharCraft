@@ -10,9 +10,4 @@ class GetCommentsInPostRequest extends Request
             'post_id' => ['required', 'integer'],
         ];
     }
-
-    public function authorize(): bool
-    {
-        return true;
-    }
 }

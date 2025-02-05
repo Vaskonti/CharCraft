@@ -102,18 +102,6 @@ class UserController extends Controller
      */
     public function getUsername(GetUsernameRequest $request): JsonResponse
     {
-        if (!isset($_COOKIE['auth_token'])) {
-            return $this->jsonResponse([
-                'message' => 'You are not logged in!'
-            ], 401);
-        }
-
-        if (!$request->authorize()) {
-            return $this->jsonResponse([
-                'message' => 'Invalid or expired token!'
-            ], 401);
-        }
-
         $authUser = $request->getAuthUser();
         $userId = $authUser->sub;
         $user = User::find($userId);
