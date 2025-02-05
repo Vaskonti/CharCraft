@@ -1,8 +1,8 @@
 import { hostName } from "../src/js/config.js";
-import { isUserLoggedIn, redirectToFeed } from "../src/js/user_details.js";
+import { isUserLoggedIn, redirectToDrawpage } from "../src/js/user_details.js";
 
 if (isUserLoggedIn()) {
-    redirectToFeed();
+    redirectToDrawpage();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,20 +14,34 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
-
-        const response = await fetch(hostName + '/register', {
-            method: 'POST',
-            body: JSON.stringify(jsonData),
-            headers: {'Content-Type': 'application/json'},
-        });
-
-        console.log(response.body);
-        if (!response.ok) {
-            alert(`Something went wrong! \n${response.message}`);
-            throw new Error('Failed to submit comment');
+    
+        try {
+            const response = await fetch(hostName + '/register', {
+                method: 'POST',
+                body: JSON.stringify(jsonData),
+                headers: {'Content-Type': 'application/json'},
+            });
+    
+            const responseData = await response.json();
+    
+            if (!response.ok) {
+                if (responseData.errors) {
+                    let errorMessage = '';
+                    for (const [key, value] of Object.entries(responseData.errors)) {
+                        errorMessage += `${key}: ${value.join(', ')}\n`;
+                    }
+                    alert(`Registration failed:\n${errorMessage}`);
+                } else {
+                    alert(`Something went wrong! \n${response.statusText}`);
+                }
+                throw new Error('Failed to submit registration');
+            }
+    
+            alert(`Registration successful.`);
+            redirectToDrawpage();
+        } catch (error) {
+            console.error('Error:', error);
         }
-        window.location.href = '/feed.html';
-        alert(`Registration successful.`);
     });
 
     const loginForm = document.getElementById('login');
@@ -49,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             throw new Error('Failed to submit comment');
         }
 
-        window.location.href = '/feed.html';
         alert(`Login successful.`);
+        redirectToDrawpage();
     });
 });
