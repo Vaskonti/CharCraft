@@ -5,13 +5,15 @@ namespace Backend\Requests;
 use Backend\Constants\HttpMethods;
 use Backend\Constants\ImageType;
 use Backend\Database\Database;
+use Backend\Requests\Traits\HasProtectedRoute;
 
 class Request
 {
+    use HasProtectedRoute;
+
     protected array $data;
     protected array $errors = [];
     protected \PDO $pdo;
-    protected $authUser;
 
     public function __construct()
     {
@@ -19,7 +21,7 @@ class Request
         $this->pdo = Database::connect();
         if (!$this->authorize()) {
             http_response_code(403);
-            echo json_encode(["error" => "Unauthorized access."]);
+            echo json_encode(["error" => $this->getMessage("access_denied")]);
             exit;
         }
         if ($_SERVER['REQUEST_METHOD'] === HttpMethods::GET) {
@@ -40,23 +42,6 @@ class Request
     public function authorize(): bool
     {
         return true;
-    }
-
-    public function messages(): array
-    {
-        return [
-            "required" => ":field is required.",
-            "string" => ":field must be a string.",
-            "email" => ":field must be a valid email address.",
-            "min" => ":field must be at least :min characters.",
-            "max" => ":field must not exceed :max characters.",
-            "confirmed" => ":field must match :field_confirmation.",
-            "unique" => ":field is already taken.",
-            "exists" => ":field does not exist.",
-            "image" => ":field must be an image.",
-            "maxSize" => "The :field must not exceed :maxSize MB.",
-            "mimes" => "The :field must be of type: :mimes"
-        ];
     }
 
     public function validate(): bool
@@ -154,7 +139,7 @@ class Request
             }
         }
         return true;
-}
+    }
 
     protected function addError(string $field, string $message): void
     {
@@ -186,25 +171,5 @@ class Request
             return null;
         }
         return $_FILES[$field];
-    }
-
-    private function hasCookie(string $name): bool
-    {
-        return isset($_COOKIE[$name]);
-    }
-
-    public function getCookie(string $name): ?string
-    {
-        return $_COOKIE[$name] ?? null;
-    }
-
-    public function getAuthUser()
-    {
-        return $this->authUser;
-    }
-
-    public function setAuthUser($user): void
-    {
-        $this->authUser = $user;
     }
 }
