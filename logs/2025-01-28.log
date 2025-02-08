@@ -1,0 +1,18 @@
+[28/01/25 10:16:35]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[28/01/25 10:16:35]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[28/01/25 10:16:35]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}

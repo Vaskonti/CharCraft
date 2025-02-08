@@ -1,0 +1,256 @@
+[21/01/25 16:15:18]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:45:34]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:47:01]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:47:24]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:47:52]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:48:24]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:48:43]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:48:50]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:49:19]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:49:35]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:49:54]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 16:50:05]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:43:39]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:43:49]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:47:44]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:48:02]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:50:03]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:50:29]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:51:30]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:51:40]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:52:03]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:52:37]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:52:57]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:53:21]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:53:34]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:54:41]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:55:27]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:55:47]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:56:10]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:56:18]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:58:39]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}
+[21/01/25 17:58:55]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/test.php(5): require('/Users/vasilhri...')
+#5 {main}

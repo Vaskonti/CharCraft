@@ -1,0 +1,120 @@
+[27/01/25 19:32:44]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:39:38]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:39:39]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:40:06]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:40:07]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:40:08]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:40:26]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:40:27]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:41:00]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:41:01]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:41:43]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}
+[27/01/25 19:41:44]	PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(41): Backend\Routes\Router->resolve()
+#7 {main}

@@ -1,0 +1,2070 @@
+[03/02/25 20:14:02]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:14:02]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:14:02]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:16:08]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:16:08]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:16:08]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:32:14]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#7 {main}
+[03/02/25 20:34:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:34:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:34:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:19]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:19]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:19]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:55]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:55]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:55]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:56]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:56]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:56]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:57]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:57]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:57]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:58]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:58]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:58]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:59]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:36:59]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:00]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:06]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:06]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:06]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:13]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:13]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:13]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:27]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:27]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:27]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:53]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:53]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:37:53]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:13]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:13]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:13]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:14]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:14]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:14]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:15]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:15]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:15]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:17]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:18]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:18]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:20]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:20]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:20]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:24]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:24]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:24]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:31]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:31]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:31]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:45]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:45]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:38:45]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:11]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:11]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:11]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:31]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:31]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:31]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:31]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:32]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:32]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:32]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:32]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:33]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:34]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:34]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:34]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:35]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:35]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:35]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:37]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:38]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:38]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:41]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:42]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:42]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:49]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:49]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:39:49]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:01]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:01]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:02]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:03]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:03]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:03]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:04]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:04]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:05]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:06]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:06]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:06]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:08]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:09]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:09]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:12]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:13]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:13]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:20]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:20]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:20]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:57]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:57]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:57]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:58]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:58]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:58]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:59]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:59]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:40:59]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:00]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:00]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:00]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:04]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:05]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:05]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:08]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:09]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:09]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:16]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:38]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:38]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:38]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:39]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:39]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:39]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:40]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:40]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:40]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:41]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:41]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:41]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:46]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:46]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:41:46]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 20:42:01]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#7 {main}
+[03/02/25 20:42:02]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#7 {main}
+[03/02/25 20:42:03]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#7 {main}
+[03/02/25 20:42:20]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#7 {main}
+[03/02/25 20:42:21]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/Requests/Request.php(19): Backend\Database\Database::connect()
+#3 /var/www/html/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#4 /var/www/html/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies()
+#5 /var/www/html/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies()
+#6 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#7 {main}
+[03/02/25 20:43:03]	PDOException: SQLSTATE[HY000] [1049] Unknown database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:00]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:01]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:01]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:01]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:01]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:02]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:02]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:02]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:03]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:03]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:04]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:04]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:05]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:05]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:05]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:08]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:08]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:08]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:12]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:12]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:12]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:19]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:19]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:19]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:33]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:33]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:33]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:59]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:59]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:09:59]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:10:51]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:10:51]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:10:51]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:11:52]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:11:52]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:11:52]	PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'172.23.0.3' (using password: YES) in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:55]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:55]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:55]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:56]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:56]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:56]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:57]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:57]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:58]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:59]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:59]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:12:59]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:00]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:01]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:01]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:03]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:03]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:03]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:07]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:07]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:07]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:14]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:14]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:15]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:28]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:28]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:28]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:38]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:38]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:38]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:39]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:39]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:40]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:41]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:41]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:41]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:42]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:42]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:42]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:43]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:44]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:44]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:46]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:46]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:46]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:50]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:50]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:50]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:57]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:57]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:13:57]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:11]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:11]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:11]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:25]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:25]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:25]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:26]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:26]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:26]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:27]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:27]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:27]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:28]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:28]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:28]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:30]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:30]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:30]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:32]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:32]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:32]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:36]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:36]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:36]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:43]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:43]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:44]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:57]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:57]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:14:57]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:14]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:14]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:14]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:15]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:15]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:15]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:16]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:16]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:16]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:17]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:17]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:17]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:19]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:19]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:19]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:21]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:21]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:21]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:25]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:25]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:25]	PDOException: SQLSTATE[HY000] [1044] Access denied for user 'admin'@'%' to database 'char_craft' in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:41]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:41]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:41]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:42]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:42]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:42]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:43]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:43]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:44]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:45]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:45]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:45]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:46]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:46]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:47]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:49]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:49]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:15:49]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:16:30]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:16:30]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:16:30]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:19:08]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:19:08]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:19:08]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:19:41]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:19:42]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:19:42]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:27:54]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:27:54]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:27:54]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:27:59]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:27:59]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 21:28:00]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[03/02/25 22:15:29]	PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'char_craft.posts1' doesn't exist in /var/www/html/Models/Model.php:175
+Stack trace:
+#0 /var/www/html/Models/Model.php(175): PDO->prepare()
+#1 /var/www/html/Controllers/PostController.php(48): Backend\Models\Model->save()
+#2 [internal function]: Backend\Controllers\PostController->removePost()
+#3 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#4 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#5 {main}
+[03/02/25 22:15:33]	PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'char_craft.posts1' doesn't exist in /var/www/html/Models/Model.php:175
+Stack trace:
+#0 /var/www/html/Models/Model.php(175): PDO->prepare()
+#1 /var/www/html/Controllers/PostController.php(48): Backend\Models\Model->save()
+#2 [internal function]: Backend\Controllers\PostController->removePost()
+#3 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#4 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#5 {main}
+[03/02/25 22:15:34]	PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'char_craft.posts1' doesn't exist in /var/www/html/Models/Model.php:175
+Stack trace:
+#0 /var/www/html/Models/Model.php(175): PDO->prepare()
+#1 /var/www/html/Controllers/PostController.php(48): Backend\Models\Model->save()
+#2 [internal function]: Backend\Controllers\PostController->removePost()
+#3 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#4 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#5 {main}
