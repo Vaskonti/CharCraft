@@ -26,18 +26,10 @@ Copy-Item -Path $httpdConf -Destination $backupConf -Force
 # Replace the original httpd.conf with the modified one
 Move-Item -Path $tempConf -Destination $httpdConf -Force
 
-# Run SQL Migrations
-$mysqlPath = "C:\xampp\mysql\bin\mysql.exe"
-$database = "char_craft"
-$mysqlUser = "root"
-$mysqlPassword = ""
-$sqlScriptPath = "$projectRoot\migrations\up\all.sql"
-
-# Ensure the database exists
-$createDbCommand = "CREATE DATABASE IF NOT EXISTS $database;"
-$createDbCommand | & $mysqlPath -u $mysqlUser --password=$mysqlPassword
-
-# Run SQL Migrations
-Get-Content $sqlScriptPath | & $mysqlPath -u $mysqlUser --password=$mysqlPassword $database
+# Create logs directory
+$dirPath = "$projectRoot\logs"
+if (-not (Test-Path $dirPath)) {
+    New-Item -ItemType Directory -Path $dirPath
+}
 
 Write-Host "Setup complete!"
