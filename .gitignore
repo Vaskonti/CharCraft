@@ -15,7 +15,6 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
-*.log
 backend/Storage/images
 .idea/
 
