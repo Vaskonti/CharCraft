@@ -26,7 +26,7 @@ CREATE TABLE `posts` (
                          `title` varchar(255),
                          `content` varchar(255),
                          `user_id` integer,
-                         `ascii_image_id` integer,
+                         `ascii_image_id` integer NULL,
                          `created_at` timestamp default CURRENT_TIMESTAMP,
                          `likes` bigint default 0,
                          `is_archived` boolean default false
@@ -47,12 +47,12 @@ CREATE TABLE `entity_likes` (
                                 `created_at` timestamp default CURRENT_TIMESTAMP
 );
 
-ALTER TABLE `posts` ADD FOREIGN KEY (`ascii_image_id`) REFERENCES `ascii_images` (`id`);
-ALTER TABLE `posts` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-ALTER TABLE `ascii_images` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-ALTER TABLE `comments` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-ALTER TABLE `comments` ADD FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`);
-ALTER TABLE `entity_likes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+ALTER TABLE `posts` ADD FOREIGN KEY (`ascii_image_id`) REFERENCES `ascii_images` (`id`) ON DELETE SET NULL;
+ALTER TABLE `posts` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+ALTER TABLE `ascii_images` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+ALTER TABLE `comments` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+ALTER TABLE `comments` ADD FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE;
+ALTER TABLE `entity_likes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 
 INSERT INTO users (username, password, email, created_at)
