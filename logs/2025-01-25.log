@@ -1,0 +1,952 @@
+[25/01/25 00:01:28]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:01:56]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:02:22]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:04:23]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:05:27]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:06:18]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:06:36]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:07:43]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:10:02]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:10:17]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:10:49]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:11:33]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:12:20]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'getComments')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('getComments', '/post/comments')
+#11 {main}
+[25/01/25 00:14:30]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'createComment')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(19): Backend\Routes\Router->resolve('createComment', '/post/comments')
+#11 {main}
+[25/01/25 00:14:34]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'createComment')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(19): Backend\Routes\Router->resolve('createComment', '/post/comments')
+#11 {main}
+[25/01/25 00:14:47]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'createComment')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(19): Backend\Routes\Router->resolve('createComment', '/post/comments')
+#11 {main}
+[25/01/25 00:15:04]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'createComment')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(19): Backend\Routes\Router->resolve('createComment', '/post/comments')
+#11 {main}
+[25/01/25 00:15:05]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'createComment')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(19): Backend\Routes\Router->resolve('createComment', '/post/comments')
+#11 {main}
+[25/01/25 00:15:24]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(93): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(75): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(61): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\CommentController), 'createComment')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(19): Backend\Routes\Router->resolve('createComment', '/post/comments')
+#11 {main}
+[25/01/25 18:38:38]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:38:56]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:38:58]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:39:03]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:40:05]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:40:08]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:40:50]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:41:21]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:41:25]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:42:05]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:42:06]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:42:12]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:42:29]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:42:33]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:42:37]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:42:58]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:43:07]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:43:36]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:43:37]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:43:54]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:43:55]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:44:30]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:45:15]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:45:16]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:45:17]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:45:39]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:45:40]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:45:54]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:47:25]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:47:29]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:47:32]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:47:35]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:47:35]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:47:36]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:47:36]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:47:37]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:49:14]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:49:34]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:51:02]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:51:10]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:51:27]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:52:30]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:52:32]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:53:37]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:53:53]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\UserController), 'createUser')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createUser', '/register')
+#11 {main}
+[25/01/25 18:55:34]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:55:52]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:56:12]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}
+[25/01/25 18:56:19]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(18): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#9 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#10 /Users/vasilhristov/projects/CharCraft/public/index.php(18): Backend\Routes\Router->resolve('createPost', '/post')
+#11 {main}

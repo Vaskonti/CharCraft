@@ -1,0 +1,10 @@
+[26/01/25 19:03:33]	Firebase\JWT\ExpiredException: Expired token in /Users/vasilhristov/projects/CharCraft/vendor/firebase/php-jwt/src/JWT.php:176
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/Auth/Auth.php(31): Firebase\JWT\JWT::decode('eyJ0eXAiOiJKV1Q...', Object(Firebase\JWT\Key))
+#1 /Users/vasilhristov/projects/CharCraft/backend/Requests/CreatePostRequest.php(21): Backend\Auth\Auth::validateToken('eyJ0eXAiOiJKV1Q...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/Requests/Request.php(19): Backend\Requests\CreatePostRequest->authorize()
+#3 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(92): Backend\Requests\Request->__construct()
+#4 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(74): Backend\Routes\Router->resolveDependencies(Array)
+#5 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(60): Backend\Routes\Router->resolveMethodDependencies(Object(Backend\Controllers\PostController), 'createPost')
+#6 /Users/vasilhristov/projects/CharCraft/public/index.php(27): Backend\Routes\Router->resolve('createPost', '/post')
+#7 {main}

@@ -1,0 +1,15 @@
+[22/01/25 19:17:44]	Exception: File does not exist: /Users/vasilhristov/projects/CharCraft/backend/config/../.env in /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php:9
+Stack trace:
+#0 /Users/vasilhristov/projects/CharCraft/backend/config/env_loader.php(33): load_env('/Users/vasilhri...')
+#1 /Users/vasilhristov/projects/CharCraft/backend/config/env.php(2): require_once('/Users/vasilhri...')
+#2 /Users/vasilhristov/projects/CharCraft/backend/config/config.php(2): require_once('/Users/vasilhri...')
+#3 /Users/vasilhristov/projects/CharCraft/backend/Database/Database.php(6): require('/Users/vasilhri...')
+#4 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(576): include('/Users/vasilhri...')
+#5 /Users/vasilhristov/projects/CharCraft/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Users/vasilhri...')
+#6 /Users/vasilhristov/projects/CharCraft/backend/Models/Model.php(15): Composer\Autoload\ClassLoader->loadClass('Backend\\Databas...')
+#7 /Users/vasilhristov/projects/CharCraft/backend/Models/Model.php(29): Backend\Models\Model::connect()
+#8 /Users/vasilhristov/projects/CharCraft/backend/Controllers/UserController.php(21): Backend\Models\Model::create(Array)
+#9 [internal function]: Backend\Controllers\UserController->createUser(Object(Backend\Requests\CreateUserRequest))
+#10 /Users/vasilhristov/projects/CharCraft/backend/Routes/Router.php(59): call_user_func_array(Array, Array)
+#11 /Users/vasilhristov/projects/CharCraft/public/index.php(14): Backend\Routes\Router->resolve('createUser', '/register')
+#12 {main}
