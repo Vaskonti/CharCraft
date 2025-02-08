@@ -74,8 +74,8 @@ header {
     align-content: center;
 }
 
-#name {
-    padding-left: 20%;
+#name{
+    align-self: center;
 }
 
 a {
