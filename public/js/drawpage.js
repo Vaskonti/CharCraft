@@ -250,5 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    logout();
+
 });
 
