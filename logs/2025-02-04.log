@@ -1,0 +1,35 @@
+[04/02/25 09:05:33]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[04/02/25 09:05:33]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[04/02/25 09:05:33]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[04/02/25 09:05:45]	PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'char_craft.posts' doesn't exist in /var/www/html/Requests/Request.php:171
+Stack trace:
+#0 /var/www/html/Requests/Request.php(171): PDO->prepare()
+#1 /var/www/html/Requests/Request.php(116): Backend\Requests\Request->valueExists()
+#2 /var/www/html/Controllers/PostController.php(32): Backend\Requests\Request->validate()
+#3 [internal function]: Backend\Controllers\PostController->removePost()
+#4 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#5 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#6 {main}
+[04/02/25 09:06:26]	PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'char_craft.ascii_images' doesn't exist in /var/www/html/Models/Model.php:34
+Stack trace:
+#0 /var/www/html/Models/Model.php(34): PDO->prepare()
+#1 /var/www/html/Controllers/ImageController.php(27): Backend\Models\Model::create()
+#2 [internal function]: Backend\Controllers\ImageController->store()
+#3 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#4 /var/www/html/public/index.php(42): Backend\Routes\Router->resolve()
+#5 {main}

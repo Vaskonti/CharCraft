@@ -1,0 +1,81 @@
+[08/02/25 12:43:27]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0001_create_migrations_log_table.php(7): Backend\Database\Database::connect()
+#3 {main}
+[08/02/25 12:43:27]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0002_create_tables.php(4): Backend\Database\Database::connect()
+#3 {main}
+[08/02/25 12:43:27]	PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/Database/Database.php:20
+Stack trace:
+#0 /var/www/html/Database/Database.php(20): PDO->__construct()
+#1 /var/www/html/Database/Database.php(34): Backend\Database\Database->__construct()
+#2 /var/www/html/migrations/up/0003_add_dummy_data.php(5): Backend\Database\Database::connect()
+#3 {main}
+[08/02/25 13:27:18]	Exception: Config setting 'image_path' not found in 'filesystems.php' in /var/www/html/config/config.php:31
+Stack trace:
+#0 /var/www/html/Controllers/ImageController.php(47): config()
+#1 [internal function]: Backend\Controllers\ImageController->{closure:Backend\Controllers\ImageController::getUserImages():44}()
+#2 /var/www/html/Controllers/ImageController.php(44): array_map()
+#3 [internal function]: Backend\Controllers\ImageController->getUserImages()
+#4 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#5 /var/www/html/public/index.php(44): Backend\Routes\Router->resolve()
+#6 {main}
+[08/02/25 13:27:20]	Exception: Config setting 'image_path' not found in 'filesystems.php' in /var/www/html/config/config.php:31
+Stack trace:
+#0 /var/www/html/Controllers/ImageController.php(47): config()
+#1 [internal function]: Backend\Controllers\ImageController->{closure:Backend\Controllers\ImageController::getUserImages():44}()
+#2 /var/www/html/Controllers/ImageController.php(44): array_map()
+#3 [internal function]: Backend\Controllers\ImageController->getUserImages()
+#4 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#5 /var/www/html/public/index.php(44): Backend\Routes\Router->resolve()
+#6 {main}
+[08/02/25 13:27:21]	Exception: Config setting 'image_path' not found in 'filesystems.php' in /var/www/html/config/config.php:31
+Stack trace:
+#0 /var/www/html/Controllers/ImageController.php(47): config()
+#1 [internal function]: Backend\Controllers\ImageController->{closure:Backend\Controllers\ImageController::getUserImages():44}()
+#2 /var/www/html/Controllers/ImageController.php(44): array_map()
+#3 [internal function]: Backend\Controllers\ImageController->getUserImages()
+#4 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#5 /var/www/html/public/index.php(44): Backend\Routes\Router->resolve()
+#6 {main}
+[08/02/25 13:27:31]	Exception: Config setting 'image_path' not found in 'filesystems.php' in /var/www/html/config/config.php:31
+Stack trace:
+#0 /var/www/html/Controllers/ImageController.php(47): config()
+#1 [internal function]: Backend\Controllers\ImageController->{closure:Backend\Controllers\ImageController::getUserImages():44}()
+#2 /var/www/html/Controllers/ImageController.php(44): array_map()
+#3 [internal function]: Backend\Controllers\ImageController->getUserImages()
+#4 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#5 /var/www/html/public/index.php(44): Backend\Routes\Router->resolve()
+#6 {main}
+[08/02/25 13:27:38]	Exception: Config setting 'image_path' not found in 'filesystems.php' in /var/www/html/config/config.php:31
+Stack trace:
+#0 /var/www/html/Controllers/ImageController.php(47): config()
+#1 [internal function]: Backend\Controllers\ImageController->{closure:Backend\Controllers\ImageController::getUserImages():44}()
+#2 /var/www/html/Controllers/ImageController.php(44): array_map()
+#3 [internal function]: Backend\Controllers\ImageController->getUserImages()
+#4 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#5 /var/www/html/public/index.php(44): Backend\Routes\Router->resolve()
+#6 {main}
+[08/02/25 13:53:41]	Exception: Config setting 'image_path' not found in 'filesystems.php' in /var/www/html/config/config.php:31
+Stack trace:
+#0 /var/www/html/Controllers/ImageController.php(47): config()
+#1 [internal function]: Backend\Controllers\ImageController->{closure:Backend\Controllers\ImageController::getUserImages():44}()
+#2 /var/www/html/Controllers/ImageController.php(44): array_map()
+#3 [internal function]: Backend\Controllers\ImageController->getUserImages()
+#4 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#5 /var/www/html/public/index.php(44): Backend\Routes\Router->resolve()
+#6 {main}
+[08/02/25 13:53:41]	Exception: Config setting 'image_path' not found in 'filesystems.php' in /var/www/html/config/config.php:31
+Stack trace:
+#0 /var/www/html/Controllers/ImageController.php(47): config()
+#1 [internal function]: Backend\Controllers\ImageController->{closure:Backend\Controllers\ImageController::getUserImages():44}()
+#2 /var/www/html/Controllers/ImageController.php(44): array_map()
+#3 [internal function]: Backend\Controllers\ImageController->getUserImages()
+#4 /var/www/html/Routes/Router.php(62): call_user_func_array()
+#5 /var/www/html/public/index.php(44): Backend\Routes\Router->resolve()
+#6 {main}
