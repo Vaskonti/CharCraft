@@ -74,7 +74,6 @@ export async function getImagePath(imageId)
 
 export async function generatePost(post, comments) {
     const imagePath = await getImagePath(post.ascii_image_id);
-    console.log(post);
     const postElement = document.createElement("section");
     postElement.classList.add("post");
     postElement.innerHTML = `
@@ -215,7 +214,7 @@ async function generatePosts(posts) {
     }
 }
 var selectedImage;
-console.log(5);
+
 document.addEventListener('DOMContentLoaded', async () => {
     const postCreationForm = document.getElementById('post-creation-form');
     if (!postCreationForm) {
@@ -226,15 +225,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const userImages = await getUserImages();
     const imageSelection = document.getElementById('choose-photo-btn');
     const postPopUpSection = document.createElement("section");
-    postPopUpSection.classList.add("hidden");
     postPopUpSection.classList.add("pop-up");
-    console.log(userImages.values());
+    postPopUpSection.classList.add("hidden");
     userImages.values().forEach(image =>{
-        console.log(image);
         const imageBtn = document.createElement("button");
         imageBtn.type = "button"
+        imageBtn.classList.add("option");
         imageBtn.addEventListener("click", function(){
             selectedImage = image.id;
+            postPopUpSection.classList.add("hidden");
         });
         imageBtn.innerHTML = `<img src="${image.path}" alt="ASCII image" class="ASCII-image">`;
         postPopUpSection.append(imageBtn);
@@ -253,6 +252,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     closeButton.addEventListener("click", () => {
+        console.log("Closing popup...");
         postPopUpSection.classList.add("hidden");
     });
 
@@ -266,7 +266,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         let formData = new FormData(this);
         formData.append('ascii_image_id', selectedImage);
 
-        console.log(6);
         let jsonData = {};
         formData.forEach((value, key) => {
             console.log(key, value);
