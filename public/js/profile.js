@@ -1,6 +1,6 @@
 import {generatePost, getImagePath, getComments} from './feed.js';
 import {hostName} from "../src/js/config.js";
-import { isUserLoggedIn, redirectToRegistration, getUserUsername } from "../src/js/user_details.js";
+import { isUserLoggedIn, redirectToRegistration, getUserUsername, logout} from "../src/js/user_details.js";
 
 if (!isUserLoggedIn()) {
   redirectToRegistration();
@@ -139,7 +139,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   .catch(error => {
     console.error('Error:', error);
   });
-  console.log(profileData);
   generateProfile(profileData);
+
+  logout();
 });
 

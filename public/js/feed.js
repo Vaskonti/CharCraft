@@ -1,5 +1,5 @@
 import {hostName} from "../src/js/config.js";
-import { isUserLoggedIn, redirectToRegistration } from "../src/js/user_details.js";
+import { isUserLoggedIn, logout, redirectToRegistration } from "../src/js/user_details.js";
 
 if (!isUserLoggedIn()) {
     redirectToRegistration();
@@ -282,5 +282,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.log("Failed to create post");
         }
     });
+
+    logout();
 });
 
