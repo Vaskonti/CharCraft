@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(`Something went wrong! \n${response.message}`);
             throw new Error('Failed to submit comment');
         }
-        window.location.href = '/feed.html';
+        redirectToFeed();
         alert(`Registration successful.`);
     });
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             throw new Error('Failed to submit comment');
         }
 
-        window.location.href = '/feed.html';
+        redirectToFeed();
         alert(`Login successful.`);
     });
 });

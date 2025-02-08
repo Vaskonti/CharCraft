@@ -12,10 +12,4 @@ class CreateUserRequest extends Request
             'password' => ['required', 'min:6', 'confirmed'],
         ];
     }
-
-    public function authorize(): bool
-    {
-        return true;
-    }
-
 }
