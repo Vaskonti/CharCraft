@@ -18,6 +18,18 @@ const postsData = await fetch(hostName + '/posts', {
     alert('Failed to load posts. Please try again later.');
 });
 
+const user_images = await fetch(hostName + 'user/images', {
+    method: 'GET',
+    headers: {'Content-Type': 'application/json'}
+}).then(response => {
+    return response.json();
+}).then(posts => {
+    generatePosts(posts);
+}).catch(error => {
+    console.error('Error fetching posts:', error);
+    alert('Failed to load images. Please try again later.');
+});
+
 export async function getComments(postId) {
     return fetch(hostName + '/post/comments' + '?post_id=' + postId, {
         method: 'GET',
@@ -185,17 +197,50 @@ function generatePosts(posts) {
         postsContainer.appendChild(postElement);
     }
 }
-
+var selectedImage;
 document.addEventListener("DOMContentLoaded", function () {
 
     const postCreationForm = document.getElementById('post-creation-form');
     if (!postCreationForm) {
         return;
     }
+
+    const createPostSection = document.getElementById('post-creation-form');
+    const image_selection = document.getElementById('choose-photo-btn');
+    const postPopUpSection = document.createElement("section");
+      postPopUpSection.classList.add("hidden");
+      postPopUpSection.classList.add("pop-up");
+      
+      for (image of user_images.values()) {
+        const image_btn = document.createElement("button");
+        image_btn.addEventListener("click", function(){
+            selectedImage = post.ascii_image_id;
+        });
+
+        image_btn.innerHTML = `<img src="/images/${post.ascii_image_id}.png" alt="ASCII image" class="ASCII-image">`;
+        postPopUpSection.append(image_btn);
+      }
+      
+
+      const closeButton = document.createElement("button");
+      closeButton.classList.add("close-btn");
+      closeButton.textContent = "x";
+      postPopUpSection.appendChild(closeButton);
+
+      createPostSection.appendChild(postPopUpSection);
+
+      image_selection.addEventListener("click", () => {
+        postPopUpSection.classList.remove("hidden");
+      });
+
+      closeButton.addEventListener("click", () => {
+        postPopUpSection.classList.add("hidden");
+      });
+
     postCreationForm.addEventListener('submit', async function (event) {
         event.preventDefault();
         let formData = new FormData(this);
-        formData.append('ascii_image_id', 1);
+        formData.append('ascii_image_id', selectedImage);
 
 
         let jsonData = {};

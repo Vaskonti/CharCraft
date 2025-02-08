@@ -3,75 +3,75 @@ import { hostName } from './config.js';
 import { isUserLoggedIn, redirectToRegistration } from "../src/js/user_details.js";
 
 if (!isUserLoggedIn()) {
-    redirectToRegistration();
+  redirectToRegistration();
 }
-
-const profileData = 
-{
-    "username": "ascii_artist123",
-    "posts": [
-      {
-        "title": "Sunset Vibes",
-        "description": "An ASCII representation of a peaceful sunset.",
-        "image_id": "1",
-        "created_at": "2025-01-24T14:30:00Z",
-        "likes": 120,
-        "comments": [
-            { "username": "Alice", "content": "Wow, amazing shot!" },
-            { "username": "Bob", "content": "Looks fantastic!" }
-        ]
-      },
-      {
-        "title": "Cyber Cityscape",
-        "description": "A futuristic city made entirely in ASCII art.",
-        "image_id": "1",
-        "created_at": "2025-01-20T10:15:00Z",
-        "likes": 340,
-        "comments": [
-            { "username": "Alice", "content": "Wow, amazing shot!" },
-            { "username": "Bob", "content": "Looks fantastic!" }
-        ]
-      },
-      {
-        "title": "Minimalist Cat",
-        "description": "A simple yet cute ASCII cat.",
-        "image_id": "1",
-        "created_at": "2025-01-18T08:45:00Z",
-        "likes": 89,
-        "comments": [
-            { "username": "Alice", "content": "Wow, amazing shot!" },
-            { "username": "Bob", "content": "Looks fantastic!" }
-        ]
-      },
-      {
-        "title": "Space Odyssey",
-        "description": "ASCII art inspired by space exploration.",
-        "image_id": "1",
-        "created_at": "2025-01-15T19:00:00Z",
-        "likes": 450,
-        "comments": [
-            { "username": "Alice", "content": "Wow, amazing shot!" },
-            { "username": "Bob", "content": "Looks fantastic!" }
-        ]
-      }
-    ]
+const profileData = fetch(hostName + '/user/posts', {
+  method: 'GET',
+  headers: { 'Content-Type': 'application/json'}
+})
+.then(response => {
+  if (!response.ok) {
+      alert(`Something went wrong! \n${response.status}`);
+      throw new Error('Failed to submit comment');
   }
-  
-// const profileData = fetch(hostName + '/user/posts', {
-//   method: 'GET',
-//   body: formData,
-//   headers: { 'Content-Type': 'application/json'}
-// })
-// .then(response => {
-//   if (!response.ok) {
-//       alert(`Something went wrong! \n${response.status}`);
-//       throw new Error('Failed to submit comment');
+  return response.json();
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+// const profileData = 
+// {
+//     "username": "ascii_artist123",
+//     "posts": [
+//       {
+//         "title": "Sunset Vibes",
+//         "description": "An ASCII representation of a peaceful sunset.",
+//         "image_id": "1",
+//         "created_at": "2025-01-24T14:30:00Z",
+//         "likes": 120,
+//         "comments": [
+//             { "username": "Alice", "content": "Wow, amazing shot!" },
+//             { "username": "Bob", "content": "Looks fantastic!" }
+//         ]
+//       },
+//       {
+//         "title": "Cyber Cityscape",
+//         "description": "A futuristic city made entirely in ASCII art.",
+//         "image_id": "1",
+//         "created_at": "2025-01-20T10:15:00Z",
+//         "likes": 340,
+//         "comments": [
+//             { "username": "Alice", "content": "Wow, amazing shot!" },
+//             { "username": "Bob", "content": "Looks fantastic!" }
+//         ]
+//       },
+//       {
+//         "title": "Minimalist Cat",
+//         "description": "A simple yet cute ASCII cat.",
+//         "image_id": "1",
+//         "created_at": "2025-01-18T08:45:00Z",
+//         "likes": 89,
+//         "comments": [
+//             { "username": "Alice", "content": "Wow, amazing shot!" },
+//             { "username": "Bob", "content": "Looks fantastic!" }
+//         ]
+//       },
+//       {
+//         "title": "Space Odyssey",
+//         "description": "ASCII art inspired by space exploration.",
+//         "image_id": "1",
+//         "created_at": "2025-01-15T19:00:00Z",
+//         "likes": 450,
+//         "comments": [
+//             { "username": "Alice", "content": "Wow, amazing shot!" },
+//             { "username": "Bob", "content": "Looks fantastic!" }
+//         ]
+//       }
+//     ]
 //   }
-//   return response.json();
-// })
-// .catch(error => {
-//   console.error('Error:', error);
-// });
+  
+
 
 function generateProfile(profileData) {
   const profileContainer = document.getElementById("profile-container");
