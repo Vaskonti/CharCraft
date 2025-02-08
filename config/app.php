@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'host' => env('DB_HOST', 'localhost'),
+    'host' => env('APP_HOST', 'localhost'),
 ];
