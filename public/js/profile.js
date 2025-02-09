@@ -88,7 +88,6 @@ async function generateProfile(profileData) {
   imageContainer.classList.add("image-container");
 
   profileData.forEach(async post => {
-    const comments = getComments(post.id);
     const imagePath = await getImagePath(post.ascii_image_id);
     const button = document.createElement("button");
     button.classList.add("image-btn");
@@ -102,6 +101,8 @@ async function generateProfile(profileData) {
     const postPopUpSection = document.createElement("section");
     postPopUpSection.classList.add("hidden");
     postPopUpSection.classList.add("pop-up");
+
+    const comments = await getComments(post.id);
     const postElement = await generatePost(post, comments);
     postPopUpSection.append(postElement);
     const closeButton = document.createElement("button");
