@@ -93,9 +93,6 @@ function convertBoardToImage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    getUserUsername().then( username => {
-        console.log(username);
-    });
     brush.setMouseRadius(mouseRadius);
     brush.setBrushShape(BrushShape.CIRCLE);
     brush.setToolType(ToolType.BRUSH);
@@ -252,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error:', error);
         });
     });
+
+    logout();
 
 });
 

@@ -1,0 +1,48 @@
+.pop-up 
+{ 
+    color: var(--white);
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background: var(--gray); 
+    padding: 20px; 
+    border-radius: 10px; 
+    z-index: 1000; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    min-width: 60vw;
+    min-height: 80vh; 
+    overflow: auto; 
+    border: 2px outset var(--orange);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5px;
+    flex-wrap: wrap;
+}
+
+.hidden{
+    display: none;
+}
+
+.close-btn 
+{ 
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    cursor: pointer;
+    color: var(--orange);
+    border: none; 
+    background: none;
+}
+
+.option, .option img{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.option{
+    border: none; 
+    background: none;
+}

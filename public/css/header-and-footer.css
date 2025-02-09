@@ -51,7 +51,7 @@ header {
 .menu-item {
   flex: 1;
   display: flex;
-    width: 30%;
+  width: 30%;
   align-items: center;
   justify-content: center;
 }
@@ -72,6 +72,10 @@ header {
     width: auto;
     height: 100%;
     align-content: center;
+}
+
+#name{
+    align-self: center;
 }
 
 a {

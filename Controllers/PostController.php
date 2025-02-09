@@ -51,7 +51,7 @@ class PostController extends Controller
             'message' => 'Post removed successfully!'
         ]);
     }
-
+    
     public function getPosts(): JsonResponse
     {
         $posts = Post::where('is_archived', false)->randomGet(10);

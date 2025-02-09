@@ -39,6 +39,7 @@ $router->post('/like', [LikeEntityController::class, 'likeEntity']);
 $router->delete('/unlike', [LikeEntityController::class, 'removeLikeEntity']);
 $router->get('/post/comments', [CommentController::class, 'getComments']);
 $router->post('/post/comment', [CommentController::class, 'createComment']);
+$router->get('/image/path', [ImageController::class, 'getImagePath']);
 
 try {
     $router->resolve($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
