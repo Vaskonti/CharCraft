@@ -73,6 +73,8 @@ export async function getImagePath(imageId)
 }
 
 export async function generatePost(post, comments) {
+    console.log(post);
+    console.log(comments);
     const imagePath = await getImagePath(post.ascii_image_id);
     const postElement = document.createElement("section");
     postElement.classList.add("post");
@@ -101,7 +103,7 @@ export async function generatePost(post, comments) {
         `;
 
     const commentList = postElement.querySelector(".comment-list");
-    comments.then(comment => comment.forEach(comment => {
+    comments.forEach(comment => {
         const htmlValue =`
             <img src="/assets/images/icons/heart-empty.png" 
                      alt="like" 
@@ -125,7 +127,7 @@ export async function generatePost(post, comments) {
                 commentItem.querySelector(".like-count").textContent = comment.likes;
             });
         commentList.appendChild(commentItem);
-    }));
+    });
 
     const likeIcon = postElement.querySelector(".like-icon");
     likeIcon.addEventListener("click", function () {
@@ -208,7 +210,7 @@ export async function generatePost(post, comments) {
 async function generatePosts(posts) {
     const postsContainer = document.querySelector(".posts-container");
     for (const post of posts) {
-        const comments = getComments(post.id);
+        const comments = await getComments(post.id);
         const postElement = await generatePost(post, comments);
         postsContainer.appendChild(postElement);
     }
@@ -280,6 +282,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (!response.ok) {
             console.log("Failed to create post");
+        }
+        else
+        {
+            formData.ascii_image_id = selectedImage;
+            formData.likes = 0;
+            formData.content = jsonData["content"];
+            formData.title = jsonData["title"];
+            formData.created_at = new Date().toISOString().slice(0, 19).replace("T", " ");;
+            const post = await generatePost(formData, []);
+            const postsContainer = document.querySelector('.posts-container');
+            postsContainer.prepend(post);
         }
     });
 
