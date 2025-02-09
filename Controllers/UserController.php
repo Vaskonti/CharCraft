@@ -86,12 +86,7 @@ class UserController extends Controller
                 'message' => 'You are not logged in!'
             ], 401);
         }
-        $this->setCookie(
-            name: 'auth_token',
-            value: '',
-            expire: time() - 3600,
-            httponly: true
-        );
+        setcookie('auth_token', '', time() - 3600, '/', '', true, true);
         return $this->jsonResponse([
             'message' => 'Logged out successfully!'
         ]);
