@@ -1,22 +1,35 @@
 import {hostName} from "../src/js/config.js";
-import { isUserLoggedIn, redirectToRegistration } from "../src/js/user_details.js";
+import { isUserLoggedIn, logout, redirectToRegistration } from "../src/js/user_details.js";
 
 if (!isUserLoggedIn()) {
     redirectToRegistration();
 }
 
+async function getPostData(){
+    const postsData = await fetch(hostName + '/posts', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => {
+        return response.json();
+    }).catch(error => {
+        console.error('Error fetching posts:', error);
+        alert('Failed to load posts. Please try again later.');
+    });
+    return postsData;
+}
 
-const postsData = await fetch(hostName + '/posts', {
-    method: 'GET',
-    headers: {'Content-Type': 'application/json'}
-}).then(response => {
-    return response.json();
-}).then(posts => {
-    generatePosts(posts);
-}).catch(error => {
-    console.error('Error fetching posts:', error);
-    alert('Failed to load posts. Please try again later.');
-});
+async function getUserImages(){
+    const userImages = await fetch(hostName + '/user/images' , {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => {
+        return response.json();
+    }).catch(error => {
+        console.error('Error fetching posts:', error);
+        alert('Failed to load images. Please try again later.');
+    });
+    return userImages;
+}
 
 export async function getComments(postId) {
     return fetch(hostName + '/post/comments' + '?post_id=' + postId, {
@@ -45,13 +58,28 @@ export async function like(entityId, type, isLiked) {
     });
 }
 
-export function generatePost(post, comments) {
+export async function getImagePath(imageId)
+{
+    const imagePath = await fetch(hostName + '/image/path' + '?image_id=' + imageId, {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => {
+        return response.json();
+    }).catch(error => {
+        console.error('Error fetching image path:', error);
+        alert('Failed to load image path. Please try again later.');
+    });
+    return imagePath;
+}
+
+export async function generatePost(post, comments) {
+    const imagePath = await getImagePath(post.ascii_image_id);
     const postElement = document.createElement("section");
     postElement.classList.add("post");
     postElement.innerHTML = `
                 <h3 class="username">${post.title}</h3>
             <time class="created-at">${post.created_at}</time>
-            <img src="/images/${post.ascii_image_id}.png" alt="ASCII image" class="ASCII-image">
+            <img src="${imagePath.image_path}" alt="ASCII image" class="ASCII-image">
             <h3 class="title">${post.title}</h3>
             <section class="likes">
                 <img src="/assets/images/icons/heart-empty.png" 
@@ -177,29 +205,70 @@ export function generatePost(post, comments) {
     return postElement;
 }
 
-function generatePosts(posts) {
-    const postsContainer = document.querySelectorAll(".posts-container")[0];
+async function generatePosts(posts) {
+    const postsContainer = document.querySelector(".posts-container");
     for (const post of posts) {
         const comments = getComments(post.id);
-        const postElement = generatePost(post, comments);
+        const postElement = await generatePost(post, comments);
         postsContainer.appendChild(postElement);
     }
 }
+var selectedImage;
 
-document.addEventListener("DOMContentLoaded", function () {
-
+document.addEventListener('DOMContentLoaded', async () => {
     const postCreationForm = document.getElementById('post-creation-form');
     if (!postCreationForm) {
         return;
     }
+    const postData = await getPostData();
+    generatePosts(postData);
+    const userImages = await getUserImages();
+    const imageSelection = document.getElementById('choose-photo-btn');
+    const postPopUpSection = document.createElement("section");
+    postPopUpSection.classList.add("pop-up");
+    postPopUpSection.classList.add("hidden");
+    userImages.values().forEach(image =>{
+        const imageBtn = document.createElement("button");
+        imageBtn.type = "button"
+        imageBtn.classList.add("option");
+        imageBtn.addEventListener("click", function(){
+            selectedImage = image.id;
+            postPopUpSection.classList.add("hidden");
+        });
+        imageBtn.innerHTML = `<img src="${image.path}" alt="ASCII image" class="ASCII-image">`;
+        postPopUpSection.append(imageBtn);
+    })
+    
+    const closeButton = document.createElement("button");
+    closeButton.classList.add("close-btn");
+    closeButton.type = "button"
+    closeButton.textContent = "x";
+    postPopUpSection.appendChild(closeButton);
+
+    postCreationForm.appendChild(postPopUpSection);
+
+    imageSelection.addEventListener("click", () => {
+        postPopUpSection.classList.remove("hidden");
+    });
+
+    closeButton.addEventListener("click", () => {
+        console.log("Closing popup...");
+        postPopUpSection.classList.add("hidden");
+    });
+
     postCreationForm.addEventListener('submit', async function (event) {
         event.preventDefault();
+        if(!selectedImage)
+        {
+            alert("Please select image");
+            return;
+        }
         let formData = new FormData(this);
-        formData.append('ascii_image_id', 1);
-
+        formData.append('ascii_image_id', selectedImage);
 
         let jsonData = {};
         formData.forEach((value, key) => {
+            console.log(key, value);
             jsonData[key] = value;
         });
 
@@ -213,5 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Failed to create post");
         }
     });
+
+    logout();
 });
 

@@ -7,6 +7,7 @@ use Backend\Requests\GetUserImagesRequest;
 use Backend\Requests\StoreImageRequest;
 use Backend\Responses\JsonResponse;
 use Backend\Storage\Storage;
+use Backend\Requests\GetImagePathRequest;
 
 class ImageController extends Controller
 {
@@ -47,5 +48,28 @@ class ImageController extends Controller
                 'path' => Storage::get($image->path),
             ];
         }, $images));
+    }
+
+    public function getImagePath(GetImagePathRequest $request): JsonResponse
+    {
+        if (!$request->validate()) {
+            return new JsonResponse([
+                'errors' => $request->errors(),
+            ], 409);
+        }
+        $data = $request->validated();
+        $imageId = $data['image_id'];
+        $image = AsciiImage::find($imageId);
+
+        if (!$image) {
+            return $this->jsonResponse([
+                'message' => 'Image not found!'
+            ], 404);
+        }
+        
+        return $this->jsonResponse([
+            'image_path' => $image->path
+        ]);
+
     }
 }

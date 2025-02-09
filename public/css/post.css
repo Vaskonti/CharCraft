@@ -42,7 +42,7 @@ form
     gap: 10px;
 }
 
-form input[type="submit"]
+form input[type="submit"], #choose-photo-btn
 {
     width: 100%;
     padding: 10px 20px;
@@ -55,7 +55,7 @@ form input[type="submit"]
     font: var(--font);
 }
 
-form input[type="submit"]:hover
+form input[type="submit"]:hover, #choose-photo-btn:hover
 {
     background-color: var(--orange);
     border: 2px inset var(--gray);

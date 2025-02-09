@@ -51,3 +51,27 @@ export function getUserUsername() {
         return "";
     });
 }
+
+export function logout(){
+    const logOut = document.getElementById('log-out');
+  logOut.addEventListener("click", (event) => {
+    event.preventDefault();
+    if(confirm("Are you sure you want log out?")) {
+      fetch(hostName + '/logout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'}
+      })
+      .then(response => {
+        if (!response.ok) {
+            alert(`Something went wrong! \n${response.status}`);
+            throw new Error('Failed to logout!');
+        }
+        redirectToRegistration();
+        return response.json();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  });
+}
