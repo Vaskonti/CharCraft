@@ -75,3 +75,16 @@ export function logout(){
     }
   });
 }
+
+export function setupLogButton(button) {
+    if (isUserLoggedIn()) {
+        button.textContent = "Log out";
+        button.addEventListener("click", (_) => {
+            fetch(hostName + "/logout")
+        })
+    }
+    else {
+         button.textContent = "Log in";
+    }
+    button.href = "register-and-login.html";
+}
