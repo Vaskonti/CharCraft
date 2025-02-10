@@ -9,7 +9,18 @@
 {
     --post-width: 50%;
 }
-
+.no-images {
+    display: block;
+    width: 50%;
+}
+.image-preview {
+    display: flex;
+    max-width: 400px;
+    height:auto;
+    align-self:center;
+    border-radius: 10px;
+    border: 2px outset var(--orange);
+}
 main
 {
     margin-top: var(--header-height);
