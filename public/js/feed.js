@@ -48,7 +48,7 @@ export async function like(entityId, type, isLiked) {
         entity_type: type
     }
     return fetch(hostName + (isLiked ? '/unlike' : '/like'), {
-        method: 'POST',
+        method: isLiked ? 'DELETE' : 'POST',
         body: JSON.stringify(data),
         headers: {'Content-Type': 'application/json'}
     }).then(response =>
@@ -72,16 +72,16 @@ export async function getImagePath(imageId)
     return imagePath;
 }
 
-export async function generatePost(post, comments) {
-    console.log(post);
-    console.log(comments);
-    const imagePath = await getImagePath(post.ascii_image_id);
+export async function generatePost(post, comments, isNewPost = false) {
     const postElement = document.createElement("section");
+    if (isNewPost) {
+        post.image_path = (await getImagePath(post.ascii_image_id)).image_path;
+    }
     postElement.classList.add("post");
     postElement.innerHTML = `
                 <h3 class="username">${post.title}</h3>
             <time class="created-at">${post.created_at}</time>
-            <img src="${imagePath.image_path}" alt="ASCII image" class="ASCII-image">
+            <img src="${post.image_path}" alt="ASCII image" class="ASCII-image">
             <h3 class="title">${post.title}</h3>
             <section class="likes">
                 <img src="/assets/images/icons/heart-empty.png" 
@@ -153,7 +153,7 @@ export async function generatePost(post, comments) {
         if (commentText === "") return;
 
         const formData = new FormData();
-        formData.append('post_id', post.id);
+        formData.append('post_id', parseInt(post.id));
         formData.append('content', commentText);
         let jsonData = {};
 
@@ -181,20 +181,19 @@ export async function generatePost(post, comments) {
                     <section class="comment-text">You : ${commentText}</section>`;
                 const newComment = document.createElement("section");
                 newComment.classList.add("comment-item");
+                newComment.innerHTML = commentHtml;
                 const likeIcon = newComment.querySelector(".like-icon");
                 likeIcon.addEventListener("click", function () {
                     if (likeIcon.src.includes("heart-empty.png")) {
                         likeIcon.src = "/assets/images/icons/heart-full.png";
-                        like(data.id, 'comment', false);
-                        data.likes++;
+                        like(data.comment_id, 'comment', false);
+                        newComment.querySelector(".like-count").textContent = 1;
                     } else {
                         likeIcon.src = "/assets/images/icons/heart-empty.png";
-                        like(data.id, 'comment', true);
-                        data.likes--;
+                        like(data.comment_id, 'comment', true);
+                        newComment.querySelector(".like-count").textContent = 0;
                     }
-                    commentItem.querySelector(".like-count").textContent = comment.likes;
                 });
-                newComment.innerHTML = commentHtml;
                 commentList.appendChild(newComment);
 
                 commentInput.value = "";
@@ -270,7 +269,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         let jsonData = {};
         formData.forEach((value, key) => {
-            console.log(key, value);
             jsonData[key] = value;
         });
 
@@ -289,8 +287,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             formData.likes = 0;
             formData.content = jsonData["content"];
             formData.title = jsonData["title"];
-            formData.created_at = new Date().toISOString().slice(0, 19).replace("T", " ");;
-            const post = await generatePost(formData, []);
+            formData.created_at = new Date().toISOString().slice(0, 19).replace("T", " ");
+            formData.id = (await response.json()).id;
+            const post = await generatePost(formData, [], true);
             const postsContainer = document.querySelector('.posts-container');
             postsContainer.prepend(post);
         }
