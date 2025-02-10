@@ -77,13 +77,22 @@ export function logout(){
 }
 
 export function setupLogButton(button) {
+    const event = (event) => {
+        event.preventDefault();
+        if(confirm("Are you sure you want log out?")) {
+          fetch(hostName + '/logout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'}
+          });
+        }
+      };
+
     if (isUserLoggedIn()) {
         button.textContent = "Log out";
-        button.addEventListener("click", (_) => {
-            fetch(hostName + "/logout")
-        })
+        button.addEventListener("click", event);
     }
     else {
+         button.removeEventListener("click", event);
          button.textContent = "Log in";
     }
     button.href = "register-and-login.html";
