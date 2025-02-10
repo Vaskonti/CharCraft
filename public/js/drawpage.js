@@ -4,7 +4,10 @@ import { Brush, ToolType, BrushShape, BrushType} from '../src/js/brush.js';
 import { ImageConverter, ImageParseOptions } from '../src/js/image_converter.js';
 import { CharacterBoard } from '../src/js/character_board.js';
 import {hostName} from "../src/js/config.js";
-import { getUserUsername, isUserLoggedIn } from "../src/js/user_details.js";
+import { setupLogButton, isUserLoggedIn, logout } from "../src/js/user_details.js";
+
+const logButton = document.getElementById("log-out");
+setupLogButton(logButton);
 
 const imageInput = document.getElementById('image-input');
 const openPopup = document.getElementById('image-loader-btn');
