@@ -35,11 +35,11 @@ async function generateProfile(profileData) {
   imageContainer.classList.add("image-container");
 
   profileData.forEach(async post => {
-    const imagePath = await getImagePath(post.ascii_image_id);
+    const imagePath = post.image_path;
     const button = document.createElement("button");
     button.classList.add("image-btn");
     const img = document.createElement("img");
-    img.src = `${imagePath.image_path}`;
+    img.src = `${imagePath}`;
     img.alt = post.title;
 
     button.appendChild(img);
@@ -77,7 +77,6 @@ async function generateProfile(profileData) {
 }
 
 document.addEventListener("DOMContentLoaded", async function () { 
-  console.log("7");
   const profileData = await fetch(hostName + '/user/posts', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json'}

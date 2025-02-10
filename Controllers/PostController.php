@@ -78,7 +78,17 @@ class PostController extends Controller
         $posts = Post::where('user_id', $user->sub)->all();
 
         return $this->jsonResponse(array_map(function ($post) {
-            return $post->toArray();
+            $post = $post->toArray();
+            return [
+                'title' => $post['title'],
+                'content' => $post['content'],
+                'id' => $post['id'],
+                'image_path' =>  Storage::get(AsciiImage::find($post['ascii_image_id'])->path),
+                'author_username' => User::find($post['user_id'])->username,
+                'created_at' => $post['created_at'],
+                'is_archived' => $post['is_archived'],
+                'likes' => $post['likes'],
+            ];
         }, $posts));
     }
 }

@@ -79,7 +79,7 @@ export async function generatePost(post, comments, isNewPost = false) {
     }
     postElement.classList.add("post");
     postElement.innerHTML = `
-                <h3 class="username">${post.title}</h3>
+                <h3 class="username">${post.author_username}</h3>
             <time class="created-at">${post.created_at}</time>
             <img src="${post.image_path}" alt="ASCII image" class="ASCII-image">
             <h3 class="title">${post.title}</h3>
@@ -234,11 +234,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         imageBtn.classList.add("option");
         imageBtn.addEventListener("click", function(){
             selectedImage = image.id;
+            const imagePreview = document.createElement("img");
+            imagePreview.classList.add("image-preview");
+            imagePreview.src = image.path;
+            imagePreview.alt = "ASCII image";
+            postCreationForm.appendChild(imagePreview);
             postPopUpSection.classList.add("hidden");
         });
         imageBtn.innerHTML = `<img src="${image.path}" alt="ASCII image" class="ASCII-image">`;
         postPopUpSection.append(imageBtn);
     })
+    if (userImages.length === 0) {
+        const noImages = document.createElement("p");
+        noImages.classList.add("no-images");
+        noImages.textContent = "No images to show. Please save an image first in the draw page.";
+        postPopUpSection.appendChild(noImages);
+    }
     
     const closeButton = document.createElement("button");
     closeButton.classList.add("close-btn");
@@ -292,6 +303,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const post = await generatePost(formData, [], true);
             const postsContainer = document.querySelector('.posts-container');
             postsContainer.prepend(post);
+            document.getElementsByClassName("image-preview")[0].remove();
         }
     });
 
