@@ -253,7 +253,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    logout();
-
 });
 
